@@ -20,7 +20,24 @@ Education
 Indian Institute of Management Shillong (2020 - Present)
 - MTech in Technology and Development \
 Indian Institute of Technology Bombay (2015 - 2017)
-- BE in Instrumentation Engineering 
+- BE in Instrumentation Engineering \
 Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University (2010 - 2014)
 
+Experience
+======
+- Research Associate \ 
+CSR Study Unit, Indian Institute of Technology  Bombay  \
+Project funded by - Department of Heavy Industry, Government of India (2018 - 2019)
+- Research Fellow \
+CTARA- IITB MoRD Fellowship \
+Funded by - Ministry of Rural Development, Government of India
 
+Interest
+=====
+- Development Economics 
+- Applied Microeconomics
+- Macroeconomics 
+- Managerial Economics
+- Behavioral Economics 
+- Applied Econometrics
+- Data Analysis using R and STATA
