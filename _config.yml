@@ -24,17 +24,17 @@ author:
   avatar           : "profile.jpg"
   name             : "Pawan A Kamble"
   pronouns         : # example: "she/her"  
-  bio              : "Research Scholor | Economics and Public Policy "
-  employer         : "Indian Institute of Management Shillong"
+  bio              : "Research Scholor | IIM Shillong | Economics and Public Policy "
+  employer         : ""
 
-  email            : "mailto:pawan.phd20@iimshillong.ac.in" 
+  email            : "pawan.phd20@iimshillong.ac.in" 
 
   # Academic websites
   googlescholar    : "https://scholar.google.com/citations?user=PisEs5cAAAAJ&hl=en"
   orcid            : "https://orcid.org/0000-0002-7635-2323"
   
   # Social media
-  linkedin         : # Username
+  linkedin         : "https://www.linkedin.com/in/pawankb13/"
 
 
 # Publication Category - The following the list of publication categories and their headings
