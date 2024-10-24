@@ -16,6 +16,11 @@ Download my [resumé](https://github.com/pawankb13/resume/blob/main/resume_latex
 
 Education
 ======
-- PhD in Management (Economics & Public Policy) &nbsp;
-Indian Institute of Management Shillong &nbsp;
-(2020 - Present)
+- PhD in Management (Economics and Public Policy) \
+Indian Institute of Management Shillong (2020 - Present)
+- MTech in Technology and Development \
+Indian Institute of Technology Bombay (2015 - 2017)
+- BE in Instrumentation Engineering 
+Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University (2010 - 2014)
+
+
