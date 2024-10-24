@@ -11,6 +11,9 @@ main:
   - title: "Conferences"
     url: /conferences/
 
+  - title: "Workshops"
+    url: /workshops/
+
   - title: "Teaching"
     url: /teaching/
 
