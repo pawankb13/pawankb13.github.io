@@ -1,7 +1,7 @@
 ---
 permalink: /resources/
 title: "Resources"
-author_profile: true
+author_profile: false
 ---
 
 ### Machine Learning & Causal Inference: A Short Course
