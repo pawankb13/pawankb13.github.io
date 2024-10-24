@@ -3,7 +3,6 @@ permalink: /readings/
 title: "Readings"
 author_profile: false
 ---
-## Research Articles
 
 ### On Causality
 

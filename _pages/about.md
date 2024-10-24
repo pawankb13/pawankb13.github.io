@@ -19,13 +19,13 @@ Download my [resumé](https://github.com/pawankb13/resume/blob/main/resume_latex
 ## Education
 
 - PhD in Management (Economics and Public Policy) \
-Indian Institute of Management Shillong \ 
+Indian Institute of Management Shillong \
 (2020 - Present)
 - MTech in Technology and Development \
-Indian Institute of Technology Bombay \ 
+Indian Institute of Technology Bombay \
 (2015 - 2017)
 - BE in Instrumentation Engineering \
-Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \ 
+Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \
 (2010 - 2014)
 
 ## Experience
@@ -50,4 +50,3 @@ Funded by - Ministry of Rural Development, Government of India \
 - Applied Econometrics
 - Data Analysis using R and STATA
 
----
