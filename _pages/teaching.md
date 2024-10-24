@@ -6,8 +6,6 @@ author_profile: false
 
 ## Teaching Assistant
 
----
-
 ### Infrastructure and Private Sector
 
 Faculty: Dr. Kumar V Pratap \

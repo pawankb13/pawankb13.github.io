@@ -12,7 +12,7 @@ This course is a series of videos designed for economics students looking to lea
 
 ### Mixtape Session for Applied Econometrics
 Mixtape Sessions aims to provide high-quality and approachable courses in Casual Inference by Prof. Scott Cunningham and colleagues. Mixtape session covers several topics on applied econometrics such as Causal Inference, Machine Learning and Causal Inference, Difference-in Difference, Regression Discontinuity Design etc. Mixtape Session provides high-quality lecture material that individuals can access for free.\
-[Githhub](https://github.com/Mixtape-Sessions/)
+[Github](https://github.com/Mixtape-Sessions/)
 
 ---
 
