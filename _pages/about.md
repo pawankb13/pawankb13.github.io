@@ -16,7 +16,7 @@ Download my [resumé](https://github.com/pawankb13/resume/blob/main/resume_latex
 
 ---
 
-### Education
+## Education
 
 - PhD in Management (Economics and Public Policy) \
 Indian Institute of Management Shillong \ 
@@ -27,8 +27,6 @@ Indian Institute of Technology Bombay \
 - BE in Instrumentation Engineering \
 Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \ 
 (2010 - 2014)
-
---- 
 
 ## Experience
 
@@ -41,7 +39,6 @@ CTARA- IITB MoRD Fellowship \
 Funded by - Ministry of Rural Development, Government of India \
 (2017 - 2018)
 
----
 
 ## Interest
 
