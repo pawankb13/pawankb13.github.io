@@ -8,7 +8,7 @@ redirect_from:
 ---
 Hi, 
 
-I am a PhD Candidate in Economics and Public Policy Area at the Indian Institute of Management Shillong, India. My research interests span the areas of inclusive finance with a special focus on household financial resilience and behavior amid various types of shocks. Within this area, I work on topics related to financial inclusion, financial literacy, and financial well-being.
+I am a Research Scholar in Economics and Public Policy Area at the Indian Institute of Management Shillong, India. My research interests span the areas of inclusive finance with a special focus on household financial resilience and behavior amid various types of shocks. Within this area, I work on topics related to financial inclusion, financial literacy, and financial well-being.
 
 I am on the 2024-2025 academic job market.
 
