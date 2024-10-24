@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "About me"
+title: "Pawan Kamble"
 author_profile: true
 redirect_from: 
   - /about/
@@ -14,4 +14,8 @@ I am on the 2024-2025 academic job market.
 
 Download my [resumé](https://github.com/pawankb13/resume/blob/main/resume_latex/resume1.pdf)   
 
-------
+Education
+======
+- PhD in Management (Economics & Public Policy)
+Indian Institute of Management Shillong
+(2020 - Present)
