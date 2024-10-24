@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: "Pawan Kamble"
+title: "About me"
 author_profile: true
 redirect_from: 
   - /about/
@@ -15,8 +15,9 @@ I am on the 2024-2025 academic job market.
 Download my [resumé](https://github.com/pawankb13/resume/blob/main/resume_latex/resume1.pdf)   
 
 ---
-Education
-======
+
+### Education
+
 - PhD in Management (Economics and Public Policy) \
 Indian Institute of Management Shillong \ (2020 - Present)
 - MTech in Technology and Development \
@@ -25,8 +26,9 @@ Indian Institute of Technology Bombay \ (2015 - 2017)
 Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \ (2010 - 2014)
 
 --- 
-Experience
-======
+
+### Experience
+
 - Research Associate \
 CSR Study Unit, Indian Institute of Technology  Bombay  \
 Project funded by - Department of Heavy Industry, Government of India \
@@ -37,8 +39,9 @@ Funded by - Ministry of Rural Development, Government of India
 (2017 - 2018)
 
 ---
-Interest
-=====
+
+### Interest
+
 - Development Economics 
 - Applied Microeconomics
 - Macroeconomics 
