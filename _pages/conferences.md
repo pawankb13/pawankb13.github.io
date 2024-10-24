@@ -1,6 +1,6 @@
 ---
-permalink: /comferences/
-title: "conferences"
+permalink: /conferences/
+title: "Conferences"
 author_profile: false
 ---
 
