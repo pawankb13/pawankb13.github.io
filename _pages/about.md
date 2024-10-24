@@ -19,15 +19,18 @@ Download my [resumé](https://github.com/pawankb13/resume/blob/main/resume_latex
 ### Education
 
 - PhD in Management (Economics and Public Policy) \
-Indian Institute of Management Shillong \ (2020 - Present)
+Indian Institute of Management Shillong \ 
+(2020 - Present)
 - MTech in Technology and Development \
-Indian Institute of Technology Bombay \ (2015 - 2017)
+Indian Institute of Technology Bombay \ 
+(2015 - 2017)
 - BE in Instrumentation Engineering \
-Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \ (2010 - 2014)
+Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \ 
+(2010 - 2014)
 
 --- 
 
-### Experience
+## Experience
 
 - Research Associate \
 CSR Study Unit, Indian Institute of Technology  Bombay  \
@@ -35,12 +38,12 @@ Project funded by - Department of Heavy Industry, Government of India \
 (2018 - 2019)
 - Research Fellow \
 CTARA- IITB MoRD Fellowship \
-Funded by - Ministry of Rural Development, Government of India
+Funded by - Ministry of Rural Development, Government of India \
 (2017 - 2018)
 
 ---
 
-### Interest
+## Interest
 
 - Development Economics 
 - Applied Microeconomics
