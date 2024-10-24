@@ -16,6 +16,6 @@ Download my [resumé](https://github.com/pawankb13/resume/blob/main/resume_latex
 
 Education
 ======
-- PhD in Management (Economics & Public Policy)
-Indian Institute of Management Shillong
+- PhD in Management (Economics & Public Policy) &nbsp;
+Indian Institute of Management Shillong &nbsp;
 (2020 - Present)
