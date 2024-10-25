@@ -5,24 +5,22 @@
    @-webkit-keyframes intro {
     0% {
       opacity: 0;
-      background-color: rgba(255, 0, 0, 0); /* Transparent */
     }
     100% {
       opacity: 1;
-      background-color: rgba(255, 0, 0, 1); /* Red */
     }
   }
   
   @keyframes intro {
     0% {
       opacity: 0;
-      background-color: rgba(255, 0, 0, 0); /* Transparent */
     }
     100% {
       opacity: 1;
-      background-color: rgba(255, 0, 0, 1); /* Red */
     }
   }
+  
+  
   
   /* Applying the animation to an element */
   .element {
