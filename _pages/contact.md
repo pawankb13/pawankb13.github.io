@@ -8,7 +8,7 @@ author_profile: false
 Umsawli Campus, East Khasi Hills, Shillong \
 \
 Research Space, Third Floor, Admin Building \
-Meghealaya, India - 793018 
+Meghalaya, India - 793018 
 
 
 ### Emails
