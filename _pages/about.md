@@ -12,7 +12,7 @@ I am a Research Scholar in Economics and Public Policy Area at the Indian Instit
 
 I am on the 2024-2025 academic job market.
 
-Download my [resumé](/files/resume1.pdf)   
+Download my [resumé](https://raw.githubusercontent.com/pawankb13/resume/main/resume/resume_latex/resume1.pdf)   
 
 ---
 
