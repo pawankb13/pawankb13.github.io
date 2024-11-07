@@ -11,7 +11,7 @@ author_profile: false
 with Atul Mehta and Neelam Rani. Forthcoming in Social Indicators Research \
 <span style="color: red">[Category: ABDC - A]</span>
 
-- Kamble, P.A., Mehta, A. & Rani, N. Financial Inclusion and Digital Financial Literacy: Do they Matter for Financial Well-being?. Soc Indic Res 171, 777–807 (2024). [https://doi.org/10.1007/s11205-023-03264-w](https://doi.org/10.1007/s11205-023-03264-w) \
+- Kamble, P.A., Mehta, A. & Rani, N. Financial Inclusion and Digital Financial Literacy: Do they Matter for Financial Well-being?. Social Indicators Research 171, 777–807 (2024). [https://doi.org/10.1007/s11205-023-03264-w](https://doi.org/10.1007/s11205-023-03264-w) \
 <span style="color: red">[Category: ABDC - A]</span>
 
 ### 2016 
