@@ -1,6 +1,6 @@
 ---
-permalink: /knowledge_hub/
-title: "Knowledge Hub"
+permalink: /resources/
+title: "Resources"
 author_profile: false
 ---
 
