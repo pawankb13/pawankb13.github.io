@@ -1,6 +1,6 @@
 ---
-permalink: /materials/
-title: "Materials"
+permalink: /material/
+title: "Material"
 author_profile: false
 ---
 
