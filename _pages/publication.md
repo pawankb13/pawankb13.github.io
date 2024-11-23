@@ -7,7 +7,7 @@ author_profile: false
 ## Published Papers
 
 ### 2024
-- Kamble, P.A., Mehta, A. & Rani, N. Measuring Multidimensional Financial Resilience: An Ex-ante Approach. Soc Indic Res (2024). [https://doi.org/10.1007/s11205-024-03476-8](https://doi.org/10.1007/s11205-024-03476-8) \
+- Kamble, P.A., Mehta, A. & Rani, N. Measuring Multidimensional Financial Resilience: An Ex-ante Approach. Social Indicators Research (2024). [https://doi.org/10.1007/s11205-024-03476-8](https://doi.org/10.1007/s11205-024-03476-8) \
 <span style="color: red">[Category: ABDC - A]</span>
 
 - Kamble, P.A., Mehta, A. & Rani, N (2024). Financial Inclusion and Digital Financial Literacy: Do they Matter for Financial Well-being?. Social Indicators Research 171, 777–807. [https://doi.org/10.1007/s11205-023-03264-w](https://doi.org/10.1007/s11205-023-03264-w) \
