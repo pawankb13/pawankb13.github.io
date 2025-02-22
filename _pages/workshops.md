@@ -5,6 +5,9 @@ author_profile: false
 ---
 
 ## Conducted
+- Knowledge Management for Working Professional PhD Scholars using Zotero and Obsidian, Indian Institute of Management Shillong \
+Mode - Online | November 09, 2024
+
 - Knowledge Management for Research Scholars using Zotero and Obsidian, Indian Institute of Management Shillong \
 Mode - Offline | May 08, 2023
 
