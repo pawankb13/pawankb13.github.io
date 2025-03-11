@@ -32,7 +32,7 @@ Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \
 
 - Research Associate \
 CSR Study Unit, Indian Institute of Technology  Bombay  \
-Project funded by - Ministry of Heavy Industries, Government of India \
+Funded by - Ministry of Heavy Industries, Government of India \
 (2018 - 2019)
 - Research Fellow \
 CTARA- IITB MoRD Fellowship \
