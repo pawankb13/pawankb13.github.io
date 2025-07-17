@@ -7,7 +7,7 @@ author_profile: false
 ## As  Faculty 
 
 ### Managerial Economics 
-PGDM 1st Year (Core Course) \
+PGDM 1st Year (Core Course)
 
 *Course Description:* \
 This course explores the application of microeconomic principles to managerial decision-making within business contexts. It builds upon the foundational concepts introduced in Principles of Economics, with an emphasis on consumer and producer behavior, market dynamics, game theory, and strategic decision-making. The course aims to equip students with analytical tools to address complex business challenges through an economic lens. 
