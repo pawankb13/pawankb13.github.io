@@ -21,6 +21,9 @@ It is an intuitive interactive visualization of key concepts in economics develo
 [Website](http://www.econgraphs.org)
 
 --- 
+### Marginal Revolution University (MRU)
+If you wish to learn economics — from basic to advanced—whether you're a student or a teacher, this is the place to be! This platform makes learning economics fun and interactive, unlike traditional classroom teaching 
+[Website](https://mru.org/)
 
 ### Econometrics Academy
 It is a free online educational platform to learn basic econometrics concepts using R and STATA by Ani Katchova, The Ohio State University.\
