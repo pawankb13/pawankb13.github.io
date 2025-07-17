@@ -37,7 +37,7 @@ Economic and International Business \
 
 - State Program Manager  \
 Child Nutrition (ChiNu) Centre of Excellence \
-State Health Resource Strengthening Center (SHSRC)\
+State Health Systems Resource Center (SHSRC)\
 Funded by- UNICEF and IIT Bombay
 (Dec. 2024 - April 2025)
 
