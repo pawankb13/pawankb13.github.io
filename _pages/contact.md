@@ -4,15 +4,16 @@ permalink: /contact/
 author_profile: false
 ---
 
-### Indian Institute of Management Shillong
-Umsawli Campus, East Khasi Hills, Shillong \
-\
-Research Space, Third Floor, Admin Building \
-Meghalaya, India - 793018 
+### Birla Institute of Management Technology (BIMTECH)
+Knowledge Park 2, NCR, Plot Number 5 \
+BIMTECH Rd, Greater Noida \
+Uttar Pradesh 201306 \
+
 
 
 ### Emails
-Official : pawan.phd20@iimshillong.ac.in \
+Official 1 : pawanashok.kamble@bimtech.ac.in
+Official 2 : pawan.phd20@iimshillong.ac.in \
 Personal : pawankb13@gmail.com
 
 

@@ -4,8 +4,17 @@ title: "Conferences"
 author_profile: false
 ---
 
+## 2025
+- **12th Conference on Asia and Pacific Economies (CAPE)** \
+Paper Title:  Does financial literacy alleviate poverty? – New insights from a multidimensional approach \
+Authors: Pawan A Kamble, Atul Mehta  \
+Conference Details: 12th Conference on Asia and Pacific Economies, Xi'an Jiaotong-Liverpool University (XJTLU), Sozhou, China, co-hosted by the Asian Development Bank Institute  (ADBI)\
+Session: Digital Economy and Fintech \
+Dates: 23 May - 24 May, 2025 (Presented Online)
+
+
 ## 2024
-- **Conference on Asia and Pacific Economies (CAPE)** \
+- **11th Conference on Asia and Pacific Economies (CAPE)** \
 Paper Title:  Multidimensional Financial Resilience: An  Ex-ante Approach \
 Authors: Pawan A Kamble, Atul Mehta, Neelam Rani \
 Conference Details: 11th Conference on Asia and Pacific Economies, Xi'an Jiaotong-Liverpool University (XJTLU), Sozhou, China, co-hosted by the Asian Development Bank Institute  (ADBI)\
