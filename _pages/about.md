@@ -33,18 +33,19 @@ Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \
 - Faculty \
 Birla Institute of Management Technology (BIMTECH), Greater Noida\
 Economic and International Business \
-(May 2025 - Presen)
+(May 2025 - Present)
 
 - State Program Manager  \
 Child Nutrition (ChiNu) Centre of Excellence \
 State Health Systems Resource Center (SHSRC)\
-Funded by- UNICEF and IIT Bombay
+Funded by- UNICEF and IIT Bombay \
 (Dec. 2024 - April 2025)
 
 - Research Associate \
 CSR Study Unit, Indian Institute of Technology  Bombay  \
 Funded by - Ministry of Heavy Industries, Government of India \
 (July 2018 - Feb. 2019)
+
 - Research Fellow \
 CTARA- IITB MoRD Fellowship \
 Funded by - Ministry of Rural Development, Government of India \
@@ -53,10 +54,10 @@ Funded by - Ministry of Rural Development, Government of India \
 
 ## Interest
 
+- Managerial Economics
+- Macroeconomics 
 - Development Economics 
 - Applied Microeconomics
-- Macroeconomics 
-- Managerial Economics
 - Behavioral Economics 
 - Applied Econometrics
 - Data Analysis using R and STATA
