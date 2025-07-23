@@ -12,7 +12,7 @@ Uttar Pradesh 201306 \
 
 
 ### Emails
-Official 1 : pawanashok.kamble@bimtech.ac.in
+Official 1 : pawanashok.kamble@bimtech.ac.in \
 Official 2 : pawan.phd20@iimshillong.ac.in \
 Personal : pawankb13@gmail.com
 
