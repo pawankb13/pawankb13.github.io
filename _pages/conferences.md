@@ -22,7 +22,7 @@ Session: Special Track on Digitalization and Resilience \
 Dates: 30 May - 1 June, 2024
 
 ## 2023
-- **World Finance Conferece** \
+- **World Finance Conference** \
 Paper Title: Financial Inclusion and Fintech Adoption Behavior: Do they matter for Financial Well-being?\
 Authors: Pawan A Kamble, Atul Mehta, Neelam Rani \
 Conference Details: 12th World Finance Conference, University of Agder, Kristiansand, Norway\
