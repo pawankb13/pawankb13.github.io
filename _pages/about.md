@@ -50,7 +50,7 @@ Funded by - Ministry of Rural Development, Government of India \
 (July 2017 - June 2018)
 
 
-## Interest
+## Interests
 
 - Managerial Economics
 - Macroeconomics 
