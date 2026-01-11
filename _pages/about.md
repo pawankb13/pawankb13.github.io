@@ -18,7 +18,7 @@ Download my [resumé](/files/resume1.pdf)
 
 - PhD in Management (Economics and Public Policy) *Thesis Submitted*  \
 Indian Institute of Management Shillong \
-(2020 - Present)
+(2020 - 2025)
 - MTech in Technology and Development \
 Indian Institute of Technology Bombay \
 (2015 - 2017)
