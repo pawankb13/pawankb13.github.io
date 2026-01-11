@@ -6,6 +6,13 @@ author_profile: false
 
 ## As  Faculty 
 
+### Macroeconomics  
+PGDM 1st Year (Core Course)
+
+*Course Description:* \
+This course discusses macroeconomic theories and their applications - specifically in the context of India. This course provides an overview of macroeconomic concepts such as output, employment, unemployment, interest rates, inflation, monetary and fiscal policies etc. 
+
+
 ### Managerial Economics 
 PGDM 1st Year (Core Course)
 

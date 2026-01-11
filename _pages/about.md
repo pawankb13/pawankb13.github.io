@@ -6,11 +6,9 @@ redirect_from:
   - /about/
   - /about.html
 ---
-Hi, 
+I hold a PhD in Management (Economics and Public Policy) from the Indian Institute of Management Shillong, India. My research focuses on inclusive finance and its impact on development outcomes, with a particular focus on household financial resilience and financial behaviour in the face of different types of shocks. I examine how households make financial decisions, manage risk, and cope with vulnerability, and how these processes shape broader outcomes related to poverty and inequality. Within this broad area, my research covers themes such as financial inclusion, financial literacy, financial well-being, gender, and poverty. I am also interested in applied econometrics and in exploring causal inference approaches.
 
-I am a Research Scholar in Economics and Public Policy Area at the Indian Institute of Management Shillong, India. My research interests span the areas of inclusive finance with a special focus on household financial resilience and behavior amid various types of shocks. Within this area, I work on topics related to financial inclusion, financial literacy, and financial well-being.
-
-Currently, I am an Academic Associate cum Faculty Member at the Birla Institute of Management Technology (BIMTECH), Greater Noida.  
+Currently, I am an Assistant Professor at the Birla Institute of Management Technology (BIMTECH), Greater Noida.
 
 Download my [resumé](/files/resume1.pdf)   
 
