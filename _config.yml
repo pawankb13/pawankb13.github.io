@@ -8,9 +8,9 @@
 
 # Basic Site Settings
 locale                   : "en-US"
-title                    : "Pawan Kamble"
+title                    : "Pawan Ashok Kamble"
 title_separator          : "-"
-name                     : &name "Pawan Kamble"
+name                     : &name "Pawan Ashok Kamble"
 description              : &description "personal description"
 url                      : https://pawankb13.github.io # the base hostname & protocol for your site e.g. "httpss.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
@@ -22,11 +22,11 @@ repository               : "pawankb13/pawankb13.github.io"
 author:
   # Biographic information
   avatar           : "profile.jpg"
-  name             : "Pawan A Kamble"
+  name             : "Pawan Ashok Kamble"
   pronouns         : # example: "she/her"  
-  bio              : "Assistant Professor | Economics and Public Policy"
-  employer         : Birla Institute of Management Technology (BIMTECH)
-
+  bio              : "Economics and Public Policy"
+  employer         : "Birla Institute of Management Technology (BIMTECH)"
+  position         : "Assistant Professor"
   email            : "pawankb13@gmail.com" 
 
   # Academic websites
