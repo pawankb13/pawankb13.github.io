@@ -49,7 +49,6 @@ CTARA- IITB MoRD Fellowship \
 Funded by - Ministry of Rural Development, Government of India \
 (July 2017 - June 2018)
 
-
 ## Interests
 
 - Managerial Economics
@@ -59,4 +58,17 @@ Funded by - Ministry of Rural Development, Government of India \
 - Behavioral Economics 
 - Applied Econometrics
 - Data Analysis using R and STATA
+
+## PhD Thesis
+  
+- Title: Multidimensional Financial Resilience: Conceptualization, Measurement and Impact of Shocks
+- Brief: My thesis conceptualizes financial resilience as a multidimensional, ex-ante capability. Using three studies with household-level survey
+data, first, I develop a composite measure of financial resilience to capture households' ability to absorb shocks, adapt, and recover using
+resources, namely: financial inclusion, financial literacy, digital literacy, participatory decision-making, and social capital. Second, I examine
+how resilience evolves with exposure to shocks, whether repeated shocks build adaptive capacity or begin to erode resilience beyond a
+threshold, and third, whether idiosyncratic and covariate shocks have distinct eﬀects. My findings underscore the need for policy to move
+beyond one-size-fits-all support toward shock-responsive, targeted interventions that strengthen key capabilities early and tailor assistance
+to the type and intensity of shocks households face
+
+
 
