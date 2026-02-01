@@ -28,7 +28,7 @@ Dr. D Y Patil Institute of Technology, Savitribai Phule Pune University \
 
 ## Experience
 
-- Faculty \
+- Assistant Professor \
 Birla Institute of Management Technology (BIMTECH), Greater Noida\
 Economic and International Business \
 (May 2025 - Present)
