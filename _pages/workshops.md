@@ -1,17 +1,27 @@
 ---
 permalink: /workshops/
-title: "Workshops"
+title: "Workshops "
 author_profile: false
 ---
 
 ## Conducted
+
+### 2026
+
+- Faculty Devevelopement Program - "Applied Econometrics and Causal Inference, Birla Institute of Management Technology \
+Mode - Online | Sessions: Causal Inference and Regression Discontinuity Design | January 28-30, 2026
+
+### 2024
 - Knowledge Management for Working Professional PhD Scholars using Zotero and Obsidian, Indian Institute of Management Shillong \
 Mode - Online | November 09, 2024
 
+### 2023
 - Knowledge Management for Research Scholars using Zotero and Obsidian, Indian Institute of Management Shillong \
 Mode - Offline | May 08, 2023
 
 ## Attended
+
+### 2024
 
 - Machine Learning and Causal Inference Prof. Brigham Frandsen, Mixtape Sessions \
 Mode - Online | October 21-21, 2024 
@@ -31,9 +41,11 @@ Mode - Offline | June 17 - 21, 2024
 - Multilevel Modeling using R and SPSS, by SkillEdge \
 Mode - Online |  March 13 -15, 2024
 
+### 2023
 - Introduction to Linear Regression in R by OARC Stat, UCLA \
 Mode - Online |  February 26, 2023
 
+### 2022
 - Conducting Systematic Literature Review, International Marketing Conference, Indian Institute of Management Shillong \
 Mode - Offline | August 22, 2022
 
