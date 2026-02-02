@@ -8,7 +8,7 @@ author_profile: false
 
 ### 2026
 
-- Faculty Devevelopement Program - "Applied Econometrics and Causal Inference, Birla Institute of Management Technology \
+- Faculty Devevelopement Program - "Applied Econometrics and Causal Inference", Birla Institute of Management Technology \
 Mode - Online | Sessions: Causal Inference and Regression Discontinuity Design | January 28-30, 2026
 
 ### 2024
