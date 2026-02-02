@@ -61,7 +61,7 @@ Funded by - Ministry of Rural Development, Government of India \
 
 ## PhD Thesis
   
-- Title: Multidimensional Financial Resilience: Conceptualization, Measurement and Impact of Shocks \
+Title: Multidimensional Financial Resilience: Conceptualization, Measurement and Impact of Shocks 
   
 My thesis conceptualizes financial resilience as a multidimensional, ex-ante capability. Using three studies with household-level survey
 data, first, I develop a composite measure of financial resilience to capture households' ability to absorb shocks, adapt, and recover using
