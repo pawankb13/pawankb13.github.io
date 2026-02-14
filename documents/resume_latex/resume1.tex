@@ -1,0 +1,128 @@
+% MY RESUME -----------------------------------
+
+% PREAMBLE ---------------------------------
+\documentclass[letterpaper,11pt]{article} %For use in US
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{array}
+\usepackage{enumerate}
+\usepackage{fontawesome}
+
+% FONT OPTIONS ------------------------------------------------------------
+% serif
+ \usepackage{palatino}
+% \usepackage{times} %This is the default as well
+% \usepackage{charter}
+
+% sans-serif
+% \usepackage{helvet}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% PAGE SETUP --------------------------------------------------------------
+% Adjust margins
+%\addtolength{\oddsidemargin}{-1cm}
+%\addtolength{\evensidemargin}{-1cm}
+%\addtolength{\textwidth}{2cm}
+%\addtolength{\topmargin}{-1cm}
+%\addtolength{\textheight}{2cm}
+
+% Margins for US Letter size
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0cm}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that .pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-----CUSTOM COMMANDS FOR FORMATTING SECTIONS----------------------------------
+\newcommand{\CVItem}[1]{
+  \item \small{{#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVItemTwo}[1]{
+  \item[] \small{{#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\CVSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \small\textbf{\textit{#3}} & \small #4 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \text{\small#1} & \text{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\CVSubItem}[1]{\CVItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\CVSubHeadingListStart}{\begin{itemize}[leftmargin=0.5cm, label={}]}
+% \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]} % Uncomment for US
+\newcommand{\CVSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\CVItemListStart}{\begin{itemize}}
+\newcommand{\CVItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\newcommand{\CVTableEntry}[3]{
+\textbf{{#1}}  &  \small{\hspace{6pt}{{#2}} \hspace{4pt}{\emph{#3}}}\\ 
+}
+
+\newcommand{\CVTableTwo}[4]{
+{#1}  &  \small{\hspace{10pt}{\textbf{#2}} \hspace{4pt}{\emph{#3}}} & {#4}\\ 
+}
+
+%-----------------------------------------------------
+% CV SECTIONS   %
+%-----------------------------------------------------
+\begin{document}
+\input{sections/heading.tex}
+\input{sections/education.tex}
+\input{sections/experience.tex}
+\input{sections/publications.tex}
+\input{sections/conference.tex}
+\input{sections/workshops.tex}
+\input{sections/acadservices.tex}
+\input{sections/honors.tex}
+\input{sections/certifications.tex}
+\input{sections/responsibilities.tex}
+\input{sections/skills.tex}
+\input{sections/interest.tex}
+%\input{sections/miscellaneous.tex}
+\newpage
+\input{sections/references.tex}
+\vspace{3em}
+Last Updated on \today
+\end{document}
+%-----------------------------------------------------
