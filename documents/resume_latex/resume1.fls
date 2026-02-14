@@ -1,4 +1,4 @@
-PWD /Users/pawan/Library/Mobile Documents/com~apple~CloudDocs/Personal Drive/Github/resume/resume_latex
+PWD /Users/pawan/Library/Mobile Documents/com~apple~CloudDocs/Personal Drive/Github/pawankb13.github.io/documents/resume_latex
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
@@ -928,24 +928,24 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr8c.tfm
+INPUT ./sections/certifications.tex
+INPUT sections/certifications.tex
+INPUT ./sections/certifications.tex
+INPUT sections/certifications.tex
+INPUT ./sections/responsibilities.tex
+INPUT sections/responsibilities.tex
+INPUT ./sections/responsibilities.tex
+INPUT sections/responsibilities.tex
+INPUT ./sections/skills.tex
+INPUT sections/skills.tex
+INPUT ./sections/skills.tex
+INPUT sections/skills.tex
+INPUT ./sections/interest.tex
+INPUT sections/interest.tex
+INPUT ./sections/interest.tex
+INPUT sections/interest.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
-INPUT ./sections/certifications.tex
-INPUT sections/certifications.tex
-INPUT ./sections/certifications.tex
-INPUT sections/certifications.tex
-INPUT ./sections/responsibilities.tex
-INPUT sections/responsibilities.tex
-INPUT ./sections/responsibilities.tex
-INPUT sections/responsibilities.tex
-INPUT ./sections/skills.tex
-INPUT sections/skills.tex
-INPUT ./sections/skills.tex
-INPUT sections/skills.tex
-INPUT ./sections/interest.tex
-INPUT sections/interest.tex
-INPUT ./sections/interest.tex
-INPUT sections/interest.tex
 INPUT ./sections/references.tex
 INPUT sections/references.tex
 INPUT ./sections/references.tex
