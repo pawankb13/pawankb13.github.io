@@ -10,7 +10,7 @@ I hold a PhD in Management (Economics and Public Policy) from the Indian Institu
 
 Currently, I am an Assistant Professor at the Birla Institute of Management Technology (BIMTECH), Greater Noida.
 
-Download my [resumé](/documents/resume/resume_latex/resume1.pdf)   
+Download my [resumé](/files/resume1.pdf)   
 
 ---
 
