@@ -69,7 +69,7 @@ resources, namely: financial inclusion, financial literacy, digital literacy, pa
 how resilience evolves with exposure to shocks, whether repeated shocks build adaptive capacity or begin to erode resilience beyond a
 threshold, and third, whether idiosyncratic and covariate shocks have distinct eﬀects. My findings underscore the need for policy to move
 beyond one-size-fits-all support toward shock-responsive, targeted interventions that strengthen key capabilities early and tailor assistance
-to the type and intensity of shocks households face
+to the type and intensity of shocks households face.
 
 
 
