@@ -4,7 +4,7 @@ title: "Resources"
 author_profile: false
 ---
 
-### Journal Ranking 
+### Journal Rankings 
 The ABDC Journal Quality List and ABS Academic Journal Guide are widely used journal ranking that classify academic journals based on quality and rigor. These rankings help scholars to publish their research in quality journals. \
 [Database](/files/journals.html)
 
