@@ -428,6 +428,21 @@
     height: 30px;
     font-size: 0.75rem;
   }
+
+  /* Prevent grid overflow */
+  #jrk .jrk-grid > * {
+  min-width: 0;
+  }
+
+  #jrk .card-badges {
+  flex-wrap: wrap;
+  overflow: hidden;
+  }
+
+#jrk .badge {
+  max-width: 100%;
+  white-space: nowrap;
+  }
 }
 
 /* Ultra small screens */
