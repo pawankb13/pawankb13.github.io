@@ -1,6 +1,6 @@
 ---
 permalink: /journal/
-title: "Journal Ranking"
+title: "Journal Rankings"
 author_profile: false
 ---
 
