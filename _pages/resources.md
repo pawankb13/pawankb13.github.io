@@ -8,6 +8,8 @@ author_profile: false
 The ABDC Journal Quality List and ABS Academic Journal Guide are widely used journal ranking that classify academic journals based on quality and rigor. These rankings help scholars to publish their research in quality journals. \
 [Database](/files/journals.html)
 
+---
+
 ### Machine Learning & Causal Inference: A Short Course
 This course is a series of videos designed for economics students looking to learn more about how machine learning can be used to measure the effects of interventions, understand the heterogeneous impact of interventions, and design targeted treatment assignment policies. This course is free and offered by Golub Capital Social Impact Lab, Stanford Graduate School of Business. \
 [Website](https://www.gsb.stanford.edu/faculty-research/labs-initiatives/sil/research/methods/ai-machine-learning/short-course) | [Youtube](https://youtube.com/playlist?list=PLxq_lXOUlvQAoWZEqhRqHNezS30lI49G-&si=yEJmsdznXXnnvlP6)
