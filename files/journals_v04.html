@@ -27,8 +27,6 @@
   --abs2-bg: #fff7ed;  --abs2-fg: #9a3412;  --abs2-border: #fdba74;
   --abs1-bg: #f3f4f6;  --abs1-fg: #64748b;  --abs1-border: #cbd5e1;
 
-  --ft50-bg: #fef2f2;  --ft50-fg: #991b1b;  --ft50-border: #fca5a5;
-
   font-family: 'IBM Plex Sans', sans-serif;
   color: var(--ink);
 }
@@ -295,9 +293,6 @@
 #jrk .badge.abs-2      { background:var(--abs2-bg);  color:var(--abs2-fg);  border-color:var(--abs2-border); }
 #jrk .badge.abs-1      { background:var(--abs1-bg);  color:var(--abs1-fg);  border-color:var(--abs1-border); }
 
-#jrk .badge.ft50-badge { background:var(--ft50-bg);  color:var(--ft50-fg);  border-color:var(--ft50-border); }
-#jrk .jrk-pill[data-ft50].on { background:var(--ft50-bg); color:var(--ft50-fg); border-color:var(--ft50-border); }
-
 #jrk .card-meta {
   display: flex;
   flex-wrap: wrap;
@@ -456,7 +451,6 @@
     <div class="jrk-stat s-a"><span class="stat-n" id="stat-a">—</span> ABDC A</div>
     <div class="jrk-stat s-b"><span class="stat-n" id="stat-b">—</span> ABDC B</div>
     <div class="jrk-stat s-c"><span class="stat-n" id="stat-c">—</span> ABDC C</div>
-    <div class="jrk-stat" style="background:var(--ft50-bg);color:var(--ft50-fg);border-color:var(--ft50-border)"><span class="stat-n" id="stat-ft50"></span> FT50</div>
   </div>
 
   <div class="jrk-search-wrap">
@@ -481,10 +475,6 @@
       <button class="jrk-pill" data-abs="3">3</button>
       <button class="jrk-pill" data-abs="2">2</button>
       <button class="jrk-pill" data-abs="1">1</button>
-    </div>
-    <div class="jrk-filter-row">
-      <span class="jrk-flabel">FT50</span>
-      <button class="jrk-pill" data-ft50="1">FT50 Only</button>
     </div>
     <div class="jrk-filter-row">
       <span class="jrk-flabel">Field</span>
@@ -526,62 +516,7 @@ const RAW = [{"t":"4OR","p":"Springer Nature","i":"1619-4500","a":"B","b":"2","f
 
 const PER = 24;
 let filtered = RAW, pg = 1;
-let selAbdc = new Set(), selAbs = new Set(), selFor = '', selFt50 = false, q = '';
-
-// ── FT50 list ────────────────────────────────────────────────────────────────
-const FT50 = new Set([
-  "Academy of Management Journal",
-  "Academy of Management Review",
-  "Accounting, Organizations and Society",
-  "Administrative Science Quarterly",
-  "The American Economic Review",
-  "Contemporary Accounting Research",
-  "Econometrica",
-  "Entrepreneurship Theory and Practice",
-  "Harvard Business Review",
-  "Human Relations",
-  "Human Resource Management (US)",
-  "Information Systems Research",
-  "Journal of Accounting and Economics",
-  "Journal of Accounting Research",
-  "Journal of Applied Psychology",
-  "Journal of Business Ethics",
-  "Journal of Business Venturing",
-  "Journal of Consumer Psychology",
-  "Journal of Consumer Research",
-  "The Journal of Finance",
-  "Journal of Financial and Quantitative Analysis",
-  "Journal of Financial Economics",
-  "Journal of International Business Studies",
-  "Journal of Management",
-  "Journal of Management Information Systems",
-  "Journal of Management Studies",
-  "Journal of Marketing",
-  "Journal of Marketing Research",
-  "Journal of Operations Management",
-  "Journal of Political Economy",
-  "Journal of the Academy of Marketing Science",
-  "Management Science",
-  "Manufacturing and Service Operations Management",
-  "Marketing Science",
-  "MIS Quarterly",
-  "Operations Research",
-  "Organization Science",
-  "Organization Studies",
-  "Organizational Behavior and Human Decision Processes",
-  "Production and Operations Management",
-  "The Quarterly Journal of Economics",
-  "Research Policy",
-  "Review of Accounting Studies",
-  "The Review of Economic Studies",
-  "Review of Finance",
-  "The Review of Financial Studies",
-  "MIT Sloan Management Review",
-  "Strategic Entrepreneurship Journal",
-  "Strategic Management Journal",
-  "The Accounting Review"
-]);
-RAW.forEach(j => { j.ft = FT50.has(j.t); });
+let selAbdc = new Set(), selAbs = new Set(), selFor = '', q = '';
 
 // Stats
 const cnt = v => RAW.filter(j => j.a === v).length;
@@ -590,7 +525,6 @@ document.getElementById('stat-astar').textContent = cnt('A*').toLocaleString();
 document.getElementById('stat-a').textContent     = cnt('A').toLocaleString();
 document.getElementById('stat-b').textContent     = cnt('B').toLocaleString();
 document.getElementById('stat-c').textContent     = cnt('C').toLocaleString();
-document.getElementById('stat-ft50').textContent  = RAW.filter(j=>j.ft).length.toLocaleString();
 
 function esc(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -605,12 +539,10 @@ function filter(){
     if(selAbdc.size && !selAbdc.has(j.a)) return false;
     if(selAbs.size  && !selAbs.has(j.b))  return false;
     if(selFor       && j.f !== selFor)     return false;
-    if(selFt50      && !j.ft)             return false;
     return true;
   });
   pg = 1;
   render();
-  if (window.updateBadge) window.updateBadge();
 }
 
 function render(){
@@ -626,7 +558,6 @@ function render(){
   document.getElementById('stat-a').textContent     = fc('A').toLocaleString();
   document.getElementById('stat-b').textContent     = fc('B').toLocaleString();
   document.getElementById('stat-c').textContent     = fc('C').toLocaleString();
-  document.getElementById('stat-ft50').textContent  = filtered.filter(j=>j.ft).length.toLocaleString();
 
   const slice = filtered.slice((pg-1)*PER, pg*PER);
   const grid  = document.getElementById('jrk-grid');
@@ -641,14 +572,13 @@ function render(){
     const cc  = CARD_CLS[j.a] || '';
     const abc = ABDC_CLS[j.a] ? `<span class="badge ${ABDC_CLS[j.a]}"><span class="bl">ABDC</span>${esc(j.a)}</span>` : `<span class="badge na"><span class="bl">ABDC</span>—</span>`;
     const abs = ABS_CLS[j.b]  ? `<span class="badge ${ABS_CLS[j.b]}"><span class="bl">ABS</span>${esc(j.b)}</span>`  : `<span class="badge na"><span class="bl">ABS</span>—</span>`;
-    const ft50Badge = j.ft ? `<span class="badge ft50-badge">FT50</span>` : '';
     const forTag = j.fl ? `<span class="meta-tag">${esc(j.fl)}</span>` : '';
     const yrTag  = j.y  ? `<span class="meta-tag year">Est. ${j.y}</span>` : '';
     const issn   = j.i  ? `<span class="meta-tag">ISSN ${esc(j.i)}</span>` : '';
     return `<div class="jrk-card ${cc}">
       <div class="card-title">${esc(j.t)}</div>
       ${j.p ? `<div class="card-pub">${esc(j.p)}</div>` : ''}
-      <div class="card-badges">${abc}${abs}${ft50Badge}</div>
+      <div class="card-badges">${abc}${abs}</div>
       <div class="card-meta">${forTag}${yrTag}${issn}</div>
     </div>`;
   }).join('');
@@ -705,14 +635,6 @@ document.querySelectorAll('[data-abs]').forEach(btn => {
   });
 });
 
-document.querySelectorAll('[data-ft50]').forEach(btn => {
-  btn.addEventListener('click', () => {
-    selFt50 = !selFt50;
-    selFt50 ? btn.classList.add('on') : btn.classList.remove('on');
-    filter();
-  });
-});
-
 document.getElementById('jrk-for').addEventListener('change', e => {
   selFor = e.target.value;
   e.target.className = selFor ? 'active' : '';
@@ -720,14 +642,13 @@ document.getElementById('jrk-for').addEventListener('change', e => {
 });
 
 document.getElementById('jrk-clear').addEventListener('click', () => {
-  q=''; selAbdc=new Set(); selAbs=new Set(); selFor=''; selFt50=false;
+  q=''; selAbdc=new Set(); selAbs=new Set(); selFor='';
   document.getElementById('jrk-search').value='';
   document.getElementById('jrk-for').value='';
   document.getElementById('jrk-for').className='';
-  document.querySelectorAll('[data-abdc],[data-abs],[data-ft50]').forEach(b=>b.classList.remove('on'));
+  document.querySelectorAll('[data-abdc],[data-abs]').forEach(b=>b.classList.remove('on'));
   filter();
 });
 
 filter();
-
 </script>
