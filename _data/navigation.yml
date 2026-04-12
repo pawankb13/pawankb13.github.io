@@ -23,7 +23,7 @@ main:
   - title: "Readings"
     url: /readings/    
 
-- title: "Journal Rankings"
+  - title: "Journal Rankings"
     url: /journal/    
     
   #- title: "Portfolio"
