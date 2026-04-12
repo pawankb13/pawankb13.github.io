@@ -20,8 +20,8 @@ main:
   - title: "Resources"
     url: /resources/
 
-  - title: "Readings"
-    url: /readings/    
+  #- title: "Readings"
+  #  url: /readings/    
 
   - title: "Journal Rankings"
     url: /journal/    
