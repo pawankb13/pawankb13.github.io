@@ -145,7 +145,7 @@
   flex-shrink: 0;
 }
 #jrk .jrk-pill {
-  padding: 0.4rem 0.9rem;
+  padding: 0.28rem 0.75rem;
   border-radius: 99px;
   border: 1.5px solid var(--rule);
   background: var(--white);
@@ -339,98 +339,6 @@
   transition: all 0.12s;
   padding: 0 0.5rem;
 }
-/* ── Mobile Optimization ───────────────────────────── */
-@media (max-width: 768px) {
-
-  /* Container padding */
-  #jrk {
-    padding: 0 1rem;
-  }
-
-  /* Header */
-  #jrk .jrk-header h2 {
-    font-size: 1.3rem;
-  }
-
-  #jrk .jrk-header p {
-    font-size: 0.75rem;
-  }
-
-  /* Stats strip */
-  #jrk .jrk-stat {
-    font-size: 0.7rem;
-    padding: 0.3rem 0.6rem;
-  }
-
-  /* Search bar (prevents zoom on iPhone) */
-  #jrk #jrk-search {
-    font-size: 16px;
-  }
-
-  /* Sticky search (huge UX upgrade) */
-  #jrk .jrk-search-wrap {
-    position: sticky;
-    top: 0;
-    background: white;
-    z-index: 20;
-    padding-top: 8px;
-  }
-
-  /* Filters */
-  #jrk .jrk-filters {
-    padding: 0.8rem;
-  }
-
-  #jrk .jrk-filter-row {
-    gap: 0.3rem;
-  }
-
-  #jrk .jrk-flabel {
-    width: auto;
-    font-size: 0.65rem;
-  }
-
-  /* Pills (better tap size) */
-  #jrk .jrk-pill {
-    padding: 0.4rem 0.9rem;
-    font-size: 0.8rem;
-  }
-
-  /* Cards */
-  #jrk .jrk-card {
-    padding: 0.8rem;
-  }
-
-  #jrk .card-title {
-    font-size: 0.85rem;
-  }
-
-  #jrk .card-pub {
-    font-size: 0.7rem;
-  }
-
-  /* Toolbar */
-  #jrk .jrk-toolbar {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  /* Pagination */
-  #jrk .pg {
-    min-width: 30px;
-    height: 30px;
-    font-size: 0.75rem;
-  }
-}
-
-/* Ultra small screens */
-@media (max-width: 480px) {
-  #jrk .jrk-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 #jrk .pg:hover:not(:disabled):not(.on) { border-color: var(--navy); color: var(--navy); }
 #jrk .pg.on { background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 600; }
 #jrk .pg:disabled { opacity: 0.3; cursor: default; }
