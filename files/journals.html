@@ -689,9 +689,9 @@ function renderPages(total){
 function pageRange(cur, tot){
   if(tot<=7) return Array.from({length:tot},(_,i)=>i+1);
   const p=[1];
-  if(cur>4) p.push('…');
-  for(let i=Math.max(3,cur-1);i<=Math.min(tot-1,cur+1);i++) p.push(i);
-  if(cur<tot-3) p.push('…');
+  if(cur>3) p.push('…');
+  for(let i=Math.max(2,cur-1);i<=Math.min(tot-1,cur+1);i++) p.push(i);
+  if(cur<tot-2) p.push('…');
   p.push(tot);
   return p;
 }
