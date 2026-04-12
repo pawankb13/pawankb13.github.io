@@ -5,7 +5,7 @@ author_profile: false
 ---
 
 ### Journal Ranking 
-The ABDC Journal Quality List and ABS Academic Journal Guide are widely used journal ranking that classify academic journals based on quality and rigor. These rankings help scholars to publish their research in quality journals. 
+The ABDC Journal Quality List and ABS Academic Journal Guide are widely used journal ranking that classify academic journals based on quality and rigor. These rankings help scholars to publish their research in quality journals. \
 [Database](/files/journals.html)
 
 ### Machine Learning & Causal Inference: A Short Course
