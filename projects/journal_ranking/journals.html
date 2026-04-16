@@ -537,27 +537,32 @@ function updateStats(src){
   const abdcCount = v => src.filter(j => j.abdc === v).length;
   const absCount = v => src.filter(j => j.abs === v).length;
   const scopusCount = v => src.filter(j => j.sq === v).length;
+  const setStat = (id, value) => {
+    const el = document.getElementById(id);
+    if(el) el.textContent = value.toLocaleString();
+  };
 
-  document.getElementById('stat-total-abdc').textContent   = src.filter(j => j.abdc).length.toLocaleString();
-  document.getElementById('stat-astar').textContent        = abdcCount('A*').toLocaleString();
-  document.getElementById('stat-a').textContent            = abdcCount('A').toLocaleString();
-  document.getElementById('stat-b').textContent            = abdcCount('B').toLocaleString();
-  document.getElementById('stat-c').textContent            = abdcCount('C').toLocaleString();
+  setStat('stat-total', src.length);
+  setStat('stat-total-abdc', src.filter(j => j.abdc).length);
+  setStat('stat-astar', abdcCount('A*'));
+  setStat('stat-a', abdcCount('A'));
+  setStat('stat-b', abdcCount('B'));
+  setStat('stat-c', abdcCount('C'));
 
-  document.getElementById('stat-total-abs').textContent    = src.filter(j => j.abs).length.toLocaleString();
-  document.getElementById('stat-abs4s').textContent        = absCount('4*').toLocaleString();
-  document.getElementById('stat-abs4').textContent         = absCount('4').toLocaleString();
-  document.getElementById('stat-abs3').textContent         = absCount('3').toLocaleString();
-  document.getElementById('stat-abs2').textContent         = absCount('2').toLocaleString();
-  document.getElementById('stat-abs1').textContent         = absCount('1').toLocaleString();
+  setStat('stat-total-abs', src.filter(j => j.abs).length);
+  setStat('stat-abs4s', absCount('4*'));
+  setStat('stat-abs4', absCount('4'));
+  setStat('stat-abs3', absCount('3'));
+  setStat('stat-abs2', absCount('2'));
+  setStat('stat-abs1', absCount('1'));
 
-  document.getElementById('stat-total-scopus').textContent = src.filter(j => j.sq).length.toLocaleString();
-  document.getElementById('stat-q4').textContent           = scopusCount('Q4').toLocaleString();
-  document.getElementById('stat-q3').textContent           = scopusCount('Q3').toLocaleString();
-  document.getElementById('stat-q2').textContent           = scopusCount('Q2').toLocaleString();
-  document.getElementById('stat-q1').textContent           = scopusCount('Q1').toLocaleString();
+  setStat('stat-total-scopus', src.filter(j => j.sq).length);
+  setStat('stat-q4', scopusCount('Q4'));
+  setStat('stat-q3', scopusCount('Q3'));
+  setStat('stat-q2', scopusCount('Q2'));
+  setStat('stat-q1', scopusCount('Q1'));
 
-  document.getElementById('stat-ft50').textContent         = src.filter(j => j.ft).length.toLocaleString();
+  setStat('stat-ft50', src.filter(j => j.ft).length);
 }
 
 function buildFieldDropdown(){
