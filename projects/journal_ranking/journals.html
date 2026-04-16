@@ -592,9 +592,9 @@ function updateStats(src){
   document.getElementById('stat-total').textContent = src.length.toLocaleString();
   const cnt = v => src.filter(j => j.sq === v).length;
   document.getElementById('stat3-q1').textContent = cnt('Q1').toLocaleString();
-  document.getElementById('stat3-q2').textContent     = cnt('Q2').toLocaleString();
-  document.getElementById('stat3-q3').textContent     = cnt('Q3').toLocaleString();
-  document.getElementById('stat3-q4').textContent     = cnt('Q4').toLocaleString();
+  document.getElementById('stat3-q2').textContent = cnt('Q2').toLocaleString();
+  document.getElementById('stat3-q3').textContent = cnt('Q3').toLocaleString();
+  document.getElementById('stat3-q4').textContent = cnt('Q4').toLocaleString();
 }
 
 function buildFieldDropdown(){
