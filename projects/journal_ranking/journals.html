@@ -111,7 +111,7 @@
 }
 #jrk #jrk-search {
   width: 100%;
-  padding: 0.75rem 1rem 0.75rem 2.6rem;
+  padding: 0.75rem 2.4rem 0.75rem 2.6rem;
   border: 1.5px solid var(--rule);
   border-radius: 8px;
   font-size: 0.9rem;
@@ -125,6 +125,27 @@
   box-shadow: 0 0 0 3px rgba(15,23,42,0.07);
 }
 #jrk #jrk-search::placeholder { color: var(--faint); }
+#jrk #jrk-search-clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 20px; height: 20px;
+  border: none;
+  background: var(--faint);
+  border-radius: 50%;
+  color: var(--white);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+  font-size: 11px;
+  transition: background 0.13s;
+}
+#jrk #jrk-search-clear:hover { background: var(--muted); }
+#jrk #jrk-search-clear.visible { display: flex; }
 
 /* ── Filter panel ───────────────────────────────────────────── */
 #jrk .jrk-filters {
@@ -421,6 +442,7 @@
       <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
     </svg>
     <input type="text" id="jrk-search" placeholder="Search by journal title or ISSN…" autocomplete="off" spellcheck="false">
+    <button id="jrk-search-clear" aria-label="Clear search">✕</button>
   </div>
 
   <div class="jrk-filters">
@@ -599,7 +621,22 @@ window.goPage = function(p){
 };
 
 // ── Event listeners ────────────────────────────────────────────
-document.getElementById('jrk-search').addEventListener('input', e => { q=e.target.value; filter(); });
+const searchInput = document.getElementById('jrk-search');
+const searchClear = document.getElementById('jrk-search-clear');
+
+searchInput.addEventListener('input', e => {
+  q = e.target.value;
+  searchClear.classList.toggle('visible', q.length > 0);
+  filter();
+});
+
+searchClear.addEventListener('click', () => {
+  searchInput.value = '';
+  q = '';
+  searchClear.classList.remove('visible');
+  searchInput.focus();
+  filter();
+});
 
 document.querySelectorAll('[data-abdc]').forEach(btn => {
   btn.addEventListener('click', () => {
