@@ -66,14 +66,19 @@
   letter-spacing: 0.01em;
 }
 
-/* ── Stat strip 1─────────────────────────────────────────────── */
+/* ── Stat strip ─────────────────────────────────────────────── */
 #jrk .jrk-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+#jrk .jrk-stat-row {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
 }
-#jrk .jrk-stat1 {
+#jrk .jrk-stat {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -83,64 +88,26 @@
   font-weight: 500;
   border: 1px solid;
 }
-#jrk .jrk-stat1.stat1-n {
+#jrk .jrk-stat .stat-n {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   font-size: 0.8rem;
 }
-
-#jrk .jrk-stat2 {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid;
-}
-#jrk .jrk-stat2.stat2-n {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 600;
-  font-size: 0.8rem;
-}
-
-
-#jrk .jrk-stat3 {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.8rem;
-  border-radius: 6px;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border: 1px solid;
-}
-#jrk .jrk-stat3.stat3-n {
-  font-family: 'IBM Plex Mono', monospace;
-  font-weight: 600;
-  font-size: 0.8rem;
-}
-
-
-#jrk .jrk-stat1.s-astar { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
-#jrk .jrk-stat1.s-a     { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
-#jrk .jrk-stat1.s-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
-#jrk .jrk-stat1.s-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
-#jrk .jrk-stat1.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
-
-#jrk .jrk-stat2.s-4s { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
-#jrk .jrk-stat2.s-4 { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
-#jrk .jrk-stat2.s-3 { background:var(--abs3-bg); color:var(--abs3-fg); border-color:var(--abs3-border); }
-#jrk .jrk-stat2.s-2 { background:var(--abs2-bg); color:var(--abs2-fg); border-color:var(--abs2-border); }
-#jrk .jrk-stat2.s-1 { background:var(--abs1-bg); color:var(--abs1-fg); border-color:var(--abs1-border); }
-#jrk .jrk-stat2.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
-
-#jrk .jrk-stat3.badge { background:var(--q1-bg); color:var(--q1-fg); border-color:var(--q1-border); }
-#jrk .jrk-stat3.s-q2 { background:var(--q2-bg); color:var(--q2-fg); border-color:var(--q2-border); }
-#jrk .jrk-stat3.s-q3 { background:var(--q3-bg); color:var(--q3-fg); border-color:var(--q3-border); }
-#jrk .jrk-stat3.s-q4 { background:var(--q4-bg); color:var(--q4-fg); border-color:var(--q4-border); }
-#jrk .jrk-stat3.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+#jrk .jrk-stat.s-astar { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
+#jrk .jrk-stat.s-a     { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
+#jrk .jrk-stat.s-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
+#jrk .jrk-stat.s-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
+#jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+#jrk .jrk-stat.s-abs4s { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat.s-abs4  { background:var(--abs4-bg);  color:var(--abs4-fg);  border-color:var(--abs4-border); }
+#jrk .jrk-stat.s-abs3  { background:var(--abs3-bg);  color:var(--abs3-fg);  border-color:var(--abs3-border); }
+#jrk .jrk-stat.s-abs2  { background:var(--abs2-bg);  color:var(--abs2-fg);  border-color:var(--abs2-border); }
+#jrk .jrk-stat.s-abs1  { background:var(--abs1-bg);  color:var(--abs1-fg);  border-color:var(--abs1-border); }
+#jrk .jrk-stat.s-q4    { background:var(--q4-bg);    color:var(--q4-fg);    border-color:var(--q4-border); }
+#jrk .jrk-stat.s-q3    { background:var(--q3-bg);    color:var(--q3-fg);    border-color:var(--q3-border); }
+#jrk .jrk-stat.s-q2    { background:var(--q2-bg);    color:var(--q2-fg);    border-color:var(--q2-border); }
+#jrk .jrk-stat.s-q1    { background:var(--q1-bg);    color:var(--q1-fg);    border-color:var(--q1-border); }
+#jrk .jrk-stat.s-ft50  { background:var(--ft50-bg);  color:var(--ft50-fg);  border-color:var(--ft50-border); }
 
 /* ── Search ─────────────────────────────────────────────────── */
 #jrk .jrk-search-wrap {
@@ -439,7 +406,7 @@
   #jrk .jrk-search-wrap { position: sticky; top: 0; background: white; z-index: 20; padding-top: 8px; }
   #jrk .jrk-filters   { padding: 0.8rem; }
   #jrk .jrk-filter-row { gap: 0.3rem; }
-  #jrk .jrk-flabel    { width: 2rem; font-size: 0.65rem; }
+  #jrk .jrk-flabel    { width: auto; font-size: 0.65rem; }
   #jrk .jrk-pill      { padding: 0.4rem 0.9rem; font-size: 0.8rem; }
   #jrk .jrk-card      { padding: 0.8rem; }
   #jrk .card-title    { font-size: 0.85rem; }
@@ -476,30 +443,31 @@
   </div>
 
   <div class="jrk-stats" id="jrk-stats">
-    <div class="jrk-stat s-total"><span class="stat-n" id="stat-total">—</span> Total</div>
-    <div class="jrk-stat s-astar"><span class="stat-n" id="stat-astar">—</span> ABDC A*</div>
-    <div class="jrk-stat s-a"><span class="stat-n" id="stat-a">—</span> ABDC A</div>
-    <div class="jrk-stat s-b"><span class="stat-n" id="stat-b">—</span> ABDC B</div>
-    <div class="jrk-stat s-c"><span class="stat-n" id="stat-c">—</span> ABDC C</div>
-    <div class="jrk-stat" style="background:var(--ft50-bg);color:var(--ft50-fg);border-color:var(--ft50-border)"><span class="stat-n" id="stat-ft50">—</span> FT50</div>
-    <div class="jrk-stat" style="background:var(--q1-bg);color:var(--q1-fg);border-color:var(--q1-border)"><span class="stat-n" id="stat-q1">—</span> Scopus Q1</div>
-  </div>
-
-  <div class="jrk-stats" id="jrk-stats">
-    <div class="jrk-stat s-total"><span class="stat-n" id="stat-total">—</span> Total</div>
-    <div class="jrk-stat s-4star"><span class="stat-n" id="stat-4star">—</span> ABS 4*</div>
-    <div class="jrk-stat s-4"><span class="stat-n" id="stat-4">—</span> ABS 4</div>
-    <div class="jrk-stat s-3"><span class="stat-n" id="stat-3">—</span> ABS 3</div>
-    <div class="jrk-stat s-2"><span class="stat-n" id="stat-2">—</span> ABS 2</div>
-    <div class="jrk-stat s-1"><span class="stat-n" id="stat-1">—</span> ABS 1</div>
-  </div>
-
-  <div class="jrk-stats" id="jrk-stats">
-    <div class="jrk-stat s-total"><span class="stat-n" id="stat-total">—</span> Total</div>
-    <div class="jrk-stat s-q1"><span class="stat-n" id="stat-q1">—</span> Scopus Q1</div>
-    <div class="jrk-stat s-q2"><span class="stat-n" id="stat-q2">—</span> Scopus Q2</div>
-    <div class="jrk-stat s-q3"><span class="stat-n" id="stat-q3">—</span> Scopus Q3</div>
-    <div class="jrk-stat s-q4"><span class="stat-n" id="stat-q4">—</span> Scopus Q4</div>
+    <div class="jrk-stat-row">
+      <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-abdc">—</span> Total ABDC</div>
+      <div class="jrk-stat s-astar"><span class="stat-n" id="stat-astar">—</span> ABDC A*</div>
+      <div class="jrk-stat s-a"><span class="stat-n" id="stat-a">—</span> ABDC A</div>
+      <div class="jrk-stat s-b"><span class="stat-n" id="stat-b">—</span> ABDC B</div>
+      <div class="jrk-stat s-c"><span class="stat-n" id="stat-c">—</span> ABDC C</div>
+    </div>
+    <div class="jrk-stat-row">
+      <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-abs">—</span> Total ABS</div>
+      <div class="jrk-stat s-abs4s"><span class="stat-n" id="stat-abs4s">—</span> ABS 4*</div>
+      <div class="jrk-stat s-abs4"><span class="stat-n" id="stat-abs4">—</span> ABS 4</div>
+      <div class="jrk-stat s-abs3"><span class="stat-n" id="stat-abs3">—</span> ABS 3</div>
+      <div class="jrk-stat s-abs2"><span class="stat-n" id="stat-abs2">—</span> ABS 2</div>
+      <div class="jrk-stat s-abs1"><span class="stat-n" id="stat-abs1">—</span> ABS 1</div>
+    </div>
+    <div class="jrk-stat-row">
+      <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-scopus">—</span> Total Scopus</div>
+      <div class="jrk-stat s-q4"><span class="stat-n" id="stat-q4">—</span> Q4</div>
+      <div class="jrk-stat s-q3"><span class="stat-n" id="stat-q3">—</span> Q3</div>
+      <div class="jrk-stat s-q2"><span class="stat-n" id="stat-q2">—</span> Q2</div>
+      <div class="jrk-stat s-q1"><span class="stat-n" id="stat-q1">—</span> Q1</div>
+    </div>
+    <div class="jrk-stat-row">
+      <div class="jrk-stat s-ft50"><span class="stat-n" id="stat-ft50">—</span> Total FT50</div>
+    </div>
   </div>
 
   <div class="jrk-search-wrap">
@@ -527,7 +495,7 @@
       <button class="jrk-pill" data-abs="1">1</button>
     </div>
     <div class="jrk-filter-row">
-      <span class="jrk-flabel">Scopus</span>
+      <span class="jrk-flabel">SJR</span>
       <button class="jrk-pill" data-sq="Q1">Q1</button>
       <button class="jrk-pill" data-sq="Q2">Q2</button>
       <button class="jrk-pill" data-sq="Q3">Q3</button>
@@ -569,32 +537,30 @@ const SQ_CLS   = {'Q1':'sq-q1','Q2':'sq-q2','Q3':'sq-q3','Q4':'sq-q4'};
 const CARD_CLS = {'A*':'rank-astar','A':'rank-a','B':'rank-b','C':'rank-c'};
 
 function updateStats(src){
-  document.getElementById('stat-total').textContent = src.length.toLocaleString();
-  const cnt = v => src.filter(j => j.abdc === v).length;
-  document.getElementById('stat1-astar').textContent = cnt('A*').toLocaleString();
-  document.getElementById('stat1-a').textContent     = cnt('A').toLocaleString();
-  document.getElementById('stat1-b').textContent     = cnt('B').toLocaleString();
-  document.getElementById('stat1-c').textContent     = cnt('C').toLocaleString();
-  document.getElementById('stat1-ft50').textContent  = src.filter(j => j.ft).length.toLocaleString();
-}
+  const abdcCount = v => src.filter(j => j.abdc === v).length;
+  const absCount = v => src.filter(j => j.abs === v).length;
+  const scopusCount = v => src.filter(j => j.sq === v).length;
 
-function updateStats(src){
-  document.getElementById('stat-total').textContent = src.length.toLocaleString();
-  const cnt = v => src.filter(j => j.abs === v).length;
-  document.getElementById('stat2-4star').textContent = cnt('4*').toLocaleString();
-  document.getElementById('stat2-4').textContent     = cnt('4').toLocaleString();
-  document.getElementById('stat2-3').textContent     = cnt('3').toLocaleString();
-  document.getElementById('stat2-2').textContent     = cnt('2').toLocaleString();
-  document.getElementById('stat2-1').textContent     = cnt('1').toLocaleString();
-}
+  document.getElementById('stat-total-abdc').textContent   = src.filter(j => j.abdc).length.toLocaleString();
+  document.getElementById('stat-astar').textContent        = abdcCount('A*').toLocaleString();
+  document.getElementById('stat-a').textContent            = abdcCount('A').toLocaleString();
+  document.getElementById('stat-b').textContent            = abdcCount('B').toLocaleString();
+  document.getElementById('stat-c').textContent            = abdcCount('C').toLocaleString();
 
-function updateStats(src){
-  document.getElementById('stat-total').textContent = src.length.toLocaleString();
-  const cnt = v => src.filter(j => j.sq === v).length;
-  document.getElementById('stat3-q1').textContent = cnt('Q1').toLocaleString();
-  document.getElementById('stat3-q2').textContent = cnt('Q2').toLocaleString();
-  document.getElementById('stat3-q3').textContent = cnt('Q3').toLocaleString();
-  document.getElementById('stat3-q4').textContent = cnt('Q4').toLocaleString();
+  document.getElementById('stat-total-abs').textContent    = src.filter(j => j.abs).length.toLocaleString();
+  document.getElementById('stat-abs4s').textContent        = absCount('4*').toLocaleString();
+  document.getElementById('stat-abs4').textContent         = absCount('4').toLocaleString();
+  document.getElementById('stat-abs3').textContent         = absCount('3').toLocaleString();
+  document.getElementById('stat-abs2').textContent         = absCount('2').toLocaleString();
+  document.getElementById('stat-abs1').textContent         = absCount('1').toLocaleString();
+
+  document.getElementById('stat-total-scopus').textContent = src.filter(j => j.sq).length.toLocaleString();
+  document.getElementById('stat-q4').textContent           = scopusCount('Q4').toLocaleString();
+  document.getElementById('stat-q3').textContent           = scopusCount('Q3').toLocaleString();
+  document.getElementById('stat-q2').textContent           = scopusCount('Q2').toLocaleString();
+  document.getElementById('stat-q1').textContent           = scopusCount('Q1').toLocaleString();
+
+  document.getElementById('stat-ft50').textContent         = src.filter(j => j.ft).length.toLocaleString();
 }
 
 function buildFieldDropdown(){
