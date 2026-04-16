@@ -73,6 +73,32 @@
   gap: 0.6rem;
   margin-bottom: 1.5rem;
 }
+#jrk .jrk-stats-tabs {
+  display: none;
+  gap: 0.4rem;
+  padding: 0.25rem;
+  background: var(--snow);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+}
+#jrk .jrk-stats-tab {
+  flex: 1 1 0;
+  min-width: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  padding: 0.55rem 0.75rem;
+  transition: background 0.13s, color 0.13s, box-shadow 0.13s;
+}
+#jrk .jrk-stats-tab.on {
+  background: var(--white);
+  color: var(--navy);
+  box-shadow: inset 0 0 0 1px var(--rule);
+}
 #jrk .jrk-stat-row {
   display: flex;
   flex-wrap: wrap;
@@ -421,6 +447,21 @@
   #jrk .jrk-grid { grid-template-columns: 1fr; }
 }
 
+@media (max-width: 640px) {
+  #jrk .jrk-stats {
+    gap: 0.75rem;
+  }
+  #jrk .jrk-stats-tabs {
+    display: flex;
+  }
+  #jrk .jrk-stat-row {
+    display: none;
+  }
+  #jrk .jrk-stat-row.on {
+    display: flex;
+  }
+}
+
 #jrk .pg:hover:not(:disabled):not(.on) { border-color: var(--navy); color: var(--navy); }
 #jrk .pg.on { background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 600; }
 #jrk .pg:disabled { opacity: 0.3; cursor: default; }
@@ -443,14 +484,19 @@
   </div>
 
   <div class="jrk-stats" id="jrk-stats">
-    <div class="jrk-stat-row">
+    <div class="jrk-stats-tabs" id="jrk-stats-tabs" aria-label="Ranking segments">
+      <button class="jrk-stats-tab on" type="button" data-stats-tab="abdc">ABDC</button>
+      <button class="jrk-stats-tab" type="button" data-stats-tab="abs">ABS</button>
+      <button class="jrk-stats-tab" type="button" data-stats-tab="scopus">Scopus</button>
+    </div>
+    <div class="jrk-stat-row on" data-stats-panel="abdc">
       <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-abdc">—</span> ABDC</div>
       <div class="jrk-stat s-astar"><span class="stat-n" id="stat-astar">—</span> ABDC A*</div>
       <div class="jrk-stat s-a"><span class="stat-n" id="stat-a">—</span> ABDC A</div>
       <div class="jrk-stat s-b"><span class="stat-n" id="stat-b">—</span> ABDC B</div>
       <div class="jrk-stat s-c"><span class="stat-n" id="stat-c">—</span> ABDC C</div>
     </div>
-    <div class="jrk-stat-row">
+    <div class="jrk-stat-row" data-stats-panel="abs">
       <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-abs">—</span> ABS</div>
       <div class="jrk-stat s-abs4s"><span class="stat-n" id="stat-abs4s">—</span> ABS 4*</div>
       <div class="jrk-stat s-abs4"><span class="stat-n" id="stat-abs4">—</span> ABS 4</div>
@@ -458,7 +504,7 @@
       <div class="jrk-stat s-abs2"><span class="stat-n" id="stat-abs2">—</span> ABS 2</div>
       <div class="jrk-stat s-abs1"><span class="stat-n" id="stat-abs1">—</span> ABS 1</div>
     </div>
-    <div class="jrk-stat-row">
+    <div class="jrk-stat-row" data-stats-panel="scopus">
       <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-scopus">—</span> Scopus</div>
       <div class="jrk-stat s-q1"><span class="stat-n" id="stat-q1">—</span> Q1</div>
       <div class="jrk-stat s-q2"><span class="stat-n" id="stat-q2">—</span> Q2</div>
@@ -674,6 +720,13 @@ window.goPage = function(p){
 // ── Event listeners ────────────────────────────────────────────
 const searchInput = document.getElementById('jrk-search');
 const searchClear = document.getElementById('jrk-search-clear');
+const statsTabs = document.querySelectorAll('[data-stats-tab]');
+const statsPanels = document.querySelectorAll('[data-stats-panel]');
+
+function setStatsPanel(panel){
+  statsTabs.forEach(tab => tab.classList.toggle('on', tab.dataset.statsTab === panel));
+  statsPanels.forEach(row => row.classList.toggle('on', row.dataset.statsPanel === panel));
+}
 
 searchInput.addEventListener('input', e => {
   q = e.target.value;
@@ -687,6 +740,10 @@ searchClear.addEventListener('click', () => {
   searchClear.classList.remove('visible');
   searchInput.focus();
   filter();
+});
+
+statsTabs.forEach(tab => {
+  tab.addEventListener('click', () => setStatsPanel(tab.dataset.statsTab));
 });
 
 document.querySelectorAll('[data-abdc]').forEach(btn => {
