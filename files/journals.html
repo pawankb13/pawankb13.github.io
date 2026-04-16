@@ -16,18 +16,17 @@
   --snow:   #f8fafc;
   --white:  #ffffff;
 
-  --astar-bg: #fffbeb; --astar-fg: #15803d; --astar-border: #86efac;
-  --a-bg:    #eff6ff;  --a-fg:    #854d0e;  --a-border:    #fde047;
-  --b-bg:    #f0fdf4;  --b-fg:    #9a3412;  --b-border:    #fb923c;
-  --c-bg:    #f3f4f6;  --c-fg:    #991b1b;  --c-border:    #fca5a5;
+  --astar-bg: #fffbeb; --astar-fg: #92400e; --astar-border: #fcd34d;
+  --a-bg:    #eff6ff;  --a-fg:    #1e40af;  --a-border:    #93c5fd;
+  --b-bg:    #f0fdf4;  --b-fg:    #15803d;  --b-border:    #86efac;
+  --c-bg:    #f3f4f6;  --c-fg:    #6b7280;  --c-border:    #d1d5db;
 
-  --abs4s-bg:#faf5ff;  --abs4s-fg:#134e4a;  --abs4s-border:#5eead4;
-  --abs4-bg: #ecfeff;  --abs4-fg: #15803d;  --abs4-border: #86efac;
-  --abs3-bg: #f0fdfa;  --abs3-fg: #854d0e;  --abs3-border: #fde047;
-  --abs2-bg: #fff7ed;  --abs2-fg: #9a3412;  --abs2-border: #fb923c;
-  --abs1-bg: #f3f4f6;  --abs1-fg: #991b1b;  --abs1-border: #fca5a5;
+  --abs4s-bg:#faf5ff;  --abs4s-fg:#6b21a8;  --abs4s-border:#d8b4fe;
+  --abs4-bg: #ecfeff;  --abs4-fg: #155e75;  --abs4-border: #67e8f9;
+  --abs3-bg: #f0fdfa;  --abs3-fg: #134e4a;  --abs3-border: #5eead4;
+  --abs2-bg: #fff7ed;  --abs2-fg: #9a3412;  --abs2-border: #fdba74;
+  --abs1-bg: #f3f4f6;  --abs1-fg: #64748b;  --abs1-border: #cbd5e1;
 
-  
   --ft50-bg: #fef2f2;  --ft50-fg: #991b1b;  --ft50-border: #fca5a5;
 
   --q1-bg:   #f0fdf4;  --q1-fg:   #15803d;  --q1-border:   #86efac;
@@ -70,9 +69,14 @@
 /* ── Stat strip ─────────────────────────────────────────────── */
 #jrk .jrk-stats {
   display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+#jrk .jrk-stat-row {
+  display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1.5rem;
 }
 #jrk .jrk-stat {
   display: flex;
@@ -94,6 +98,16 @@
 #jrk .jrk-stat.s-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
 #jrk .jrk-stat.s-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
 #jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+#jrk .jrk-stat.s-abs4s { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat.s-abs4  { background:var(--abs4-bg);  color:var(--abs4-fg);  border-color:var(--abs4-border); }
+#jrk .jrk-stat.s-abs3  { background:var(--abs3-bg);  color:var(--abs3-fg);  border-color:var(--abs3-border); }
+#jrk .jrk-stat.s-abs2  { background:var(--abs2-bg);  color:var(--abs2-fg);  border-color:var(--abs2-border); }
+#jrk .jrk-stat.s-abs1  { background:var(--abs1-bg);  color:var(--abs1-fg);  border-color:var(--abs1-border); }
+#jrk .jrk-stat.s-q4    { background:var(--q4-bg);    color:var(--q4-fg);    border-color:var(--q4-border); }
+#jrk .jrk-stat.s-q3    { background:var(--q3-bg);    color:var(--q3-fg);    border-color:var(--q3-border); }
+#jrk .jrk-stat.s-q2    { background:var(--q2-bg);    color:var(--q2-fg);    border-color:var(--q2-border); }
+#jrk .jrk-stat.s-q1    { background:var(--q1-bg);    color:var(--q1-fg);    border-color:var(--q1-border); }
+#jrk .jrk-stat.s-ft50  { background:var(--ft50-bg);  color:var(--ft50-fg);  border-color:var(--ft50-border); }
 
 /* ── Search ─────────────────────────────────────────────────── */
 #jrk .jrk-search-wrap {
@@ -429,13 +443,28 @@
   </div>
 
   <div class="jrk-stats" id="jrk-stats">
-    <div class="jrk-stat s-total"><span class="stat-n" id="stat-total">—</span> Total</div>
-    <div class="jrk-stat s-astar"><span class="stat-n" id="stat-astar">—</span> ABDC A*</div>
-    <div class="jrk-stat s-a"><span class="stat-n" id="stat-a">—</span> ABDC A</div>
-    <div class="jrk-stat s-b"><span class="stat-n" id="stat-b">—</span> ABDC B</div>
-    <div class="jrk-stat s-c"><span class="stat-n" id="stat-c">—</span> ABDC C</div>
-    <div class="jrk-stat" style="background:var(--ft50-bg);color:var(--ft50-fg);border-color:var(--ft50-border)"><span class="stat-n" id="stat-ft50">—</span> FT50</div>
-    <div class="jrk-stat" style="background:var(--q1-bg);color:var(--q1-fg);border-color:var(--q1-border)"><span class="stat-n" id="stat-q1">—</span> Scopus Q1 </div>
+    <div class="jrk-stat-row">
+      <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-abdc">—</span> ABDC</div>
+      <div class="jrk-stat s-astar"><span class="stat-n" id="stat-astar">—</span> ABDC A*</div>
+      <div class="jrk-stat s-a"><span class="stat-n" id="stat-a">—</span> ABDC A</div>
+      <div class="jrk-stat s-b"><span class="stat-n" id="stat-b">—</span> ABDC B</div>
+      <div class="jrk-stat s-c"><span class="stat-n" id="stat-c">—</span> ABDC C</div>
+    </div>
+    <div class="jrk-stat-row">
+      <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-abs">—</span> ABS</div>
+      <div class="jrk-stat s-abs4s"><span class="stat-n" id="stat-abs4s">—</span> ABS 4*</div>
+      <div class="jrk-stat s-abs4"><span class="stat-n" id="stat-abs4">—</span> ABS 4</div>
+      <div class="jrk-stat s-abs3"><span class="stat-n" id="stat-abs3">—</span> ABS 3</div>
+      <div class="jrk-stat s-abs2"><span class="stat-n" id="stat-abs2">—</span> ABS 2</div>
+      <div class="jrk-stat s-abs1"><span class="stat-n" id="stat-abs1">—</span> ABS 1</div>
+    </div>
+    <div class="jrk-stat-row">
+      <div class="jrk-stat s-total"><span class="stat-n" id="stat-total-scopus">—</span> Scopus</div>
+      <div class="jrk-stat s-q1"><span class="stat-n" id="stat-q1">—</span> Q1</div>
+      <div class="jrk-stat s-q2"><span class="stat-n" id="stat-q2">—</span> Q2</div>
+      <div class="jrk-stat s-q3"><span class="stat-n" id="stat-q3">—</span> Q3</div>
+      <div class="jrk-stat s-q4"><span class="stat-n" id="stat-q4">—</span> Q4</div>
+    </div>
   </div>
 
   <div class="jrk-search-wrap">
@@ -505,14 +534,30 @@ const SQ_CLS   = {'Q1':'sq-q1','Q2':'sq-q2','Q3':'sq-q3','Q4':'sq-q4'};
 const CARD_CLS = {'A*':'rank-astar','A':'rank-a','B':'rank-b','C':'rank-c'};
 
 function updateStats(src){
-  document.getElementById('stat-total').textContent = src.length.toLocaleString();
-  const cnt = v => src.filter(j => j.abdc === v).length;
-  document.getElementById('stat-astar').textContent = cnt('A*').toLocaleString();
-  document.getElementById('stat-a').textContent     = cnt('A').toLocaleString();
-  document.getElementById('stat-b').textContent     = cnt('B').toLocaleString();
-  document.getElementById('stat-c').textContent     = cnt('C').toLocaleString();
-  document.getElementById('stat-ft50').textContent  = src.filter(j => j.ft).length.toLocaleString();
-  document.getElementById('stat-q1').textContent    = src.filter(j => j.sq === 'Q1').length.toLocaleString();
+  const abdcCount = v => src.filter(j => j.abdc === v).length;
+  const absCount = v => src.filter(j => j.abs === v).length;
+  const scopusCount = v => src.filter(j => j.sq === v).length;
+
+  document.getElementById('stat-total-abdc').textContent   = src.filter(j => j.abdc).length.toLocaleString();
+  document.getElementById('stat-astar').textContent        = abdcCount('A*').toLocaleString();
+  document.getElementById('stat-a').textContent            = abdcCount('A').toLocaleString();
+  document.getElementById('stat-b').textContent            = abdcCount('B').toLocaleString();
+  document.getElementById('stat-c').textContent            = abdcCount('C').toLocaleString();
+
+  document.getElementById('stat-total-abs').textContent    = src.filter(j => j.abs).length.toLocaleString();
+  document.getElementById('stat-abs4s').textContent        = absCount('4*').toLocaleString();
+  document.getElementById('stat-abs4').textContent         = absCount('4').toLocaleString();
+  document.getElementById('stat-abs3').textContent         = absCount('3').toLocaleString();
+  document.getElementById('stat-abs2').textContent         = absCount('2').toLocaleString();
+  document.getElementById('stat-abs1').textContent         = absCount('1').toLocaleString();
+
+  document.getElementById('stat-total-scopus').textContent = src.filter(j => j.sq).length.toLocaleString();
+  document.getElementById('stat-q4').textContent           = scopusCount('Q4').toLocaleString();
+  document.getElementById('stat-q3').textContent           = scopusCount('Q3').toLocaleString();
+  document.getElementById('stat-q2').textContent           = scopusCount('Q2').toLocaleString();
+  document.getElementById('stat-q1').textContent           = scopusCount('Q1').toLocaleString();
+
+  document.getElementById('stat-ft50').textContent         = src.filter(j => j.ft).length.toLocaleString();
 }
 
 function buildFieldDropdown(){
