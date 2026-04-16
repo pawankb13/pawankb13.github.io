@@ -66,7 +66,7 @@
   letter-spacing: 0.01em;
 }
 
-/* ── Stat strip ─────────────────────────────────────────────── */
+/* ── Stat strip 1─────────────────────────────────────────────── */
 #jrk .jrk-stats {
   display: flex;
   flex-wrap: wrap;
@@ -92,6 +92,19 @@
 #jrk .jrk-stat.s-a     { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
 #jrk .jrk-stat.s-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
 #jrk .jrk-stat.s-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
+#jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+
+#jrk .jrk-stat.s-4s { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat.s-4 { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat.s-3 { background:var(--abs3-bg); color:var(--abs3-fg); border-color:var(--abs3-border); }
+#jrk .jrk-stat.s-2 { background:var(--abs2-bg); color:var(--abs2-fg); border-color:var(--abs2-border); }
+#jrk .jrk-stat.s-1 { background:var(--abs1-bg); color:var(--abs1-fg); border-color:var(--abs1-border); }
+#jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+
+#jrk .jrk-stat.s-q1 { background:var(--abs4star-bg); color:var(--abs4star-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat.s-q2 { background:var(--abs4star-bg); color:var(--abs4star-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat.s-q3 { background:var(--abs4star-bg); color:var(--abs4star-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat.s-q4 { background:var(--abs4star-bg); color:var(--abs4star-fg); border-color:var(--abs4s-border); }
 #jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
 
 /* ── Search ─────────────────────────────────────────────────── */
@@ -437,13 +450,21 @@
     <div class="jrk-stat" style="background:var(--q1-bg);color:var(--q1-fg);border-color:var(--q1-border)"><span class="stat-n" id="stat-q1">—</span> Scopus Q1</div>
   </div>
 
-    <div class="jrk-stats" id="jrk-stats">
+  <div class="jrk-stats" id="jrk-stats">
     <div class="jrk-stat s-total"><span class="stat-n" id="stat-total">—</span> Total</div>
     <div class="jrk-stat s-4star"><span class="stat-n" id="stat-4star">—</span> ABS 4*</div>
     <div class="jrk-stat s-4"><span class="stat-n" id="stat-4">—</span> ABS 4</div>
     <div class="jrk-stat s-3"><span class="stat-n" id="stat-3">—</span> ABS 3</div>
     <div class="jrk-stat s-2"><span class="stat-n" id="stat-2">—</span> ABS 2</div>
     <div class="jrk-stat s-1"><span class="stat-n" id="stat-1">—</span> ABS 1</div>
+  </div>
+
+  <div class="jrk-stats" id="jrk-stats">
+    <div class="jrk-stat s-total"><span class="stat-n" id="stat-total">—</span> Total</div>
+    <div class="jrk-stat s-q1"><span class="stat-n" id="stat-q1">—</span> Scopus Q1</div>
+    <div class="jrk-stat s-q2"><span class="stat-n" id="stat-q2">—</span> Scopus Q2</div>
+    <div class="jrk-stat s-q3"><span class="stat-n" id="stat-q3">—</span> Scopus Q3</div>
+    <div class="jrk-stat s-q4"><span class="stat-n" id="stat-q4">—</span> Scopus Q4</div>
   </div>
 
   <div class="jrk-search-wrap">
