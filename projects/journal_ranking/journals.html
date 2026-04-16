@@ -73,7 +73,7 @@
   gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
-#jrk .jrk-stat {
+#jrk .jrk-stat1 {
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -83,29 +83,64 @@
   font-weight: 500;
   border: 1px solid;
 }
-#jrk .jrk-stat .stat-n {
+#jrk .jrk-stat1.stat1-n {
   font-family: 'IBM Plex Mono', monospace;
   font-weight: 600;
   font-size: 0.8rem;
 }
-#jrk .jrk-stat.s-astar { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
-#jrk .jrk-stat.s-a     { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
-#jrk .jrk-stat.s-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
-#jrk .jrk-stat.s-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
-#jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
 
-#jrk .jrk-stat.s-4s { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
-#jrk .jrk-stat.s-4 { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
-#jrk .jrk-stat.s-3 { background:var(--abs3-bg); color:var(--abs3-fg); border-color:var(--abs3-border); }
-#jrk .jrk-stat.s-2 { background:var(--abs2-bg); color:var(--abs2-fg); border-color:var(--abs2-border); }
-#jrk .jrk-stat.s-1 { background:var(--abs1-bg); color:var(--abs1-fg); border-color:var(--abs1-border); }
-#jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+#jrk .jrk-stat2 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+#jrk .jrk-stat2.stat2-n {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
 
-#jrk .jrk-stat.s-q1 { background:var(--q1-bg); color:var(--q1-fg); border-color:var(--q1-border); }
-#jrk .jrk-stat.s-q2 { background:var(--q2-bg); color:var(--q2-fg); border-color:var(--q2-border); }
-#jrk .jrk-stat.s-q3 { background:var(--q3-bg); color:var(--q3-fg); border-color:var(--q3-border); }
-#jrk .jrk-stat.s-q4 { background:var(--q4-bg); color:var(--q4-fg); border-color:var(--q4-border); }
-#jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+
+#jrk .jrk-stat3 {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+#jrk .jrk-stat3.stat3-n {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+
+#jrk .jrk-stat1.s-astar { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
+#jrk .jrk-stat1.s-a     { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
+#jrk .jrk-stat1.s-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
+#jrk .jrk-stat1.s-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
+#jrk .jrk-stat1.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+
+#jrk .jrk-stat2.s-4s { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat2.s-4 { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-stat2.s-3 { background:var(--abs3-bg); color:var(--abs3-fg); border-color:var(--abs3-border); }
+#jrk .jrk-stat2.s-2 { background:var(--abs2-bg); color:var(--abs2-fg); border-color:var(--abs2-border); }
+#jrk .jrk-stat2.s-1 { background:var(--abs1-bg); color:var(--abs1-fg); border-color:var(--abs1-border); }
+#jrk .jrk-stat2.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+
+#jrk .jrk-stat3.badge { background:var(--q1-bg); color:var(--q1-fg); border-color:var(--q1-border); }
+#jrk .jrk-stat3.s-q2 { background:var(--q2-bg); color:var(--q2-fg); border-color:var(--q2-border); }
+#jrk .jrk-stat3.s-q3 { background:var(--q3-bg); color:var(--q3-fg); border-color:var(--q3-border); }
+#jrk .jrk-stat3.s-q4 { background:var(--q4-bg); color:var(--q4-fg); border-color:var(--q4-border); }
+#jrk .jrk-stat3.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
 
 /* ── Search ─────────────────────────────────────────────────── */
 #jrk .jrk-search-wrap {
@@ -536,12 +571,30 @@ const CARD_CLS = {'A*':'rank-astar','A':'rank-a','B':'rank-b','C':'rank-c'};
 function updateStats(src){
   document.getElementById('stat-total').textContent = src.length.toLocaleString();
   const cnt = v => src.filter(j => j.abdc === v).length;
-  document.getElementById('stat-astar').textContent = cnt('A*').toLocaleString();
-  document.getElementById('stat-a').textContent     = cnt('A').toLocaleString();
-  document.getElementById('stat-b').textContent     = cnt('B').toLocaleString();
-  document.getElementById('stat-c').textContent     = cnt('C').toLocaleString();
-  document.getElementById('stat-ft50').textContent  = src.filter(j => j.ft).length.toLocaleString();
-  document.getElementById('stat-q1').textContent    = src.filter(j => j.sq === 'Q1').length.toLocaleString();
+  document.getElementById('stat1-astar').textContent = cnt('A*').toLocaleString();
+  document.getElementById('stat1-a').textContent     = cnt('A').toLocaleString();
+  document.getElementById('stat1-b').textContent     = cnt('B').toLocaleString();
+  document.getElementById('stat1-c').textContent     = cnt('C').toLocaleString();
+  document.getElementById('stat1-ft50').textContent  = src.filter(j => j.ft).length.toLocaleString();
+}
+
+function updateStats(src){
+  document.getElementById('stat-total').textContent = src.length.toLocaleString();
+  const cnt = v => src.filter(j => j.abs === v).length;
+  document.getElementById('stat2-4star').textContent = cnt('4*').toLocaleString();
+  document.getElementById('stat2-4').textContent     = cnt('4').toLocaleString();
+  document.getElementById('stat2-3').textContent     = cnt('3').toLocaleString();
+  document.getElementById('stat2-2').textContent     = cnt('2').toLocaleString();
+  document.getElementById('stat2-1').textContent     = cnt('1').toLocaleString();
+}
+
+function updateStats(src){
+  document.getElementById('stat-total').textContent = src.length.toLocaleString();
+  const cnt = v => src.filter(j => j.sq === v).length;
+  document.getElementById('stat3-q1').textContent = cnt('Q1').toLocaleString();
+  document.getElementById('stat3-q2').textContent     = cnt('Q2').toLocaleString();
+  document.getElementById('stat3-q3').textContent     = cnt('Q3').toLocaleString();
+  document.getElementById('stat3-q4').textContent     = cnt('Q4').toLocaleString();
 }
 
 function buildFieldDropdown(){
