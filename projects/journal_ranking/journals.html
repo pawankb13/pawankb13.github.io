@@ -1,0 +1,679 @@
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+
+<style>
+/* ── Variables ─────────────────────────────────────────────── */
+#jrk {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  --navy:   #0f172a;
+  --ink:    #1e293b;
+  --muted:  #64748b;
+  --faint:  #94a3b8;
+  --rule:   #e2e8f0;
+  --snow:   #f8fafc;
+  --white:  #ffffff;
+
+  --astar-bg: #fffbeb; --astar-fg: #92400e; --astar-border: #fcd34d;
+  --a-bg:    #eff6ff;  --a-fg:    #1e40af;  --a-border:    #93c5fd;
+  --b-bg:    #f0fdf4;  --b-fg:    #15803d;  --b-border:    #86efac;
+  --c-bg:    #f3f4f6;  --c-fg:    #6b7280;  --c-border:    #d1d5db;
+
+  --abs4s-bg:#faf5ff;  --abs4s-fg:#6b21a8;  --abs4s-border:#d8b4fe;
+  --abs4-bg: #ecfeff;  --abs4-fg: #155e75;  --abs4-border: #67e8f9;
+  --abs3-bg: #f0fdfa;  --abs3-fg: #134e4a;  --abs3-border: #5eead4;
+  --abs2-bg: #fff7ed;  --abs2-fg: #9a3412;  --abs2-border: #fdba74;
+  --abs1-bg: #f3f4f6;  --abs1-fg: #64748b;  --abs1-border: #cbd5e1;
+
+  --ft50-bg: #fef2f2;  --ft50-fg: #991b1b;  --ft50-border: #fca5a5;
+
+  --q1-bg:   #f0fdf4;  --q1-fg:   #15803d;  --q1-border:   #86efac;
+  --q2-bg:   #fefce8;  --q2-fg:   #854d0e;  --q2-border:   #fde047;
+  --q3-bg:   #fff7ed;  --q3-fg:   #9a3412;  --q3-border:   #fb923c;
+  --q4-bg:   #fef2f2;  --q4-fg:   #991b1b;  --q4-border:   #fca5a5;
+
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: var(--ink);
+}
+
+/* ── Reset scoped ───────────────────────────────────────────── */
+#jrk *, #jrk *::before, #jrk *::after { box-sizing: border-box; }
+#jrk button { cursor: pointer; font-family: inherit; }
+#jrk input, #jrk select { font-family: inherit; }
+
+/* ── Header ─────────────────────────────────────────────────── */
+#jrk .jrk-header {
+  padding: 0.25rem 0 1.75rem;
+  border-bottom: 2px solid var(--navy);
+  margin-bottom: 1.75rem;
+}
+#jrk .jrk-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: -0.025em;
+  margin: 0 0 0.3rem;
+  border: none;
+  padding: 0;
+}
+#jrk .jrk-header p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+
+/* ── Stat strip ─────────────────────────────────────────────── */
+#jrk .jrk-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+#jrk .jrk-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid;
+}
+#jrk .jrk-stat .stat-n {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+#jrk .jrk-stat.s-astar { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
+#jrk .jrk-stat.s-a     { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
+#jrk .jrk-stat.s-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
+#jrk .jrk-stat.s-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
+#jrk .jrk-stat.s-total { background:var(--snow);     color:var(--navy);     border-color:var(--rule); }
+
+/* ── Search ─────────────────────────────────────────────────── */
+#jrk .jrk-search-wrap {
+  position: relative;
+  margin-bottom: 1rem;
+}
+#jrk .jrk-search-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--faint);
+  pointer-events: none;
+  width: 16px; height: 16px;
+  flex-shrink: 0;
+}
+#jrk #jrk-search {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.6rem;
+  border: 1.5px solid var(--rule);
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: var(--ink);
+  background: var(--white);
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+#jrk #jrk-search:focus {
+  border-color: var(--navy);
+  box-shadow: 0 0 0 3px rgba(15,23,42,0.07);
+}
+#jrk #jrk-search::placeholder { color: var(--faint); }
+
+/* ── Filter panel ───────────────────────────────────────────── */
+#jrk .jrk-filters {
+  background: var(--snow);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1rem 1.1rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+#jrk .jrk-filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+#jrk .jrk-flabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  width: 38px;
+  flex-shrink: 0;
+}
+#jrk .jrk-pill {
+  padding: 0.4rem 0.9rem;
+  border-radius: 99px;
+  border: 1.5px solid var(--rule);
+  background: var(--white);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: all 0.13s;
+  line-height: 1.4;
+}
+#jrk .jrk-pill:hover { border-color: #94a3b8; color: var(--ink); }
+
+#jrk .jrk-pill[data-abdc="A*"].on  { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
+#jrk .jrk-pill[data-abdc="A"].on   { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
+#jrk .jrk-pill[data-abdc="B"].on   { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
+#jrk .jrk-pill[data-abdc="C"].on   { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
+#jrk .jrk-pill[data-abs="4*"].on   { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .jrk-pill[data-abs="4"].on    { background:var(--abs4-bg);  color:var(--abs4-fg);  border-color:var(--abs4-border); }
+#jrk .jrk-pill[data-abs="3"].on    { background:var(--abs3-bg);  color:var(--abs3-fg);  border-color:var(--abs3-border); }
+#jrk .jrk-pill[data-abs="2"].on    { background:var(--abs2-bg);  color:var(--abs2-fg);  border-color:var(--abs2-border); }
+#jrk .jrk-pill[data-abs="1"].on    { background:var(--abs1-bg);  color:var(--abs1-fg);  border-color:var(--abs1-border); }
+#jrk .jrk-pill[data-sq="Q1"].on    { background:var(--q1-bg);    color:var(--q1-fg);    border-color:var(--q1-border); }
+#jrk .jrk-pill[data-sq="Q2"].on    { background:var(--q2-bg);    color:var(--q2-fg);    border-color:var(--q2-border); }
+#jrk .jrk-pill[data-sq="Q3"].on    { background:var(--q3-bg);    color:var(--q3-fg);    border-color:var(--q3-border); }
+#jrk .jrk-pill[data-sq="Q4"].on    { background:var(--q4-bg);    color:var(--q4-fg);    border-color:var(--q4-border); }
+
+#jrk #jrk-for {
+  padding: 0.28rem 0.7rem;
+  border-radius: 99px;
+  border: 1.5px solid var(--rule);
+  background: var(--white);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.13s;
+  max-width: 100%;
+}
+#jrk #jrk-for:focus { border-color: var(--navy); }
+#jrk #jrk-for.active { border-color: var(--navy); color: var(--navy); background: #f1f5f9; }
+
+/* ── Toolbar ─────────────────────────────────────────────────── */
+#jrk .jrk-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  min-height: 24px;
+}
+#jrk .jrk-count {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+#jrk .jrk-count strong { color: var(--ink); font-weight: 600; }
+#jrk .jrk-clear {
+  background: none;
+  border: none;
+  font-size: 0.78rem;
+  color: var(--muted);
+  padding: 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.12s;
+}
+#jrk .jrk-clear:hover { color: var(--navy); }
+
+/* ── Grid ────────────────────────────────────────────────────── */
+#jrk .jrk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ── Card ────────────────────────────────────────────────────── */
+#jrk .jrk-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--rule);
+  border-radius: 8px;
+  padding: 1rem 1.1rem 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  transition: box-shadow 0.15s, transform 0.15s, border-left-color 0.15s;
+  position: relative;
+}
+#jrk .jrk-card:hover {
+  box-shadow: 0 4px 18px rgba(15,23,42,0.09);
+  transform: translateY(-2px);
+}
+
+/* Left border colour by ABDC rank */
+#jrk .jrk-card.rank-astar { border-left-color: var(--astar-border); }
+#jrk .jrk-card.rank-a     { border-left-color: var(--a-border); }
+#jrk .jrk-card.rank-b     { border-left-color: var(--b-border); }
+#jrk .jrk-card.rank-c     { border-left-color: var(--c-border); }
+
+#jrk .card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.92rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--navy);
+}
+#jrk .card-pub {
+  font-size: 0.72rem;
+  color: var(--faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#jrk .card-badges {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: 0.1rem;
+}
+#jrk .badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.18rem 0.55rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  font-family: 'IBM Plex Mono', monospace;
+  letter-spacing: 0.01em;
+  border: 1px solid;
+}
+#jrk .badge .bl {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 400;
+  font-size: 0.64rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  opacity: 0.65;
+}
+#jrk .badge.na { background:var(--snow); color:var(--faint); border-color:var(--rule); }
+
+#jrk .badge.abdc-astar { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
+#jrk .badge.abdc-a     { background:var(--a-bg);     color:var(--a-fg);     border-color:var(--a-border); }
+#jrk .badge.abdc-b     { background:var(--b-bg);     color:var(--b-fg);     border-color:var(--b-border); }
+#jrk .badge.abdc-c     { background:var(--c-bg);     color:var(--c-fg);     border-color:var(--c-border); }
+
+#jrk .badge.abs-4star  { background:var(--abs4s-bg); color:var(--abs4s-fg); border-color:var(--abs4s-border); }
+#jrk .badge.abs-4      { background:var(--abs4-bg);  color:var(--abs4-fg);  border-color:var(--abs4-border); }
+#jrk .badge.abs-3      { background:var(--abs3-bg);  color:var(--abs3-fg);  border-color:var(--abs3-border); }
+#jrk .badge.abs-2      { background:var(--abs2-bg);  color:var(--abs2-fg);  border-color:var(--abs2-border); }
+#jrk .badge.abs-1      { background:var(--abs1-bg);  color:var(--abs1-fg);  border-color:var(--abs1-border); }
+
+#jrk .badge.sq-q1      { background:var(--q1-bg);    color:var(--q1-fg);    border-color:var(--q1-border); }
+#jrk .badge.sq-q2      { background:var(--q2-bg);    color:var(--q2-fg);    border-color:var(--q2-border); }
+#jrk .badge.sq-q3      { background:var(--q3-bg);    color:var(--q3-fg);    border-color:var(--q3-border); }
+#jrk .badge.sq-q4      { background:var(--q4-bg);    color:var(--q4-fg);    border-color:var(--q4-border); }
+
+#jrk .badge.ft50-badge { background:var(--ft50-bg);  color:var(--ft50-fg);  border-color:var(--ft50-border); }
+#jrk .jrk-pill[data-ft50].on { background:var(--ft50-bg); color:var(--ft50-fg); border-color:var(--ft50-border); }
+
+#jrk .card-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.1rem;
+}
+#jrk .meta-tag {
+  font-size: 0.67rem;
+  color: var(--muted);
+  background: var(--snow);
+  border: 1px solid var(--rule);
+  padding: 0.12rem 0.45rem;
+  border-radius: 3px;
+}
+#jrk .meta-tag.year { color: #0369a1; background: #f0f9ff; border-color: #bae6fd; }
+
+/* ── Empty state ─────────────────────────────────────────────── */
+#jrk .jrk-empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+#jrk .jrk-empty p { font-size: 0.9rem; color: var(--muted); margin-top: 0.5rem; }
+
+/* ── Pagination ──────────────────────────────────────────────── */
+#jrk .jrk-pages {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+#jrk .pg {
+  min-width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 0.8rem;
+  color: var(--ink);
+  transition: all 0.12s;
+  padding: 0 0.5rem;
+}
+
+/* ── Mobile Optimization ───────────────────────────── */
+@media (max-width: 768px) {
+  #jrk { padding: 0 1rem; }
+  #jrk .jrk-header h2 { font-size: 1.3rem; }
+  #jrk .jrk-header p  { font-size: 0.75rem; }
+  #jrk .jrk-stat      { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
+  #jrk #jrk-search    { font-size: 16px; }
+  #jrk .jrk-search-wrap { position: sticky; top: 0; background: white; z-index: 20; padding-top: 8px; }
+  #jrk .jrk-filters   { padding: 0.8rem; }
+  #jrk .jrk-filter-row { gap: 0.3rem; }
+  #jrk .jrk-flabel    { width: auto; font-size: 0.65rem; }
+  #jrk .jrk-pill      { padding: 0.4rem 0.9rem; font-size: 0.8rem; }
+  #jrk .jrk-card      { padding: 0.8rem; }
+  #jrk .card-title    { font-size: 0.85rem; }
+  #jrk .card-pub      { font-size: 0.7rem; }
+  #jrk .jrk-toolbar   { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  #jrk .pg            { min-width: 30px; height: 30px; font-size: 0.75rem; }
+  #jrk .jrk-grid > * { min-width: 0; }
+  #jrk .card-badges   { flex-wrap: wrap; overflow: hidden; }
+  #jrk .badge         { max-width: 100%; white-space: nowrap; }
+}
+@media (max-width: 480px) {
+  #jrk .jrk-grid { grid-template-columns: 1fr; }
+}
+
+#jrk .pg:hover:not(:disabled):not(.on) { border-color: var(--navy); color: var(--navy); }
+#jrk .pg.on { background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 600; }
+#jrk .pg:disabled { opacity: 0.3; cursor: default; }
+#jrk .pg-dots { color: var(--faint); font-size: 0.8rem; padding: 0 2px; }
+</style>
+
+<div id="jrk">
+
+  <div class="jrk-header">
+    <div style="display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;">
+      <div>
+        <h2>Journal Rankings</h2>
+        <p>ABDC · ABS · Scopus rankings for 3,191 journals &middot; Use the filters below to explore</p>
+      </div>
+      <a href="https://pawankb13.github.io/" style="display:inline-flex;align-items:center;gap:0.35rem;padding:0.35rem 0.75rem;border:1.5px solid #e2e8f0;border-radius:6px;background:#f8fafc;color:#1e293b;font-family:'IBM Plex Sans',sans-serif;font-size:0.78rem;font-weight:500;text-decoration:none;transition:border-color 0.13s,background 0.13s;white-space:nowrap;" onmouseover="this.style.borderColor='#0f172a';this.style.background='#f1f5f9'" onmouseout="this.style.borderColor='#e2e8f0';this.style.background='#f8fafc'">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home
+      </a>
+    </div>
+  </div>
+
+  <div class="jrk-stats" id="jrk-stats">
+    <div class="jrk-stat s-total"><span class="stat-n" id="stat-total">—</span> Total</div>
+    <div class="jrk-stat s-astar"><span class="stat-n" id="stat-astar">—</span> ABDC A*</div>
+    <div class="jrk-stat s-a"><span class="stat-n" id="stat-a">—</span> ABDC A</div>
+    <div class="jrk-stat s-b"><span class="stat-n" id="stat-b">—</span> ABDC B</div>
+    <div class="jrk-stat s-c"><span class="stat-n" id="stat-c">—</span> ABDC C</div>
+    <div class="jrk-stat" style="background:var(--ft50-bg);color:var(--ft50-fg);border-color:var(--ft50-border)"><span class="stat-n" id="stat-ft50">—</span> FT50</div>
+    <div class="jrk-stat" style="background:var(--q1-bg);color:var(--q1-fg);border-color:var(--q1-border)"><span class="stat-n" id="stat-q1">—</span> Scopus Q1</div>
+  </div>
+
+  <div class="jrk-search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
+    </svg>
+    <input type="text" id="jrk-search" placeholder="Search by journal title or ISSN…" autocomplete="off" spellcheck="false">
+  </div>
+
+  <div class="jrk-filters">
+    <div class="jrk-filter-row">
+      <span class="jrk-flabel">ABDC</span>
+      <button class="jrk-pill" data-abdc="A*">A*</button>
+      <button class="jrk-pill" data-abdc="A">A</button>
+      <button class="jrk-pill" data-abdc="B">B</button>
+      <button class="jrk-pill" data-abdc="C">C</button>
+    </div>
+    <div class="jrk-filter-row">
+      <span class="jrk-flabel">ABS</span>
+      <button class="jrk-pill" data-abs="4*">4*</button>
+      <button class="jrk-pill" data-abs="4">4</button>
+      <button class="jrk-pill" data-abs="3">3</button>
+      <button class="jrk-pill" data-abs="2">2</button>
+      <button class="jrk-pill" data-abs="1">1</button>
+    </div>
+    <div class="jrk-filter-row">
+      <span class="jrk-flabel">Scopus</span>
+      <button class="jrk-pill" data-sq="Q1">Q1</button>
+      <button class="jrk-pill" data-sq="Q2">Q2</button>
+      <button class="jrk-pill" data-sq="Q3">Q3</button>
+      <button class="jrk-pill" data-sq="Q4">Q4</button>
+    </div>
+    <div class="jrk-filter-row">
+      <span class="jrk-flabel">FT50</span>
+      <button class="jrk-pill" data-ft50="1">FT50 Only</button>
+    </div>
+    <div class="jrk-filter-row">
+      <span class="jrk-flabel">Field</span>
+      <select id="jrk-for">
+        <option value="">All fields</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="jrk-toolbar">
+    <span class="jrk-count" id="jrk-count"></span>
+    <button class="jrk-clear" id="jrk-clear">Clear all filters</button>
+  </div>
+
+  <div class="jrk-grid" id="jrk-grid"></div>
+  <div class="jrk-pages" id="jrk-pages"></div>
+
+</div>
+
+<script>
+const PER = 24;
+let RAW = [], filtered = [], pg = 1;
+let selAbdc = new Set(), selAbs = new Set(), selSq = new Set();
+let selFor = '', selFt50 = false, q = '';
+
+function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+const ABDC_CLS = {'A*':'abdc-astar','A':'abdc-a','B':'abdc-b','C':'abdc-c'};
+const ABS_CLS  = {'4*':'abs-4star','4':'abs-4','3':'abs-3','2':'abs-2','1':'abs-1'};
+const SQ_CLS   = {'Q1':'sq-q1','Q2':'sq-q2','Q3':'sq-q3','Q4':'sq-q4'};
+const CARD_CLS = {'A*':'rank-astar','A':'rank-a','B':'rank-b','C':'rank-c'};
+
+function updateStats(src){
+  document.getElementById('stat-total').textContent = src.length.toLocaleString();
+  const cnt = v => src.filter(j => j.abdc === v).length;
+  document.getElementById('stat-astar').textContent = cnt('A*').toLocaleString();
+  document.getElementById('stat-a').textContent     = cnt('A').toLocaleString();
+  document.getElementById('stat-b').textContent     = cnt('B').toLocaleString();
+  document.getElementById('stat-c').textContent     = cnt('C').toLocaleString();
+  document.getElementById('stat-ft50').textContent  = src.filter(j => j.ft).length.toLocaleString();
+  document.getElementById('stat-q1').textContent    = src.filter(j => j.sq === 'Q1').length.toLocaleString();
+}
+
+function buildFieldDropdown(){
+  const labels = [...new Set(RAW.map(j => j.fl).filter(Boolean))].sort();
+  const sel = document.getElementById('jrk-for');
+  labels.forEach(label => {
+    const opt = document.createElement('option');
+    opt.value = label;
+    opt.textContent = label;
+    sel.appendChild(opt);
+  });
+}
+
+function filter(){
+  const qq = q.toLowerCase().trim();
+  filtered = RAW.filter(j => {
+    if(qq && !j.t.toLowerCase().includes(qq) && !j.issn.includes(qq)) return false;
+    if(selAbdc.size && !selAbdc.has(j.abdc)) return false;
+    if(selAbs.size  && !selAbs.has(j.abs))   return false;
+    if(selSq.size   && !selSq.has(j.sq))     return false;
+    if(selFor       && j.fl !== selFor)       return false;
+    if(selFt50      && !j.ft)                return false;
+    return true;
+  });
+  pg = 1;
+  render();
+}
+
+function render(){
+  const n = filtered.length;
+  document.getElementById('jrk-count').innerHTML =
+    `<strong>${n.toLocaleString()}</strong> journal${n!==1?'s':''} found`;
+
+  updateStats(filtered);
+
+  const slice = filtered.slice((pg-1)*PER, pg*PER);
+  const grid  = document.getElementById('jrk-grid');
+
+  if(!slice.length){
+    grid.innerHTML = '<div class="jrk-empty"><p>No journals match your search or filters.</p></div>';
+    document.getElementById('jrk-pages').innerHTML = '';
+    return;
+  }
+
+  grid.innerHTML = slice.map(j => {
+    const cc  = CARD_CLS[j.abdc] || '';
+
+    // ABDC badge
+    const abdc = ABDC_CLS[j.abdc]
+      ? `<span class="badge ${ABDC_CLS[j.abdc]}"><span class="bl">ABDC</span>${esc(j.abdc)}</span>`
+      : `<span class="badge na"><span class="bl">ABDC</span>—</span>`;
+
+    // ABS badge
+    const abs = ABS_CLS[j.abs]
+      ? `<span class="badge ${ABS_CLS[j.abs]}"><span class="bl">ABS</span>${esc(j.abs)}</span>`
+      : `<span class="badge na"><span class="bl">ABS</span>—</span>`;
+
+    // Scopus badge
+    const sq = SQ_CLS[j.sq]
+      ? `<span class="badge ${SQ_CLS[j.sq]}"><span class="bl">Scopus</span>${esc(j.sq)}</span>`
+      : `<span class="badge na"><span class="bl">Scopus</span>—</span>`;
+
+    const ft50Badge = j.ft ? `<span class="badge ft50-badge">FT50</span>` : '';
+    const fieldTag  = j.fl ? `<span class="meta-tag">${esc(j.fl)}</span>` : '';
+    const yrTag     = j.yr ? `<span class="meta-tag year">Est. ${esc(j.yr)}</span>` : '';
+    const issnTag   = j.issn ? `<span class="meta-tag">ISSN ${esc(j.issn)}</span>` : '';
+
+    return `<div class="jrk-card ${cc}">
+      <div class="card-title">${esc(j.t)}</div>
+      ${j.pub ? `<div class="card-pub">${esc(j.pub)}</div>` : ''}
+      <div class="card-badges">${abdc}${abs}${sq}${ft50Badge}</div>
+      <div class="card-meta">${fieldTag}${yrTag}${issnTag}</div>
+    </div>`;
+  }).join('');
+
+  renderPages(n);
+}
+
+function renderPages(total){
+  const totalPg = Math.ceil(total/PER);
+  const el = document.getElementById('jrk-pages');
+  if(totalPg <= 1){ el.innerHTML=''; return; }
+
+  const range = pageRange(pg, totalPg);
+  let h = `<button class="pg" onclick="goPage(${pg-1})" ${pg===1?'disabled':''}>‹</button>`;
+  range.forEach(p => {
+    if(p==='…') h += `<span class="pg-dots">…</span>`;
+    else h += `<button class="pg ${p===pg?'on':''}" onclick="goPage(${p})">${p}</button>`;
+  });
+  h += `<button class="pg" onclick="goPage(${pg+1})" ${pg===totalPg?'disabled':''}>›</button>`;
+  el.innerHTML = h;
+}
+
+function pageRange(cur, tot){
+  if(tot<=7) return Array.from({length:tot},(_,i)=>i+1);
+  const p=[1];
+  if(cur>3) p.push('…');
+  for(let i=Math.max(2,cur-1);i<=Math.min(tot-1,cur+1);i++) p.push(i);
+  if(cur<tot-2) p.push('…');
+  p.push(tot);
+  return p;
+}
+
+window.goPage = function(p){
+  pg=p; render();
+  document.getElementById('jrk').scrollIntoView({behavior:'smooth'});
+};
+
+// ── Event listeners ────────────────────────────────────────────
+document.getElementById('jrk-search').addEventListener('input', e => { q=e.target.value; filter(); });
+
+document.querySelectorAll('[data-abdc]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const v=btn.dataset.abdc;
+    selAbdc.has(v) ? (selAbdc.delete(v), btn.classList.remove('on')) : (selAbdc.add(v), btn.classList.add('on'));
+    filter();
+  });
+});
+
+document.querySelectorAll('[data-abs]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const v=btn.dataset.abs;
+    selAbs.has(v) ? (selAbs.delete(v), btn.classList.remove('on')) : (selAbs.add(v), btn.classList.add('on'));
+    filter();
+  });
+});
+
+document.querySelectorAll('[data-sq]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const v=btn.dataset.sq;
+    selSq.has(v) ? (selSq.delete(v), btn.classList.remove('on')) : (selSq.add(v), btn.classList.add('on'));
+    filter();
+  });
+});
+
+document.querySelectorAll('[data-ft50]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    selFt50 = !selFt50;
+    selFt50 ? btn.classList.add('on') : btn.classList.remove('on');
+    filter();
+  });
+});
+
+document.getElementById('jrk-for').addEventListener('change', e => {
+  selFor = e.target.value;
+  e.target.className = selFor ? 'active' : '';
+  filter();
+});
+
+document.getElementById('jrk-clear').addEventListener('click', () => {
+  q=''; selAbdc=new Set(); selAbs=new Set(); selSq=new Set(); selFor=''; selFt50=false;
+  document.getElementById('jrk-search').value='';
+  document.getElementById('jrk-for').value='';
+  document.getElementById('jrk-for').className='';
+  document.querySelectorAll('[data-abdc],[data-abs],[data-sq],[data-ft50]').forEach(b=>b.classList.remove('on'));
+  filter();
+});
+
+// ── Load data ──────────────────────────────────────────────────
+document.getElementById('jrk-grid').innerHTML =
+  '<div class="jrk-empty"><p>Loading journals…</p></div>';
+
+fetch('journals.json')
+  .then(r => { if(!r.ok) throw new Error('Failed to load'); return r.json(); })
+  .then(data => {
+    // Map new JSON field names → internal short keys
+    RAW = data.journals.map(j => ({
+      t:    j['Journal Title']   || '',
+      pub:  j['Publisher']       || '',
+      issn: j['ISSN']            || '',
+      yr:   j['Year Founded']    || '',
+      fl:   j['Field Label']     || '',
+      abdc: j['ABDC Rank']       || '',
+      abs:  j['ABS Rank']        || '',
+      sq:   j['Scopus Quantile'] || '',
+      ft:   j['FT50'] === true
+    }));
+    filtered = RAW;
+    buildFieldDropdown();
+    updateStats(RAW);
+    filter();
+  })
+  .catch(() => {
+    document.getElementById('jrk-grid').innerHTML =
+      '<div class="jrk-empty"><p>Could not load journal data. Make sure <strong>journals_database.json</strong> is in the same folder as this file.</p></div>';
+  });
+</script>
