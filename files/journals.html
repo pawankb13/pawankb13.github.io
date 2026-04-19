@@ -122,8 +122,11 @@
   color: var(--navy);
 }
 #jrk .jrk-theme-toggle:focus {
-  outline: 2px solid rgba(15,23,42,0.16);
-  outline-offset: 2px;
+  outline: none;
+}
+#jrk .jrk-theme-toggle:focus .jrk-theme-track,
+#jrk .jrk-theme-toggle:focus-visible .jrk-theme-track {
+  box-shadow: 0 0 0 3px rgba(122, 130, 136, 0.28);
 }
 #jrk .jrk-home-link svg {
   width: 13px;
@@ -137,7 +140,7 @@
   background: #cbd5e1;
   border-radius: 14px;
   flex-shrink: 0;
-  transition: background 0.25s ease;
+  transition: background 0.25s ease, box-shadow 0.2s ease;
 }
 #jrk .jrk-theme-thumb {
   position: absolute;
@@ -599,6 +602,10 @@ html.jrk-dark-mode #jrk #jrk-for.active {
 }
 html.jrk-dark-mode #jrk .jrk-theme-track {
   background: #2a2a2a;
+}
+html.jrk-dark-mode #jrk .jrk-theme-toggle:focus .jrk-theme-track,
+html.jrk-dark-mode #jrk .jrk-theme-toggle:focus-visible .jrk-theme-track {
+  box-shadow: 0 0 0 3px rgba(209, 213, 219, 0.22);
 }
 html.jrk-dark-mode #jrk .jrk-theme-thumb {
   color: #78350f;

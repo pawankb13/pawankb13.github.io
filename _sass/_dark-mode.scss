@@ -29,7 +29,17 @@
 }
 
 .theme-toggle:focus {
-  @extend %tab-focus;
+  outline: none;
+}
+
+.theme-toggle:focus .theme-toggle__track,
+.theme-toggle:focus-visible .theme-toggle__track {
+  box-shadow: 0 0 0 3px rgba(122, 130, 136, 0.28);
+}
+
+.dark-mode .theme-toggle:focus .theme-toggle__track,
+.dark-mode .theme-toggle:focus-visible .theme-toggle__track {
+  box-shadow: 0 0 0 3px rgba(209, 213, 219, 0.22);
 }
 
 .theme-toggle__track {
@@ -38,7 +48,7 @@
   height: 28px;
   background: #cbd5e1;
   border-radius: 14px;
-  transition: background 0.3s;
+  transition: background 0.3s, box-shadow 0.2s;
   flex-shrink: 0;
 }
 
