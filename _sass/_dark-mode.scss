@@ -26,10 +26,14 @@
   background: transparent;
   cursor: pointer;
   vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.theme-toggle:focus {
-  outline: none;
+.theme-toggle:focus,
+.theme-toggle:focus-visible,
+.theme-toggle:active {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .theme-toggle:focus .theme-toggle__track,
