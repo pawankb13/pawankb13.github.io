@@ -89,8 +89,7 @@
   margin: 0;
   letter-spacing: 0.01em;
 }
-#jrk .jrk-home-link,
-#jrk .jrk-theme-toggle {
+#jrk .jrk-home-link {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -106,17 +105,18 @@
   text-decoration: none;
   transition: border-color 0.13s, background 0.13s, color 0.13s;
   white-space: nowrap;
-}
-#jrk .jrk-home-link {
   padding: 0.35rem 0.75rem;
 }
 #jrk .jrk-theme-toggle {
-  width: 2.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
 }
-#jrk .jrk-home-link:hover,
-#jrk .jrk-theme-toggle:hover,
-#jrk .jrk-theme-toggle:focus {
+#jrk .jrk-home-link:hover {
   border-color: var(--navy);
   background: var(--white);
   color: var(--navy);
@@ -125,10 +125,38 @@
   outline: 2px solid rgba(15,23,42,0.16);
   outline-offset: 2px;
 }
-#jrk .jrk-home-link svg,
-#jrk .jrk-theme-toggle svg {
+#jrk .jrk-home-link svg {
   width: 13px;
   height: 13px;
+  flex-shrink: 0;
+}
+#jrk .jrk-theme-track {
+  position: relative;
+  width: 50px;
+  height: 28px;
+  background: #cbd5e1;
+  border-radius: 14px;
+  flex-shrink: 0;
+  transition: background 0.25s ease;
+}
+#jrk .jrk-theme-thumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: #4b5563;
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+#jrk .jrk-theme-thumb svg {
+  width: 12px;
+  height: 12px;
   flex-shrink: 0;
 }
 #jrk .jrk-theme-toggle .jrk-icon-sun {
@@ -541,16 +569,16 @@ html.jrk-dark-mode {
   color-scheme: dark;
 }
 html.jrk-dark-mode body {
-  background: #0f172a;
+  background: #141414;
 }
 html.jrk-dark-mode #jrk {
   --navy:   #e2e8f0;
   --ink:    #cbd5e1;
   --muted:  #94a3b8;
   --faint:  #64748b;
-  --rule:   #334155;
-  --snow:   #1e293b;
-  --white:  #0f172a;
+  --rule:   #2a2a2a;
+  --snow:   #1f1f1f;
+  --white:  #141414;
 
   color: var(--ink);
 }
@@ -562,12 +590,20 @@ html.jrk-dark-mode #jrk .jrk-card:hover {
 }
 html.jrk-dark-mode #jrk .meta-tag.year {
   color: #7dd3fc;
-  background: #0c2340;
-  border-color: #1e4a7a;
+  background: #161f24;
+  border-color: #284554;
 }
 html.jrk-dark-mode #jrk #jrk-for.active {
-  background: #1e293b;
+  background: #1f1f1f;
   color: var(--navy);
+}
+html.jrk-dark-mode #jrk .jrk-theme-track {
+  background: #2a2a2a;
+}
+html.jrk-dark-mode #jrk .jrk-theme-thumb {
+  color: #78350f;
+  background: #fbbf24;
+  transform: translateX(22px);
 }
 html.jrk-dark-mode #jrk .jrk-theme-toggle .jrk-icon-moon {
   display: none;
@@ -586,9 +622,13 @@ html.jrk-dark-mode #jrk .jrk-theme-toggle .jrk-icon-sun {
         <p>ABDC · ABS · Scopus rankings for 3,191 journals &middot; Use the filters below to explore</p>
       </div>
       <div class="jrk-header-actions">
-        <button class="jrk-theme-toggle" id="jrk-theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false" title="Switch to dark mode">
-          <svg class="jrk-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>
-          <svg class="jrk-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <button class="jrk-theme-toggle" id="jrk-theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span class="jrk-theme-track">
+            <span class="jrk-theme-thumb">
+              <svg class="jrk-icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"/></svg>
+              <svg class="jrk-icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+            </span>
+          </span>
         </button>
         <a class="jrk-home-link" href="https://pawankb13.github.io/">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
@@ -693,7 +733,7 @@ const themeRoot = document.documentElement;
 function setThemeToggleState(){
   if(!themeToggle) return;
   const isDark = themeRoot.classList.contains('jrk-dark-mode');
-  themeToggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+  themeToggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
   themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   themeToggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
 }
