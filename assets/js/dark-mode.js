@@ -39,7 +39,7 @@
       return;
     }
 
-    toggle.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+    toggle.setAttribute('aria-checked', isDark ? 'true' : 'false');
     toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
     toggle.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
   }
