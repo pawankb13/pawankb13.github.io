@@ -268,3 +268,48 @@ html.dark-mode {
 .dark-mode .page__content a:hover img {
   box-shadow: 0 0 10px rgba(#000, 0.45);
 }
+
+.dark-mode input,
+.dark-mode textarea,
+.dark-mode select {
+  color: #d1d5db;
+  background-color: #1f2937;
+  border-color: #374151;
+  box-shadow: none;
+}
+
+.dark-mode input:hover,
+.dark-mode textarea:hover,
+.dark-mode select:hover {
+  border-color: #4b5563;
+}
+
+.dark-mode input::placeholder,
+.dark-mode textarea::placeholder {
+  color: #6b7280;
+}
+
+.dark-mode .notice {
+  background-color: #1f2937;
+  color: #d1d5db;
+}
+
+.dark-mode .notice--primary {
+  background-color: mix(#1f2937, $primary-color, 80%);
+}
+
+.dark-mode .notice--info {
+  background-color: mix(#1f2937, $info-color, 80%);
+}
+
+.dark-mode .notice--warning {
+  background-color: mix(#1f2937, $warning-color, 80%);
+}
+
+.dark-mode .notice--success {
+  background-color: mix(#1f2937, $success-color, 80%);
+}
+
+.dark-mode .notice--danger {
+  background-color: mix(#1f2937, $danger-color, 80%);
+}

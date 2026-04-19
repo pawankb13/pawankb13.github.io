@@ -429,7 +429,7 @@
   #jrk .jrk-header p  { font-size: 0.75rem; }
   #jrk .jrk-stat      { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
   #jrk #jrk-search    { font-size: 16px; }
-  #jrk .jrk-search-wrap { position: sticky; top: 0; background: white; z-index: 20; padding-top: 8px; }
+  #jrk .jrk-search-wrap { position: sticky; top: 0; background: var(--white); z-index: 20; padding-top: 8px; }
   #jrk .jrk-filters   { padding: 0.8rem; }
   #jrk .jrk-filter-row { gap: 0.3rem; }
   #jrk .jrk-flabel    { width: auto; font-size: 0.65rem; }
@@ -466,6 +466,35 @@
 #jrk .pg.on { background: var(--navy); border-color: var(--navy); color: #fff; font-weight: 600; }
 #jrk .pg:disabled { opacity: 0.3; cursor: default; }
 #jrk .pg-dots { color: var(--faint); font-size: 0.8rem; padding: 0 2px; }
+
+/* ── Dark mode ───────────────────────────────────────────────── */
+@media (prefers-color-scheme: dark) {
+  body { background: #0f172a; }
+
+  #jrk {
+    --navy:   #e2e8f0;
+    --ink:    #cbd5e1;
+    --muted:  #94a3b8;
+    --faint:  #64748b;
+    --rule:   #334155;
+    --snow:   #1e293b;
+    --white:  #0f172a;
+
+    color: var(--ink);
+  }
+
+  #jrk #jrk-search {
+    color: var(--ink);
+  }
+
+  #jrk .jrk-card:hover {
+    box-shadow: 0 4px 18px rgba(0,0,0,0.45);
+  }
+
+  #jrk .meta-tag.year { color: #7dd3fc; background: #0c2340; border-color: #1e4a7a; }
+
+  #jrk #jrk-for.active { background: #1e293b; color: var(--navy); }
+}
 </style>
 
 <div id="jrk">
