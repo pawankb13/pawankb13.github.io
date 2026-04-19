@@ -13,6 +13,15 @@
 
 <script>
   document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+  (function() {
+    try {
+      var storedTheme = localStorage.getItem('theme');
+      var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (storedTheme === 'dark' || (!storedTheme && prefersDark)) {
+        document.documentElement.className += ' dark-mode';
+      }
+    } catch (error) {}
+  })();
 </script>
 
 <!-- For all browsers -->
