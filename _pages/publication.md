@@ -11,7 +11,7 @@ author_profile: false
 <span style="color: red">[Category: ABDC - B, ABS - 2, Scopus - Q3]</span>
 
 ### 2025
-- Kamble, P.A., Mehta, A. & Rani, N (2025). Building Financial Resilience: A Systematic Literature Review and Future Research Agenda. Journal of Economic Surveys. 1-28. [https://doi.org/10.1111/joes.70024](https://doi.org/10.1111/joes.70024) \
+- Kamble, P.A., Mehta, A. & Rani, N (2025). Building Financial Resilience: A Systematic Literature Review and Future Research Agenda. Journal of Economic Surveys. 40(2), 954-981. [https://doi.org/10.1111/joes.70024](https://doi.org/10.1111/joes.70024) \
 <span style="color: red">[Category: ABDC - A, ABS - 2, Scopus - Q1]</span>
 
 ### 2024
