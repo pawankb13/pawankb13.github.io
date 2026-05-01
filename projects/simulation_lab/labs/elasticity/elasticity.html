@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elasticity Market Lab</title>
+  <style>
+    :root {
+      --ink: #17212b;
+      --muted: #5e6a72;
+      --line: #d8e0df;
+      --paper: #ffffff;
+      --wash: #f2f6f4;
+      --teal: #0f766e;
+      --teal-dark: #0b4f4a;
+      --gold: #f2b84b;
+      --red: #c94b4b;
+      --blue: #356f9f;
+      --green: #16a34a;
+      --orange: #ea580c;
+      --shadow: 0 16px 42px rgba(23,33,43,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, rgba(15,118,110,0.12), rgba(242,246,244,0) 260px), var(--wash);
+    }
+    button, input, select { font: inherit; }
+    button { border: 0; cursor: pointer; }
+    h1, h2, h3, p { margin-top: 0; }
+
+    .shell { width: min(1200px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 44px; }
+
+    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-bottom: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .top-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: flex-end; }
+    .logo { display: grid; width: 44px; height: 44px; place-items: center; border-radius: 8px; color: #fff; background: var(--teal); font-size: 24px; font-weight: 800; }
+    h1 { margin-bottom: 3px; font-size: clamp(22px, 3.5vw, 38px); line-height: 1.08; }
+    .subtitle { margin-bottom: 0; color: var(--muted); font-size: 14px; }
+
+    .layout { display: grid; grid-template-columns: minmax(280px, 340px) minmax(0,1fr); gap: 20px; align-items: start; }
+
+    .card { border: 1px solid var(--line); border-radius: 8px; background: var(--paper); box-shadow: var(--shadow); }
+    .card-body { padding: 18px; }
+    .control-stack { display: grid; gap: 14px; }
+
+    .label-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 7px; }
+    label, .label { color: #26323d; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .4px; }
+
+    select, input[type="number"] { width: 100%; min-height: 40px; border: 1px solid var(--line); border-radius: 6px; padding: 8px 10px; color: var(--ink); background: #fff; }
+    input[type="range"] { width: 100%; accent-color: var(--teal); }
+
+    .price-line { display: grid; grid-template-columns: 1fr 88px; gap: 10px; align-items: center; }
+
+    .pill { display: inline-flex; align-items: center; justify-content: center; min-height: 26px; padding: 4px 10px; border-radius: 999px; color: var(--teal-dark); background: #dff3ef; font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .pill.danger { color: #7f1d1d; background: #fee2e2; }
+    .pill.warning { color: #78350f; background: #fef3c7; }
+    .pill.info { color: var(--blue); background: #dbeafe; }
+    .pill.success { color: #14532d; background: #dcfce7; }
+
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; border-radius: 6px; padding: 9px 16px; color: #fff; background: var(--teal); font-weight: 800; font-size: 14px; transition: transform 120ms ease, background 120ms ease, opacity 120ms ease; }
+    .btn:hover { transform: translateY(-1px); background: var(--teal-dark); }
+    .btn:disabled { cursor: not-allowed; opacity: .5; transform: none; }
+    .btn.secondary { color: var(--teal-dark); background: #dff3ef; }
+    .btn.secondary:hover { background: #cdebe5; }
+    .btn.sm { min-height: 34px; padding: 6px 12px; font-size: 13px; }
+
+    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .good-profile { display: grid; gap: 8px; padding: 12px; border-radius: 8px; background: #f7faf9; border: 1px solid var(--line); }
+    .profile-row { display: flex; justify-content: space-between; gap: 12px; color: var(--muted); font-size: 13px; }
+    .profile-row strong { color: var(--ink); text-align: right; max-width: 55%; }
+
+    /* Inventory */
+    .inv-section { padding: 12px; border-radius: 8px; background: #f7faf9; border: 1px solid var(--line); display: grid; gap: 10px; }
+    .inv-header { display: flex; align-items: center; justify-content: space-between; }
+    .stock-bar-wrap { height: 8px; border-radius: 999px; background: var(--line); overflow: hidden; }
+    .stock-bar { height: 100%; border-radius: inherit; background: var(--green); transition: width 280ms ease, background 280ms ease; }
+    .stock-bar.med { background: var(--gold); }
+    .stock-bar.low { background: var(--red); }
+    .inv-row { display: flex; justify-content: space-between; align-items: center; font-size: 13px; }
+    .inv-row span { color: var(--muted); }
+    .inv-row strong.danger { color: var(--red); }
+    .inv-row strong.warn { color: var(--orange); }
+    .pending-box { font-size: 12px; color: #92400e; padding: 7px 9px; border-radius: 6px; background: #fffbeb; border: 1px solid #fde68a; line-height: 1.6; }
+    .restock-grid { display: grid; grid-template-columns: 1fr auto; gap: 8px; align-items: center; }
+    .cost-hint { font-size: 12px; color: var(--muted); margin: 0; }
+
+    /* Main stage */
+    .main-stage { display: grid; gap: 18px; }
+    .status-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+    .stat { min-width: 0; padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+    .stat span { display: block; color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .3px; }
+    .stat strong { display: block; min-width: 0; margin-top: 5px; font-size: clamp(15px, 1.8vw, 22px); line-height: 1.08; overflow-wrap: anywhere; }
+    .stat.danger { border-color: #fca5a5; background: #fef2f2; }
+    .stat.danger strong { color: var(--red); }
+    .stat.success { border-color: #86efac; background: #f0fdf4; }
+    .stat.success strong { color: var(--green); }
+    .selected-item-card { overflow: hidden; gap: 0; padding: 0; background: #fff; }
+    .selected-item-card .profile-details { display: grid; gap: 8px; padding: 12px; background: #f7faf9; }
+    .day-cycle { --sun-x: 8%; --sun-y: 16%; --sky-top: #f7b267; --sky-bottom: #ffe5a8; position: relative; min-height: 118px; overflow: hidden; border-radius: 8px 8px 0 0; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, var(--sky-top), var(--sky-bottom)); transition: background 180ms linear; }
+    .day-cycle::before { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(180deg, rgba(255,255,255,.38), rgba(255,255,255,.08) 55%, rgba(15,118,110,.24)); }
+    .day-cycle::after { content: ""; position: absolute; left: -8%; right: -8%; bottom: -28px; height: 62px; border-radius: 50% 50% 0 0; background: linear-gradient(180deg, rgba(15,118,110,.84), #0b4f4a); z-index: 4; }
+    .day-cycle-head { position: relative; z-index: 6; display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 10px 0; }
+    .day-cycle-head .label { color: rgba(255,255,255,.85); }
+    .day-cycle-head #dayProgressText { color: #fff; font-size: 12px; font-weight: 800; white-space: nowrap; }
+    .day-cycle-meta { display: inline-flex; align-items: center; gap: 8px; }
+    .day-cycle-sun { position: absolute; z-index: 2; left: var(--sun-x); bottom: var(--sun-y); width: 34px; height: 34px; border-radius: 50%; background: radial-gradient(circle, #fff7b1 0 26%, #facc15 27% 64%, #f59e0b 65%); box-shadow: 0 0 28px rgba(250,204,21,.65); transform: translate(-50%, 50%); transition: left 120ms linear, bottom 120ms linear, box-shadow 180ms linear; }
+    .day-cycle-cloud { position: absolute; z-index: 1; width: 58px; height: 18px; border-radius: 999px; background: rgba(255,255,255,.74); box-shadow: 18px -8px 0 2px rgba(255,255,255,.62), 34px 0 0 rgba(255,255,255,.52); animation: drift 12s linear infinite; }
+    .day-cycle-cloud.one { top: 52px; left: 12%; }
+    .day-cycle-cloud.two { top: 70px; left: 54%; width: 44px; opacity: .72; animation-duration: 16s; animation-delay: -5s; }
+    @keyframes drift { 50% { transform: translateX(18px); } }
+    .market { display: grid; grid-template-columns: minmax(0,1fr) minmax(250px, 290px); gap: 14px; align-items: stretch; }
+
+    .storefront { position: relative; min-height: 210px; overflow: hidden; border-radius: 8px;
+      background: linear-gradient(180deg, rgba(255,255,255,.16), rgba(255,255,255,0)), linear-gradient(145deg, #16343f, #256b6c 50%, #e7b75a);
+      color: #fff; }
+    .store-copy { position: relative; z-index: 1; padding: 18px 20px; }
+    .store-copy h2 { margin-bottom: 6px; font-size: clamp(22px, 3.7vw, 40px); line-height: 1.02; }
+    .store-copy p { max-width: 420px; color: rgba(255,255,255,.88); font-size: 14px; }
+    .demand-meter { margin-top: 16px; max-width: 360px; }
+    .demand-meter .label, .demand-meter #demandPct { color: #fff; }
+    .meter-track { height: 14px; overflow: hidden; border-radius: 999px; background: rgba(255,255,255,.28); }
+    .meter-fill { width: 60%; height: 100%; border-radius: inherit; background: var(--gold); transition: width 220ms ease; }
+
+    .sold-out-overlay { display: none; position: absolute; inset: 0; z-index: 8; align-items: center; justify-content: center; background: rgba(23,33,43,.65); backdrop-filter: blur(3px); }
+    .sold-out-overlay.on { display: flex; }
+    .sold-out-badge { padding: 14px 28px; border-radius: 8px; background: var(--red); font-size: 22px; font-weight: 800; letter-spacing: 1px; }
+
+    .customers { position: absolute; right: 14px; bottom: 12px; display: grid; grid-template-columns: repeat(4,30px); gap: 7px; opacity: .96; }
+    .person { width: 30px; height: 40px; background: url("graphics/icon.png") center / contain no-repeat; animation: bob 1.8s ease-in-out infinite; filter: drop-shadow(0 2px 2px rgba(23,33,43,.22)); }
+    .person:nth-child(2n) { animation-delay: 250ms; }
+    .person:nth-child(3n) { animation-delay: 520ms; }
+    @keyframes bob { 50% { transform: translateY(-6px); } }
+
+    .event-card { display: flex; min-height: 100%; flex-direction: column; justify-content: space-between; border-left: 5px solid var(--gold); }
+    .event-card h3 { margin-bottom: 6px; font-size: 18px; }
+    .event-card p { color: var(--muted); font-size: 14px; margin-bottom: 0; }
+    .event-card.shock { border-left-color: var(--red); }
+    .event-card.positive { border-left-color: var(--green); }
+
+    /* Chart */
+    .chart-empty { height: 140px; display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 14px; border: 1px dashed var(--line); border-radius: 8px; }
+    .chart-legend { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 10px; font-size: 12px; color: var(--muted); }
+    .leg { display: flex; align-items: center; gap: 5px; }
+    .leg-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+    .leg-line { width: 16px; height: 2px; border-top: 2.5px dashed; flex-shrink: 0; }
+
+    /* Table */
+    .table-wrap { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; min-width: 820px; font-size: 13px; }
+    th, td { padding: 9px 9px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+    th { color: #2c3a43; background: #f7faf9; font-size: 11px; text-transform: uppercase; letter-spacing: .3px; }
+    tr.cur { background: #fff7e3; }
+    .tag { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 11px; font-weight: 800; margin-right: 3px; }
+    .tag.stockout { background: #fee2e2; color: var(--red); }
+    .tag.spoil { background: #fef3c7; color: #92400e; }
+    .tag.arrived { background: #dcfce7; color: #14532d; }
+    .tag.event { background: #dbeafe; color: var(--blue); }
+
+    /* Elasticity */
+    .formula { display: grid; gap: 14px; }
+    .formula-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 10px; }
+    .formula-box { padding: 12px; border: 1px solid var(--line); border-radius: 8px; background: #f7faf9; }
+    .formula-box span { display: block; color: var(--muted); font-size: 11px; font-weight: 800; text-transform: uppercase; }
+    .formula-box strong { display: block; margin-top: 4px; font-size: 20px; }
+
+    .result-banner { display: none; padding: 14px; border-radius: 8px; background: #e8f3ff; border: 1px solid #b8d7f4; font-size: 14px; line-height: 1.6; }
+    .result-banner.on { display: block; }
+    .result-banner strong { color: var(--blue); }
+
+    .hint { margin: 0; color: var(--muted); font-size: 13px; }
+
+    .toast { position: fixed; right: 18px; bottom: 18px; max-width: 320px; padding: 12px 15px; border-radius: 8px; color: #fff; background: var(--teal-dark); box-shadow: var(--shadow); transform: translateY(16px); opacity: 0; pointer-events: none; transition: opacity 160ms, transform 160ms; font-size: 14px; z-index: 100; }
+    .toast.on { transform: translateY(0); opacity: 1; }
+
+    @media (max-width: 1060px) { .status-grid { grid-template-columns: repeat(3,minmax(0,1fr)); } }
+    @media (max-width: 940px) { .layout, .market { grid-template-columns: 1fr; } .formula-grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 620px) {
+      .shell { width: calc(100% - 20px); padding-top: 14px; }
+      .topbar, .actions { flex-direction: column; grid-template-columns: 1fr; }
+      .top-actions { width: 100%; justify-content: stretch; }
+      .top-actions .btn { flex: 1; }
+      .status-grid, .formula-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .store-copy { padding: 16px 18px; }
+    }
+
+    /* ── Enhanced day-cycle ─────────────────────────────────────────────── */
+    .day-stars { position:absolute; inset:0; z-index:0; pointer-events:none; opacity:0; transition:opacity 1.4s ease; }
+    .day-stars.vis { opacity:1; }
+    .star { position:absolute; border-radius:50%; background:#ddeeff; opacity:0;
+            animation:twinkle var(--d,2.2s) ease-in-out var(--dl,0s) infinite; }
+    @keyframes twinkle { 0%,100%{opacity:.12;transform:scale(1)} 50%{opacity:.95;transform:scale(1.7)} }
+    .day-moon { position:absolute; z-index:1; right:20%; top:16%; width:20px; height:20px; border-radius:50%;
+                background:radial-gradient(circle at 36% 36%,#f6f2e0,#c8b878);
+                box-shadow:0 0 11px rgba(210,200,140,.45); opacity:0; transition:opacity 1.1s ease; }
+    .day-moon.vis { opacity:.9; }
+    .day-burst { position:absolute; inset:0; z-index:8; pointer-events:none; border-radius:8px 8px 0 0; }
+    .day-burst.sunrise { animation:sunrise-burst 700ms ease-out forwards; }
+    .day-burst.sunset  { animation:sunset-burst 1100ms ease-out forwards; }
+    @keyframes sunrise-burst { 0%{background:rgba(255,215,110,.55)} 100%{background:rgba(255,215,110,0)} }
+    @keyframes sunset-burst  { 0%{background:rgba(255,90,30,0)} 42%{background:rgba(255,90,30,.26)} 100%{background:rgba(55,10,38,.18)} }
+    .day-progress-track { position:absolute; bottom:0; left:0; right:0; height:3px; background:rgba(0,0,0,.18); z-index:7; }
+    .day-progress-fill  { height:100%; width:0%; background:linear-gradient(90deg,#facc15,#fb923c); transition:width 200ms linear; }
+    .day-cycle-sun { transition:left 220ms linear, bottom 220ms linear, background 500ms ease, box-shadow 500ms ease !important; }
+
+    /* ── Storefront out-of-stock tint ── */
+    .storefront { transition:background 800ms ease; }
+    .storefront.oos { background: linear-gradient(180deg,rgba(201,75,75,.14),rgba(201,75,75,0)),
+                      linear-gradient(145deg,#2a1010,#6b1818 50%,#b02828) !important; }
+
+    /* ── Sold-out overlay ── */
+    .sold-out-overlay.on { animation:oo-throb 2.6s ease-in-out infinite; }
+    @keyframes oo-throb { 0%,100%{background:rgba(23,33,43,.62)} 50%{background:rgba(23,33,43,.82)} }
+    .sold-out-badge { animation:badge-float 1.8s ease-in-out infinite;
+                      box-shadow:0 4px 22px rgba(201,75,75,.55); }
+    @keyframes badge-float { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-5px) scale(1.05)} }
+
+    /* ── Run Day button ready glow ── */
+    #runDayBtn:not(:disabled) { animation:run-ready 2.8s ease-in-out infinite; }
+    @keyframes run-ready { 0%,100%{box-shadow:0 2px 8px rgba(15,118,110,.28)} 52%{box-shadow:0 4px 20px rgba(15,118,110,.58)} }
+
+    /* ── Stat value pop ── */
+    @keyframes stat-pop  { 0%{transform:scale(1.2);color:var(--teal)} 100%{transform:scale(1);color:inherit} }
+    @keyframes stat-popd { 0%{transform:scale(1.2);color:var(--red)}  100%{transform:scale(1);color:inherit} }
+    .stat strong.pop        { animation:stat-pop  380ms ease-out; }
+    .stat.danger strong.pop { animation:stat-popd 380ms ease-out; }
+
+    /* ── Demand meter gradient ── */
+    .meter-fill { background:linear-gradient(90deg,#22c55e,#f2b84b 55%,#ea580c) !important;
+                  transition:width 280ms ease; }
+
+    /* ── Event card body slide ── */
+    .ev-animate { animation:ev-slide 240ms ease-out; }
+    @keyframes ev-slide { from{opacity:.25;transform:translateY(9px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── Formula boxes ── */
+    .formula-box { transition:background 350ms ease, border-color 350ms ease; }
+    .formula-box.lit { background:#e8f3ff; border-color:#b8d7f4; }
+  </style>
+</head>
+<body>
+<audio id="musicSample" src="sounds/1.wav" loop preload="auto"></audio>
+<div class="shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo" aria-hidden="true">$</div>
+      <div>
+        <h1>Elasticity Market Lab</h1>
+        <p class="subtitle">Run a business for 15 days · manage stock · discover price elasticity</p>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button class="btn secondary" id="musicBtn" type="button">Music Off</button>
+      <button class="btn secondary" id="newGameBtn" type="button">New Scenario</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="card">
+      <div class="card-body control-stack">
+
+        <div>
+          <div class="label-row">
+            <label for="goodSelect">Choose a business</label>
+            <span class="pill" id="elasticityTag">Infer from data</span>
+          </div>
+          <select id="goodSelect">
+            <option value="coffee">Coffee Cart</option>
+            <option value="medicine">Basic Medicine</option>
+            <option value="movie">Movie Tickets</option>
+            <option value="rice">Rice Bags</option>
+            <option value="water">Bottled Water Stand</option>
+            <option value="smartphoneCase">Phone Cases</option>
+            <option value="busRide">Bus Ride Passes</option>
+            <option value="restaurant">Restaurant Meals</option>
+            <option value="textbook">Textbooks</option>
+            <option value="gasoline">Gasoline</option>
+            <option value="iceCream">Ice Cream Stall</option>
+            <option value="salt">Salt Packets</option>
+          </select>
+        </div>
+
+        <div class="good-profile selected-item-card" id="goodProfile">
+          <div class="day-cycle" id="dayCycle" aria-label="Day cycle">
+            <div class="day-stars" id="dayStars" aria-hidden="true"></div>
+            <div class="day-moon"  id="dayMoon"  aria-hidden="true"></div>
+            <div class="day-burst" id="dayBurst" aria-hidden="true"></div>
+            <div class="day-cycle-head">
+              <span class="label">Day cycle</span>
+              <span class="day-cycle-meta">
+                <span id="dayProgressText">Ready</span>
+                <button class="btn sm secondary" id="skipDayBtn" type="button" disabled>Skip</button>
+              </span>
+            </div>
+            <span class="day-cycle-sun" id="dayCycleSun" aria-hidden="true"></span>
+            <span class="day-cycle-cloud one" aria-hidden="true"></span>
+            <span class="day-cycle-cloud two" aria-hidden="true"></span>
+            <div class="day-progress-track" aria-hidden="true">
+              <div class="day-progress-fill" id="dayProgressFill"></div>
+            </div>
+          </div>
+          <div class="profile-details" id="goodProfileDetails"></div>
+        </div>
+
+        <div>
+          <div class="label-row">
+            <label for="priceSlider">Today's price</label>
+            <span class="pill" id="priceReadout">$5.00</span>
+          </div>
+          <div class="price-line">
+            <input id="priceSlider" type="range" min="1" max="20" step="0.25" value="5">
+            <input id="priceInput"  type="number" min="1" max="20" step="0.25" value="5">
+          </div>
+          <p class="hint" style="margin-top:6px">Lower prices raise demand but deplete stock faster.</p>
+        </div>
+
+        <!-- Inventory panel -->
+        <div class="inv-section">
+          <div class="inv-header">
+            <span class="label">Inventory</span>
+            <span class="pill" id="stockPill">-- units</span>
+          </div>
+          <div class="stock-bar-wrap"><div class="stock-bar" id="stockBar" style="width:100%"></div></div>
+          <div class="inv-row" id="perishRow" style="display:none"><span style="color:var(--orange)">⚠ Perishable — unsold stock spoils daily</span></div>
+          <div>
+            <div class="label-row" style="margin-bottom:5px">
+              <span class="label">Restock</span>
+              <span class="pill info" id="leadPill">-- lead</span>
+            </div>
+            <div class="restock-grid">
+              <input id="restockQty" type="number" min="0" step="10" placeholder="Units to order" value="0">
+              <button class="btn sm secondary" id="orderBtn" type="button">Order</button>
+            </div>
+            <p class="cost-hint" id="costHint" style="margin-top:5px">Cost: $0.00</p>
+            <div class="pending-box" id="pendingWrap" style="display:none">
+              <strong>Pending orders</strong><br>
+              <span id="pendingList"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button class="btn" id="runDayBtn" type="button">▶ Run Day</button>
+          <button class="btn secondary" id="calcBtn" type="button" disabled>Calculate</button>
+        </div>
+
+      </div>
+    </aside>
+
+    <main class="main-stage">
+
+      <section class="status-grid" aria-label="Business status">
+        <div class="stat"><span>Day</span><strong id="sDay">1 / 15</strong></div>
+        <div class="stat"><span>Units Sold</span><strong id="sSold">--</strong></div>
+        <div class="stat"><span>Units Unsold</span><strong id="sUnsold">--</strong></div>
+        <div class="stat"><span>Today Revenue</span><strong id="sRev">$0</strong></div>
+        <div class="stat"><span>Total Revenue</span><strong id="sTotal">$0</strong></div>
+        <div class="stat" id="sProfitBox"><span>Profit</span><strong id="sProfit">$0</strong></div>
+        <div class="stat" id="sTodayLostBox"><span>Today's Lost Sales</span><strong id="sTodayLost">0</strong></div>
+        <div class="stat" id="sLostBox"><span>Lost Sales</span><strong id="sLost">0</strong></div>
+      </section>
+
+      <section class="market">
+        <div class="storefront">
+          <div class="store-copy">
+            <h2 id="storeName">Coffee Cart</h2>
+            <p  id="storeStory">Students stop by before class.</p>
+            <div class="demand-meter">
+              <div class="label-row">
+                <span class="label">Demand strength</span>
+                <span id="demandPct">60%</span>
+              </div>
+              <div class="meter-track"><div class="meter-fill" id="meterFill"></div></div>
+            </div>
+          </div>
+          <div class="sold-out-overlay" id="soldOutOverlay"><div class="sold-out-badge">📦 OUT OF STOCK</div></div>
+          <div class="customers" aria-hidden="true" id="customers"></div>
+        </div>
+
+        <aside class="card event-card" id="eventCard">
+          <div class="card-body">
+            <span class="pill" id="evLabel">Market Setup</span>
+            <h3 id="evTitle" style="margin-top:8px">Choose a price</h3>
+            <p  id="evText">Set your price and run each day. Watch stock levels — if you run out, customers walk away. Order restocks before you go dry.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="card">
+        <div class="card-body">
+          <div class="label-row">
+            <h2 style="margin-bottom:0">Performance Chart</h2>
+            <div class="chart-legend">
+              <span class="leg"><span class="leg-dot" style="background:#0f766e"></span>Sold</span>
+              <span class="leg"><span class="leg-line" style="border-color:#f2b84b"></span>Price</span>
+              <span class="leg"><span class="leg-dot" style="background:#c94b4b"></span>Stockout day</span>
+            </div>
+          </div>
+          <div class="chart-wrap" id="chartWrap">
+            <div class="chart-empty" id="chartEmpty">Run day 1 to see the performance chart.</div>
+            <div id="chartInner"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-body">
+          <div class="label-row">
+            <h2>Revenue Log</h2>
+            <span class="pill" id="daysLeft">15 days left</span>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead><tr>
+                <th>Day</th><th>Price</th><th>Stock</th><th>Demand</th>
+                <th>Sold</th><th>Lost</th><th>Spoil</th><th>Revenue</th><th>Note</th>
+              </tr></thead>
+              <tbody id="logBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-body formula">
+          <div>
+            <h2>Final Elasticity Check</h2>
+            <p class="hint">After day 15, compare day 1 vs day 15 using the midpoint formula.</p>
+          </div>
+          <div class="formula-grid">
+            <div class="formula-box"><span>% Δ Quantity</span><strong id="fQ">--</strong></div>
+            <div class="formula-box"><span>% Δ Price</span><strong id="fP">--</strong></div>
+            <div class="formula-box"><span>PED</span><strong id="fE">--</strong></div>
+            <div class="formula-box"><span>Good type</span><strong id="fT">--</strong></div>
+          </div>
+          <div class="result-banner" id="resultBanner"></div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const SIM_DAYS   = 15;
+const DAY_MS     = 15000;
+const DAY_START_MIN = 9 * 60;
+const DAY_END_MIN   = 17 * 60;
+
+const GOODS = {
+  coffee: {
+    name:"Coffee Cart", nature:"Elastic", type:"Campus drink",
+    basePrice:5, baseQty:100, elas:1.35, minP:2, maxP:10,
+    cost:1.50, initStock:240, leadTime:1, maxOrder:600,
+    perishable:true, spoilRate:0.08,
+    story:"Students stop by before class. Many substitutes exist so buyers notice price changes quickly.",
+    context:"Customers can switch to tea, juice, vending machines, or nearby cafes."
+  },
+  medicine: {
+    name:"Basic Medicine", nature:"Inelastic", type:"Health product",
+    basePrice:8, baseQty:70, elas:0.35, minP:3, maxP:18,
+    cost:2.50, initStock:170, leadTime:2, maxOrder:400,
+    perishable:false,
+    story:"People need it regardless of price, so quantity barely moves.",
+    context:"Need-based demand stays stable, though extreme prices affect some buyers."
+  },
+  movie: {
+    name:"Movie Tickets", nature:"Elastic", type:"Entertainment",
+    basePrice:12, baseQty:80, elas:1.6, minP:5, maxP:24,
+    cost:4.00, initStock:200, leadTime:1, maxOrder:500,
+    perishable:false,
+    story:"Customers can switch to streaming, games, or other entertainment if tickets feel pricey.",
+    context:"People delay the purchase or choose other leisure when prices rise."
+  },
+  rice: {
+    name:"Rice Bags", nature:"Inelastic", type:"Staple food",
+    basePrice:15, baseQty:90, elas:0.48, minP:7, maxP:28,
+    cost:5.00, initStock:220, leadTime:2, maxOrder:500,
+    perishable:false,
+    story:"Households need staples regardless of price, though very high prices trim purchases.",
+    context:"Families may adjust quantity or switch brands at extreme prices."
+  },
+  water: {
+    name:"Bottled Water Stand", nature:"Inelastic", type:"Refreshment",
+    basePrice:2, baseQty:140, elas:0.62, minP:1, maxP:6,
+    cost:0.30, initStock:350, leadTime:1, maxOrder:800,
+    perishable:false,
+    story:"On hot days customers buy quickly instead of searching for alternatives.",
+    context:"Convenience and thirst urgency keep demand stable."
+  },
+  smartphoneCase: {
+    name:"Phone Cases", nature:"Elastic", type:"Accessory",
+    basePrice:14, baseQty:65, elas:1.85, minP:5, maxP:32,
+    cost:4.00, initStock:160, leadTime:2, maxOrder:400,
+    perishable:false,
+    story:"Buyers compare designs and prices across many sellers before choosing.",
+    context:"Online alternatives and variety make demand very price sensitive."
+  },
+  busRide: {
+    name:"Bus Ride Passes", nature:"Inelastic", type:"Local transport",
+    basePrice:3, baseQty:180, elas:0.42, minP:1, maxP:8,
+    cost:0.60, initStock:450, leadTime:1, maxOrder:1000,
+    perishable:false,
+    story:"Commuters need to reach school or work regardless of fare changes.",
+    context:"Some riders can walk or cycle, but most depend on the route."
+  },
+  restaurant: {
+    name:"Restaurant Meals", nature:"Elastic", type:"Dining",
+    basePrice:18, baseQty:75, elas:1.28, minP:8, maxP:36,
+    cost:7.00, initStock:180, leadTime:1, maxOrder:400,
+    perishable:true, spoilRate:0.15,
+    story:"Diners compare menus, cook at home, or pick cheaper spots when prices rise.",
+    context:"Prepped food can't be held overnight — over-ordering means waste."
+  },
+  textbook: {
+    name:"Textbooks", nature:"Inelastic", type:"School supply",
+    basePrice:45, baseQty:55, elas:0.58, minP:20, maxP:80,
+    cost:18.00, initStock:135, leadTime:3, maxOrder:300,
+    perishable:false,
+    story:"Students need a specific book for class, though rentals and used copies compete.",
+    context:"Course requirements support demand; substitutes apply some price pressure."
+  },
+  gasoline: {
+    name:"Gasoline", nature:"Inelastic", type:"Transport fuel",
+    basePrice:4, baseQty:220, elas:0.3, minP:2, maxP:8,
+    cost:1.50, initStock:550, leadTime:1, maxOrder:1200,
+    perishable:false,
+    story:"Drivers still need fuel for regular trips — short-run demand barely budges.",
+    context:"Daily routines lock in most purchases even at higher prices."
+  },
+  iceCream: {
+    name:"Ice Cream Stall", nature:"Elastic", type:"Treat",
+    basePrice:4, baseQty:115, elas:1.45, minP:1.5, maxP:9,
+    cost:0.80, initStock:280, leadTime:1, maxOrder:700,
+    perishable:true, spoilRate:0.12,
+    story:"Customers enjoy the treat but can skip it or choose another snack.",
+    context:"Weather, mood, and nearby options shift purchases quickly."
+  },
+  salt: {
+    name:"Salt Packets", nature:"Inelastic", type:"Household staple",
+    basePrice:1.5, baseQty:130, elas:0.22, minP:0.5, maxP:4,
+    cost:0.20, initStock:320, leadTime:2, maxOrder:900,
+    perishable:false,
+    story:"Tiny budget share and no real substitute — quantity barely changes with price.",
+    context:"Customers don't buy much more or less when the price moves."
+  }
+};
+
+const MAJOR_SHOCKS = [
+  { title:"Competitor Opens Nearby",   text:"A new seller enters the market. Some buyers compare prices before purchasing.", dM:0.78, pS:1.18, label:"Negative Shock", neg:true },
+  { title:"Festival Crowd Arrives",    text:"Foot traffic jumps for a week. More buyers are available at almost every price.", dM:1.28, pS:0.92, label:"Positive Shock", neg:false },
+  { title:"Shipment Seized — Stock Hit", text:"A supplier delay destroys 30% of your current inventory immediately.", dM:1.0, pS:1.02, stockLoss:0.30, label:"Supply Shock", neg:true },
+  { title:"Viral Recommendation",      text:"A popular post boosts interest. Demand shifts outward suddenly.", dM:1.42, pS:0.86, label:"Viral Boost", neg:false },
+  { title:"Budget Squeeze",            text:"Buyers grow cautious. They react more sharply to higher prices.", dM:0.86, pS:1.35, label:"Income Shock", neg:true }
+];
+
+const MINOR_EVENTS = [
+  { title:"Nearby Sale", text:"A competing store is running a promotion. Some of your regulars are tempted away.", dM:0.88, pS:1.08 },
+  { title:"School Event", text:"A school fair nearby brings extra foot traffic.", dM:1.15, pS:0.97 },
+  { title:"Rainy Day", text:"Poor weather keeps some customers away.", dM:0.85, pS:1.0 },
+  { title:"Weekend Crowd", text:"Weekend traffic gives a small demand bump.", dM:1.12, pS:0.98 },
+  { title:"Price App Alert", text:"Customers are comparing prices on their phones — they're more sensitive than usual.", dM:1.0, pS:1.18 },
+  { title:"Local Holiday", text:"A public holiday keeps more people out shopping.", dM:1.20, pS:0.95 }
+];
+
+// ── State ──────────────────────────────────────────────────────────────────
+const S = {
+  day:1, records:[], shockDays:[], eventDaysHit:[],
+  shockSchedule:[], eventSchedule:[],
+  selectedGood:"coffee",
+  dM:1, pS:1, capM:1,
+  stock:0, pending:[],
+  lastSold:null,
+  totalRev:0, initialInventoryCost:0, totalRestockCost:0, totalLost:0,
+  running:false, skipRequested:false
+};
+
+// ── Element refs ───────────────────────────────────────────────────────────
+const E = {};
+["goodSelect","goodProfile","goodProfileDetails","elasticityTag","priceSlider","priceInput","priceReadout",
+ "runDayBtn","calcBtn","newGameBtn","musicBtn","skipDayBtn","musicSample",
+ "sDay","sSold","sUnsold","sRev","sTotal","sProfit","sProfitBox","sTodayLost","sTodayLostBox","sLost","sLostBox",
+ "dayCycle","dayCycleSun","dayProgressText","dayStars","dayMoon","dayBurst","dayProgressFill",
+ "storeName","storeStory","demandPct","meterFill","soldOutOverlay","customers",
+ "eventCard","evLabel","evTitle","evText",
+ "stockPill","stockBar","perishRow","pendingWrap","pendingList",
+ "restockQty","orderBtn","costHint","leadPill",
+ "chartWrap","chartEmpty","chartInner",
+ "logBody","daysLeft",
+ "fQ","fP","fE","fT","resultBanner","toast"
+].forEach(id => { E[id] = document.getElementById(id); });
+
+// ── Helpers ────────────────────────────────────────────────────────────────
+const good = () => GOODS[S.selectedGood];
+const clamp = (v,a,b) => Math.min(Math.max(v,a),b);
+const rnd   = (a,b)   => a + Math.random() * (b - a);
+
+function makeSchedule(count, startDay = 2, endDay = SIM_DAYS - 1) {
+  const days = [];
+  for (let d = startDay; d <= endDay; d++) days.push(d);
+  for (let i = days.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [days[i], days[j]] = [days[j], days[i]];
+  }
+  return days.slice(0, count).sort((a, b) => a - b);
+}
+
+function money(v) {
+  return v.toLocaleString("en-US",{style:"currency",currency:"USD",maximumFractionDigits:v%1===0?0:2});
+}
+function pct(v) { return `${v>=0?"+":""}${v.toFixed(1)}%`; }
+function totalInventoryCost() { return S.initialInventoryCost + S.totalRestockCost; }
+function netProfit(revenue = S.totalRev) { return revenue - totalInventoryCost(); }
+
+let toastTimer;
+let music = null;
+let musicEnabled = false;
+function showToast(msg, type) {
+  E.toast.textContent = msg;
+  E.toast.style.background = type==="danger" ? "var(--red)" : type==="success" ? "var(--green)" : "var(--teal-dark)";
+  E.toast.classList.add("on");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => E.toast.classList.remove("on"), 3000);
+}
+
+function startMusic(day = S.day) {
+  musicEnabled = true;
+  E.musicBtn.textContent = "Music On";
+
+  if (E.musicSample) {
+    const dayTrack = `sounds/${clamp(day, 1, SIM_DAYS)}.wav`;
+    if (!E.musicSample.src.endsWith(dayTrack)) {
+      E.musicSample.src = dayTrack;
+      E.musicSample.load();
+    }
+    E.musicSample.currentTime = 0;
+    E.musicSample.volume = 0.28;
+    const playPromise = E.musicSample.play();
+    if (playPromise && typeof playPromise.catch === "function") {
+      playPromise.catch(startSynthMusic);
+    }
+    return;
+  }
+
+  startSynthMusic();
+}
+
+function startSynthMusic() {
+  const AudioCtx = window.AudioContext || window.webkitAudioContext;
+  if (!AudioCtx) return;
+  if (!music) {
+    const ctx = new AudioCtx();
+    const gain = ctx.createGain();
+    gain.gain.value = 0.0001;
+    gain.connect(ctx.destination);
+    music = { ctx, gain, timer:null, step:0 };
+  }
+  music.ctx.resume();
+  music.gain.gain.setTargetAtTime(0.035, music.ctx.currentTime, 0.08);
+
+  if (music.timer) return;
+
+  const notes = [261.63, 329.63, 392.00, 523.25, 392.00, 329.63];
+  const play = () => {
+    if (!musicEnabled) return;
+    const osc = music.ctx.createOscillator();
+    const env = music.ctx.createGain();
+    osc.type = "triangle";
+    osc.frequency.value = notes[music.step % notes.length];
+    env.gain.setValueAtTime(0.0001, music.ctx.currentTime);
+    env.gain.exponentialRampToValueAtTime(0.18, music.ctx.currentTime + 0.02);
+    env.gain.exponentialRampToValueAtTime(0.0001, music.ctx.currentTime + 0.28);
+    osc.connect(env).connect(music.gain);
+    osc.start();
+    osc.stop(music.ctx.currentTime + 0.32);
+    music.step++;
+  };
+  play();
+  music.timer = setInterval(play, 420);
+}
+
+function stopMusic() {
+  musicEnabled = false;
+  E.musicBtn.textContent = "Music Off";
+  if (E.musicSample) { E.musicSample.pause(); E.musicSample.currentTime = 0; }
+  if (music) {
+    music.gain.gain.setTargetAtTime(0.0001, music.ctx.currentTime, 0.08);
+    if (music.timer) { clearInterval(music.timer); music.timer = null; }
+  }
+}
+
+function toggleMusic() {
+  if (musicEnabled) stopMusic();
+  else startMusic();
+}
+
+// ── Price controls ─────────────────────────────────────────────────────────
+function setPrice(v) {
+  const g = good();
+  const p = clamp(Number(v), g.minP, g.maxP);
+  E.priceSlider.value = p;
+  E.priceInput.value  = p.toFixed(2);
+  E.priceReadout.textContent = money(p);
+  updateMeter();
+  updateCostHint();
+}
+
+// ── Demand model ───────────────────────────────────────────────────────────
+function calcDemand(price, noisy) {
+  const g = good();
+  const pr   = price / g.basePrice;
+  const sens = g.elas * S.pS;
+  const raw  = g.baseQty * Math.pow(pr, -sens) * S.dM
+             * (noisy ? (1 + (S.day-1)*rnd(-0.025,0.035)) * rnd(0.92,1.08) : 1);
+  return Math.max(1, Math.round(clamp(raw, 1, g.baseQty * 1.9 * S.capM)));
+}
+
+function updateMeter() {
+  const g = good();
+  const p = Number(E.priceInput.value);
+  const q = calcDemand(p, false);
+  const str = clamp((q / (g.baseQty * 1.45)) * 100, 4, 100);
+  const out  = S.stock === 0;
+  E.meterFill.style.width = out ? "0%" : `${str}%`;
+  E.demandPct.textContent  = out ? "0% (no stock)" : `${Math.round(str)}%`;
+  renderPeople(out ? 0 : str);
+  E.soldOutOverlay.classList.toggle("on", out);
+  const sf = E.soldOutOverlay.closest(".storefront");
+  if (sf) sf.classList.toggle("oos", out);
+}
+
+function renderPeople(str) {
+  const n = clamp(Math.round(str / 12), 0, 8);
+  E.customers.innerHTML = "";
+  for (let i=0;i<n;i++) {
+    const s = document.createElement("span");
+    s.className = "person";
+    E.customers.appendChild(s);
+  }
+}
+
+// ── Inventory UI ───────────────────────────────────────────────────────────
+function renderInv() {
+  const g   = good();
+  const ratio = S.stock / g.initStock;
+  const pct2  = Math.round(ratio * 100);
+  E.stockPill.textContent = `${S.stock} units`;
+
+  if (S.stock === 0) {
+    E.stockPill.className = "pill danger";
+    E.stockBar.style.width = "2px";
+    E.stockBar.className = "stock-bar low";
+  } else if (ratio < 0.2) {
+    E.stockPill.className = "pill warning";
+    E.stockBar.style.width = `${Math.max(pct2,3)}%`;
+    E.stockBar.className = "stock-bar low";
+  } else if (ratio < 0.4) {
+    E.stockPill.className = "pill warning";
+    E.stockBar.style.width = `${pct2}%`;
+    E.stockBar.className = "stock-bar med";
+  } else {
+    E.stockPill.className = "pill success";
+    E.stockBar.style.width = `${pct2}%`;
+    E.stockBar.className = "stock-bar";
+  }
+
+  E.perishRow.style.display = g.perishable ? "flex" : "none";
+
+  if (S.pending.length) {
+    E.pendingWrap.style.display = "block";
+    E.pendingList.innerHTML = S.pending
+      .map(o => `📦 ${o.qty} units — arriving Day ${o.arrives} — ${money(o.cost)}`)
+      .join("<br>");
+  } else {
+    E.pendingWrap.style.display = "none";
+  }
+}
+
+function renderLiveTotals(sold, unsold, todayLost, revenue) {
+  const liveTotal = S.totalRev + revenue;
+  const liveProfit = netProfit(liveTotal);
+  E.sSold.textContent  = sold;
+  E.sUnsold.textContent = unsold;
+  E.sTodayLost.textContent = todayLost;
+  E.sRev.textContent   = money(revenue);
+  E.sTotal.textContent = money(liveTotal);
+  E.sProfit.textContent = money(liveProfit);
+  E.sProfitBox.className = `stat${liveProfit > 0 ? " success" : liveProfit < 0 ? " danger" : ""}`;
+  E.sTodayLostBox.className = `stat${todayLost > 0 ? " danger" : ""}`;
+}
+
+function setControlsForRun(running) {
+  S.running = running;
+  E.runDayBtn.disabled = running || S.day > SIM_DAYS;
+  E.runDayBtn.textContent = running ? "Running..." : "▶ Run Day";
+  E.priceSlider.disabled = running;
+  E.priceInput.disabled  = running;
+  E.restockQty.disabled  = running;
+  E.orderBtn.disabled    = running || S.day > SIM_DAYS;
+  E.goodSelect.disabled  = running || S.records.length > 0;
+  E.newGameBtn.disabled  = running;
+  E.musicBtn.disabled    = !running;
+  E.skipDayBtn.disabled  = !running;
+}
+
+// Sky keyframes: progress, skyTop, skyBot, sunInner, sunMid, sunOuter, glowAlpha, glowR,G,B
+const SKY = [
+  { p:0.00, t:"#1a2744", b:"#253d6e", si:"#b0c8e8", sm:"#7aa0c8", so:"#4a70a8", ga:0.00, gr:160,gg:200,gb:255 },
+  { p:0.10, t:"#e05028", b:"#ffb060", si:"#fff0d0", sm:"#fa9030", so:"#f55000", ga:0.65, gr:255,gg:130,gb:50  },
+  { p:0.30, t:"#44b0cc", b:"#b8e4f8", si:"#fff7c0", sm:"#facc15", so:"#f0a000", ga:0.52, gr:250,gg:195,gb:55  },
+  { p:0.50, t:"#1a8ee0", b:"#c8e8ff", si:"#fff7b1", sm:"#facc15", so:"#f59e0b", ga:0.82, gr:250,gg:204,gb:21  },
+  { p:0.72, t:"#36a8d8", b:"#b4dcf4", si:"#fff7b1", sm:"#facc15", so:"#f59e0b", ga:0.65, gr:250,gg:204,gb:21  },
+  { p:0.90, t:"#d04010", b:"#ff9828", si:"#ffd090", sm:"#ff6020", so:"#d01808", ga:0.82, gr:255,gg:72, gb:25  },
+  { p:1.00, t:"#26303e", b:"#36485a", si:"#706050", sm:"#503828", so:"#382018", ga:0.00, gr:255,gg:50, gb:10  },
+];
+function lerpNum(a,b,t) { return a + (b-a)*t; }
+function skyAt(prog) {
+  const p = clamp(prog,0,1);
+  let lo=SKY[0], hi=SKY[SKY.length-1];
+  for (let i=0;i<SKY.length-1;i++) { if (p>=SKY[i].p && p<=SKY[i+1].p){lo=SKY[i];hi=SKY[i+1];break;} }
+  const t = lo.p===hi.p ? 0 : (p-lo.p)/(hi.p-lo.p);
+  return {
+    top: blendHex(lo.t, hi.t, t), bot: blendHex(lo.b, hi.b, t),
+    si:  blendHex(lo.si,hi.si,t), sm:  blendHex(lo.sm,hi.sm,t), so: blendHex(lo.so,hi.so,t),
+    ga: lerpNum(lo.ga,hi.ga,t),
+    gr: Math.round(lerpNum(lo.gr,hi.gr,t)),
+    gg: Math.round(lerpNum(lo.gg,hi.gg,t)),
+    gb: Math.round(lerpNum(lo.gb,hi.gb,t)),
+  };
+}
+
+function updateDayProgress(progress) {
+  const pct = clamp(progress * 100, 0, 100);
+  const dayMinute = Math.round(DAY_START_MIN + (DAY_END_MIN - DAY_START_MIN) * (pct / 100));
+  const arc  = Math.sin((pct / 100) * Math.PI);
+  const sunX = 8 + (pct / 100) * 84;
+  const sunY = 14 + arc * 58;
+
+  E.dayCycle.style.setProperty("--sun-x", `${sunX}%`);
+  E.dayCycle.style.setProperty("--sun-y", `${sunY}%`);
+
+  const sk = skyAt(pct / 100);
+  E.dayCycle.style.setProperty("--sky-top",    sk.top);
+  E.dayCycle.style.setProperty("--sky-bottom",  sk.bot);
+
+  const glowCSS = `rgba(${sk.gr},${sk.gg},${sk.gb},${sk.ga.toFixed(2)})`;
+  E.dayCycleSun.style.background = `radial-gradient(circle,${sk.si} 0 26%,${sk.sm} 27% 64%,${sk.so} 65%)`;
+  E.dayCycleSun.style.boxShadow  = `0 0 ${Math.round(10+sk.ga*30)}px ${glowCSS}`;
+
+  if (E.dayProgressFill) E.dayProgressFill.style.width = `${pct}%`;
+
+  const atNight = pct <= 9 || pct >= 93;
+  if (E.dayStars) E.dayStars.classList.toggle("vis", atNight);
+  if (E.dayMoon)  E.dayMoon.classList.toggle("vis", progress === 0 && !S.running);
+
+  if (progress === 0 && !S.running) {
+    E.dayProgressText.textContent = "Ready";
+  } else if (progress >= 1) {
+    E.dayProgressText.textContent = "5:00 PM";
+  } else {
+    E.dayProgressText.textContent = formatClock(dayMinute);
+  }
+}
+
+function blendHex(from, to, amount) {
+  const a = hexToRgb(from);
+  const b = hexToRgb(to);
+  const mix = n => Math.round(a[n] + (b[n] - a[n]) * amount);
+  return `rgb(${mix("r")}, ${mix("g")}, ${mix("b")})`;
+}
+
+function hexToRgb(hex) {
+  const raw = hex.replace("#", "");
+  return {
+    r: parseInt(raw.slice(0, 2), 16),
+    g: parseInt(raw.slice(2, 4), 16),
+    b: parseInt(raw.slice(4, 6), 16)
+  };
+}
+
+function formatClock(totalMinutes) {
+  const hour24 = Math.floor(totalMinutes / 60);
+  const minute = totalMinutes % 60;
+  const suffix = hour24 >= 12 ? "PM" : "AM";
+  const hour12 = hour24 % 12 || 12;
+  return `${hour12}:${String(minute).padStart(2, "0")} ${suffix}`;
+}
+
+function updateCostHint() {
+  const g = good();
+  const q = Math.max(0, Number(E.restockQty.value) || 0);
+  E.costHint.textContent = `Cost: ${money(q * g.cost)} @ ${money(g.cost)}/unit`;
+}
+
+function placeOrder() {
+  const g = good();
+  const qty = Number(E.restockQty.value);
+  if (!qty || qty <= 0) { showToast("Enter a quantity to order.", "danger"); return; }
+  if (qty > g.maxOrder) { showToast(`Max order is ${g.maxOrder} units.`, "danger"); return; }
+  const arrives = S.day + g.leadTime;
+  if (arrives > SIM_DAYS) {
+    showToast(`Order would arrive Day ${arrives} — after the simulation ends.`, "danger"); return;
+  }
+  const cost = qty * g.cost;
+  S.pending.push({ qty, cost, arrives });
+  S.totalRestockCost += cost;
+  E.restockQty.value = 0;
+  renderInv();
+  updateCostHint();
+  showToast(`Order placed: ${qty} units arriving Day ${arrives} (${money(cost)}).`, "success");
+}
+
+function processRestock() {
+  const hits = S.pending.filter(o => o.arrives === S.day);
+  let total = 0;
+  hits.forEach(o => { total += o.qty; });
+  S.pending = S.pending.filter(o => o.arrives !== S.day);
+  S.stock += total;
+  return total;
+}
+
+// ── Shocks ─────────────────────────────────────────────────────────────────
+function applyMajorShock() {
+  if (!S.shockSchedule.includes(S.day)) return null;
+  const sh = MAJOR_SHOCKS[Math.floor(Math.random() * MAJOR_SHOCKS.length)];
+  S.shockDays.push(S.day);
+  S.dM  *= sh.dM;
+  S.pS  *= sh.pS || 1;
+  S.capM *= sh.capM || 1;
+  if (sh.stockLoss) {
+    const lost = Math.round(S.stock * sh.stockLoss);
+    S.stock = Math.max(0, S.stock - lost);
+  }
+  return sh;
+}
+
+function applyMinorEvent() {
+  if (!S.eventSchedule.includes(S.day) || S.eventDaysHit.includes(S.day)) return null;
+  const ev = MINOR_EVENTS[Math.floor(Math.random() * MINOR_EVENTS.length)];
+  S.dM  *= ev.dM;
+  S.pS  *= ev.pS;
+  S.eventDaysHit.push(S.day);
+  return ev;
+}
+
+// ── Run a day ──────────────────────────────────────────────────────────────
+function runDay() {
+  if (S.running) return;
+  if (S.day > SIM_DAYS) { showToast("Simulation complete — click Calculate."); return; }
+  S.skipRequested = false;
+
+  const restocked = processRestock();
+  const major     = applyMajorShock();
+  const minor     = !major ? applyMinorEvent() : null;
+
+  const price   = Number(E.priceInput.value);
+  const demand  = calcDemand(price, true);
+  const sold    = Math.min(demand, S.stock);
+  const lost    = demand - sold;
+  const revenue = price * sold;
+
+  const stockBefore = S.stock;
+  const ev = major || minor;
+  const note = ev ? `${ev.title}: ${ev.text}` : makeNote(price, demand, sold);
+
+  if (major) {
+    setEvent(major.label, major.title, major.text, major.neg ? "shock" : "positive");
+  } else if (minor) {
+    setEvent("Minor Event", minor.title, minor.text, null);
+  } else {
+    setEvent("Daily Sales", `Day ${S.day} in progress`, "Customers are buying from 9:00 AM to 5:00 PM.", null);
+  }
+
+  setControlsForRun(true);
+  // Sunrise burst
+  if (E.dayBurst) {
+    E.dayBurst.className = "day-burst";
+    void E.dayBurst.offsetWidth;
+    E.dayBurst.classList.add("sunrise");
+  }
+  startMusic();
+  // Snap sun instantly to the dawn horizon — no backwards slide
+  E.dayCycleSun.style.transition = "none";
+  updateDayProgress(0);
+  void E.dayCycleSun.offsetWidth; // force reflow before re-enabling transition
+  E.dayCycleSun.style.transition = "";
+  renderLiveTotals(0, stockBefore, 0, 0);
+  renderInv();
+
+  const start = performance.now();
+  let lastSold = -1;
+  let lastLost = -1;
+
+  function tick(now) {
+    const progress = S.skipRequested ? 1 : clamp((now - start) / DAY_MS, 0, 1);
+    const demandSoFar = progress >= 1 ? demand : Math.floor(demand * progress);
+    const soldSoFar = Math.min(demandSoFar, stockBefore);
+    const unsoldSoFar = Math.max(0, stockBefore - soldSoFar);
+    const lostSoFar = Math.max(0, demandSoFar - stockBefore);
+    const revenueSoFar = price * soldSoFar;
+
+    if (soldSoFar !== lastSold || lostSoFar !== lastLost || progress >= 1) {
+      S.stock = unsoldSoFar;
+      S.lastSold = soldSoFar;
+      renderLiveTotals(soldSoFar, unsoldSoFar, lostSoFar, revenueSoFar);
+      renderInv();
+      updateMeter();
+      lastSold = soldSoFar;
+      lastLost = lostSoFar;
+    }
+    updateDayProgress(progress);
+
+    if (progress < 1) {
+      requestAnimationFrame(tick);
+      return;
+    }
+
+    finishDay();
+  }
+
+  function finishDay() {
+    S.stock = Math.max(0, stockBefore - sold);
+
+    const g = good();
+    let spoil = 0;
+    if (g.perishable && S.stock > 0) {
+      spoil   = Math.round(S.stock * g.spoilRate);
+      S.stock = Math.max(0, S.stock - spoil);
+    }
+
+    S.records.push({ day:S.day, price, demand, sold, lost, revenue, restocked, spoil, stockBefore, note, isEvent:!!ev });
+    S.lastSold = sold;
+    S.totalRev += revenue;
+    S.totalLost += lost;
+    S.day++;
+
+    if (!major && !minor) {
+      setEvent("Daily Result", `Day ${S.day - 1} complete`, note, null);
+    }
+
+    renderInv();
+    renderStats();
+    renderLog();
+    renderChart();
+    updateMeter();
+    updateDayProgress(1);
+    setControlsForRun(false);
+    stopMusic();
+    // Sunset burst
+    setTimeout(() => {
+      if (E.dayBurst) {
+        E.dayBurst.className = "day-burst";
+        void E.dayBurst.offsetWidth;
+        E.dayBurst.classList.add("sunset");
+      }
+    }, 150);
+
+    if (lost > 0) {
+      showToast(`⚠ ${lost} customers left empty-handed — restock soon!`, "danger");
+    } else if (restocked > 0) {
+      showToast(`📦 +${restocked} units arrived from your order.`, "success");
+    }
+
+    if (S.day > SIM_DAYS) {
+      E.runDayBtn.disabled = true;
+      E.calcBtn.disabled   = false;
+      E.goodSelect.disabled = true;
+      E.orderBtn.disabled  = true;
+      showToast("15 days done — calculate elasticity now.");
+    }
+  }
+
+  requestAnimationFrame(tick);
+}
+
+function makeNote(price, demand, sold) {
+  const g  = good();
+  const dir = price > g.basePrice ? "above" : price < g.basePrice ? "below" : "at";
+  const lost = demand - sold;
+  if (sold < demand)               return `Demand was ${demand} but stock only covered ${sold}. ${lost} sales lost.`;
+  if (demand > g.baseQty * 1.15)  return `Price is ${dir} normal. Strong demand — revenue is high.`;
+  if (demand < g.baseQty * 0.85)  return `Price is ${dir} normal. Weak demand — buyers are holding back.`;
+  return `Price is ${dir} normal. Demand is close to baseline.`;
+}
+
+function setEvent(label, title, text, type) {
+  E.evLabel.textContent = label;
+  E.evTitle.textContent = title;
+  E.evText.textContent  = text;
+  E.eventCard.className = `card event-card${type==="shock"?" shock":type==="positive"?" positive":""}`;
+  const body = E.eventCard.querySelector(".card-body");
+  if (body) { body.classList.remove("ev-animate"); void body.offsetWidth; body.classList.add("ev-animate"); }
+}
+
+// ── Stats panel ────────────────────────────────────────────────────────────
+function popEl(el) {
+  if (!el) return;
+  el.classList.remove("pop");
+  void el.offsetWidth;
+  el.classList.add("pop");
+  el.addEventListener("animationend", () => el.classList.remove("pop"), { once: true });
+}
+
+function renderStats() {
+  const vis  = Math.min(S.day, SIM_DAYS);
+  const left = Math.max(0, SIM_DAYS + 1 - S.day);
+  const prof = netProfit();
+  const last = S.records[S.records.length - 1];
+
+  E.sDay.textContent    = `${vis} / ${SIM_DAYS}`;
+  E.sUnsold.textContent = S.stock;
+  E.sTotal.textContent  = money(S.totalRev);
+  E.sLost.textContent   = S.totalLost;
+  E.daysLeft.textContent = `${left} ${left===1?"day":"days"} left`;
+
+  E.sSold.textContent      = S.lastSold === null ? "--" : S.lastSold;
+  E.sTodayLost.textContent = last ? last.lost : 0;
+  E.sRev.textContent       = last ? money(last.revenue) : "$0";
+  E.sProfit.textContent    = money(prof);
+
+  popEl(E.sSold);
+  popEl(E.sRev);
+  if (last && last.lost > 0) popEl(E.sTodayLost);
+  popEl(E.sProfit);
+
+  E.sProfitBox.className    = `stat${prof > 0 ? " success" : prof < 0 ? " danger" : ""}`;
+  E.sTodayLostBox.className = `stat${last && last.lost > 0 ? " danger" : ""}`;
+  E.sLostBox.className      = `stat${S.totalLost > 0 ? " danger" : ""}`;
+}
+
+// ── Log table ──────────────────────────────────────────────────────────────
+function renderLog() {
+  E.logBody.innerHTML = "";
+  for (let d = 1; d <= SIM_DAYS; d++) {
+    const r   = S.records.find(x => x.day === d);
+    const row = document.createElement("tr");
+    row.className = d === S.day ? "cur" : "";
+    if (r) {
+      const tags = [];
+      if (r.restocked > 0) tags.push(`<span class="tag arrived">+${r.restocked} in</span>`);
+      if (r.lost > 0)      tags.push(`<span class="tag stockout">−${r.lost} lost</span>`);
+      if (r.spoil > 0)     tags.push(`<span class="tag spoil">−${r.spoil} spoil</span>`);
+      if (r.isEvent)       tags.push(`<span class="tag event">event</span>`);
+      row.innerHTML = `
+        <td><strong>${r.day}</strong></td>
+        <td>${money(r.price)}</td>
+        <td>${r.stockBefore}</td>
+        <td>${r.demand}</td>
+        <td><strong>${r.sold}</strong></td>
+        <td style="color:${r.lost>0?"var(--red)":"inherit"}">${r.lost||"—"}</td>
+        <td style="color:${r.spoil>0?"var(--orange)":"inherit"}">${r.spoil||"—"}</td>
+        <td>${money(r.revenue)}</td>
+        <td>${tags.join("")} <span style="color:var(--muted);font-size:12px">${r.isEvent?r.note.split(":")[0]:r.note}</span></td>
+      `;
+    } else {
+      row.innerHTML = `<td>${d}</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td style="color:var(--muted);font-size:12px">Waiting for decision</td>`;
+    }
+    E.logBody.appendChild(row);
+  }
+}
+
+// ── SVG Chart ──────────────────────────────────────────────────────────────
+function renderChart() {
+  const recs = S.records;
+  if (recs.length === 0) {
+    E.chartEmpty.style.display = "flex";
+    E.chartInner.innerHTML = "";
+    return;
+  }
+  E.chartEmpty.style.display = "none";
+
+  const W=700, H=180;
+  const pad={t:18,r:58,b:30,l:48};
+  const pw = W - pad.l - pad.r;
+  const ph = H - pad.t - pad.b;
+
+  const maxQ = Math.max(...recs.map(r=>Math.max(r.sold, r.demand)), 1);
+  const prices = recs.map(r=>r.price);
+  const minP = Math.min(...prices), maxP = Math.max(...prices, minP+0.01);
+  const pRange = maxP - minP || 1;
+
+  const xS = d  => pad.l + ((d-1)/(SIM_DAYS-1)) * pw;
+  const yQ = q  => pad.t + ph - (q/maxQ) * ph;
+  const yP = p  => pad.t + ph - ((p-minP)/pRange) * ph;
+
+  // Grid
+  let grid = "";
+  for (let i=0;i<=4;i++) {
+    const y  = pad.t + ph*(i/4);
+    const qv = Math.round(maxQ*(1-i/4));
+    grid += `<line x1="${pad.l}" y1="${y.toFixed(1)}" x2="${W-pad.r}" y2="${y.toFixed(1)}" stroke="#e2e8e6" stroke-width="1"/>`;
+    grid += `<text x="${pad.l-5}" y="${(y+4).toFixed(1)}" text-anchor="end" font-size="10" fill="#8a9ba8">${qv}</text>`;
+  }
+
+  // Event markers
+  recs.filter(r => r.isEvent).forEach(r => {
+    const mx = xS(r.day).toFixed(1);
+    grid += `<line x1="${mx}" y1="${pad.t}" x2="${mx}" y2="${pad.t+ph}" stroke="#c94b4b" stroke-width="1.2" stroke-dasharray="4,3" opacity="0.45"/>`;
+  });
+
+  // X labels
+  let xLabels = "";
+  [1,4,7,10,13,15].filter(d=>d<=SIM_DAYS).forEach(d => {
+    xLabels += `<text x="${xS(d).toFixed(1)}" y="${H-5}" text-anchor="middle" font-size="10" fill="#8a9ba8">${d}</text>`;
+  });
+
+  // Area + sold line
+  const qPts = recs.map(r=>`${xS(r.day).toFixed(1)},${yQ(r.sold).toFixed(1)}`).join(" ");
+  const areaL = `${xS(recs[0].day).toFixed(1)},${(pad.t+ph).toFixed(1)}`;
+  const areaR = `${xS(recs[recs.length-1].day).toFixed(1)},${(pad.t+ph).toFixed(1)}`;
+
+  // Price line
+  const pPts = recs.map(r=>`${xS(r.day).toFixed(1)},${yP(r.price).toFixed(1)}`).join(" ");
+
+  // Demand line (dashed, lighter)
+  const dPts = recs.map(r=>`${xS(r.day).toFixed(1)},${yQ(r.demand).toFixed(1)}`).join(" ");
+
+  // Dots
+  const dots = recs.map(r=>{
+    const cx = xS(r.day).toFixed(1);
+    const cy = yQ(r.sold).toFixed(1);
+    const col = r.lost > 0 ? "#c94b4b" : "#0f766e";
+    return `<circle cx="${cx}" cy="${cy}" r="4.5" fill="${col}" stroke="white" stroke-width="1.5"/>`;
+  }).join("");
+
+  // Price axis labels
+  const priceLabels = `
+    <text x="${W-pad.r+6}" y="${(pad.t+4).toFixed(1)}" font-size="10" fill="#d4950a">${money(maxP)}</text>
+    <text x="${W-pad.r+6}" y="${(pad.t+ph).toFixed(1)}" font-size="10" fill="#d4950a">${money(minP)}</text>
+  `;
+
+  E.chartInner.innerHTML = `
+    <svg viewBox="0 0 ${W} ${H}" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block">
+      ${grid}
+      <polygon points="${areaL} ${qPts} ${areaR}" fill="rgba(15,118,110,0.09)"/>
+      <polyline points="${dPts}" fill="none" stroke="rgba(15,118,110,0.3)" stroke-width="1.5" stroke-dasharray="4,3" stroke-linejoin="round"/>
+      <polyline points="${qPts}" fill="none" stroke="#0f766e" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <polyline points="${pPts}" fill="none" stroke="#f2b84b" stroke-width="2" stroke-dasharray="6,4" stroke-linejoin="round"/>
+      ${dots}
+      ${xLabels}
+      ${priceLabels}
+      <text x="13" y="${(pad.t+ph/2).toFixed(1)}" text-anchor="middle" transform="rotate(-90,13,${(pad.t+ph/2).toFixed(1)})" font-size="10" fill="#0f766e" font-weight="600">Units</text>
+      <text x="${(W/2).toFixed(1)}" y="${H-1}" text-anchor="middle" font-size="10" fill="#8a9ba8">Day →</text>
+    </svg>
+  `;
+}
+
+// ── Elasticity calculation ─────────────────────────────────────────────────
+function midChange(nv, ov) { return ((nv-ov)/((nv+ov)/2))*100; }
+
+function calcElasticity() {
+  if (S.records.length < SIM_DAYS) {
+    showToast(`Run all ${SIM_DAYS} days first.`, "danger"); return;
+  }
+  const f = S.records[0], l = S.records[S.records.length-1];
+  const dQ = midChange(l.demand, f.demand);
+  const dP = midChange(l.price, f.price);
+  const elas = dP === 0 ? 0 : Math.abs(dQ/dP);
+  const type = elas > 1 ? "Elastic" : elas < 1 ? "Inelastic" : "Unit elastic";
+  const g = good();
+  const profit = netProfit();
+
+  E.fQ.textContent = pct(dQ);
+  E.fP.textContent = pct(dP);
+  E.fE.textContent = dP === 0 ? "N/A" : elas.toFixed(2);
+  E.fT.textContent = type;
+  E.resultBanner.classList.add("on");
+
+  const matched = type === g.nature;
+  const lostNote = S.totalLost > 0
+    ? ` <strong>⚠ ${S.totalLost} units in lost sales</strong> from stockouts — these skew the elasticity reading.`
+    : "";
+  const profitNote = profit >= 0
+    ? `Net profit: <strong style="color:var(--green)">${money(profit)}</strong>`
+    : `Net loss: <strong style="color:var(--red)">${money(profit)}</strong>`;
+
+  E.resultBanner.innerHTML = dP === 0
+    ? `Price didn't change from day 1 to day 15 — elasticity can't be computed. Try varying the price next time.`
+    : `<strong>${type} demand (PED = ${elas.toFixed(2)}):</strong>
+       Quantity ${dQ>=0?"rose":"fell"} by ${pct(dQ)} while price ${dP>=0?"rose":"fell"} by ${pct(dP)}.
+       The hidden nature of this good was <strong>${g.nature.toLowerCase()}</strong> — your result
+       <strong>${matched?"matched ✓":"differed ✗"}</strong> (shocks and pricing decisions shift the measured value).
+       <br><br>
+       ${profitNote} &nbsp;·&nbsp; Revenue: ${money(S.totalRev)} &nbsp;·&nbsp; Base inventory cost: ${money(S.initialInventoryCost)} &nbsp;·&nbsp; Restock spent: ${money(S.totalRestockCost)}.${lostNote}`;
+}
+
+// ── Reset ──────────────────────────────────────────────────────────────────
+function resetScenario(keepPrice) {
+  const g = good();
+  Object.assign(S, {
+    day:1, records:[], shockDays:[], eventDaysHit:[],
+    shockSchedule:makeSchedule(3 + Math.floor(Math.random() * 3)),
+    eventSchedule:makeSchedule(3 + Math.floor(Math.random() * 4)),
+    dM:1, pS:1, capM:1,
+    stock:g.initStock, pending:[],
+    lastSold:null, totalRev:0, initialInventoryCost:g.initStock * g.cost, totalRestockCost:0, totalLost:0,
+    running:false, skipRequested:false
+  });
+
+  E.priceSlider.min = g.minP;  E.priceSlider.max = g.maxP;
+  E.priceInput.min  = g.minP;  E.priceInput.max  = g.maxP;
+  E.restockQty.max  = g.maxOrder;
+  setPrice(keepPrice ? Number(E.priceInput.value) : g.basePrice);
+
+  E.runDayBtn.disabled   = false;
+  E.calcBtn.disabled     = true;
+  E.orderBtn.disabled    = false;
+  E.goodSelect.disabled  = false;
+  E.priceSlider.disabled = false;
+  E.priceInput.disabled  = false;
+  E.restockQty.disabled  = false;
+  E.newGameBtn.disabled  = false;
+  E.musicBtn.disabled    = true;
+  E.skipDayBtn.disabled  = true;
+  E.runDayBtn.textContent = "▶ Run Day";
+  updateDayProgress(0);
+  E.resultBanner.classList.remove("on");
+  E.fQ.textContent = E.fP.textContent = E.fE.textContent = E.fT.textContent = "--";
+  E.leadPill.textContent = `${g.leadTime}-day lead`;
+
+  // Profile
+  E.elasticityTag.textContent = "Infer from data";
+  E.elasticityTag.className   = "pill";
+  E.storeName.textContent     = g.name;
+  E.storeStory.textContent    = g.story;
+  E.goodProfileDetails.innerHTML = `
+    <div class="profile-row"><span>Market</span><strong>${g.type}</strong></div>
+    <div class="profile-row"><span>Base price</span><strong>${money(g.basePrice)}</strong></div>
+    <div class="profile-row"><span>Unit cost</span><strong>${money(g.cost)}</strong></div>
+    <div class="profile-row"><span>Initial stock</span><strong>${g.initStock} units</strong></div>
+    <div class="profile-row"><span>Base inventory cost</span><strong>${money(S.initialInventoryCost)}</strong></div>
+    <div class="profile-row"><span>Context</span><strong style="font-size:12px">${g.context}</strong></div>
+  `;
+
+  renderInv();
+  updateCostHint();
+  renderStats();
+  renderLog();
+  renderChart();
+  setEvent("Market Setup", "Choose a price",
+    "Set your price, then click Run Day. Watch your stock — if it hits zero, customers walk away empty-handed. Place restock orders before you run dry.",
+    null);
+  showToast("New scenario ready.", "success");
+}
+
+// ── Event wiring ───────────────────────────────────────────────────────────
+E.priceSlider.addEventListener("input", e => setPrice(e.target.value));
+E.priceInput.addEventListener("input",  e => setPrice(e.target.value));
+E.runDayBtn.addEventListener("click",   runDay);
+E.skipDayBtn.addEventListener("click",  () => { if (S.running) S.skipRequested = true; });
+E.calcBtn.addEventListener("click",     calcElasticity);
+E.musicBtn.addEventListener("click",    toggleMusic);
+E.newGameBtn.addEventListener("click",  () => resetScenario(false));
+E.orderBtn.addEventListener("click",    placeOrder);
+E.restockQty.addEventListener("input",  updateCostHint);
+E.goodSelect.addEventListener("change", e => { S.selectedGood = e.target.value; resetScenario(false); });
+
+// ── Boot ───────────────────────────────────────────────────────────────────
+(function initDayStars() {
+  if (!E.dayStars) return;
+  for (let i = 0; i < 26; i++) {
+    const s = document.createElement("span");
+    s.className = "star";
+    const sz = rnd(1.4, 3.2).toFixed(1);
+    s.style.cssText = `width:${sz}px;height:${sz}px;` +
+      `left:${rnd(4,88).toFixed(1)}%;top:${rnd(8,70).toFixed(1)}%;` +
+      `--d:${rnd(1.6,3.4).toFixed(1)}s;--dl:${rnd(0,2.4).toFixed(1)}s`;
+    E.dayStars.appendChild(s);
+  }
+})();
+resetScenario(false);
+</script>
+</body>
+</html>

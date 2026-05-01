@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Economics Simulation Lab</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg: #f6f6f1;
+            --panel: #ffffff;
+            --ink: #161812;
+            --muted: #62685c;
+            --soft: #eff0e8;
+            --line: #dedfd5;
+            --accent: #2f624f;
+            --accent-strong: #204636;
+            --amber: #b7791f;
+            --blue: #365f8f;
+            --shadow: 0 22px 60px rgba(28, 34, 24, 0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at top left, rgba(47, 98, 79, 0.08), transparent 34rem),
+                linear-gradient(180deg, #fbfbf8 0%, var(--bg) 48%, #efefe8 100%);
+            color: var(--ink);
+            font-family: "IBM Plex Sans", system-ui, sans-serif;
+            letter-spacing: 0;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .shell {
+            width: min(1120px, calc(100% - 48px));
+            margin: 0 auto;
+            padding: 36px 0 26px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding-bottom: 34px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 0.94rem;
+        }
+
+        .mark {
+            width: 34px;
+            height: 34px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(47, 98, 79, 0.24);
+            border-radius: 8px;
+            background: #fff;
+            color: var(--accent);
+            font-family: "IBM Plex Serif", serif;
+            font-size: 1.05rem;
+            box-shadow: 0 8px 22px rgba(28, 34, 24, 0.06);
+        }
+
+        .nav-note {
+            color: var(--muted);
+            font-size: 0.86rem;
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 340px;
+            gap: 28px;
+            align-items: stretch;
+        }
+
+        .intro {
+            padding: 34px 0 32px;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--accent);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 28px;
+            height: 2px;
+            background: var(--accent);
+        }
+
+        h1 {
+            max-width: 760px;
+            margin-top: 18px;
+            font-family: "IBM Plex Serif", Georgia, serif;
+            font-size: clamp(2.15rem, 5vw, 4rem);
+            line-height: 1.02;
+            font-weight: 600;
+        }
+
+        .intro-text {
+            max-width: 620px;
+            margin-top: 18px;
+            color: var(--muted);
+            font-size: 1.02rem;
+            line-height: 1.65;
+        }
+
+        .summary-panel {
+            display: grid;
+            align-content: space-between;
+            min-height: 280px;
+            padding: 24px;
+            border: 1px solid rgba(47, 98, 79, 0.16);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.7);
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+        }
+
+        .summary-panel h2 {
+            max-width: 220px;
+            font-size: 1rem;
+            line-height: 1.35;
+            font-weight: 600;
+        }
+
+        .stats {
+            display: grid;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .stat {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 18px;
+            padding-top: 12px;
+            border-top: 1px solid var(--line);
+        }
+
+        .stat span {
+            color: var(--muted);
+            font-size: 0.82rem;
+        }
+
+        .stat strong {
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .section-head {
+            display: flex;
+            align-items: end;
+            justify-content: space-between;
+            gap: 24px;
+            margin-top: 34px;
+            padding-top: 24px;
+            border-top: 1px solid var(--line);
+        }
+
+        .section-head h2 {
+            font-size: 1.12rem;
+            line-height: 1.3;
+        }
+
+        .section-head p {
+            max-width: 420px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.55;
+            text-align: right;
+        }
+
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .lab-card {
+            position: relative;
+            min-height: 260px;
+            display: grid;
+            align-content: space-between;
+            gap: 26px;
+            padding: 24px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--panel);
+            text-decoration: none;
+            box-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) inset;
+            transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+        }
+
+        .lab-card::before {
+            content: "";
+            position: absolute;
+            inset: 0 0 auto;
+            height: 4px;
+            background: var(--accent);
+        }
+
+        .lab-card:nth-child(2)::before {
+            background: var(--blue);
+        }
+
+        .lab-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(47, 98, 79, 0.3);
+            box-shadow: var(--shadow);
+        }
+
+        .lab-card:focus-visible {
+            outline: 3px solid rgba(47, 98, 79, 0.25);
+            outline-offset: 4px;
+        }
+
+        .lab-meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            min-height: 28px;
+            padding: 5px 10px;
+            border-radius: 999px;
+            background: var(--soft);
+            color: var(--muted);
+            font-size: 0.76rem;
+            font-weight: 600;
+        }
+
+        .status {
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 700;
+        }
+
+        .status.soon {
+            color: var(--amber);
+        }
+
+        .lab-title {
+            display: grid;
+            gap: 14px;
+            max-width: 460px;
+        }
+
+        .lab-title h3 {
+            font-size: 1.32rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+
+        .lab-title p {
+            color: var(--muted);
+            font-size: 0.94rem;
+            line-height: 1.6;
+        }
+
+        .launch {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            min-height: 36px;
+            padding: 8px 13px;
+            border: 1px solid rgba(47, 98, 79, 0.18);
+            border-radius: 999px;
+            background: #e2ece7;
+            color: var(--accent-strong);
+            font-size: 0.84rem;
+            font-weight: 700;
+        }
+
+        .launch::after {
+            content: "\2192";
+            margin-left: 9px;
+            font-size: 1rem;
+        }
+
+        .lab-card:hover .launch {
+            background: var(--accent);
+            color: #fff;
+        }
+
+        footer {
+            width: min(1120px, calc(100% - 48px));
+            margin: 40px auto 0;
+            padding: 22px 0 26px;
+            border-top: 1px solid var(--line);
+            color: var(--muted);
+            font-size: 0.84rem;
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .intro {
+                padding-bottom: 0;
+            }
+
+            .summary-panel {
+                min-height: auto;
+            }
+
+            .section-head {
+                display: grid;
+            }
+
+            .section-head p {
+                max-width: 100%;
+                text-align: left;
+            }
+
+            .lab-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .shell,
+            footer {
+                width: min(100% - 32px, 1120px);
+            }
+
+            .shell {
+                padding-top: 24px;
+            }
+
+            .nav {
+                align-items: flex-start;
+                padding-bottom: 22px;
+            }
+
+            .nav-note {
+                display: none;
+            }
+
+            h1 {
+                font-size: clamp(2.05rem, 12vw, 2.75rem);
+            }
+
+            .intro-text {
+                font-size: 0.96rem;
+            }
+
+            .lab-card {
+                min-height: 238px;
+                padding: 22px;
+            }
+
+            .lab-title h3 {
+                font-size: 1.18rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <nav class="nav" aria-label="Lab navigation">
+            <div class="brand">
+                <span class="mark">E</span>
+                <span>Economics Simulation Lab</span>
+            </div>
+            <div class="nav-note">Applied Economics Learning</div>
+        </nav>
+
+        <section class="hero" aria-labelledby="page-title">
+            <div class="intro">
+                <div class="eyebrow">Simulation workspace</div>
+                <h1 id="page-title">Explore economics through interactive labs.</h1>
+                <p class="intro-text">
+                    A focused collection of browser-based experiments for understanding markets,
+                    incentives, strategy, and decision-making with immediate visual feedback.
+                </p>
+            </div>
+
+            <aside class="summary-panel" aria-label="Lab summary">
+                <h2>Designed for quick practice, classroom demos, and self-guided exploration.</h2>
+                <div class="stats">
+                    <div class="stat">
+                        <span>Available labs</span>
+                        <strong>1</strong>
+                    </div>
+                    <div class="stat">
+                        <span>Active module</span>
+                        <strong>1</strong>
+                    </div>
+                    <div class="stat">
+                        <span>Format</span>
+                        <strong>Web</strong>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <section aria-labelledby="labs-title">
+            <div class="section-head">
+                <h2 id="labs-title">Available Labs</h2>
+            </div>
+
+            <div class="lab-grid">
+                <a href="labs/elasticity/elasticity.html" class="lab-card">
+                    <div class="lab-meta">
+                        <span class="tag">Demand analysis</span>
+                        <span class="status">Ready</span>
+                    </div>
+                    <div class="lab-title">
+                        <h3>Elasticity Lab</h3>
+                        <p>
+                            Explore how demand responds to price changes using interactive
+                            simulations and real-time feedback.
+                        </p>
+                    </div>
+                    <span class="launch">Launch lab</span>
+                </a>
+
+                <a href="#" class="lab-card">
+                    <div class="lab-meta">
+                        <span class="tag">Strategy</span>
+                        <span class="status soon">Planned</span>
+                    </div>
+                    <div class="lab-title">
+                        <h3>Game Theory Lab</h3>
+                        <p>
+                            Analyze strategic interactions, payoff matrices, and decision-making
+                            in competitive environments.
+                        </p>
+                    </div>
+                    <span class="launch">Coming Soon</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        © 2026 Economics Simulation Lab
+    </footer>
+</body>
+</html>

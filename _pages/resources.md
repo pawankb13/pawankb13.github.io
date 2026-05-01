@@ -10,6 +10,13 @@ The ABDC Journal Quality List and ABS Academic Journal Guide are widely used jou
 
 ---
 
+### Simulation Labs 
+A curated suite of browser-based simulations designed to support learning across core economics courses.
+It helps students explore markets, incentives, strategy, and decision-making through interactive, real-time experiments. By linking theory with hands-on experience, it builds deeper intuition and practical understanding of economic concepts.
+[Labs](/projects/lab_index.html)
+---
+
+
 ### Machine Learning & Causal Inference: A Short Course
 This course is a series of videos designed for economics students looking to learn more about how machine learning can be used to measure the effects of interventions, understand the heterogeneous impact of interventions, and design targeted treatment assignment policies. This course is free and offered by Golub Capital Social Impact Lab, Stanford Graduate School of Business. \
 [Website](https://www.gsb.stanford.edu/faculty-research/labs-initiatives/sil/research/methods/ai-machine-learning/short-course) | [Youtube](https://youtube.com/playlist?list=PLxq_lXOUlvQAoWZEqhRqHNezS30lI49G-&si=yEJmsdznXXnnvlP6)
