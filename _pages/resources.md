@@ -14,6 +14,7 @@ The ABDC Journal Quality List and ABS Academic Journal Guide are widely used jou
 A curated suite of browser-based simulations designed to support learning across core economics courses.
 It helps students explore markets, incentives, strategy, and decision-making through interactive, real-time experiments. By linking theory with hands-on experience, it builds deeper intuition and practical understanding of economic concepts.
 [Labs](/projects/simulation_lab/index.html)
+
 ---
 
 
