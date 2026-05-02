@@ -17,6 +17,12 @@ It helps students explore markets, incentives, strategy, and decision-making thr
 
 ---
 
+### The Evoluation of Trust (Game Thoery)
+The Evolution of Trust is an interactive, game-theory simulation developed by Nicky Case that examines the conditions under which trust emerges, persists, or collapses in society. Built around the Iterated Prisoner’s Dilemma, it shows that although betrayal can provide short-term advantages, consistent mutual cooperation proves to be the most effective and sustainable strategy over repeated interactions. \
+[Link](https://ncase.me/trust/)
+
+---
+
 ### Machine Learning & Causal Inference: A Short Course
 This course is a series of videos designed for economics students looking to learn more about how machine learning can be used to measure the effects of interventions, understand the heterogeneous impact of interventions, and design targeted treatment assignment policies. This course is free and offered by Golub Capital Social Impact Lab, Stanford Graduate School of Business. \
 [Website](https://www.gsb.stanford.edu/faculty-research/labs-initiatives/sil/research/methods/ai-machine-learning/short-course) | [Youtube](https://youtube.com/playlist?list=PLxq_lXOUlvQAoWZEqhRqHNezS30lI49G-&si=yEJmsdznXXnnvlP6)
@@ -35,7 +41,7 @@ It is an intuitive interactive visualization of key concepts in economics develo
 
 --- 
 ### Marginal Revolution University (MRU)
-If you wish to learn economics — from basic to advanced—whether you're a student or a teacher, this is the place to be! This platform makes learning economics fun and interactive, unlike traditional classroom teaching 
+If you wish to learn economics — from basic to advanced—whether you're a student or a teacher, this is the place to be! This platform makes learning economics fun and interactive, unlike traditional classroom teaching. \ 
 [Website](https://mru.org/)
 
 ### Econometrics Academy
@@ -44,15 +50,15 @@ It is a free online educational platform to learn basic econometrics concepts us
 
 ---
 
-### Statistics 101
-YouTube playlist of basic to advanced statistical concepts by Brandon Foltz. It is my favorite playlist whenever I feel the need to revisit statistical concepts.\
-[Website](https://www.bcfoltz.com/stats-101/) | [Youtube](https://www.youtube.com/watch?v=Rb8MnMEJTI4&list=PLyuzqMwtJuvKwadONz4R9H2JFrOi8LFWt&index=112) 
-
----
-
 ### Multilevel Modelling Online Course (LEMMA)*
 LEMMA (Learning Environment for Multilevel Methodology and Applications) is an online multilevel modelling course, a set of graduated modules starting from an introduction to quantitative research and progressing to multilevel modelling of continuous and binary data by Center of Multilevel Modelling, University of Bristol, UK
 *One needs to register to the portal to access the course.\
 [LEMMA Portal](https://www.cmm.bris.ac.uk/lemma/?_gl=1*1ibbgpy*_ga*OTY5MDA3OTE1LjE3MDcxMTE2MDI.*_ga_6R8SPL3HLT*MTcwOTEwNzUzNi4yMC4xLjE3MDkxMDgwMDEuNjAuMC4w&_ga=2.249036423.1418765723.1709021721-969007915.1707111602)  
+
+---
+
+### Statistics 101
+YouTube playlist of basic to advanced statistical concepts by Brandon Foltz. It is my favorite playlist whenever I feel the need to revisit statistical concepts.\
+[Website](https://www.bcfoltz.com/stats-101/) | [Youtube](https://www.youtube.com/watch?v=Rb8MnMEJTI4&list=PLyuzqMwtJuvKwadONz4R9H2JFrOi8LFWt&index=112) 
 
 ---
