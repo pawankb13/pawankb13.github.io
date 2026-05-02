@@ -19,7 +19,7 @@ It helps students explore markets, incentives, strategy, and decision-making thr
 
 ### The Evoluation of Trust (Game Thoery)
 The Evolution of Trust is an interactive, game-theory simulation developed by Nicky Case that examines the conditions under which trust emerges, persists, or collapses in society. Built around the Iterated Prisoner’s Dilemma, it shows that although betrayal can provide short-term advantages, consistent mutual cooperation proves to be the most effective and sustainable strategy over repeated interactions. \
-[Link](https://ncase.me/trust/)
+[Launch Game](https://ncase.me/trust/)
 
 ---
 
