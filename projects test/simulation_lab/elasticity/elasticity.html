@@ -577,6 +577,7 @@ const S = {
   stock:0, pending:[],
   lastSold:null,
   totalRev:0, initialInventoryCost:0, totalRestockCost:0, totalLost:0,
+  totalCOGS:0, totalSpoilageCost:0,
   running:false, skipRequested:false
 };
 
@@ -770,6 +771,10 @@ function renderInv() {
   }
 
   E.perishRow.style.display = g.perishable ? "flex" : "none";
+  if (g.perishable) {
+    const spoilCostText = S.totalSpoilageCost > 0 ? ` — loss so far: <strong style="color:var(--orange)">${money(S.totalSpoilageCost)}</strong>` : "";
+    E.perishRow.innerHTML = `<span style="color:var(--orange)">⚠ Perishable — ${Math.round(g.spoilRate*100)}% of unsold stock spoils daily${spoilCostText}</span>`;
+  }
 
   if (S.pending.length) {
     E.pendingWrap.style.display = "block";
@@ -912,6 +917,7 @@ function placeOrder() {
   E.restockQty.value = 0;
   renderInv();
   updateCostHint();
+  renderStats();
   showToast(`Order placed: ${qty} units arriving Day ${arrives} (${money(cost)}).`, "success");
 }
 
@@ -1036,6 +1042,8 @@ function runDay() {
     S.records.push({ day:S.day, price, demand, sold, lost, revenue, restocked, spoil, stockBefore, note, isEvent:!!ev });
     S.lastSold = sold;
     S.totalRev += revenue;
+    S.totalCOGS += sold * g.cost;
+    S.totalSpoilageCost += spoil * g.cost;
     S.totalLost += lost;
     S.day++;
 
@@ -1279,6 +1287,10 @@ function calcElasticity() {
     ? `Net profit: <strong style="color:var(--green)">${money(profit)}</strong>`
     : `Net loss: <strong style="color:var(--red)">${money(profit)}</strong>`;
 
+  const spoilLine = S.totalSpoilageCost > 0
+    ? ` &nbsp;·&nbsp; Spoilage loss: <strong style="color:var(--orange)">${money(S.totalSpoilageCost)}</strong> (${Math.round(g.spoilRate*100)}% daily rate)`
+    : "";
+
   E.resultBanner.innerHTML = dP === 0
     ? `Price didn't change from day 1 to day 15 — elasticity can't be computed. Try varying the price next time.`
     : `<strong>${type} demand (PED = ${elas.toFixed(2)}):</strong>
@@ -1286,7 +1298,7 @@ function calcElasticity() {
        The hidden nature of this good was <strong>${g.nature.toLowerCase()}</strong> — your result
        <strong>${matched?"matched ✓":"differed ✗"}</strong> (shocks and pricing decisions shift the measured value).
        <br><br>
-       ${profitNote} &nbsp;·&nbsp; Revenue: ${money(S.totalRev)} &nbsp;·&nbsp; Base inventory cost: ${money(S.initialInventoryCost)} &nbsp;·&nbsp; Restock spent: ${money(S.totalRestockCost)}.${lostNote}`;
+       ${profitNote} &nbsp;·&nbsp; Revenue: ${money(S.totalRev)} &nbsp;·&nbsp; Base inventory cost: ${money(S.initialInventoryCost)} &nbsp;·&nbsp; Restock spent: ${money(S.totalRestockCost)}${spoilLine}.${lostNote}`;
 }
 
 // ── Reset ──────────────────────────────────────────────────────────────────
@@ -1299,6 +1311,7 @@ function resetScenario(keepPrice) {
     dM:1, pS:1, capM:1,
     stock:g.initStock, pending:[],
     lastSold:null, totalRev:0, initialInventoryCost:g.initStock * g.cost, totalRestockCost:0, totalLost:0,
+    totalCOGS:0, totalSpoilageCost:0,
     running:false, skipRequested:false
   });
 
@@ -1334,6 +1347,7 @@ function resetScenario(keepPrice) {
     <div class="profile-row"><span>Unit cost</span><strong>${money(g.cost)}</strong></div>
     <div class="profile-row"><span>Initial stock</span><strong>${g.initStock} units</strong></div>
     <div class="profile-row"><span>Base inventory cost</span><strong>${money(S.initialInventoryCost)}</strong></div>
+    ${g.perishable ? `<div class="profile-row"><span>Daily spoil rate</span><strong style="color:var(--orange)">${Math.round(g.spoilRate*100)}% of unsold</strong></div>` : ""}
     <div class="profile-row"><span>Context</span><strong style="font-size:12px">${g.context}</strong></div>
   `;
 
