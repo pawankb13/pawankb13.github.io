@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Theory Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --bg: #f6f7fb;
+    --ink: #17202a;
+    --muted: #667085;
+    --line: #d9dee8;
+    --panel: #ffffff;
+    --panel-soft: #f9fafc;
+    --blue: #2563eb;
+    --blue-soft: #eaf1ff;
+    --green: #16845b;
+    --green-soft: #e8f6ef;
+    --amber: #b7791f;
+    --amber-soft: #fff6df;
+    --rose: #be123c;
+    --shadow: 0 18px 50px rgba(25, 34, 53, 0.10);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    color: var(--ink);
+    background:
+        linear-gradient(135deg, rgba(37, 99, 235, 0.08), transparent 34%),
+        linear-gradient(315deg, rgba(22, 132, 91, 0.10), transparent 35%),
+        var(--bg);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.shell {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 30px 0 42px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 22px;
+}
+
+.eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--blue);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0;
+}
+
+h1 {
+    max-width: 760px;
+    margin-bottom: 10px;
+    font-family: 'IBM Plex Serif', serif;
+    font-size: clamp(36px, 6vw, 64px);
+    line-height: 0.98;
+    letter-spacing: 0;
+}
+
+.subtitle {
+    max-width: 680px;
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.55;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+.sound-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 40px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.82);
+    color: #344054;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 10px 24px rgba(25, 34, 53, 0.06);
+}
+
+.sound-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background: var(--green);
+}
+
+.sound-btn.is-muted .sound-dot {
+    background: var(--rose);
+}
+
+.status-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.stat-tile {
+    min-height: 92px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.74);
+    box-shadow: 0 10px 24px rgba(25, 34, 53, 0.06);
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.stat-value {
+    margin-top: 8px;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 360px minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.panel {
+    background: var(--panel);
+    border: 1px solid rgba(217, 222, 232, 0.9);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.panel-pad {
+    padding: 22px;
+}
+
+.panel-title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.setup-form {
+    display: grid;
+    gap: 14px;
+}
+
+.field {
+    display: grid;
+    gap: 7px;
+}
+
+.field label {
+    color: #344054;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+select,
+input {
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    outline: none;
+}
+
+select:focus,
+input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.13);
+}
+
+.primary-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    padding: 12px 18px;
+    border-radius: 8px;
+    background: var(--blue);
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.secondary-btn {
+    min-height: 40px;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: white;
+    color: #344054;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.game-summary {
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 8px;
+    background: var(--panel-soft);
+    border: 1px solid var(--line);
+    color: var(--muted);
+    line-height: 1.45;
+    font-size: 14px;
+}
+
+.strategy-guide {
+    margin-top: 18px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.strategy-guide summary {
+    padding: 13px 15px;
+    color: #344054;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.strategy-list {
+    display: grid;
+    gap: 10px;
+    margin: 0;
+    padding: 0 15px 15px;
+}
+
+.strategy-list div {
+    padding-top: 10px;
+    border-top: 1px solid var(--line);
+}
+
+.strategy-list dt {
+    font-weight: 800;
+}
+
+.strategy-list dd {
+    margin: 3px 0 0;
+    color: var(--muted);
+    line-height: 1.45;
+}
+
+.matrix-wrap {
+    margin-top: 18px;
+}
+
+.matrix-meta {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.matrix {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.matrix th,
+.matrix td {
+    width: 33.33%;
+    padding: 12px 10px;
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.matrix tr:last-child th,
+.matrix tr:last-child td {
+    border-bottom: 0;
+}
+
+.matrix th:last-child,
+.matrix td:last-child {
+    border-right: 0;
+}
+
+.matrix th {
+    background: #f2f5fa;
+    color: #344054;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.matrix td {
+    position: relative;
+    min-height: 78px;
+}
+
+.payoff {
+    display: block;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.matrix small {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.equilibrium-cell {
+    background: var(--green-soft);
+    box-shadow: inset 0 0 0 2px rgba(22, 132, 91, 0.24);
+}
+
+.latest-cell {
+    background: var(--amber-soft);
+    box-shadow: inset 0 0 0 2px rgba(183, 121, 31, 0.34);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    min-height: 24px;
+    padding: 4px 8px;
+    border-radius: 999px;
+    background: var(--blue-soft);
+    color: var(--blue);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.play-area {
+    display: grid;
+    gap: 18px;
+}
+
+.arena {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 270px;
+    gap: 18px;
+}
+
+.choice-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.choice {
+    display: grid;
+    gap: 6px;
+    min-height: 118px;
+    padding: 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    text-align: left;
+    cursor: pointer;
+    transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+}
+
+.choice:hover:not(:disabled) {
+    transform: translateY(-2px);
+    border-color: rgba(37, 99, 235, 0.45);
+    box-shadow: 0 12px 28px rgba(25, 34, 53, 0.12);
+}
+
+.choice strong {
+    font-size: 20px;
+}
+
+.choice span {
+    color: var(--muted);
+    line-height: 1.35;
+}
+
+.choice:disabled {
+    cursor: not-allowed;
+    opacity: 0.56;
+}
+
+.result-box {
+    min-height: 74px;
+    margin-top: 16px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: var(--panel-soft);
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+.score-card {
+    display: grid;
+    gap: 14px;
+}
+
+.score-line {
+    display: grid;
+    gap: 7px;
+}
+
+.score-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.bar {
+    height: 10px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #edf0f5;
+}
+
+.bar-fill {
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--blue);
+    transition: width 0.25s ease;
+}
+
+.bar-fill.ai {
+    background: var(--green);
+}
+
+.mini-note {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.log {
+    max-height: 320px;
+    overflow-y: auto;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.log-row {
+    display: grid;
+    grid-template-columns: 78px minmax(0, 1fr) auto;
+    gap: 12px;
+    align-items: center;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    font-size: 14px;
+}
+
+.log-row:last-child {
+    border-bottom: 0;
+}
+
+.log-round {
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.log-payoff {
+    font-weight: 800;
+}
+
+.log-tag {
+    display: inline-flex;
+    align-items: center;
+    width: max-content;
+    margin-top: 5px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: var(--green-soft);
+    color: var(--green);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.empty-log {
+    padding: 18px;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.insight {
+    padding: 18px;
+    border: 1px solid rgba(22, 132, 91, 0.25);
+    border-radius: 8px;
+    background: var(--green-soft);
+    line-height: 1.55;
+}
+
+.insight strong {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.insight-list {
+    margin: 10px 0 0;
+    padding-left: 18px;
+}
+
+.insight-list li {
+    margin-bottom: 6px;
+}
+
+.choice-hint {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    margin-top: 3px;
+    letter-spacing: 0.02em;
+}
+
+@media (max-width: 980px) {
+    .hero,
+    .layout,
+    .arena {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .shell {
+        width: min(100% - 22px, 1180px);
+        padding-top: 18px;
+    }
+
+    .status-strip,
+    .choice-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .panel-pad {
+        padding: 16px;
+    }
+
+    .log-row {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+<main class="shell">
+    <section class="hero">
+        <div>
+            <div class="eyebrow">Simulation Lab</div>
+            <h1>Game Theory Strategy Arena</h1>
+            <p class="subtitle">Pick a game, face an AI strategy, and watch the payoff matrix explain why each round rewards cooperation, competition, or coordination.</p>
+            <div class="hero-actions">
+                <button id="soundToggle" class="sound-btn" type="button" aria-pressed="false" onclick="toggleMute()">
+                    <span class="sound-dot" aria-hidden="true"></span>
+                    <span id="soundLabel">Play Music</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="status-strip" aria-label="Current simulation status">
+            <div class="stat-tile">
+                <div class="stat-label">Round</div>
+                <div class="stat-value" id="roundStat">0/0</div>
+            </div>
+            <div class="stat-tile">
+                <div class="stat-label">You</div>
+                <div class="stat-value" id="heroPScore">0</div>
+            </div>
+            <div class="stat-tile">
+                <div class="stat-label">AI</div>
+                <div class="stat-value" id="heroAScore">0</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="layout">
+        <aside class="panel panel-pad">
+            <h2 class="panel-title">Setup</h2>
+
+            <div class="setup-form">
+                <div class="field">
+                    <label for="rounds">Rounds</label>
+                    <input type="number" id="rounds" value="5" min="1" max="30">
+                </div>
+
+                <div class="field">
+                    <label for="gameType">Game condition</label>
+                    <select id="gameType">
+                        <option value="pd">Prisoner's Dilemma</option>
+                        <option value="coord">Coordination Game</option>
+                        <option value="nds">No Dominant Strategy</option>
+                        <option value="chicken">Chicken (Hawk-Dove)</option>
+                        <option value="stag">Stag Hunt</option>
+                    </select>
+                </div>
+
+                <div class="field">
+                    <label for="aiType">AI strategy</label>
+                    <select id="aiType">
+                        <option value="random">Random</option>
+                        <option value="pure">Pure Strategy</option>
+                        <option value="mixed">Mixed Strategy</option>
+                        <option value="dominant">Dominant Strategy</option>
+                        <option value="dominated">Dominated Strategy</option>
+                        <option value="maximin">Maximin Strategy</option>
+                        <option value="minimax">Minimax Strategy</option>
+                        <option value="nash">Nash Equilibrium</option>
+                        <option value="tit">Tit-for-tat</option>
+                        <option value="trigger">Trigger Strategy</option>
+                        <option value="behavior">Behavior Strategy</option>
+                        <option value="stackelberg">Stackelberg Strategy</option>
+                        <option value="cooperative">Cooperative Strategy</option>
+                    </select>
+                </div>
+
+                <button class="primary-btn" type="button" onclick="startGame()">Start Simulation</button>
+            </div>
+
+            <div id="gameSummary" class="game-summary"></div>
+
+            <details class="strategy-guide">
+                <summary>Core strategies</summary>
+                <dl class="strategy-list" id="strategyList"></dl>
+            </details>
+
+            <div class="matrix-wrap">
+                <div class="matrix-meta">
+                    <span class="badge" id="matrixBadge">Payoff Matrix</span>
+                    <span>Cells show (You, AI)</span>
+                </div>
+                <table class="matrix" aria-label="Payoff matrix">
+                    <thead>
+                        <tr>
+                            <th>You \ AI</th>
+                            <th id="aiHeadA">A</th>
+                            <th id="aiHeadB">B</th>
+                        </tr>
+                    </thead>
+                    <tbody id="matrixBody"></tbody>
+                </table>
+            </div>
+        </aside>
+
+        <section class="play-area">
+            <div id="game" class="arena hidden">
+                <div class="panel panel-pad">
+                    <h2 class="panel-title">Choose Strategy</h2>
+                    <div class="choice-grid">
+                        <button id="btnA" class="choice" type="button" onclick="play('A')">
+                            <strong id="choiceATitle">Option A</strong>
+                            <span id="choiceADesc"></span>
+                            <span id="choiceAHint" class="choice-hint"></span>
+                        </button>
+                        <button id="btnB" class="choice" type="button" onclick="play('B')">
+                            <strong id="choiceBTitle">Option B</strong>
+                            <span id="choiceBDesc"></span>
+                            <span id="choiceBHint" class="choice-hint"></span>
+                        </button>
+                    </div>
+
+                    <div id="result" class="result-box">Start the simulation, then choose a strategy for each round.</div>
+                </div>
+
+                <div class="panel panel-pad score-card">
+                    <h2 class="panel-title">Scoreboard</h2>
+                    <div class="score-line">
+                        <div class="score-top"><span>Your score</span><span id="pScore">0</span></div>
+                        <div class="bar"><div class="bar-fill" id="pBar"></div></div>
+                    </div>
+                    <div class="score-line">
+                        <div class="score-top"><span>AI score</span><span id="aScore">0</span></div>
+                        <div class="bar"><div class="bar-fill ai" id="aBar"></div></div>
+                    </div>
+                    <div class="mini-note" id="scoreNote">Higher total payoff wins the repeated game.</div>
+                    <button class="secondary-btn" type="button" onclick="startGame()">Restart</button>
+                </div>
+            </div>
+
+            <div class="panel panel-pad">
+                <h2 class="panel-title">Game Log</h2>
+                <div id="history" class="log">
+                    <div class="empty-log">No rounds played yet.</div>
+                </div>
+            </div>
+
+            <div id="insightBox" class="insight hidden"></div>
+        </section>
+    </section>
+</main>
+
+<audio id="pageAudio" src="sample.wav" loop preload="auto"></audio>
+
+<footer style="text-align:center;padding:14px 0 18px;color:var(--muted);font-size:13px;background:rgba(255,255,255,0.18);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-top:1px solid rgba(217,222,232,0.45);">
+    &copy; 2026 | Copyright Pawan Ashok Kamble
+</footer>
+
+<script>
+const GAME_DATA = {
+    pd: {
+        title: "Prisoner's Dilemma",
+        badge: "Dominant strategy trap",
+        labels: {
+            A: { title: "Cooperate", desc: "Best joint outcome if the AI also cooperates." },
+            B: { title: "Defect", desc: "Tempting short-term move; usually safer against exploitation." }
+        },
+        matrix: { "A-A": [4, 4], "A-B": [1, 5], "B-A": [5, 1], "B-B": [2, 2] },
+        equilibria: ["B-B"],
+        summary: "Defection is individually tempting, but mutual cooperation produces a higher combined payoff. The tension is between trust and protection.",
+        insight: "The Nash equilibrium is mutual defection, even though mutual cooperation is better for both players. Repeated rounds can support cooperation when players reward trust and punish exploitation."
+    },
+    coord: {
+        title: "Coordination Game",
+        badge: "Multiple equilibria",
+        labels: {
+            A: { title: "Standard A", desc: "High-value coordination point if both players select A." },
+            B: { title: "Standard B", desc: "Lower-value but still stable if both players select B." }
+        },
+        matrix: { "A-A": [5, 5], "A-B": [0, 0], "B-A": [0, 0], "B-B": [3, 3] },
+        equilibria: ["A-A", "B-B"],
+        summary: "Matching matters more than beating the other player. Shared expectations determine which equilibrium the players reach.",
+        insight: "Both matched outcomes are Nash equilibria. A-A is payoff dominant, while B-B is also stable because neither player wants to switch alone after coordination happens."
+    },
+    nds: {
+        title: "No Dominant Strategy",
+        badge: "Opponent-dependent",
+        labels: {
+            A: { title: "Strategy A", desc: "Better when the AI chooses A, weaker when the AI chooses B." },
+            B: { title: "Strategy B", desc: "Better when the AI chooses B, weaker when the AI chooses A." }
+        },
+        matrix: { "A-A": [3, 2], "A-B": [1, 4], "B-A": [2, 3], "B-B": [4, 1] },
+        equilibria: [],
+        summary: "There is no one move that wins against every AI action. The best response changes with what you expect the AI to do.",
+        insight: "No pure strategy dominates. Good play depends on prediction, mixed behavior, and reading the opponent's pattern across rounds."
+    },
+    chicken: {
+        title: "Chicken (Hawk-Dove)",
+        badge: "Anti-coordination",
+        labels: {
+            A: { title: "Swerve (Dove)", desc: "Yield to avoid disaster. Safe if the opponent charges; suboptimal if both yield." },
+            B: { title: "Charge (Hawk)", desc: "Aggressive. Big reward if the opponent yields; catastrophic if both charge." }
+        },
+        matrix: { "A-A": [3, 3], "A-B": [1, 5], "B-A": [5, 1], "B-B": [0, 0] },
+        equilibria: ["A-B", "B-A"],
+        summary: "Each player wants to do the opposite of the other. Charging wins only when the opponent yields. If both charge, both lose everything.",
+        insight: "The two Nash equilibria require different players to back down. Without communication or convention, the outcome depends entirely on reading the opponent's willingness to yield."
+    },
+    stag: {
+        title: "Stag Hunt",
+        badge: "Trust and cooperation",
+        labels: {
+            A: { title: "Hunt Stag", desc: "Best payoff when both cooperate. Nothing if the AI hunts alone." },
+            B: { title: "Hunt Hare", desc: "Safe, guaranteed payoff regardless of what the AI does." }
+        },
+        matrix: { "A-A": [5, 5], "A-B": [0, 3], "B-A": [3, 0], "B-B": [3, 3] },
+        equilibria: ["A-A", "B-B"],
+        summary: "Hunting stag together pays most but requires mutual trust. Hare is safe and solo. The game turns on whether you believe the other player will commit.",
+        insight: "Stag Hunt has two Nash equilibria: payoff-dominant A-A (requires trust) and risk-dominant B-B (safe solo choice). Unlike the Prisoner's Dilemma, cooperation is self-enforcing once both players expect it."
+    }
+};
+
+const STRATEGIES = {
+    random: {
+        label: "Random",
+        definition: "Chooses A or B with equal probability.",
+        summary: "Random AI samples A or B each round, so prediction is limited.",
+        insight: "Random play is useful as a baseline because it shows what happens without memory, commitment, or optimization."
+    },
+    pure: {
+        label: "Pure Strategy",
+        definition: "Choosing one specific action with 100% certainty.",
+        summary: "Pure Strategy AI commits to one action for the full simulation.",
+        insight: "A pure strategy is easy to predict. If the committed move is weak in the selected game, the opponent can exploit it."
+    },
+    mixed: {
+        label: "Mixed Strategy",
+        definition: "Randomising between multiple actions based on set probabilities.",
+        summary: "Mixed Strategy AI randomises with weighted probabilities instead of a simple coin flip.",
+        insight: "Mixed play protects against being perfectly predictable, especially when no single action is always best."
+    },
+    dominant: {
+        label: "Dominant Strategy",
+        definition: "The best move regardless of what the opponent does.",
+        summary: "Dominant Strategy AI looks for the move that performs best no matter what you choose.",
+        insight: "Dominant strategies are powerful when they exist. When they do not, the AI falls back to the strongest average move."
+    },
+    dominated: {
+        label: "Dominated Strategy",
+        definition: "A move that is always worse than at least one other option.",
+        summary: "Dominated Strategy AI intentionally plays the weaker-looking move so the cost of dominated choices is visible.",
+        insight: "A dominated move should usually be eliminated from serious play because another option does better in every relevant comparison."
+    },
+    maximin: {
+        label: "Maximin Strategy",
+        definition: "Maximising the minimum possible payoff, playing it safe.",
+        summary: "Maximin AI protects its worst-case payoff.",
+        insight: "Maximin thinking is conservative. It may leave higher payoffs on the table, but it avoids the most painful outcomes."
+    },
+    minimax: {
+        label: "Minimax Strategy",
+        definition: "Minimising the opponent's maximum possible payoff.",
+        summary: "Minimax AI chooses the move that limits your best possible payoff.",
+        insight: "Minimax is defensive. It focuses less on the AI's upside and more on preventing the opponent from getting a big win."
+    },
+    nash: {
+        label: "Nash Equilibrium",
+        definition: "A strategy profile where no player wants to change their move unilaterally.",
+        summary: "Nash AI tries to steer play toward the strongest pure Nash equilibrium available.",
+        insight: "A Nash equilibrium is stable because neither side benefits by switching alone. Stability and total payoff are not always the same thing."
+    },
+    tit: {
+        label: "Tit-for-Tat",
+        definition: "Mimicking the opponent's previous move in repeated games.",
+        summary: "Tit-for-tat AI starts with A, then copies your previous round.",
+        insight: "Tit-for-tat rewards cooperation and punishes defection, but it can also echo conflict if both players keep retaliating."
+    },
+    trigger: {
+        label: "Trigger Strategy",
+        definition: "Cooperating until the opponent defects, then punishing them indefinitely.",
+        summary: "Trigger AI cooperates until you choose B once, then switches to punishment.",
+        insight: "Trigger strategies can support cooperation through threat, but one defection can permanently damage trust."
+    },
+    behavior: {
+        label: "Behavior Strategy",
+        definition: "Applying probabilities to specific decision points in a sequence.",
+        summary: "Behavior Strategy AI changes its probabilities based on round progress, score pressure, and your previous move.",
+        insight: "Behavior strategies are useful in sequential games because the same action can mean different things at different moments."
+    },
+    stackelberg: {
+        label: "Stackelberg Strategy",
+        definition: "A leader move where one player commits first to force a reaction.",
+        summary: "Stackelberg AI commits like a leader and expects you to best-respond.",
+        insight: "Stackelberg play rewards credible commitment. The leader chooses the move that works best after the follower reacts."
+    },
+    cooperative: {
+        label: "Cooperative Strategy",
+        definition: "Players coordinating moves to maximise collective payoff.",
+        summary: "Cooperative AI chooses the move from the highest joint-payoff outcome.",
+        insight: "Cooperative play can outperform selfish play, but it depends on both sides caring about the shared payoff."
+    }
+};
+
+const STRATEGY_ORDER = ["pure", "mixed", "dominant", "dominated", "maximin", "minimax", "nash", "tit", "trigger", "behavior", "stackelberg", "cooperative"];
+const ACTIONS = ["A", "B"];
+
+let round = 1;
+let totalRounds = 0;
+let playerScore = 0;
+let aiScore = 0;
+let lastPlayerMove = null;
+let gameType = "pd";
+let aiType = "random";
+let gameOver = true;
+let history = [];
+let lastOutcomeKey = null;
+let triggerPunished = false;
+let pureCommitment = null;
+let stackelbergCommitment = null;
+function currentGame() {
+    return GAME_DATA[gameType];
+}
+
+function getPayoff(player, ai) {
+    return currentGame().matrix[player + "-" + ai];
+}
+
+function aiPayoff(player, ai) {
+    return getPayoff(player, ai)[1];
+}
+
+function playerPayoff(player, ai) {
+    return getPayoff(player, ai)[0];
+}
+
+function weightedMove(probabilityA) {
+    return Math.random() < clamp(probabilityA, 0, 1) ? "A" : "B";
+}
+
+function chooseByScore(scoreFn, direction = "max") {
+    return ACTIONS.reduce((best, action) => {
+        const score = scoreFn(action);
+        if (best === null) return { action, score };
+        if (direction === "max" && score > best.score) return { action, score };
+        if (direction === "min" && score < best.score) return { action, score };
+        return best;
+    }, null).action;
+}
+
+function bestAiAverageMove() {
+    return chooseByScore(ai => ACTIONS.reduce((sum, player) => sum + aiPayoff(player, ai), 0) / ACTIONS.length);
+}
+
+function weakestAiAverageMove() {
+    return chooseByScore(ai => ACTIONS.reduce((sum, player) => sum + aiPayoff(player, ai), 0) / ACTIONS.length, "min");
+}
+
+function getDominantAiMove() {
+    const dominant = ACTIONS.find(candidate =>
+        ACTIONS.every(other => other === candidate || ACTIONS.every(player => aiPayoff(player, candidate) >= aiPayoff(player, other)))
+    );
+    return dominant || bestAiAverageMove();
+}
+
+function getMaximinMove() {
+    return chooseByScore(ai => Math.min(...ACTIONS.map(player => aiPayoff(player, ai))));
+}
+
+function getMinimaxMove() {
+    return chooseByScore(ai => Math.max(...ACTIONS.map(player => playerPayoff(player, ai))), "min");
+}
+
+function getBestNashMove() {
+    const game = currentGame();
+    if (!game.equilibria.length) return weightedMove(0.5);
+
+    const bestEquilibrium = game.equilibria.reduce((best, key) => {
+        const payoff = game.matrix[key];
+        const score = payoff[0] + payoff[1];
+        if (!best || score > best.score) return { key, score };
+        return best;
+    }, null);
+
+    return bestEquilibrium.key.split("-")[1];
+}
+
+function getStackelbergMove() {
+    return chooseByScore(ai => {
+        const playerResponse = chooseByScore(player => playerPayoff(player, ai));
+        return aiPayoff(playerResponse, ai);
+    });
+}
+
+function getCooperativeMove() {
+    const bestJointOutcome = ACTIONS.flatMap(player => ACTIONS.map(ai => ({ player, ai, payoff: getPayoff(player, ai) })))
+        .reduce((best, outcome) => {
+            const score = outcome.payoff[0] + outcome.payoff[1];
+            if (!best || score > best.score) return { ...outcome, score };
+            return best;
+        }, null);
+
+    return bestJointOutcome.ai;
+}
+
+function getBehaviorMove() {
+    const progress = totalRounds ? round / totalRounds : 0;
+    let probabilityA = gameType === "pd" ? 0.68 : gameType === "coord" ? 0.74 : gameType === "chicken" ? 0.42 : gameType === "stag" ? 0.72 : 0.50;
+
+    if (lastPlayerMove === "B") probabilityA -= 0.28;
+    if (aiScore < playerScore) probabilityA -= 0.12;
+    if (progress > 0.65 && gameType === "coord") probabilityA += 0.12;
+    if (progress > 0.65 && gameType === "pd") probabilityA -= 0.08;
+    if (progress > 0.65 && gameType === "stag" && lastPlayerMove === "B") probabilityA -= 0.20;
+
+    return weightedMove(probabilityA);
+}
+
+function aiMove() {
+    if (aiType === "random") return weightedMove(0.5);
+    if (aiType === "pure") {
+        pureCommitment = pureCommitment || "A";
+        return pureCommitment;
+    }
+    if (aiType === "mixed") return weightedMove(gameType === "coord" ? 0.65 : gameType === "pd" ? 0.35 : gameType === "chicken" ? 0.58 : gameType === "stag" ? 0.70 : 0.50);
+    if (aiType === "dominant") return getDominantAiMove();
+    if (aiType === "dominated") return weakestAiAverageMove();
+    if (aiType === "maximin") return getMaximinMove();
+    if (aiType === "minimax") return getMinimaxMove();
+    if (aiType === "nash") return getBestNashMove();
+    if (aiType === "tit") return lastPlayerMove || "A";
+    if (aiType === "trigger") return triggerPunished ? "B" : "A";
+    if (aiType === "behavior") return getBehaviorMove();
+    if (aiType === "stackelberg") {
+        stackelbergCommitment = stackelbergCommitment || getStackelbergMove();
+        return stackelbergCommitment;
+    }
+    if (aiType === "cooperative") return getCooperativeMove();
+    return "A";
+}
+
+function startGame() {
+    totalRounds = clamp(parseInt(document.getElementById("rounds").value, 10) || 5, 1, 30);
+    document.getElementById("rounds").value = totalRounds;
+    gameType = document.getElementById("gameType").value;
+    aiType = document.getElementById("aiType").value;
+
+    round = 1;
+    playerScore = 0;
+    aiScore = 0;
+    gameOver = false;
+    lastPlayerMove = null;
+    history = [];
+    lastOutcomeKey = null;
+    triggerPunished = false;
+    pureCommitment = null;
+    stackelbergCommitment = null;
+
+    document.getElementById("game").classList.remove("hidden");
+    document.getElementById("insightBox").classList.add("hidden");
+    document.getElementById("result").innerHTML = "Round 1 is ready. Choose your first strategy.";
+    document.getElementById("btnA").disabled = false;
+    document.getElementById("btnB").disabled = false;
+
+    renderGameDetails();
+    renderHistory();
+    updateUI();
+}
+
+function play(player) {
+    if (gameOver) return;
+
+    const ai = aiMove();
+    const payoff = getPayoff(player, ai);
+    const game = currentGame();
+
+    playerScore += payoff[0];
+    aiScore += payoff[1];
+    history.push({ round, player, ai, payoff });
+    lastOutcomeKey = player + "-" + ai;
+    if (player === "B") triggerPunished = true;
+
+    const remaining = totalRounds - round;
+    const roundNote = remaining > 0 ? ` — ${remaining} round${remaining === 1 ? "" : "s"} left.` : "";
+    document.getElementById("result").innerHTML =
+        `<strong>Round ${round}:</strong> You chose ${game.labels[player].title}; AI used ${STRATEGIES[aiType].label} and chose ${game.labels[ai].title}. Payoff: (${payoff[0]}, ${payoff[1]}).${roundNote}`;
+
+    lastPlayerMove = player;
+    round++;
+
+    if (round > totalRounds) {
+        endGame();
+    }
+
+    renderGameDetails();
+    renderHistory();
+    updateUI();
+}
+
+function endGame() {
+    gameOver = true;
+    document.getElementById("btnA").disabled = true;
+    document.getElementById("btnB").disabled = true;
+    document.getElementById("insightBox").innerHTML = buildInsight();
+    document.getElementById("insightBox").classList.remove("hidden");
+}
+
+function buildInsight() {
+    const game = currentGame();
+    const strategy = STRATEGIES[aiType] || STRATEGIES.random;
+    const winner = playerScore === aiScore ? "The game ended in a tie." : playerScore > aiScore ? "You won the repeated game." : "The AI won the repeated game.";
+    const cooperativeRounds = history.filter(item => item.player === "A" && item.ai === "A").length;
+    const conflictRounds = history.filter(item => item.player !== item.ai).length;
+    const equilibriumRounds = history.filter(item => game.equilibria.includes(item.player + "-" + item.ai)).length;
+    const bestPlayerRound = history.reduce((best, item) => item.payoff[0] > best.payoff[0] ? item : best, history[0]);
+    const averagePlayer = (playerScore / totalRounds).toFixed(2);
+    const averageAi = (aiScore / totalRounds).toFixed(2);
+    const playerA = history.filter(item => item.player === "A").length;
+    const aiA = history.filter(item => item.ai === "A").length;
+    const equilibriumLine = game.equilibria.length
+        ? `Equilibrium outcomes appeared in ${equilibriumRounds} of ${totalRounds} rounds.`
+        : "This matrix has no pure Nash equilibrium, so prediction and mixed behavior matter more than settling into one stable cell.";
+
+    let pattern = "";
+    if (gameType === "pd") {
+        pattern = cooperativeRounds >= Math.ceil(totalRounds / 2)
+            ? "You reached cooperation often, which is hard in this game and usually means the AI was predictable or forgiving."
+            : "Cooperation did not stabilize, so the safer individual incentive pulled the game toward lower joint outcomes.";
+    } else if (gameType === "coord") {
+        pattern = conflictRounds === 0
+            ? "You coordinated every round, so the main strategic problem was solved quickly."
+            : "Missed matches were costly; in coordination games, being correct together matters more than choosing a clever move alone.";
+    } else if (gameType === "chicken") {
+        const antiCoordRounds = history.filter(item => item.player !== item.ai).length;
+        pattern = antiCoordRounds >= Math.ceil(totalRounds / 2)
+            ? "Most rounds achieved anti-coordination — one player yielded while the other charged. That is exactly the stable outcome in Chicken."
+            : "Several rounds ended with both players choosing the same action. Matching on yield is safe but dull; matching on charge costs both players everything.";
+    } else if (gameType === "stag") {
+        pattern = cooperativeRounds >= Math.ceil(totalRounds / 2)
+            ? "Stag-hunt cooperation held up across most rounds. Sustaining this is meaningful because it requires each player to trust the other will not defect to hare."
+            : "Hare hunting pulled play away from the high joint payoff. Stag is only achievable when both players are confident the other will commit.";
+    } else {
+        pattern = conflictRounds >= Math.ceil(totalRounds / 2)
+            ? "The play pattern kept shifting, which fits a game where best responses depend on the opponent."
+            : "The game settled into repeated matches, but those matches are not guaranteed by a dominant strategy.";
+    }
+
+    return `
+        <strong>Final Insight</strong>
+        ${winner} Final score: You ${playerScore}, AI ${aiScore}. Average payoff per round: You ${averagePlayer}, AI ${averageAi}.
+        <ul class="insight-list">
+            <li>AI strategy: ${strategy.label}. ${strategy.insight}</li>
+            <li>${game.insight}</li>
+            <li>${pattern}</li>
+            <li>${equilibriumLine}</li>
+            <li>You chose A in ${playerA} rounds; the AI chose A in ${aiA} rounds.</li>
+            <li>Your best single round was round ${bestPlayerRound.round}, with payoff ${bestPlayerRound.payoff[0]}.</li>
+        </ul>
+    `;
+}
+
+function renderGameDetails() {
+    const game = currentGame();
+    const strategy = STRATEGIES[aiType] || STRATEGIES.random;
+
+    document.getElementById("matrixBadge").textContent = game.badge;
+    document.getElementById("gameSummary").innerHTML = `<strong>${game.title}:</strong> ${game.summary}<br><br><strong>${strategy.label}:</strong> ${strategy.summary}`;
+    document.getElementById("choiceATitle").textContent = game.labels.A.title;
+    document.getElementById("choiceADesc").textContent = game.labels.A.desc;
+    document.getElementById("choiceBTitle").textContent = game.labels.B.title;
+    document.getElementById("choiceBDesc").textContent = game.labels.B.desc;
+    document.getElementById("aiHeadA").textContent = `AI: ${game.labels.A.title}`;
+    document.getElementById("aiHeadB").textContent = `AI: ${game.labels.B.title}`;
+
+    const aPayoffs = ACTIONS.map(ai => game.matrix["A-" + ai][0]);
+    const bPayoffs = ACTIONS.map(ai => game.matrix["B-" + ai][0]);
+    document.getElementById("choiceAHint").textContent = `Payoffs: ${Math.min(...aPayoffs)}–${Math.max(...aPayoffs)} · Press A`;
+    document.getElementById("choiceBHint").textContent = `Payoffs: ${Math.min(...bPayoffs)}–${Math.max(...bPayoffs)} · Press B`;
+
+    const rows = ["A", "B"].map(player => {
+        const cells = ["A", "B"].map(ai => {
+            const key = player + "-" + ai;
+            const payoff = game.matrix[key];
+            const isEq = game.equilibria.includes(key);
+            const isLatest = key === lastOutcomeKey;
+            const cellClasses = [isEq ? "equilibrium-cell" : "", isLatest ? "latest-cell" : ""].filter(Boolean).join(" ");
+            const note = isLatest ? "Latest round" : isEq ? "Nash equilibrium" : "Payoff";
+            return `
+                <td class="${cellClasses}">
+                    <span class="payoff">${payoff[0]}, ${payoff[1]}</span>
+                    <small>${note}</small>
+                </td>
+            `;
+        }).join("");
+
+        return `
+            <tr>
+                <th>You: ${game.labels[player].title}</th>
+                ${cells}
+            </tr>
+        `;
+    }).join("");
+
+    document.getElementById("matrixBody").innerHTML = rows;
+}
+
+function renderStrategyList() {
+    document.getElementById("strategyList").innerHTML = STRATEGY_ORDER.map(key => {
+        const strategy = STRATEGIES[key];
+        return `
+            <div>
+                <dt>${strategy.label}</dt>
+                <dd>${strategy.definition}</dd>
+            </div>
+        `;
+    }).join("");
+}
+
+function resetSimulationView() {
+    gameType = document.getElementById("gameType").value;
+    aiType = document.getElementById("aiType").value;
+    round = 1;
+    totalRounds = 0;
+    playerScore = 0;
+    aiScore = 0;
+    lastPlayerMove = null;
+    gameOver = true;
+    history = [];
+    lastOutcomeKey = null;
+    triggerPunished = false;
+    pureCommitment = null;
+    stackelbergCommitment = null;
+
+    document.getElementById("game").classList.add("hidden");
+    document.getElementById("insightBox").classList.add("hidden");
+    renderGameDetails();
+    renderHistory();
+    updateUI();
+}
+
+function renderHistory() {
+    const historyBox = document.getElementById("history");
+    if (history.length === 0) {
+        historyBox.innerHTML = '<div class="empty-log">No rounds played yet.</div>';
+        return;
+    }
+
+    const game = currentGame();
+    historyBox.innerHTML = history.map(item => {
+        const isEq = game.equilibria.includes(item.player + "-" + item.ai);
+        return `
+            <div class="log-row">
+                <div class="log-round">Round ${item.round}</div>
+                <div>
+                    You: ${game.labels[item.player].title} | AI: ${game.labels[item.ai].title}
+                    ${isEq ? '<span class="log-tag">Nash equilibrium</span>' : ""}
+                </div>
+                <div class="log-payoff">(${item.payoff[0]}, ${item.payoff[1]})</div>
+            </div>
+        `;
+    }).join("");
+    historyBox.scrollTop = historyBox.scrollHeight;
+}
+
+function updateUI() {
+    const visibleRound = gameOver ? totalRounds : Math.min(round, totalRounds);
+    const maxScore = Math.max(playerScore, aiScore, totalRounds * 5, 1);
+    const playerPct = Math.round((playerScore / maxScore) * 100);
+    const aiPct = Math.round((aiScore / maxScore) * 100);
+
+    document.getElementById("roundStat").textContent = `${visibleRound}/${totalRounds || 0}`;
+    document.getElementById("heroPScore").textContent = playerScore;
+    document.getElementById("heroAScore").textContent = aiScore;
+    document.getElementById("pScore").textContent = playerScore;
+    document.getElementById("aScore").textContent = aiScore;
+    document.getElementById("pBar").style.width = `${playerPct}%`;
+    document.getElementById("aBar").style.width = `${aiPct}%`;
+    document.getElementById("scoreNote").textContent = gameOver
+        ? "Simulation complete. Restart to test another strategy."
+        : `Next round: ${Math.min(round, totalRounds)} of ${totalRounds}.`;
+}
+
+function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+}
+
+function getPageAudio() {
+    return document.getElementById("pageAudio");
+}
+
+function updateSoundButton() {
+    const audio = getPageAudio();
+    const button = document.getElementById("soundToggle");
+    const label = document.getElementById("soundLabel");
+    if (!audio || !button || !label) return;
+
+    const isMuted = audio.muted;
+    button.classList.toggle("is-muted", isMuted || audioWasBlocked);
+    button.setAttribute("aria-pressed", String(isMuted));
+
+    if (isMuted) {
+        label.textContent = "Sound On";
+    } else if (audioWasBlocked || audio.paused) {
+        label.textContent = "Play Sound";
+    } else {
+        label.textContent = "Mute";
+    }
+}
+
+function tryStartAudio() {
+    const audio = getPageAudio();
+    if (!audio || audio.muted) {
+        updateSoundButton();
+        return;
+    }
+
+    audio.volume = 0.32;
+    const playAttempt = audio.play();
+    if (playAttempt && typeof playAttempt.then === "function") {
+        playAttempt
+            .then(() => {
+                audioWasBlocked = false;
+                updateSoundButton();
+            })
+            .catch(() => {
+                audioWasBlocked = true;
+                updateSoundButton();
+            });
+    } else {
+        audioWasBlocked = false;
+        updateSoundButton();
+    }
+}
+
+function toggleMute() {
+    const audio = getPageAudio();
+    if (!audio) return;
+
+    if (audio.muted) {
+        audio.muted = false;
+        audioWasBlocked = false;
+        tryStartAudio();
+        return;
+    }
+
+    if (audioWasBlocked || audio.paused) {
+        audioWasBlocked = false;
+        tryStartAudio();
+        return;
+    }
+
+    audio.muted = true;
+    audio.pause();
+    updateSoundButton();
+}
+
+function handleFirstPointerDown(event) {
+    if (event.target.closest && event.target.closest("#soundToggle")) return;
+    tryStartAudio();
+}
+
+function handleFirstKeydown() {
+    if (document.activeElement && document.activeElement.id === "soundToggle") return;
+    tryStartAudio();
+}
+
+function setupAudio() {
+    const audio = getPageAudio();
+    if (!audio) return;
+
+    audio.volume = 0.32;
+    audio.muted = false;
+    tryStartAudio();
+    window.addEventListener("load", tryStartAudio);
+    document.addEventListener("pointerdown", handleFirstPointerDown, { once: true });
+    document.addEventListener("keydown", handleFirstKeydown, { once: true });
+    updateSoundButton();
+}
+
+document.getElementById("gameType").addEventListener("change", () => {
+    resetSimulationView();
+});
+
+document.getElementById("aiType").addEventListener("change", resetSimulationView);
+
+document.addEventListener("keydown", (e) => {
+    if (gameOver) return;
+    const tag = document.activeElement && document.activeElement.tagName;
+    if (tag === "INPUT" || tag === "SELECT" || tag === "TEXTAREA") return;
+    if (e.key === "a" || e.key === "A") { e.preventDefault(); play("A"); }
+    if (e.key === "b" || e.key === "B") { e.preventDefault(); play("B"); }
+});
+
+gameType = document.getElementById("gameType").value;
+aiType = document.getElementById("aiType").value;
+renderStrategyList();
+renderGameDetails();
+updateUI();
+setupAudio();
+</script>
+</body>
+</html>
