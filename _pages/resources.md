@@ -36,7 +36,7 @@ Mixtape Sessions aims to provide high-quality and approachable courses in Casual
 
 ---
 
-## EconArena (Free Economics Games)
+### EconArena (Free Economics Games)
 EconArena is a free economics games platform built for Economics, IB Economics, and introductory college courses. Instead of passive lectures and textbook drills, students learn through 22+ interactive simulations covering macroeconomics, microeconomics, personal finance, behavioral economics, and international trade. \
 [Explore](https://econarena.com/)
 
