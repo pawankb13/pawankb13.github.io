@@ -33,13 +33,7 @@ body::before{
   -webkit-mask-image:linear-gradient(to bottom,rgba(0,0,0,.44),transparent 72%);
   mask-image:linear-gradient(to bottom,rgba(0,0,0,.44),transparent 72%);
 }
-body::after{
-  content:'';
-  position:fixed;inset:18px;z-index:0;pointer-events:none;
-  border:1px solid rgba(184,138,72,.28);
-  border-radius:28px;
-  box-shadow:inset 0 0 55px rgba(255,255,255,.42);
-}
+/* Decorative page border removed for better mobile layout */
 
 /* ── PETAL BG ── */
 #petals{position:fixed;inset:0;pointer-events:none;z-index:0;filter:drop-shadow(0 8px 18px rgba(111,29,58,.16));}
@@ -580,7 +574,9 @@ body::after{
   /* page 1 — splash */
   #p1 .splash-pre{font-size:11px;}
   #p1 .splash-tag{font-size:clamp(24px,6.5vw,34px);}
-  .body-text{font-size:15px;}
+  .body-text{font-size:15px;max-width:100%;}
+  body{overflow-x:hidden;}
+  .h2,.body-text,.sub,.bday-quote p,.fc-back .bk-msg{word-break:break-word;hyphens:auto;}
 
   /* page 2 — gallery */
   #p2{padding-top:70px;}
@@ -933,7 +929,18 @@ const galData=[
   {label:'The Drive',        msg:'She goes after what she wants. Quietly, steadily, completely.'},
   {label:'The Whole Her',    msg:'All of it — every piece, every side — is what makes her extraordinary.'},
 ];
-const photoData=new Array(10).fill("test.jpg");
+const photoData=[
+  'pictures/test.jpg',
+  'pictures/test copy.jpg',
+  'pictures/test copy 2.jpg',
+  'pictures/test copy 3.jpg',
+  'pictures/test copy 4.jpg',
+  'pictures/test copy 5.jpg',
+  'pictures/test copy 6.jpg',
+  'pictures/test copy 7.jpg',
+  'pictures/test copy 8.jpg',
+  'pictures/test copy 9.jpg',
+];
 const seen=new Array(10).fill(false);
 const revealed=new Array(10).fill(false);
 let seenCount=0;
