@@ -371,23 +371,23 @@ body::before{
 }
 .fc-back .bk-text{
   flex:1;
-  padding:28px 30px;
+  padding:16px 20px;
   border-left:1px solid var(--rose-l);
   display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
   text-align:left;
 }
 .fc-back .bk-num{
-  font-size:12px;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--rose);margin-bottom:10px;
+  font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--rose);margin-bottom:6px;
 }
 .fc-back .bk-label{
   font-family:'Cormorant Garamond',serif;
-  font-size:clamp(30px,4.5vw,46px);font-weight:600;color:var(--rose-d);
-  margin-bottom:12px;line-height:1.02;
+  font-size:clamp(22px,3.2vw,34px);font-weight:600;color:var(--rose-d);
+  margin-bottom:8px;line-height:1.02;
 }
 .fc-back .bk-msg{
   font-family:'Cormorant Garamond',serif;font-style:italic;
-  font-size:clamp(18px,2.2vw,24px);font-weight:300;color:var(--text-m);line-height:1.65;
+  font-size:clamp(13px,1.4vw,15px);font-weight:300;color:var(--text-m);line-height:1.5;
 }
 .fc-back .bk-tap{
   margin-top:18px;font-size:11px;letter-spacing:.15em;
@@ -610,13 +610,13 @@ body::before{
   .flip-card.flipped:hover{transform:rotateX(180deg) scale(1.01);}
   .fc-front{transform:rotateX(0deg);}
   .fc-back{flex-direction:column;transform:rotateX(180deg);}
-  .fc-back .bk-photo{width:100%;flex:0 0 58%;}
+  .fc-back .bk-photo{width:100%;flex:0 0 44%;}
   .fc-back .bk-photo .bk-overlay{background:linear-gradient(to bottom,transparent 55%,rgba(255,253,249,.68));}
-  .fc-back .bk-text{padding:14px 16px;border-left:0;border-top:1px solid var(--rose-l);align-items:flex-start;}
-  .fc-back .bk-num{font-size:11px;margin-bottom:3px;}
-  .fc-back .bk-label{font-size:clamp(20px,5vw,26px);margin-bottom:6px;}
-  .fc-back .bk-msg{font-size:clamp(14px,3.5vw,17px);line-height:1.6;}
-  .fc-back .bk-tap{margin-top:6px;font-size:10px;}
+  .fc-back .bk-text{padding:8px 12px;border-left:0;border-top:1px solid var(--rose-l);align-items:flex-start;}
+  .fc-back .bk-num{font-size:10px;margin-bottom:2px;}
+  .fc-back .bk-label{font-size:clamp(14px,3.5vw,18px);margin-bottom:4px;}
+  .fc-back .bk-msg{font-size:clamp(11px,2.8vw,13px);line-height:1.45;}
+  .fc-back .bk-tap{margin-top:4px;font-size:10px;}
   .gal-progress-label{font-size:12px;}
 
   /* page 3 — liked cards */
@@ -954,7 +954,7 @@ nextBtn.addEventListener('click',nextPage);
 
 // ── GALLERY DATA ──
 const galData=[
-  {label:'The Smile',        msg:'That smile is her superpower. It lights up every room she walks into. That smile is her superpower. It lights up every room she walks into.That smile is her superpower. It lights up every room she walks into.That smile is her superpower. It lights up every room she walks into.That smile is her superpower. It lights up every room she walks into.'},
+  {label:'The Smile',        msg:'That smile is her superpower. It lights up every room she walks into.'},
   {label:'The Eyes',         msg:'There is a depth in her eyes that speaks before she even says a word.'},
   {label:'The Strength',     msg:'She has been through a lot — and she shows up every time, stronger.'},
   {label:'The Laugh',        msg:'Her laugh is genuine, loud, and completely unforgettable.'},
