@@ -650,14 +650,14 @@ body::before{
 }
 </style>
 </head>
-<body class="controls-hidden">
+<body class="controls-hidden" onclick="unmuteAudio()">
 
 <canvas id="petals"></canvas>
 <button type="button" id="musicBtn" aria-label="Play music" aria-pressed="false" title="Music">
   <span class="music-icon">♪</span>
   <span class="music-label">Music</span>
 </button>
-<audio id="birthdayAudio" loop preload="auto">
+<audio id="birthdayAudio" loop preload="auto" muted>
   <source src="test.mp3" type="audio/mpeg">
 </audio>
 <div id="dots"></div>
@@ -858,12 +858,22 @@ function setMusicState(isPlaying){
   musicLabel.textContent=isPlaying?'Pause':'Music';
 }
 
+// Unmute on first user interaction
+function unmuteAudio(){
+  birthdayAudio.muted=false;
+  document.removeEventListener('click',unmuteAudio);
+  document.removeEventListener('touchstart',unmuteAudio);
+}
+document.addEventListener('click',unmuteAudio);
+document.addEventListener('touchstart',unmuteAudio);
+
 musicBtn.addEventListener('click',()=>{
   if(musicPlaying){
     birthdayAudio.pause();
     setMusicState(false);
     return;
   }
+  birthdayAudio.muted=false;
   birthdayAudio.play()
     .then(()=>setMusicState(true))
     .catch(()=>setMusicState(false));
@@ -1199,12 +1209,10 @@ function fireConfetti(){
 updateNext();
 selectTab(0);
 refreshScrollControls();
-// Auto-play music on page load
-setTimeout(()=>{
-  birthdayAudio.play()
-    .then(()=>setMusicState(true))
-    .catch(()=>setMusicState(false));
-},500);
+// Auto-play music on page load (muted, will unmute on first interaction)
+birthdayAudio.play()
+  .then(()=>setMusicState(true))
+  .catch(err=>{console.log('Autoplay blocked',err);});
 setTimeout(fireConfetti,3200);
 </script>
 </body>
