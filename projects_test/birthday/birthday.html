@@ -1199,6 +1199,12 @@ function fireConfetti(){
 updateNext();
 selectTab(0);
 refreshScrollControls();
+// Auto-play music on page load
+setTimeout(()=>{
+  birthdayAudio.play()
+    .then(()=>setMusicState(true))
+    .catch(()=>setMusicState(false));
+},500);
 setTimeout(fireConfetti,3200);
 </script>
 </body>
