@@ -657,7 +657,7 @@ body::before{
   <span class="music-icon">♪</span>
   <span class="music-label">Music</span>
 </button>
-<audio id="birthdayAudio" loop preload="auto" muted>
+<audio id="birthdayAudio" loop preload="auto">
   <source src="test.mp3" type="audio/mpeg">
 </audio>
 <div id="dots"></div>
@@ -854,15 +854,6 @@ function setMusicState(isPlaying){
   musicBtn.setAttribute('aria-label',isPlaying?'Pause music':'Play music');
   musicLabel.textContent=isPlaying?'Pause':'Music';
 }
-
-// Unmute on first user interaction
-function unmuteAudio(){
-  birthdayAudio.muted=false;
-  document.removeEventListener('click',unmuteAudio);
-  document.removeEventListener('touchstart',unmuteAudio);
-}
-document.addEventListener('click',unmuteAudio);
-document.addEventListener('touchstart',unmuteAudio);
 
 musicBtn.addEventListener('click',()=>{
   if(musicPlaying){
@@ -1207,10 +1198,25 @@ function fireConfetti(){
 updateNext();
 selectTab(0);
 refreshScrollControls();
-// Auto-play music on page load (muted, will unmute on first interaction)
+// Try unmuted autoplay; fall back to muted + unmute on first interaction
+birthdayAudio.muted=false;
 birthdayAudio.play()
   .then(()=>setMusicState(true))
-  .catch(err=>{console.log('Autoplay blocked',err);});
+  .catch(()=>{
+    birthdayAudio.muted=true;
+    birthdayAudio.play()
+      .then(()=>{
+        setMusicState(true);
+        function unmuteOnInteraction(){
+          birthdayAudio.muted=false;
+          document.removeEventListener('click',unmuteOnInteraction);
+          document.removeEventListener('touchstart',unmuteOnInteraction);
+        }
+        document.addEventListener('click',unmuteOnInteraction);
+        document.addEventListener('touchstart',unmuteOnInteraction);
+      })
+      .catch(()=>setMusicState(false));
+  });
 setTimeout(fireConfetti,3200);
 </script>
 </body>
