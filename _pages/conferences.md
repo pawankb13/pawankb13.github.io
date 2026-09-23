@@ -8,7 +8,7 @@ author_profile: false
 Paper Title: Can financial literacy alleviate poverty? – New insights from a multidimensional approach \
 Authors: Pawan A Kamble, Atul Mehta \
 Conference Details:  International Public Policy Association (IPPA) - Summer School 2026The Hang Seng University of Hong Kong (HSUHK), Hong Kong \
-Track: Making Public Policies Work Effectively and Bringing Multiple Stakeholders Perspectives Back \ 
+Track: Making Public Policies Work Effectively and Bringing Multiple Stakeholders Perspectives \
 Dates: 24 June - 26 June, 2026
 
 ## 2025
