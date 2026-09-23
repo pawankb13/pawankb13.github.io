@@ -8,7 +8,7 @@ author_profile: false
 Paper Title: Can financial literacy alleviate poverty? – New insights from a multidimensional approach \
 Authors: Pawan A Kamble, Atul Mehta \
 Conference Details: The Hang Seng University of Hong Kong (HSUHK), Hong Kong \
-Track: Making Public Policies Work Effectively: Bringing Multiple Stakeholders Perspectives Back \ 
+Track: Making Public Policies Work Effectively: Bringing Multiple Stakeholders Perspectives Back\ 
 Dates: 24 June - 26 June, 2026
 
 ## 2025
