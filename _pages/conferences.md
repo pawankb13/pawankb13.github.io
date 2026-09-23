@@ -39,7 +39,7 @@ Dates: 2 - 4 August, 2023
 - **International Marketing Conference - IIM Shillong** \
 Paper Title: Public Sector Marketing for Social Welfare: A Strategic tool for India's Social Welfare Programmes** \
 Authors: Pawan A Kamble, Atul Mehta, Neelam Rani \
-Conference Details: 2nd.International Marketing Conference (iMarC II), Indian Institute of Management Shillong, India Dates: 24 - 25 August, 2022 
+Conference Details: 2nd.International Marketing Conference (iMarC II), Indian Institute of Management Shillong, India\ Dates: 24 - 25 August, 2022 
 
 ## 2016
 - **IEEE Region 10 Humanitarian Technology Conference**\
