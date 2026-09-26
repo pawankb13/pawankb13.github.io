@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.21)  26 SEP 2026 15:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.21)  26 SEP 2026 15:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -518,11 +518,11 @@ Underfull \hbox (badness 10000) in alignment at lines 5--22
 [][] 
  []
 
-) (./sections/09. honors.tex [3] [4]
-LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 25.
+) (./sections/09. honors.tex [3]
+LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 23.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
-)) (./sections/10. certifications.tex) (./sections/11. responsibilities.tex
+)) (./sections/10. certifications.tex [4]) (./sections/11. responsibilities.tex
 Overfull \hbox (55.63863pt too wide) in alignment at lines 5--12
 [][][][]
  []
@@ -532,23 +532,28 @@ Underfull \hbox (badness 10000) in alignment at lines 5--11
 [][] 
  []
 
+) (./sections/14. miscellaneous.tex
+Underfull \hbox (badness 10000) in alignment at lines 5--13
+[][] 
+ []
+
 ) [5] (./sections/15. references.tex) [6] (./resume1.aux)
 Package rerunfilecheck Info: File `resume1.out' has not changed.
-(rerunfilecheck)             Checksum: 805540B4ED16929B8F588A2C2D554C5E;1474.
+(rerunfilecheck)             Checksum: 7A1D0E65029AD9CA89CDBD89EF4C68A4;1647.
  ) 
 Here is how much of TeX's memory you used:
- 22559 strings out of 476025
- 418652 string characters out of 5790017
+ 22566 strings out of 476025
+ 418827 string characters out of 5790017
  1878388 words of memory out of 5000000
- 42563 multiletter control sequences out of 15000+600000
+ 42566 multiletter control sequences out of 15000+600000
  528657 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  102i,9n,104p,479b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on resume1.pdf (6 pages, 127803 bytes).
+Output written on resume1.pdf (6 pages, 128415 bytes).
 PDF statistics:
- 143 PDF objects out of 1000 (max. 8388607)
- 119 compressed objects within 2 object streams
- 20 named destinations out of 1000 (max. 500000)
- 117 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 147 PDF objects out of 1000 (max. 8388607)
+ 123 compressed objects within 2 object streams
+ 21 named destinations out of 1000 (max. 500000)
+ 125 words of extra memory for PDF output out of 10000 (max. 10000000)
 
