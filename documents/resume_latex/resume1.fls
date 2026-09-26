@@ -772,6 +772,93 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbol
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english-base.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english-base.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english-base.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english-base.ldf
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+INPUT /usr/local/texlive/2023/texmf-dist/tex/generic/iftex/iftex.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/palatino.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/palatino.sty
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/palatino.sty
@@ -950,14 +1037,14 @@ INPUT ./sections/13. interest.tex
 INPUT sections/13. interest.tex
 INPUT ./sections/13. interest.tex
 INPUT sections/13. interest.tex
-INPUT ./sections/14. miscellaneous.tex
-INPUT sections/14. miscellaneous.tex
-INPUT ./sections/14. miscellaneous.tex
-INPUT sections/14. miscellaneous.tex
-INPUT ./sections/15. references.tex
-INPUT sections/15. references.tex
-INPUT ./sections/15. references.tex
-INPUT sections/15. references.tex
+INPUT ./sections/14. references.tex
+INPUT sections/14. references.tex
+INPUT ./sections/14. references.tex
+INPUT sections/14. references.tex
+INPUT ./sections/15. miscellaneous.tex
+INPUT sections/15. miscellaneous.tex
+INPUT ./sections/15. miscellaneous.tex
+INPUT sections/15. miscellaneous.tex
 INPUT resume1.aux
 INPUT ./resume1.out
 INPUT ./resume1.out

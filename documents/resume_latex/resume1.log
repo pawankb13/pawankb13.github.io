@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.21)  26 SEP 2026 15:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.5.21)  26 SEP 2026 16:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -427,62 +427,134 @@ Package: fontawesome 2016/05/15 v4.6.3.1 font awesome icons
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
 ) (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex)) (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/palatino.sty
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-generic.tex) (/usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/fontawesomesymbols-pdftex.tex)) (/usr/local/texlive/2023/texmf-dist/tex/latex/datetime2/datetime2.sty
+Package: datetime2 2021/03/21 v1.5.7 (NLCT) date and time formats
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/tracklang/tracklang.sty
+Package: tracklang 2022/12/13 v1.6.1 (NLCT) Track Languages
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/tracklang/tracklang.tex)) (/usr/local/texlive/2023/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count296
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+Package: xkeyval 2022/06/16 v2.9 package option processing (HA)
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/usr/local/texlive/2023/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+\XKV@toks=\toks37
+\XKV@tempa@toks=\toks38
+)
+\XKV@depth=\count297
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english.ldf
+File: datetime2-english.ldf 2019/10/21 v1.05 (NLCT)
+
+(/usr/local/texlive/2023/texmf-dist/tex/latex/datetime2-english/datetime2-english-base.ldf
+File: datetime2-english-base.ldf 2019/10/21 v1.05 (NLCT)
+))) (/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+)
+\Gm@cnth=\count298
+\Gm@cntv=\count299
+\c@Gm@tempcnt=\count300
+\Gm@bindingoffset=\dimen267
+\Gm@wd@mp=\dimen268
+\Gm@odd@mp=\dimen269
+\Gm@even@mp=\dimen270
+\Gm@layoutwidth=\dimen271
+\Gm@layoutheight=\dimen272
+\Gm@layouthoffset=\dimen273
+\Gm@layoutvoffset=\dimen274
+\Gm@dimlist=\toks39
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/palatino.sty
 Package: palatino 2020/03/25 PSNFSS-v9.3 (SPQR) 
 )
-LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 109.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 110.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2023-01-16 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count296
+\l__color_backend_stack_int=\count301
 \l__pdf_internal_box=\box66
 ) (./resume1.aux)
 \openout1 = `resume1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 110.
+LaTeX Font Info:    ... okay on input line 110.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count297
-\scratchdimen=\dimen267
+\scratchcounter=\count302
+\scratchdimen=\dimen275
 \scratchbox=\box67
-\nofMPsegments=\count298
-\nofMParguments=\count299
-\everyMPshowfont=\toks37
-\MPscratchCnt=\count300
-\MPscratchDim=\dimen268
-\MPnumerator=\count301
-\makeMPintoPDFobject=\count302
-\everyMPtoPDFconversion=\toks38
+\nofMPsegments=\count303
+\nofMParguments=\count304
+\everyMPshowfont=\toks40
+\MPscratchCnt=\count305
+\MPscratchDim=\dimen276
+\MPnumerator=\count306
+\makeMPintoPDFobject=\count307
+\everyMPtoPDFconversion=\toks41
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 109.
+Package hyperref Info: Link coloring OFF on input line 110.
  (./resume1.out) (./resume1.out)
 \@outlinefile=\write4
 \openout4 = `resume1.out'.
 
- (./sections/01. heading.tex
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: letterpaper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(43.36243pt, 527.57014pt, 43.36243pt)
+* v-part:(T,H,B)=(43.36243pt, 708.24513pt, 43.36243pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=527.57014pt
+* \textheight=708.24513pt
+* \oddsidemargin=-28.90756pt
+* \evensidemargin=-28.90756pt
+* \topmargin=-28.90756pt
+* \headheight=0.0pt
+* \headsep=0.0pt
+* \topskip=11.0pt
+* \footskip=20.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+(./sections/01. heading.tex
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <10.95> on input line 4.
 LaTeX Font Info:    External font `cmex10' loaded for size
@@ -502,7 +574,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 7--13
  []
 
 
-Overfull \hbox (542.02501pt too wide) in paragraph at lines 6--16
+Overfull \hbox (527.57014pt too wide) in paragraph at lines 6--16
 []$[]$  
  []
 
@@ -523,7 +595,7 @@ LaTeX Font Info:    Trying to load font information for TS1+ppl on input line 23
  (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 File: ts1ppl.fd 2001/06/04 font definitions for TS1/ppl.
 )) (./sections/10. certifications.tex [4]) (./sections/11. responsibilities.tex
-Overfull \hbox (55.63863pt too wide) in alignment at lines 5--12
+Overfull \hbox (64.13617pt too wide) in alignment at lines 5--12
 [][][][]
  []
 
@@ -532,25 +604,25 @@ Underfull \hbox (badness 10000) in alignment at lines 5--11
 [][] 
  []
 
-) (./sections/14. miscellaneous.tex
+) (./sections/14. references.tex) [5] (./sections/15. miscellaneous.tex
 Underfull \hbox (badness 10000) in alignment at lines 5--13
 [][] 
  []
 
-) [5] (./sections/15. references.tex) [6] (./resume1.aux)
+) [6] (./resume1.aux)
 Package rerunfilecheck Info: File `resume1.out' has not changed.
-(rerunfilecheck)             Checksum: 7A1D0E65029AD9CA89CDBD89EF4C68A4;1647.
+(rerunfilecheck)             Checksum: 306DC06FA3AB7BD879AD170F99EBC030;1647.
  ) 
 Here is how much of TeX's memory you used:
- 22566 strings out of 476025
- 418827 string characters out of 5790017
- 1878388 words of memory out of 5000000
- 42566 multiletter control sequences out of 15000+600000
+ 26082 strings out of 476025
+ 494686 string characters out of 5790017
+ 1877388 words of memory out of 5000000
+ 46044 multiletter control sequences out of 15000+600000
  528657 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 102i,9n,104p,479b,704s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 102i,9n,104p,502b,706s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplbi8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on resume1.pdf (6 pages, 128415 bytes).
+Output written on resume1.pdf (6 pages, 128433 bytes).
 PDF statistics:
  147 PDF objects out of 1000 (max. 8388607)
  123 compressed objects within 2 object streams
