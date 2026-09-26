@@ -834,10 +834,10 @@ OUTPUT resume1.pdf
 INPUT ./resume1.out
 INPUT ./resume1.out
 OUTPUT resume1.out
-INPUT ./sections/heading.tex
-INPUT sections/heading.tex
-INPUT ./sections/heading.tex
-INPUT sections/heading.tex
+INPUT ./sections/01. heading.tex
+INPUT sections/01. heading.tex
+INPUT ./sections/01. heading.tex
+INPUT sections/01. heading.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm
@@ -861,10 +861,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.f
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/fontawesome/FontAwesome--fontawesometwo.tfm
-INPUT ./sections/education.tex
-INPUT sections/education.tex
-INPUT ./sections/education.tex
-INPUT sections/education.tex
+INPUT ./sections/02. education.tex
+INPUT sections/02. education.tex
+INPUT ./sections/02. education.tex
+INPUT sections/02. education.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplrc7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplrc7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
@@ -874,10 +874,10 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy5.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy10.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/latex-fonts/lasy7.tfm
-INPUT ./sections/experience.tex
-INPUT sections/experience.tex
-INPUT ./sections/experience.tex
-INPUT sections/experience.tex
+INPUT ./sections/03. experience.tex
+INPUT sections/03. experience.tex
+INPUT ./sections/03. experience.tex
+INPUT sections/03. experience.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri7t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplbc7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
@@ -898,58 +898,62 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplri7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
-INPUT ./sections/publications.tex
-INPUT sections/publications.tex
-INPUT ./sections/publications.tex
-INPUT sections/publications.tex
+INPUT ./sections/04. publications.tex
+INPUT sections/04. publications.tex
+INPUT ./sections/04. publications.tex
+INPUT sections/04. publications.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri7t.tfm
-INPUT ./sections/conference.tex
-INPUT sections/conference.tex
-INPUT ./sections/conference.tex
-INPUT sections/conference.tex
+INPUT ./sections/05. conference.tex
+INPUT sections/05. conference.tex
+INPUT ./sections/05. conference.tex
+INPUT sections/05. conference.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplb7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplb8r.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplri7t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm
-INPUT ./sections/workshops.tex
-INPUT sections/workshops.tex
-INPUT ./sections/workshops.tex
-INPUT sections/workshops.tex
-INPUT ./sections/acadservices.tex
-INPUT sections/acadservices.tex
-INPUT ./sections/acadservices.tex
-INPUT sections/acadservices.tex
-INPUT ./sections/honors.tex
-INPUT sections/honors.tex
-INPUT ./sections/honors.tex
-INPUT sections/honors.tex
+INPUT ./sections/06. projects.tex
+INPUT sections/06. projects.tex
+INPUT ./sections/06. projects.tex
+INPUT sections/06. projects.tex
+INPUT ./sections/07. workshops.tex
+INPUT sections/07. workshops.tex
+INPUT ./sections/07. workshops.tex
+INPUT sections/07. workshops.tex
+INPUT ./sections/08. acadservices.tex
+INPUT sections/08. acadservices.tex
+INPUT ./sections/08. acadservices.tex
+INPUT sections/08. acadservices.tex
+INPUT ./sections/09. honors.tex
+INPUT sections/09. honors.tex
+INPUT ./sections/09. honors.tex
+INPUT sections/09. honors.tex
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/ts1ppl.fd
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/palatino/pplr8c.tfm
-INPUT ./sections/certifications.tex
-INPUT sections/certifications.tex
-INPUT ./sections/certifications.tex
-INPUT sections/certifications.tex
-INPUT ./sections/responsibilities.tex
-INPUT sections/responsibilities.tex
-INPUT ./sections/responsibilities.tex
-INPUT sections/responsibilities.tex
-INPUT ./sections/skills.tex
-INPUT sections/skills.tex
-INPUT ./sections/skills.tex
-INPUT sections/skills.tex
-INPUT ./sections/interest.tex
-INPUT sections/interest.tex
-INPUT ./sections/interest.tex
-INPUT sections/interest.tex
+INPUT ./sections/10. certifications.tex
+INPUT sections/10. certifications.tex
+INPUT ./sections/10. certifications.tex
+INPUT sections/10. certifications.tex
+INPUT ./sections/11. responsibilities.tex
+INPUT sections/11. responsibilities.tex
+INPUT ./sections/11. responsibilities.tex
+INPUT sections/11. responsibilities.tex
+INPUT ./sections/12. skills.tex
+INPUT sections/12. skills.tex
+INPUT ./sections/12. skills.tex
+INPUT sections/12. skills.tex
+INPUT ./sections/13. interest.tex
+INPUT sections/13. interest.tex
+INPUT ./sections/13. interest.tex
+INPUT sections/13. interest.tex
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/palatino/pplr8c.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/mathpazo/fplmr.tfm
-INPUT ./sections/references.tex
-INPUT sections/references.tex
-INPUT ./sections/references.tex
-INPUT sections/references.tex
+INPUT ./sections/15. references.tex
+INPUT sections/15. references.tex
+INPUT ./sections/15. references.tex
+INPUT sections/15. references.tex
 INPUT resume1.aux
 INPUT ./resume1.out
 INPUT ./resume1.out
