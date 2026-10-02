@@ -420,6 +420,15 @@
   line-height: 1.4;
   color: var(--navy);
 }
+#jrk .card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+#jrk .card-title a:hover,
+#jrk .card-title a:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 #jrk .card-pub {
   font-size: 0.72rem;
   color: var(--faint);
@@ -626,7 +635,7 @@ html.jrk-dark-mode #jrk .jrk-theme-toggle .jrk-icon-sun {
     <div class="jrk-header-top">
       <div>
         <h2>Journal Rankings</h2>
-        <p>ABDC · ABS · Scopus rankings for 3,191 journals &middot; Use the filters below to explore</p>
+        <p>ABDC · ABS · Scopus rankings for <span id="jrk-total">—</span> journals &middot; Use the filters below to explore</p>
       </div>
       <div class="jrk-header-actions">
         <button class="jrk-theme-toggle" id="jrk-theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode" title="Switch to dark mode">
@@ -863,8 +872,13 @@ function render(){
     const yrTag     = j.yr ? `<span class="meta-tag year">Est. ${esc(j.yr)}</span>` : '';
     const issnTag   = j.issn ? `<span class="meta-tag">ISSN ${esc(j.issn)}</span>` : '';
 
+    // Title links to the journal's site when a valid URL is available
+    const title = /^https?:\/\//i.test(j.link)
+      ? `<a href="${esc(j.link)}" target="_blank" rel="noopener noreferrer">${esc(j.t)}</a>`
+      : esc(j.t);
+
     return `<div class="jrk-card ${cc}">
-      <div class="card-title">${esc(j.t)}</div>
+      <div class="card-title">${title}</div>
       ${j.pub ? `<div class="card-pub">${esc(j.pub)}</div>` : ''}
       <div class="card-badges">${abdc}${abs}${sq}${ft50Badge}</div>
       <div class="card-meta">${fieldTag}${yrTag}${issnTag}</div>
@@ -997,9 +1011,11 @@ fetch('journals.json')
       abdc: j['ABDC Rank']       || '',
       abs:  j['ABS Rank']        || '',
       sq:   j['Scopus Quantile'] || '',
-      ft:   j['FT50'] === true
+      ft:   j['FT50'] === true,
+      link: (j['Link'] || '').trim()
     }));
     filtered = RAW;
+    document.getElementById('jrk-total').textContent = RAW.length.toLocaleString();
     buildFieldDropdown();
     updateStats(RAW);
     filter();
