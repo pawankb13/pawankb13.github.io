@@ -233,9 +233,11 @@ body {
 
 /* ── At a glance ────────────────────────────────────────────── */
 #jrk .jrk-glance {
-  background: var(--navy-deep);
+  background: linear-gradient(90deg, #08756f 0%, #0a7f86 50%, #0b6f8f 100%);
   color: #fff;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 3px solid #f6c453;
+  box-shadow: 0 6px 18px rgba(8, 117, 111, 0.22);
+  position: relative;
 }
 #jrk .jrk-glance-grid {
   display: grid;
@@ -247,10 +249,10 @@ body {
   align-items: center;
   gap: 0.1rem;
   padding: 0.95rem 0.5rem;
-  border-right: 1px solid rgba(255, 255, 255, 0.09);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
   min-width: 0;
 }
-#jrk .jrk-glance-stat:first-child { border-left: 1px solid rgba(255, 255, 255, 0.09); }
+#jrk .jrk-glance-stat:first-child { border-left: 1px solid rgba(255, 255, 255, 0.2); }
 #jrk .jrk-glance-stat .stat-n {
   font-size: 1.45rem;
   font-weight: 700;
@@ -262,7 +264,7 @@ body {
   font-weight: 500;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(255, 255, 255, 0.88);
   text-align: center;
 }
 
@@ -614,7 +616,7 @@ body {
   #jrk .jrk-glance-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); width: 100%; }
   #jrk .jrk-glance-stat { padding: 0.75rem 0.4rem; border-left: none; }
   #jrk .jrk-glance-stat:first-child { border-left: none; }
-  #jrk .jrk-glance-stat:nth-child(-n+3) { border-bottom: 1px solid rgba(255, 255, 255, 0.09); }
+  #jrk .jrk-glance-stat:nth-child(-n+3) { border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
   #jrk .jrk-glance-stat:nth-child(3n) { border-right: none; }
   #jrk .jrk-glance-stat .stat-n { font-size: 1.15rem; }
   #jrk .jrk-glance-stat .stat-l { font-size: 0.6rem; }
@@ -652,7 +654,10 @@ html.jrk-dark-mode #jrk {
   --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.5);
 }
 html.jrk-dark-mode #jrk .jrk-hero { background: linear-gradient(135deg, #010b1a, #052248); }
-html.jrk-dark-mode #jrk .jrk-glance { background: #031832; }
+html.jrk-dark-mode #jrk .jrk-glance {
+  background: linear-gradient(90deg, #075a55 0%, #086068 50%, #08566f 100%);
+  box-shadow: none;
+}
 html.jrk-dark-mode #jrk .meta-tag.year {
   background: #0d2a2a;
   border-color: #17504b;
