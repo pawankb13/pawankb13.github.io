@@ -274,6 +274,10 @@ fetch('journals.json', {cache: 'no-cache'})
     document.getElementById('jrk-total').textContent = RAW.length.toLocaleString();
     buildFieldDropdown();
     updateStats(RAW);
+    // Unfiltered counts are the largest each pill will show: reserve that width
+    document.querySelectorAll('#jrk .pill-n').forEach(el => {
+      el.style.minWidth = (el.textContent.length + 0.25) + 'ch';
+    });
     filter();
   })
   .catch(() => {

@@ -259,7 +259,7 @@ body {
 /* ── Filter bar ─────────────────────────────────────────────── */
 #jrk .jrk-filters {
   display: grid;
-  grid-template-columns: auto auto auto auto minmax(190px, 1fr);
+  grid-template-columns: auto auto auto auto minmax(150px, 1fr);
   background: var(--surface);
   border: 1px solid var(--rule);
   border-radius: 12px;
@@ -284,14 +284,14 @@ body {
 }
 #jrk .jrk-pills {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.4rem;
 }
 #jrk .jrk-pill {
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.36rem 0.75rem;
+  gap: 0.35rem;
+  padding: 0.36rem 0.62rem;
   border-radius: 99px;
   border: 1.5px solid var(--rule);
   background: var(--surface);
@@ -309,6 +309,9 @@ body {
   font-weight: 400;
   opacity: 0.7;
   font-variant-numeric: tabular-nums;
+  /* min-width is set per pill in journals.js so pills keep their width as counts change */
+  display: inline-block;
+  text-align: right;
 }
 
 #jrk .jrk-pill[data-abdc="A*"].on  { background:var(--astar-bg); color:var(--astar-fg); border-color:var(--astar-border); }
@@ -580,8 +583,9 @@ body {
 #jrk .jrk-footer strong { color: #fff; font-weight: 600; }
 
 /* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 1199.98px) {
+@media (max-width: 1399.98px) {
   #jrk .jrk-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  #jrk .jrk-pills { flex-wrap: wrap; }
   #jrk .jrk-filter-row { border-bottom: 1px solid var(--rule); }
   #jrk .jrk-filter-row:nth-child(2n) { border-right: none; }
   #jrk .jrk-filter-field { grid-column: 1 / -1; border-bottom: none; }
