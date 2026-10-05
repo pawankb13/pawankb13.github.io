@@ -1,5 +1,5 @@
 {
-  "total": 3190,
+  "total": 3094,
   "journals": [
     {
       "Sr": "j1",
@@ -493,7 +493,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.sciencedirect.com/journal/acta-psychologica/"
+      "Link": "https://www.sciencedirect.com/journal/acta-psychologica"
     },
     {
       "Sr": "j42",
@@ -1072,10 +1072,10 @@
       "Journal Title": "Agricultural Economics",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0169-5150",
-      "Year Founded": "1928",
+      "Year Founded": "1987",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/15740862"
@@ -1673,7 +1673,7 @@
       "Year Founded": "1997",
       "Field Label": "Marketing, Advertising, Consumer Behaviour & Retailing",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.springer.com/journal/13162"
@@ -1702,7 +1702,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/analytic-methods-in-accident-research"
+      "Link": "https://www.sciencedirect.com/journal/analytic-methods-in-accident-research"
     },
     {
       "Sr": "j150",
@@ -1712,7 +1712,7 @@
       "Year Founded": "1990",
       "Field Label": "Tourism, Hospitality & Event Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rana20"
@@ -1897,7 +1897,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/annals-of-tourism-research"
+      "Link": "https://www.sciencedirect.com/journal/annals-of-tourism-research"
     },
     {
       "Sr": "j170",
@@ -1910,7 +1910,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.sciencedirect.com/journal/annals-of-tourism-research-empirical-insights/about/insights"
+      "Link": "https://www.sciencedirect.com/journal/annals-of-tourism-research-empirical-insights"
     },
     {
       "Sr": "j172",
@@ -2170,7 +2170,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/applied-energy"
+      "Link": "https://www.sciencedirect.com/journal/applied-energy"
     },
     {
       "Sr": "j195",
@@ -2206,7 +2206,7 @@
       "Year Founded": "2002",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.springer.com/journal/40258"
@@ -2245,10 +2245,10 @@
       "Year Founded": "1952",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.wiley.com/bw/journal.asp?ref=0269-994X&site=1"
+      "Link": "https://iaap-journals.onlinelibrary.wiley.com/journal/14640597"
     },
     {
       "Sr": "j204",
@@ -2343,16 +2343,16 @@
     },
     {
       "Sr": "j213",
-      "Journal Title": "Arts and the Market (formerly Arts Marketing)",
+      "Journal Title": "Arts and the Market",
       "Publisher": "Emerald Group Publishing",
-      "ISSN": "2044-2084",
+      "ISSN": "2056-4945",
       "Year Founded": "2011",
       "Field Label": "Marketing, Advertising, Consumer Behaviour & Retailing",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/2044-2084"
+      "Link": "https://www.emerald.com/insight/publication/issn/2056-4945"
     },
     {
       "Sr": "j214",
@@ -2590,13 +2590,13 @@
     },
     {
       "Sr": "j236",
-      "Journal Title": "Asia-Pacific Journal of Human Resources",
+      "Journal Title": "Asia Pacific Journal of Human Resources",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "1038-4111",
-      "Year Founded": "1966",
+      "Year Founded": "1963",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1744-7941"
@@ -2642,16 +2642,16 @@
     },
     {
       "Sr": "j241",
-      "Journal Title": "Asia-Pacific Management Review",
+      "Journal Title": "Asia Pacific Management Review",
       "Publisher": "Elsevier",
       "ISSN": "1029-3132",
       "Year Founded": "1996",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/asia-pacific-management-review"
+      "Link": "https://www.sciencedirect.com/journal/asia-pacific-management-review"
     },
     {
       "Sr": "j242",
@@ -2950,7 +2950,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.sciencedirect.com/journal/asian-journal-of-social-science/about/insights"
+      "Link": "https://www.sciencedirect.com/journal/asian-journal-of-social-science"
     },
     {
       "Sr": "j267",
@@ -3110,13 +3110,13 @@
     },
     {
       "Sr": "j282",
-      "Journal Title": "Auditing: A Journal of Practice and Theory",
+      "Journal Title": "Auditing: A Journal of Practice & Theory",
       "Publisher": "American Accounting Association",
       "ISSN": "0278-0380",
       "Year Founded": "1981",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://publications.aaahq.org/ajpt"
@@ -3318,13 +3318,13 @@
     },
     {
       "Sr": "j243",
-      "Journal Title": "Asia‐Pacific Economic History Review",
+      "Journal Title": "Asia-Pacific Economic History Review",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0004-8992",
       "Year Founded": "1956",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1467-8446"
@@ -3474,13 +3474,13 @@
     },
     {
       "Sr": "j311",
-      "Journal Title": "Australian Journal of Labour Economics: a journal of labour economics and labour relations",
-      "Publisher": "Centre for Labour Market Research",
+      "Journal Title": "Australian Journal of Labour Economics",
+      "Publisher": "The Bankwest Curtin Economics Centre",
       "ISSN": "1328-1143",
-      "Year Founded": "1989",
+      "Year Founded": "1997",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "https://ajle.org/index.php/ajle_home"
@@ -3760,13 +3760,13 @@
     },
     {
       "Sr": "j339",
-      "Journal Title": "Benchmarking: an international journal",
+      "Journal Title": "Benchmarking: An International Journal",
       "Publisher": "Emerald Group Publishing",
       "ISSN": "1463-5771",
       "Year Founded": "1994",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
+      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/1463-5771"
@@ -3912,7 +3912,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/borsa-istanbul-review"
+      "Link": "https://www.sciencedirect.com/journal/borsa-istanbul-review"
     },
     {
       "Sr": "j351",
@@ -3990,7 +3990,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-british-accounting-review"
+      "Link": "https://www.sciencedirect.com/journal/the-british-accounting-review"
     },
     {
       "Sr": "j358",
@@ -4497,7 +4497,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/business-horizons"
+      "Link": "https://www.sciencedirect.com/journal/business-horizons"
     },
     {
       "Sr": "j401",
@@ -4553,13 +4553,13 @@
     },
     {
       "Sr": "j405",
-      "Journal Title": "Business Research Quarterly",
-      "Publisher": "Asociacion Cientifica de Economia y Direccion de la Empresa",
+      "Journal Title": "BRQ Business Research Quarterly",
+      "Publisher": "Elsevier",
       "ISSN": "2340-9436",
       "Year Founded": "2014",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.sciencedirect.com/journal/brq-business-research-quarterly"
@@ -4683,26 +4683,26 @@
     },
     {
       "Sr": "j416",
-      "Journal Title": "Canadian Journal of Administrative Sciences / Revue Canadienne des Sciences de l Administration",
+      "Journal Title": "Canadian Journal of Administrative Sciences / Revue Canadienne des Sciences de l'Administration",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0825-0383",
       "Year Founded": "1984",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1936-4490"
     },
     {
       "Sr": "j418",
-      "Journal Title": "Canadian Journal of Agricultural Economics / Revue Canadienne d Agroeconomie",
+      "Journal Title": "Canadian Journal of Agricultural Economics / Revue Canadienne d'Agroeconomie",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0008-3976",
       "Year Founded": "1952",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/17447976"
@@ -4722,13 +4722,13 @@
     },
     {
       "Sr": "j422",
-      "Journal Title": "Canadian Journal of Economics / Revue Canadienne D'Economique",
+      "Journal Title": "Canadian Journal of Economics / Revue Canadienne d'Economique",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0008-4085",
       "Year Founded": "1968",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1540-5982"
@@ -4767,10 +4767,10 @@
       "Year Founded": "1975",
       "Field Label": "Public Administration, Governance & Policy Studies",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.economics.ca/cpp"
+      "Link": "https://utppublishing.com/journal/cpp"
     },
     {
       "Sr": "j429",
@@ -4900,7 +4900,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/case-studies-on-transport-policy"
+      "Link": "https://www.sciencedirect.com/journal/case-studies-on-transport-policy"
     },
     {
       "Sr": "j440",
@@ -4926,7 +4926,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/central-bank-review"
+      "Link": "https://www.sciencedirect.com/journal/central-bank-review"
     },
     {
       "Sr": "j442",
@@ -5069,7 +5069,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/china-economic-review/#description"
+      "Link": "https://www.sciencedirect.com/journal/china-economic-review"
     },
     {
       "Sr": "j454",
@@ -5108,7 +5108,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/china-journal-of-accounting-research"
+      "Link": "https://www.sciencedirect.com/journal/china-journal-of-accounting-research"
     },
     {
       "Sr": "j457",
@@ -5212,7 +5212,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/cleaner-logistics-and-supply-chain"
+      "Link": "https://www.sciencedirect.com/journal/cleaner-logistics-and-supply-chain"
     },
     {
       "Sr": "j467",
@@ -5255,13 +5255,13 @@
     },
     {
       "Sr": "j471",
-      "Journal Title": "Cliometrica: journal of historical economics and econometric history",
+      "Journal Title": "Cliometrica",
       "Publisher": "Springer International Publishing",
       "ISSN": "1863-2505",
       "Year Founded": "2007",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://www.springer.com/economics/economic+theory/journal/11698"
@@ -5485,7 +5485,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/communications-in-transportation-research"
+      "Link": "https://www.sciencedirect.com/journal/communications-in-transportation-research"
     },
     {
       "Sr": "j495",
@@ -5703,7 +5703,7 @@
       "Year Founded": "1995",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q4",
       "FT50": false,
       "Link": "https://www.afc-cca.com/pages/revue-cca"
@@ -5745,7 +5745,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/computational-statistics-and-data-analysis"
+      "Link": "https://www.sciencedirect.com/journal/computational-statistics-and-data-analysis"
     },
     {
       "Sr": "j520",
@@ -5771,7 +5771,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/422550/description#description"
+      "Link": "https://www.sciencedirect.com/journal/computer-law-and-security-review"
     },
     {
       "Sr": "j523",
@@ -5797,7 +5797,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/computers-and-industrial-engineering"
+      "Link": "https://www.sciencedirect.com/journal/computers-and-industrial-engineering"
     },
     {
       "Sr": "j525",
@@ -5810,7 +5810,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/computers-and-operations-research"
+      "Link": "https://www.sciencedirect.com/journal/computers-and-operations-research"
     },
     {
       "Sr": "j526",
@@ -5823,7 +5823,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/computers-in-human-behavior"
+      "Link": "https://www.sciencedirect.com/journal/computers-in-human-behavior"
     },
     {
       "Sr": "j529",
@@ -6139,13 +6139,13 @@
     },
     {
       "Sr": "j554",
-      "Journal Title": "Corporate Governance",
+      "Journal Title": "Corporate Governance: The International Journal of Business in Society",
       "Publisher": "Emerald Group Publishing",
       "ISSN": "1472-0701",
       "Year Founded": "2001",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/1472-0701"
@@ -6330,7 +6330,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/critical-perspectives-on-accounting"
+      "Link": "https://www.sciencedirect.com/journal/critical-perspectives-on-accounting"
     },
     {
       "Sr": "j571",
@@ -6642,7 +6642,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/decision-support-systems"
+      "Link": "https://www.sciencedirect.com/journal/decision-support-systems"
     },
     {
       "Sr": "j600",
@@ -6772,7 +6772,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/design-studies"
+      "Link": "https://www.sciencedirect.com/journal/design-studies"
     },
     {
       "Sr": "j610",
@@ -6850,7 +6850,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/digital-business"
+      "Link": "https://www.sciencedirect.com/journal/digital-business"
     },
     {
       "Sr": "j616",
@@ -7045,7 +7045,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/ecological-economics/"
+      "Link": "https://www.sciencedirect.com/journal/ecological-economics"
     },
     {
       "Sr": "j634",
@@ -7136,7 +7136,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/econometrics-and-statistics"
+      "Link": "https://www.sciencedirect.com/journal/econometrics-and-statistics"
     },
     {
       "Sr": "j641",
@@ -7214,7 +7214,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/economic-analysis-and-policy"
+      "Link": "https://www.sciencedirect.com/journal/economic-analysis-and-policy"
     },
     {
       "Sr": "j648",
@@ -7231,13 +7231,13 @@
     },
     {
       "Sr": "j650",
-      "Journal Title": "Economic and Industrial Democracy: an international journal",
+      "Journal Title": "Economic and Industrial Democracy",
       "Publisher": "Sage Publications",
       "ISSN": "0143-831X",
       "Year Founded": "1980",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
+      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://journals.sagepub.com/home/eid"
@@ -7396,7 +7396,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/economic-modelling/"
+      "Link": "https://www.sciencedirect.com/journal/economic-modelling"
     },
     {
       "Sr": "j664",
@@ -7426,26 +7426,26 @@
     },
     {
       "Sr": "j667",
-      "Journal Title": "Economic Policy / Ekonomicheskaya Politika",
-      "Publisher": "ANO Editorial Office of the Journal Economic Policy",
+      "Journal Title": "Ekonomicheskaya Politika / Economic Policy",
+      "Publisher": "The Russian Academy of National Economy and Public Administration (RANEPA)",
       "ISSN": "1994-5124",
-      "Year Founded": "2013",
+      "Year Founded": "2006",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://ecpolicy.ru/en"
     },
     {
       "Sr": "j668",
-      "Journal Title": "Economic Policy: a European forum",
+      "Journal Title": "Economic Policy",
       "Publisher": "Oxford University Press",
       "ISSN": "0266-4658",
       "Year Founded": "1985",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://academic.oup.com/economicpolicy"
@@ -7526,7 +7526,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/economic-systems"
+      "Link": "https://www.sciencedirect.com/journal/economic-systems"
     },
     {
       "Sr": "j676",
@@ -7656,7 +7656,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/622964/description#description"
+      "Link": "https://www.sciencedirect.com/journal/economics-and-human-biology"
     },
     {
       "Sr": "j687",
@@ -7708,7 +7708,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "http://www.elsevier.com/locate/ecolet"
+      "Link": "https://www.sciencedirect.com/journal/economics-letters"
     },
     {
       "Sr": "j692",
@@ -7734,7 +7734,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/economics-of-education-review"
+      "Link": "https://www.sciencedirect.com/journal/economics-of-education-review"
     },
     {
       "Sr": "j694",
@@ -7799,7 +7799,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/economics-of-transportation"
+      "Link": "https://www.sciencedirect.com/journal/economics-of-transportation"
     },
     {
       "Sr": "j699",
@@ -7868,13 +7868,13 @@
     },
     {
       "Sr": "j705",
-      "Journal Title": "EDPACS: The EDP Audit, Control, and Security Newsletter",
+      "Journal Title": "EDPACS",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "0736-6981",
       "Year Founded": "1973",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
+      "Field Label": "Information Systems, Digital Technology, Cybersecurity & Privacy",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q4",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/uedp20"
@@ -7981,7 +7981,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/electronic-commerce-research-and-applications"
+      "Link": "https://www.sciencedirect.com/journal/electronic-commerce-research-and-applications"
     },
     {
       "Sr": "j718",
@@ -8085,7 +8085,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/emerging-markets-review"
+      "Link": "https://www.sciencedirect.com/journal/emerging-markets-review"
     },
     {
       "Sr": "j728",
@@ -8189,7 +8189,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/energy-economics/"
+      "Link": "https://www.sciencedirect.com/journal/energy-economics"
     },
     {
       "Sr": "j736",
@@ -8215,7 +8215,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/energy-policy/"
+      "Link": "https://www.sciencedirect.com/journal/energy-policy"
     },
     {
       "Sr": "j738",
@@ -8456,10 +8456,10 @@
       "Journal Title": "Environment and Planning A: Economy and Space",
       "Publisher": "Sage Publications",
       "ISSN": "0308-518X",
-      "Year Founded": "1968",
+      "Year Founded": "1969",
       "Field Label": "Urban, Regional Planning & Environmental Studies",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://journals.sagepub.com/home/epn"
@@ -8592,7 +8592,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/environmental-innovation-and-societal-transitions"
+      "Link": "https://www.sciencedirect.com/journal/environmental-innovation-and-societal-transitions"
     },
     {
       "Sr": "j771",
@@ -8635,13 +8635,13 @@
     },
     {
       "Sr": "j777",
-      "Journal Title": "Equality, Diversity and Inclusion",
+      "Journal Title": "Equality, Diversity and Inclusion: An International Journal",
       "Publisher": "Emerald Group Publishing",
       "ISSN": "2040-7149",
       "Year Founded": "1981",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/2040-7149"
@@ -8956,7 +8956,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505541/description#description"
+      "Link": "https://www.sciencedirect.com/journal/european-economic-review"
     },
     {
       "Sr": "j807",
@@ -9203,7 +9203,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/european-journal-of-operational-research"
+      "Link": "https://www.sciencedirect.com/journal/european-journal-of-operational-research"
     },
     {
       "Sr": "j828",
@@ -9229,7 +9229,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/european-journal-of-political-economy"
+      "Link": "https://www.sciencedirect.com/journal/european-journal-of-political-economy"
     },
     {
       "Sr": "j830",
@@ -9398,7 +9398,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/european-management-journal"
+      "Link": "https://www.sciencedirect.com/journal/european-management-journal"
     },
     {
       "Sr": "j845",
@@ -9424,7 +9424,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/european-research-on-management-and-business-economics"
+      "Link": "https://www.sciencedirect.com/journal/european-research-on-management-and-business-economics"
     },
     {
       "Sr": "j849",
@@ -9558,13 +9558,13 @@
     },
     {
       "Sr": "j863",
-      "Journal Title": "Evidence-based HRM (EBHRM): A Global Forum for Empirical Scholarship",
+      "Journal Title": "Evidence-based HRM: A Global Forum for Empirical Scholarship",
       "Publisher": "Emerald Group Publishing",
       "ISSN": "2049-3983",
       "Year Founded": "2013",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/2049-3983"
@@ -9606,7 +9606,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/locate/eeh"
+      "Link": "https://www.sciencedirect.com/journal/explorations-in-economic-history"
     },
     {
       "Sr": "j870",
@@ -9896,13 +9896,13 @@
     },
     {
       "Sr": "j894",
-      "Journal Title": "Financial Review (US)",
+      "Journal Title": "Financial Review",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0732-8516",
-      "Year Founded": "1969",
+      "Year Founded": "1966",
       "Field Label": "Banking, Corporate Finance, Investment & Insurance",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/15406288"
@@ -9931,7 +9931,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "",
       "FT50": false,
-      "Link": "https://academyfinancial.org/Journal"
+      "Link": "https://www.sciencedirect.com/journal/financial-services-review"
     },
     {
       "Sr": "j897",
@@ -10009,7 +10009,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/food-policy"
+      "Link": "https://www.sciencedirect.com/journal/food-policy"
     },
     {
       "Sr": "j904",
@@ -10022,7 +10022,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/405859/description#description"
+      "Link": "https://www.sciencedirect.com/journal/food-quality-and-preference"
     },
     {
       "Sr": "j905",
@@ -10100,7 +10100,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/forest-policy-and-economics"
+      "Link": "https://www.sciencedirect.com/journal/forest-policy-and-economics"
     },
     {
       "Sr": "j911",
@@ -10230,7 +10230,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/futures"
+      "Link": "https://www.sciencedirect.com/journal/futures"
     },
     {
       "Sr": "j923",
@@ -10282,7 +10282,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/622836/description#description"
+      "Link": "https://www.sciencedirect.com/journal/games-and-economic-behavior"
     },
     {
       "Sr": "j929",
@@ -10351,13 +10351,13 @@
     },
     {
       "Sr": "j937",
-      "Journal Title": "German Journal of Human Resource Management",
+      "Journal Title": "German Journal of Human Resource Management: Zeitschrift für Personalforschung",
       "Publisher": "Sage Publications",
       "ISSN": "2397-0022",
       "Year Founded": "1987",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://journals.sagepub.com/home/gjh"
@@ -10438,7 +10438,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/global-environmental-change"
+      "Link": "https://www.sciencedirect.com/journal/global-environmental-change"
     },
     {
       "Sr": "j944",
@@ -10464,7 +10464,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/global-finance-journal"
+      "Link": "https://www.sciencedirect.com/journal/global-finance-journal"
     },
     {
       "Sr": "j946",
@@ -10507,13 +10507,13 @@
     },
     {
       "Sr": "j951",
-      "Journal Title": "Global Networks: A Journal of Transnational Affairs",
+      "Journal Title": "Global Networks",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "1470-2266",
       "Year Founded": "2001",
-      "Field Label": "Political Science, International Relations & Security Studies",
+      "Field Label": "Sociology, Social Policy & Development Studies",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/14710374"
@@ -10568,7 +10568,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/government-information-quarterly"
+      "Link": "https://www.sciencedirect.com/journal/government-information-quarterly"
     },
     {
       "Sr": "j958",
@@ -10611,13 +10611,13 @@
     },
     {
       "Sr": "j962",
-      "Journal Title": "Group Dynamics: theory, research and practice",
+      "Journal Title": "Group Dynamics: Theory, Research, and Practice",
       "Publisher": "American Psychological Association",
       "ISSN": "1089-2699",
       "Year Founded": "1997",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "http://www.apa.org/journals/gdn/"
@@ -10659,7 +10659,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/habitat-international"
+      "Link": "https://www.sciencedirect.com/journal/habitat-international"
     },
     {
       "Sr": "j967",
@@ -10799,7 +10799,7 @@
       "Year Founded": "1992",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1099-1050"
@@ -10867,7 +10867,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/health-policy"
+      "Link": "https://www.sciencedirect.com/journal/health-policy"
     },
     {
       "Sr": "j985",
@@ -11270,7 +11270,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/iatss-research"
+      "Link": "https://www.sciencedirect.com/journal/iatss-research"
     },
     {
       "Sr": "j1021",
@@ -11361,7 +11361,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q3",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/iimb-management-review"
+      "Link": "https://www.sciencedirect.com/journal/iimb-management-review"
     },
     {
       "Sr": "j1031",
@@ -11378,13 +11378,13 @@
     },
     {
       "Sr": "j1034",
-      "Journal Title": "ILR Review (Industrial and Labor Relations Review)",
+      "Journal Title": "ILR Review",
       "Publisher": "Sage Publications",
       "ISSN": "0019-7939",
       "Year Founded": "1947",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://journals.sagepub.com/home/ilr"
@@ -11586,13 +11586,13 @@
     },
     {
       "Sr": "j1053",
-      "Journal Title": "Industrial and Organizational Psychology: perspectives on science & practice",
+      "Journal Title": "Industrial and Organizational Psychology",
       "Publisher": "Cambridge University Press",
       "ISSN": "1754-9426",
       "Year Founded": "2008",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.cambridge.org/core/journals/industrial-and-organizational-psychology"
@@ -11634,7 +11634,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/industrial-marketing-management"
+      "Link": "https://www.sciencedirect.com/journal/industrial-marketing-management"
     },
     {
       "Sr": "j1058",
@@ -11651,13 +11651,13 @@
     },
     {
       "Sr": "j1059",
-      "Journal Title": "Industrial Relations: a journal of economy and society",
+      "Journal Title": "Industrial Relations: A Journal of Economy and Society",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0019-8676",
       "Year Founded": "1961",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/1468232X"
@@ -11690,13 +11690,13 @@
     },
     {
       "Sr": "j1063",
-      "Journal Title": "INFOR (INFOR: Information Systems and Operational Research)",
+      "Journal Title": "INFOR: Information Systems and Operational Research",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "0315-5986",
       "Year Founded": "1963",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
+      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/tinf20"
@@ -11725,7 +11725,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/information-and-management"
+      "Link": "https://www.sciencedirect.com/journal/information-and-management"
     },
     {
       "Sr": "j1067",
@@ -11777,7 +11777,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/information-and-organization"
+      "Link": "https://www.sciencedirect.com/journal/information-and-organization"
     },
     {
       "Sr": "j1071",
@@ -11803,7 +11803,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/information-economics-and-policy"
+      "Link": "https://www.sciencedirect.com/journal/information-economics-and-policy"
     },
     {
       "Sr": "j1073",
@@ -12011,7 +12011,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.sciencedirect.com/journal/innovation"
+      "Link": "https://www.sciencedirect.com/journal/innovation-and-green-development"
     },
     {
       "Sr": "j1091",
@@ -12115,7 +12115,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/insurance-mathematics-and-economics"
+      "Link": "https://www.sciencedirect.com/journal/insurance-mathematics-and-economics"
     },
     {
       "Sr": "j1101",
@@ -12158,14 +12158,14 @@
     },
     {
       "Sr": "j1105",
-      "Journal Title": "Intelligent Systems in Accounting, Finance and Management: An International Journal",
+      "Journal Title": "Intelligent Systems in Accounting, Finance and Management",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "1055-615X",
-      "Year Founded": "1996",
+      "Year Founded": "1992",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "B",
-      "ABS Rank": "",
-      "Scopus Quantile": "",
+      "ABS Rank": "1",
+      "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/10991174"
     },
@@ -12198,25 +12198,25 @@
     {
       "Sr": "j1109",
       "Journal Title": "Interdisciplinary Journal of Management Studies",
-      "Publisher": "University of Tehran Press",
-      "ISSN": "",
-      "Year Founded": "2007",
+      "Publisher": "University of Tehran",
+      "ISSN": "2008-7055",
+      "Year Founded": "2006",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "https://ijms.ut.ac.ir/"
     },
     {
       "Sr": "j1111",
-      "Journal Title": "Intereconomics: review of European economic policy",
-      "Publisher": "Springer International Publishing",
+      "Journal Title": "Intereconomics",
+      "Publisher": "Sciendo",
       "ISSN": "0020-5346",
       "Year Founded": "1966",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.springer.com/journal/10272"
@@ -12284,7 +12284,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-business-review"
+      "Link": "https://www.sciencedirect.com/journal/international-business-review"
     },
     {
       "Sr": "j1119",
@@ -12518,7 +12518,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-accounting-information-systems"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-accounting-information-systems"
     },
     {
       "Sr": "j1139",
@@ -13038,7 +13038,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-disaster-risk-reduction"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-disaster-risk-reduction"
     },
     {
       "Sr": "j1196",
@@ -13662,7 +13662,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-hospitality-management"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-hospitality-management"
     },
     {
       "Sr": "j1260",
@@ -13721,13 +13721,13 @@
       "Journal Title": "International Journal of Human-Computer Studies",
       "Publisher": "Elsevier",
       "ISSN": "1071-5819",
-      "Year Founded": "1955",
+      "Year Founded": "1993",
       "Field Label": "Information Systems, Digital Technology, Cybersecurity & Privacy",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-human-computer-studies"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-human-computer-studies"
     },
     {
       "Sr": "j1270",
@@ -13740,7 +13740,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-industrial-organization"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-industrial-organization"
     },
     {
       "Sr": "j1271",
@@ -13779,7 +13779,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-information-management"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-information-management"
     },
     {
       "Sr": "j1274",
@@ -13909,7 +13909,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-intercultural-relations"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-intercultural-relations"
     },
     {
       "Sr": "j1291",
@@ -14312,7 +14312,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-production-economics"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-production-economics"
     },
     {
       "Sr": "j1341",
@@ -14351,7 +14351,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-project-management"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-project-management"
     },
     {
       "Sr": "j1347",
@@ -14429,7 +14429,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-research-in-marketing"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-research-in-marketing"
     },
     {
       "Sr": "j1355",
@@ -14628,13 +14628,13 @@
     },
     {
       "Sr": "j1377",
-      "Journal Title": "International Journal of Sports Management and Marketing",
-      "Publisher": "Inderscience Enterprises Ltd.",
+      "Journal Title": "International Journal of Sport Management and Marketing",
+      "Publisher": "Inderscience Publishers",
       "ISSN": "1475-8962",
       "Year Founded": "2005",
-      "Field Label": "Marketing, Advertising, Consumer Behaviour & Retailing",
+      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q4",
       "FT50": false,
       "Link": "https://www.inderscience.com/jhome.php?jcode=ijsmm"
@@ -15070,16 +15070,16 @@
     },
     {
       "Sr": "j1423",
-      "Journal Title": "International Negotiation: a journal of theory and practice",
+      "Journal Title": "International Negotiation",
       "Publisher": "Brill",
       "ISSN": "1382-340X",
       "Year Founded": "1996",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "http://www.wkap.nl/jrnltoc.htm/1382-340X"
+      "Link": "https://brill.com/view/journals/iner/iner-overview.xml"
     },
     {
       "Sr": "j1424",
@@ -15209,7 +15209,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-review-of-economics-and-finance"
+      "Link": "https://www.sciencedirect.com/journal/international-review-of-economics-and-finance"
     },
     {
       "Sr": "j1434",
@@ -15222,7 +15222,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-review-of-economics-education"
+      "Link": "https://www.sciencedirect.com/journal/international-review-of-economics-education"
     },
     {
       "Sr": "j1436",
@@ -15261,7 +15261,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-review-of-financial-analysis"
+      "Link": "https://www.sciencedirect.com/journal/international-review-of-financial-analysis"
     },
     {
       "Sr": "j1439",
@@ -15287,7 +15287,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-review-of-law-and-economics"
+      "Link": "https://www.sciencedirect.com/journal/international-review-of-law-and-economics"
     },
     {
       "Sr": "j1441",
@@ -15716,7 +15716,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505557/description"
+      "Link": "https://www.sciencedirect.com/journal/japan-and-the-world-economy"
     },
     {
       "Sr": "j1479",
@@ -15785,13 +15785,13 @@
     },
     {
       "Sr": "j1486",
-      "Journal Title": "Journal for Advancement of Marketing Education (JAME)",
+      "Journal Title": "Journal for Advancement of Marketing Education",
       "Publisher": "Marketing Management Association",
       "ISSN": "2326-3296",
       "Year Founded": "2001",
       "Field Label": "Marketing, Advertising, Consumer Behaviour & Retailing",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q4",
       "FT50": false,
       "Link": "https://www.mmaglobal.org/journal-for-advancement-of-marketing-education"
@@ -15885,7 +15885,7 @@
       "ABS Rank": "4*",
       "Scopus Quantile": "Q1",
       "FT50": true,
-      "Link": "http://www.journals.elsevier.com/journal-of-accounting-and-economics/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-accounting-and-economics"
     },
     {
       "Sr": "j1497",
@@ -15902,13 +15902,13 @@
     },
     {
       "Sr": "j1499",
-      "Journal Title": "Journal of Accounting and Management Information Systems (JAMIS)",
+      "Journal Title": "Journal of Accounting and Management Information Systems",
       "Publisher": "Bucharest University of Economic Studies",
       "ISSN": "1583-4387",
       "Year Founded": "2002",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "http://jamis.ase.ro/"
@@ -15924,7 +15924,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-accounting-and-public-policy"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-accounting-and-public-policy"
     },
     {
       "Sr": "j1502",
@@ -15950,7 +15950,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-accounting-education"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-accounting-education"
     },
     {
       "Sr": "j1504",
@@ -16236,7 +16236,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-air-transport-management"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-air-transport-management"
     },
     {
       "Sr": "j1528",
@@ -16487,13 +16487,13 @@
     },
     {
       "Sr": "j1547",
-      "Journal Title": "Journal of Asia Pacific Business",
+      "Journal Title": "Journal of Asia-Pacific Business",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "1059-9231",
       "Year Founded": "1995",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/wapb20"
@@ -16561,7 +16561,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-banking-and-finance/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-banking-and-finance"
     },
     {
       "Sr": "j1556",
@@ -16600,7 +16600,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-behavioral-and-experimental-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-behavioral-and-experimental-economics"
     },
     {
       "Sr": "j1559",
@@ -16613,7 +16613,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-behavioral-and-experimental-finance"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-behavioral-and-experimental-finance"
     },
     {
       "Sr": "j1560",
@@ -16951,7 +16951,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-business-research"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-business-research"
     },
     {
       "Sr": "j1587",
@@ -17003,7 +17003,7 @@
       "ABS Rank": "4*",
       "Scopus Quantile": "Q1",
       "FT50": true,
-      "Link": "https://www.journals.elsevier.com/journal-of-business-venturing"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-business-venturing"
     },
     {
       "Sr": "j1591",
@@ -17016,7 +17016,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-business-venturing-insights"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-business-venturing-insights"
     },
     {
       "Sr": "j1592",
@@ -17124,13 +17124,13 @@
     },
     {
       "Sr": "j1602",
-      "Journal Title": "Journal of Chinese Economics and Business Studies",
+      "Journal Title": "Journal of Chinese Economic and Business Studies",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "1476-5284",
       "Year Founded": "2003",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rcea20"
@@ -17159,7 +17159,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-choice-modelling"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-choice-modelling"
     },
     {
       "Sr": "j1605",
@@ -17172,7 +17172,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-cleaner-production"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-cleaner-production"
     },
     {
       "Sr": "j1607",
@@ -17211,7 +17211,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-commodity-markets"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-commodity-markets"
     },
     {
       "Sr": "j1612",
@@ -17276,7 +17276,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-comparative-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-comparative-economics"
     },
     {
       "Sr": "j1618",
@@ -17293,13 +17293,13 @@
     },
     {
       "Sr": "j1620",
-      "Journal Title": "Journal of Comparative Policy Analysis: research and practice",
+      "Journal Title": "Journal of Comparative Policy Analysis: Research and Practice",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "1387-6988",
       "Year Founded": "1998",
       "Field Label": "Public Administration, Governance & Policy Studies",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/fcpa20"
@@ -17390,7 +17390,7 @@
       "Year Founded": "1983",
       "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://ascelibrary.org/journal/jcemd4"
@@ -17510,7 +17510,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-contemporary-accounting-and-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-contemporary-accounting-and-economics"
     },
     {
       "Sr": "j1641",
@@ -17575,7 +17575,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-corporate-finance"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-corporate-finance"
     },
     {
       "Sr": "j1646",
@@ -17822,7 +17822,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-destination-marketing-and-management"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-destination-marketing-and-management"
     },
     {
       "Sr": "j1667",
@@ -17835,7 +17835,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505546/description#description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-development-economics"
     },
     {
       "Sr": "j1668",
@@ -17952,7 +17952,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/locate/jeconom"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-econometrics"
     },
     {
       "Sr": "j1677",
@@ -18004,7 +18004,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505559/description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-economic-behavior-and-organization"
     },
     {
       "Sr": "j1683",
@@ -18173,7 +18173,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-economic-psychology"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-economic-psychology"
     },
     {
       "Sr": "j1696",
@@ -18190,13 +18190,13 @@
     },
     {
       "Sr": "j1697",
-      "Journal Title": "Journal of Economic Science Association",
+      "Journal Title": "Journal of the Economic Science Association",
       "Publisher": "Springer International Publishing",
       "ISSN": "2199-6776",
       "Year Founded": "2015",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "https://link.springer.com/journal/40881"
@@ -18248,7 +18248,7 @@
       "Year Founded": "1930",
       "Field Label": "Economic Theory, Game Theory & Mathematical Economics",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.springer.com/journal/712"
@@ -18290,7 +18290,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-economics-and-business"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-economics-and-business"
     },
     {
       "Sr": "j1705",
@@ -18333,13 +18333,13 @@
     },
     {
       "Sr": "j1708",
-      "Journal Title": "Journal of Economics and Statistics",
+      "Journal Title": "Jahrbücher für Nationalökonomie und Statistik / Journal of Economics and Statistics",
       "Publisher": "De Gruyter",
       "ISSN": "0021-4027",
       "Year Founded": "1863",
       "Field Label": "Econometrics, Statistical Modelling & Quantitative Methods",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "http://www.jbnst.de"
@@ -18557,13 +18557,13 @@
       "Journal Title": "Journal of Engineering and Technology Management",
       "Publisher": "Elsevier",
       "ISSN": "0923-4748",
-      "Year Founded": "1989",
+      "Year Founded": "1984",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-engineering-and-technology-management"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-engineering-and-technology-management"
     },
     {
       "Sr": "j1731",
@@ -18593,13 +18593,13 @@
     },
     {
       "Sr": "j1734",
-      "Journal Title": "Journal of Enterprising Communities: People and Places in the Global Community",
+      "Journal Title": "Journal of Enterprising Communities: People and Places in the Global Economy",
       "Publisher": "Emerald Group Publishing",
       "ISSN": "1750-6204",
       "Year Founded": "2007",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
+      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/1750-6204"
@@ -18654,7 +18654,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/622870/description#description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-environmental-economics-and-management"
     },
     {
       "Sr": "j1743",
@@ -18693,7 +18693,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/622872/description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-environmental-psychology"
     },
     {
       "Sr": "j1748",
@@ -18810,7 +18810,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/622874/description#description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-experimental-social-psychology"
     },
     {
       "Sr": "j1758",
@@ -18849,7 +18849,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-family-business-strategy"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-family-business-strategy"
     },
     {
       "Sr": "j1762",
@@ -18953,7 +18953,7 @@
       "ABS Rank": "4*",
       "Scopus Quantile": "Q1",
       "FT50": true,
-      "Link": "http://www.journals.elsevier.com/journal-of-financial-economics/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-financial-economics"
     },
     {
       "Sr": "j1770",
@@ -18979,7 +18979,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-financial-intermediation"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-financial-intermediation"
     },
     {
       "Sr": "j1772",
@@ -19031,7 +19031,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-financial-markets"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-financial-markets"
     },
     {
       "Sr": "j1777",
@@ -19135,7 +19135,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-financial-stability"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-financial-stability"
     },
     {
       "Sr": "j1785",
@@ -19191,13 +19191,13 @@
     },
     {
       "Sr": "j1789",
-      "Journal Title": "Journal of Forensic & Investigative Accounting",
-      "Publisher": "Louisiana State University",
+      "Journal Title": "Journal of Forensic and Investigative Accounting",
+      "Publisher": "NACVA-National Association of Certified Valuators and Analysts",
       "ISSN": "",
       "Year Founded": "2009",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q4",
       "FT50": false,
       "Link": "https://www.nacva.com/jfia"
@@ -19239,7 +19239,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q4",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-forest-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-forest-economics"
     },
     {
       "Sr": "j1795",
@@ -19447,7 +19447,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505560/description#description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-health-economics"
     },
     {
       "Sr": "j1814",
@@ -19590,7 +19590,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-hospitality-and-tourism-management"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-hospitality-and-tourism-management"
     },
     {
       "Sr": "j1829",
@@ -19642,7 +19642,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-hospitality-leisure-sport-and-tourism-education"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-hospitality-leisure-sport-and-tourism-education"
     },
     {
       "Sr": "j1833",
@@ -19655,7 +19655,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-housing-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-housing-economics"
     },
     {
       "Sr": "j1834",
@@ -19824,7 +19824,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-industrial-information-integration"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-industrial-information-integration"
     },
     {
       "Sr": "j1850",
@@ -19967,17 +19967,17 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-innovation-and-knowledge"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-innovation-and-knowledge"
     },
     {
       "Sr": "j1865",
-      "Journal Title": "Journal of Innovation Economics",
-      "Publisher": "De Boeck Superior",
+      "Journal Title": "Journal of Innovation Economics & Management",
+      "Publisher": "De Boeck Supérieur",
       "ISSN": "2032-5355",
       "Year Founded": "2008",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
+      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "http://www.cairn.info/revue-journal-of-innovation-economics.htm"
@@ -19985,12 +19985,12 @@
     {
       "Sr": "j1867",
       "Journal Title": "Journal of Innovation Management",
-      "Publisher": "Association Journal of Innovation Management",
+      "Publisher": "University of Porto (UNIVERSIDADE DO PORTO), Portugal",
       "ISSN": "",
       "Year Founded": "2013",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://journalsojs3.fe.up.pt/index.php/jim"
@@ -20175,7 +20175,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-international-accounting-auditing-and-taxation"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-international-accounting-auditing-and-taxation"
     },
     {
       "Sr": "j1883",
@@ -20383,7 +20383,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-international-financial-markets-institutions-and-money"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-international-financial-markets-institutions-and-money"
     },
     {
       "Sr": "j1900",
@@ -20409,7 +20409,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-international-management/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-international-management"
     },
     {
       "Sr": "j1902",
@@ -20474,7 +20474,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-international-money-and-finance/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-international-money-and-finance"
     },
     {
       "Sr": "j1907",
@@ -20851,7 +20851,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/622617/description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-macroeconomics"
     },
     {
       "Sr": "j1945",
@@ -21002,9 +21002,9 @@
       "Publisher": "American Society of Civil Engineers",
       "ISSN": "0742-597X",
       "Year Founded": "1985",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
+      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://ascelibrary.org/journal/jmenea"
@@ -21098,7 +21098,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-manufacturing-systems"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-manufacturing-systems"
     },
     {
       "Sr": "j1966",
@@ -21254,7 +21254,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-mathematical-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-mathematical-economics"
     },
     {
       "Sr": "j1981",
@@ -21332,7 +21332,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-monetary-economics/#description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-monetary-economics"
     },
     {
       "Sr": "j1988",
@@ -21384,7 +21384,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-multinational-financial-management"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-multinational-financial-management"
     },
     {
       "Sr": "j1992",
@@ -21397,7 +21397,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-multivariate-analysis/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-multivariate-analysis"
     },
     {
       "Sr": "j1993",
@@ -21631,7 +21631,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-outdoor-recreation-and-tourism"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-outdoor-recreation-and-tourism"
     },
     {
       "Sr": "j2016",
@@ -21787,7 +21787,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-policy-modeling"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-policy-modeling"
     },
     {
       "Sr": "j2030",
@@ -22086,7 +22086,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-public-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-public-economics"
     },
     {
       "Sr": "j2056",
@@ -22177,7 +22177,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-purchasing-and-supply-management/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-purchasing-and-supply-management"
     },
     {
       "Sr": "j2064",
@@ -22385,7 +22385,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/622897/description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-research-in-personality"
     },
     {
       "Sr": "j2082",
@@ -22398,7 +22398,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-retailing"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-retailing"
     },
     {
       "Sr": "j2083",
@@ -22411,7 +22411,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-retailing-and-consumer-services"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-retailing-and-consumer-services"
     },
     {
       "Sr": "j2084",
@@ -22515,7 +22515,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-safety-research"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-safety-research"
     },
     {
       "Sr": "j2093",
@@ -22957,7 +22957,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-statistical-planning-and-inference/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-statistical-planning-and-inference"
     },
     {
       "Sr": "j2128",
@@ -23035,7 +23035,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-journal-of-strategic-information-systems"
+      "Link": "https://www.sciencedirect.com/journal/the-journal-of-strategic-information-systems"
     },
     {
       "Sr": "j2135",
@@ -23386,7 +23386,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-journal-of-the-economics-of-ageing"
+      "Link": "https://www.sciencedirect.com/journal/the-journal-of-the-economics-of-ageing"
     },
     {
       "Sr": "j2166",
@@ -23451,7 +23451,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-the-japanese-and-international-economies"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-the-japanese-and-international-economies"
     },
     {
       "Sr": "j2171",
@@ -23737,7 +23737,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-transport-and-health"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-transport-and-health"
     },
     {
       "Sr": "j2195",
@@ -23763,7 +23763,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-transport-geography/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-transport-geography"
     },
     {
       "Sr": "j2198",
@@ -23906,7 +23906,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-urban-economics"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-urban-economics"
     },
     {
       "Sr": "j2209",
@@ -23945,7 +23945,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-vocational-behavior"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-vocational-behavior"
     },
     {
       "Sr": "j2212",
@@ -23997,7 +23997,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-world-business"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-world-business"
     },
     {
       "Sr": "j2217",
@@ -24339,13 +24339,13 @@
     },
     {
       "Sr": "j2244",
-      "Journal Title": "Labour & Industry",
+      "Journal Title": "Labour & Industry: A Journal of the Social and Economic Relations of Work",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "1030-1763",
       "Year Founded": "1987",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rlab20"
@@ -24361,7 +24361,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/labour-economics"
+      "Link": "https://www.sciencedirect.com/journal/labour-economics"
     },
     {
       "Sr": "j2247",
@@ -24439,7 +24439,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/land-use-policy"
+      "Link": "https://www.sciencedirect.com/journal/land-use-policy"
     },
     {
       "Sr": "j2253",
@@ -24452,7 +24452,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/language-and-communication"
+      "Link": "https://www.sciencedirect.com/journal/language-and-communication"
     },
     {
       "Sr": "j2255",
@@ -24599,13 +24599,13 @@
     },
     {
       "Sr": "j2267",
-      "Journal Title": "Leisure Sciences: an interdisciplinary journal",
+      "Journal Title": "Leisure Sciences",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "0149-0400",
       "Year Founded": "1977",
       "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/ulsc20"
@@ -24638,14 +24638,14 @@
     },
     {
       "Sr": "j2270",
-      "Journal Title": "Letters in Spatial and Resource Science",
+      "Journal Title": "Letters in Spatial and Resource Sciences",
       "Publisher": "Springer Nature",
-      "ISSN": "",
+      "ISSN": "1864-4031",
       "Year Founded": "2008",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
+      "Field Label": "Urban, Regional Planning & Environmental Studies",
       "ABDC Rank": "C",
-      "ABS Rank": "",
-      "Scopus Quantile": "",
+      "ABS Rank": "1",
+      "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://link.springer.com/journal/12076"
     },
@@ -24751,7 +24751,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/long-range-planning"
+      "Link": "https://www.sciencedirect.com/journal/long-range-planning"
     },
     {
       "Sr": "j2282",
@@ -24833,8 +24833,8 @@
     },
     {
       "Sr": "j2289",
-      "Journal Title": "Management",
-      "Publisher": "International Strategic Management Association",
+      "Journal Title": "M@n@gement",
+      "Publisher": "Association Internationale de Management Stratégique",
       "ISSN": "1286-4692",
       "Year Founded": "1998",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
@@ -24907,7 +24907,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/management-accounting-research"
+      "Link": "https://www.sciencedirect.com/journal/management-accounting-research"
     },
     {
       "Sr": "j2295",
@@ -25151,7 +25151,7 @@
       "Year Founded": "1996",
       "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rmle21"
@@ -25219,7 +25219,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/marine-policy"
+      "Link": "https://www.sciencedirect.com/journal/marine-policy"
     },
     {
       "Sr": "j2321",
@@ -25427,7 +25427,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/mathematical-social-sciences/"
+      "Link": "https://www.sciencedirect.com/journal/mathematical-social-sciences"
     },
     {
       "Sr": "j2339",
@@ -25561,13 +25561,13 @@
     },
     {
       "Sr": "j2351",
-      "Journal Title": "Metroeconomica: international review of economics",
+      "Journal Title": "Metroeconomica",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0026-1386",
       "Year Founded": "1949",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/1467999X"
@@ -25626,13 +25626,13 @@
     },
     {
       "Sr": "j2358",
-      "Journal Title": "Millennial Asia: An International Journal of Asian Studies",
+      "Journal Title": "Millennial Asia",
       "Publisher": "Sage Publications",
       "ISSN": "0976-3996",
       "Year Founded": "2010",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
+      "Field Label": "Sociology, Social Policy & Development Studies",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://journals.sagepub.com/home/mla"
@@ -25666,12 +25666,12 @@
     {
       "Sr": "j2361",
       "Journal Title": "MIS Quarterly",
-      "Publisher": "University of Minnesota Press",
+      "Publisher": "University of Minnesota",
       "ISSN": "0276-7783",
       "Year Founded": "1977",
       "Field Label": "Information Systems, Digital Technology, Cybersecurity & Privacy",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "4*",
       "Scopus Quantile": "Q1",
       "FT50": true,
       "Link": "http://www.misq.org/"
@@ -25912,13 +25912,13 @@
     },
     {
       "Sr": "j2386",
-      "Journal Title": "Netnomics",
+      "Journal Title": "NETNOMICS: Economic Research and Electronic Networking",
       "Publisher": "Springer International Publishing",
       "ISSN": "1385-9587",
       "Year Founded": "1999",
-      "Field Label": "Heterodox, Institutional & Interdisciplinary Economics",
+      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://www.springer.com/journal/11066"
@@ -26376,7 +26376,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/omega"
+      "Link": "https://www.sciencedirect.com/journal/omega"
     },
     {
       "Sr": "j2428",
@@ -26480,7 +26480,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/operations-research-letters"
+      "Link": "https://www.sciencedirect.com/journal/operations-research-letters"
     },
     {
       "Sr": "j2438",
@@ -26649,7 +26649,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": true,
-      "Link": "https://www.journals.elsevier.com/organizational-behavior-and-human-decision-processes"
+      "Link": "https://www.sciencedirect.com/journal/organizational-behavior-and-human-decision-processes"
     },
     {
       "Sr": "j2451",
@@ -26662,7 +26662,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/organizational-dynamics"
+      "Link": "https://www.sciencedirect.com/journal/organizational-dynamics"
     },
     {
       "Sr": "j2452",
@@ -26893,10 +26893,10 @@
       "Year Founded": "1993",
       "Field Label": "Banking, Corporate Finance, Investment & Insurance",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/pacific-basin-finance-journal"
+      "Link": "https://www.sciencedirect.com/journal/pacific-basin-finance-journal"
     },
     {
       "Sr": "j2473",
@@ -27052,7 +27052,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/locate/paid"
+      "Link": "https://www.sciencedirect.com/journal/personality-and-individual-differences"
     },
     {
       "Sr": "j2485",
@@ -27225,13 +27225,13 @@
     },
     {
       "Sr": "j2503",
-      "Journal Title": "Policy and Politics: an international journal",
-      "Publisher": "Policy Press",
+      "Journal Title": "Policy & Politics",
+      "Publisher": "Policy Press (Bristol University Press)",
       "ISSN": "0305-5736",
       "Year Founded": "1972",
       "Field Label": "Public Administration, Governance & Policy Studies",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://www.ingentaconnect.com/content/tpp/pap"
@@ -27251,13 +27251,13 @@
     },
     {
       "Sr": "j2507",
-      "Journal Title": "Policy Science",
+      "Journal Title": "Policy Sciences",
       "Publisher": "Springer International Publishing",
       "ISSN": "0032-2687",
       "Year Founded": "1970",
       "Field Label": "Public Administration, Governance & Policy Studies",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.springer.com/journal/11077"
@@ -27459,13 +27459,13 @@
     },
     {
       "Sr": "j2525",
-      "Journal Title": "Population Studies: a journal of demography",
+      "Journal Title": "Population Studies",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "0032-4728",
       "Year Founded": "1947",
       "Field Label": "Population Studies, Demography & Migration",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rpst20"
@@ -27637,7 +27637,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/project-leadership-and-society"
+      "Link": "https://www.sciencedirect.com/journal/project-leadership-and-society"
     },
     {
       "Sr": "j2543",
@@ -27654,13 +27654,13 @@
     },
     {
       "Sr": "j2545",
-      "Journal Title": "Prometheus: Critical Studies in Innovation",
-      "Publisher": "Taylor & Francis Online",
+      "Journal Title": "Prometheus",
+      "Publisher": "Pluto Journals",
       "ISSN": "0810-9028",
       "Year Founded": "1983",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/cpro20"
@@ -27810,13 +27810,13 @@
     },
     {
       "Sr": "j2567",
-      "Journal Title": "Public Administration: an international journal",
+      "Journal Title": "Public Administration",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0033-3298",
       "Year Founded": "1922",
       "Field Label": "Public Administration, Governance & Policy Studies",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1467-9299"
@@ -27849,13 +27849,13 @@
     },
     {
       "Sr": "j2571",
-      "Journal Title": "Public Finance Analysis / FinanzArchiv",
+      "Journal Title": "FinanzArchiv / Public Finance Analysis",
       "Publisher": "Mohr Siebeck Verlag",
       "ISSN": "0015-2218",
       "Year Founded": "1884",
       "Field Label": "Banking, Corporate Finance, Investment & Insurance",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q4",
       "FT50": false,
       "Link": "http://www.mohr.de/fa.html"
@@ -28014,7 +28014,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/620188/description"
+      "Link": "https://www.sciencedirect.com/journal/public-relations-review"
     },
     {
       "Sr": "j2587",
@@ -28044,13 +28044,13 @@
     },
     {
       "Sr": "j2590",
-      "Journal Title": "Qualitative Market Research: an international journal",
+      "Journal Title": "Qualitative Market Research: An International Journal",
       "Publisher": "Emerald Group Publishing",
       "ISSN": "1352-2752",
       "Year Founded": "1998",
       "Field Label": "Marketing, Advertising, Consumer Behaviour & Retailing",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/1352-2752"
@@ -28215,11 +28215,11 @@
       "Sr": "j2609",
       "Journal Title": "Quarterly Journal of Finance and Accounting",
       "Publisher": "Creighton University",
-      "ISSN": "0747-5535",
+      "ISSN": "1939-8123",
       "Year Founded": "1962",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "http://www.jstor.org/action/showPublication?journalCode=qjbusiecon"
@@ -28248,7 +28248,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-quarterly-review-of-economics-and-finance"
+      "Link": "https://www.sciencedirect.com/journal/the-quarterly-review-of-economics-and-finance"
     },
     {
       "Sr": "j2613",
@@ -28297,20 +28297,20 @@
       "Year Founded": "1970",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/14679310"
     },
     {
       "Sr": "j2620",
-      "Journal Title": "RAE-Revista de Administracao de Empresas",
-      "Publisher": "Fundacao Getulio Vargas School of Business Administration",
+      "Journal Title": "RAE Revista de Administracao de Empresas",
+      "Publisher": "Fundacao Getulio Vargas, Escola de Administracao de Empresas de Sao Paulo",
       "ISSN": "0034-7590",
       "Year Founded": "1961",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "http://www.scielo.br/scielo.php?script=sci_serial&pid=0034-7590&lng=en&nrm=iso"
@@ -28456,7 +28456,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/regional-science-and-urban-economics"
+      "Link": "https://www.sciencedirect.com/journal/regional-science-and-urban-economics"
     },
     {
       "Sr": "j2636",
@@ -28521,7 +28521,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/reliability-engineering-and-system-safety"
+      "Link": "https://www.sciencedirect.com/journal/reliability-engineering-and-system-safety"
     },
     {
       "Sr": "j2643",
@@ -28534,7 +28534,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/renewable-and-sustainable-energy-reviews"
+      "Link": "https://www.sciencedirect.com/journal/renewable-and-sustainable-energy-reviews"
     },
     {
       "Sr": "j2645",
@@ -28573,7 +28573,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/research-in-economics/"
+      "Link": "https://www.sciencedirect.com/journal/research-in-economics"
     },
     {
       "Sr": "j2648",
@@ -28638,7 +28638,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/research-in-international-business-and-finance"
+      "Link": "https://www.sciencedirect.com/journal/research-in-international-business-and-finance"
     },
     {
       "Sr": "j2654",
@@ -28651,7 +28651,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/research-in-organizational-behavior"
+      "Link": "https://www.sciencedirect.com/journal/research-in-organizational-behavior"
     },
     {
       "Sr": "j2657",
@@ -28690,7 +28690,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/research-in-transportation-business-and-management"
+      "Link": "https://www.sciencedirect.com/journal/research-in-transportation-business-and-management"
     },
     {
       "Sr": "j2660",
@@ -28703,7 +28703,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/research-in-transportation-economics"
+      "Link": "https://www.sciencedirect.com/journal/research-in-transportation-economics"
     },
     {
       "Sr": "j2661",
@@ -28729,7 +28729,7 @@
       "ABS Rank": "4*",
       "Scopus Quantile": "Q1",
       "FT50": true,
-      "Link": "https://www.journals.elsevier.com/research-policy"
+      "Link": "https://www.sciencedirect.com/journal/research-policy"
     },
     {
       "Sr": "j2664",
@@ -28739,7 +28739,7 @@
       "Year Founded": "1958",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/urtm20"
@@ -28755,7 +28755,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/resource-and-energy-economics/"
+      "Link": "https://www.sciencedirect.com/journal/resource-and-energy-economics"
     },
     {
       "Sr": "j2666",
@@ -29600,7 +29600,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/safety-science"
+      "Link": "https://www.sciencedirect.com/journal/safety-science"
     },
     {
       "Sr": "j2745",
@@ -29678,7 +29678,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/scandinavian-journal-of-management"
+      "Link": "https://www.sciencedirect.com/journal/scandinavian-journal-of-management"
     },
     {
       "Sr": "j2752",
@@ -29838,13 +29838,13 @@
     },
     {
       "Sr": "j2768",
-      "Journal Title": "SERIEs: Journal of the Spanish Economic Association",
+      "Journal Title": "SERIEs",
       "Publisher": "Springer International Publishing",
       "ISSN": "1869-4187",
       "Year Founded": "2010",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.springer.com/journal/13209"
@@ -30211,7 +30211,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/315/description#description"
+      "Link": "https://www.sciencedirect.com/journal/social-science-and-medicine"
     },
     {
       "Sr": "j2804",
@@ -30302,7 +30302,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/socio-economic-planning-sciences"
+      "Link": "https://www.sciencedirect.com/journal/socio-economic-planning-sciences"
     },
     {
       "Sr": "j2814",
@@ -30592,16 +30592,16 @@
     },
     {
       "Sr": "j2841",
-      "Journal Title": "Spanish Accounting Review / Revista de Contabilidad",
-      "Publisher": "ASEPUC (Associacion Espanola de Profesores Universitarios de Contabilidad)",
+      "Journal Title": "Revista de Contabilidad - Spanish Accounting Review",
+      "Publisher": "Elsevier",
       "ISSN": "1138-4891",
       "Year Founded": "1997",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/revista-de-contabilidad-spanish-accounting-review"
+      "Link": "https://www.sciencedirect.com/journal/revista-de-contabilidad-spanish-accounting-review"
     },
     {
       "Sr": "j2842",
@@ -30618,13 +30618,13 @@
     },
     {
       "Sr": "j2843",
-      "Journal Title": "Spanish Journal of Finance and Accounting",
+      "Journal Title": "Spanish Journal of Finance and Accounting / Revista Española de Financiación y Contabilidad",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "0210-2412",
-      "Year Founded": "2001",
+      "Year Founded": "1972",
       "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "http://www.tandfonline.com/refc"
@@ -30735,13 +30735,13 @@
     },
     {
       "Sr": "j2853",
-      "Journal Title": "Sport, Business and Management",
-      "Publisher": "Emerald Group Publishing Limited",
+      "Journal Title": "Sport, Business and Management: An International Journal",
+      "Publisher": "Emerald Group Publishing",
       "ISSN": "2042-678X",
       "Year Founded": "2011",
       "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/2042-678X"
@@ -30991,7 +30991,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/statistics-and-probability-letters"
+      "Link": "https://www.sciencedirect.com/journal/statistics-and-probability-letters"
     },
     {
       "Sr": "j2879",
@@ -31108,7 +31108,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/stochastic-processes-and-their-applications/"
+      "Link": "https://www.sciencedirect.com/journal/stochastic-processes-and-their-applications"
     },
     {
       "Sr": "j2888",
@@ -31125,13 +31125,13 @@
     },
     {
       "Sr": "j2891",
-      "Journal Title": "Strategic Change: Briefings in Entrepreurial Finance",
+      "Journal Title": "Strategic Change",
       "Publisher": "Wiley-Blackwell Publishing",
-      "ISSN": "1099-1697",
+      "ISSN": "1086-1718",
       "Year Founded": "1992",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/10991697"
@@ -31225,7 +31225,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/structural-change-and-economic-dynamics"
+      "Link": "https://www.sciencedirect.com/journal/structural-change-and-economic-dynamics"
     },
     {
       "Sr": "j2899",
@@ -31378,7 +31378,7 @@
       "Year Founded": "2000",
       "Field Label": "Transportation, Logistics, Supply Chain Management & Operations",
       "ABDC Rank": "C",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/tscf20"
@@ -31398,13 +31398,13 @@
     },
     {
       "Sr": "j2915",
-      "Journal Title": "Supply Chain Management: an international journal",
+      "Journal Title": "Supply Chain Management: An International Journal",
       "Publisher": "Emerald Group Publishing",
       "ISSN": "1359-8546",
       "Year Founded": "1996",
       "Field Label": "Transportation, Logistics, Supply Chain Management & Operations",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/1359-8546"
@@ -31459,7 +31459,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/sustainable-futures"
+      "Link": "https://www.sciencedirect.com/journal/sustainable-futures"
     },
     {
       "Sr": "j2920",
@@ -31641,7 +31641,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/technological-forecasting-and-social-change"
+      "Link": "https://www.sciencedirect.com/journal/technological-forecasting-and-social-change"
     },
     {
       "Sr": "j2940",
@@ -31680,7 +31680,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/technology-in-society"
+      "Link": "https://www.sciencedirect.com/journal/technology-in-society"
     },
     {
       "Sr": "j2944",
@@ -31706,7 +31706,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/technovation"
+      "Link": "https://www.sciencedirect.com/journal/technovation"
     },
     {
       "Sr": "j2947",
@@ -31719,7 +31719,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/telematics-and-informatics"
+      "Link": "https://www.sciencedirect.com/journal/telematics-and-informatics"
     },
     {
       "Sr": "j2948",
@@ -31814,13 +31814,13 @@
     },
     {
       "Sr": "j2956",
-      "Journal Title": "The Annals of Regional Science: international journal of urban, regional and environmental research and policy",
+      "Journal Title": "The Annals of Regional Science",
       "Publisher": "Springer International Publishing",
       "ISSN": "0570-1864",
       "Year Founded": "1967",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
+      "Field Label": "Urban, Regional Planning & Environmental Studies",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.springer.com/journal/168"
@@ -32022,13 +32022,13 @@
     },
     {
       "Sr": "j2972",
-      "Journal Title": "The Economic History Review: a journal of economic and social history",
+      "Journal Title": "The Economic History Review",
       "Publisher": "Wiley-Blackwell Publishing",
       "ISSN": "0013-0117",
       "Year Founded": "1927",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/14680289"
@@ -32252,7 +32252,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-international-journal-of-management-education"
+      "Link": "https://www.sciencedirect.com/journal/the-international-journal-of-management-education"
     },
     {
       "Sr": "j2992",
@@ -32434,7 +32434,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-journal-of-economic-asymmetries"
+      "Link": "https://www.sciencedirect.com/journal/the-journal-of-economic-asymmetries"
     },
     {
       "Sr": "j3007",
@@ -32581,13 +32581,13 @@
     },
     {
       "Sr": "j3018",
-      "Journal Title": "The Journal of International Trade and Economic Development: an international and comparative review",
+      "Journal Title": "Journal of International Trade & Economic Development",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "0963-8199",
       "Year Founded": "1992",
       "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rjte20"
@@ -32759,7 +32759,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-leadership-quarterly"
+      "Link": "https://www.sciencedirect.com/journal/the-leadership-quarterly"
     },
     {
       "Sr": "j3034",
@@ -32811,7 +32811,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-north-american-journal-of-economics-and-finance"
+      "Link": "https://www.sciencedirect.com/journal/the-north-american-journal-of-economics-and-finance"
     },
     {
       "Sr": "j3038",
@@ -33075,13 +33075,13 @@
     },
     {
       "Sr": "j3059",
-      "Journal Title": "Theory and Decision: an international journal for multidisciplinary advances in decision sciences",
+      "Journal Title": "Theory and Decision",
       "Publisher": "Springer International Publishing",
       "ISSN": "0040-5833",
       "Year Founded": "1970",
       "Field Label": "Economic Theory, Game Theory & Mathematical Economics",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://www.springer.com/economics/economic+theory/journal/11238"
@@ -33179,13 +33179,13 @@
     },
     {
       "Sr": "j3069",
-      "Journal Title": "TOP - Transactions in Operations Research",
-      "Publisher": "Springer",
+      "Journal Title": "TOP",
+      "Publisher": "Springer Nature",
       "ISSN": "1134-5764",
       "Year Founded": "1993",
       "Field Label": "Operations Research, Decision Sciences & Engineering Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.springer.com/journal/11750"
@@ -33331,7 +33331,7 @@
       "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/tourism-management"
+      "Link": "https://www.sciencedirect.com/journal/tourism-management"
     },
     {
       "Sr": "j3081",
@@ -33344,7 +33344,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/tourism-management-perspectives"
+      "Link": "https://www.sciencedirect.com/journal/tourism-management-perspectives"
     },
     {
       "Sr": "j3082",
@@ -33487,7 +33487,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transport-policy"
+      "Link": "https://www.sciencedirect.com/journal/transport-policy"
     },
     {
       "Sr": "j3098",
@@ -33565,7 +33565,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transportation-research-part-a-policy-and-practice"
+      "Link": "https://www.sciencedirect.com/journal/transportation-research-part-a-policy-and-practice"
     },
     {
       "Sr": "j3104",
@@ -33575,10 +33575,10 @@
       "Year Founded": "1979",
       "Field Label": "Transportation, Logistics, Supply Chain Management & Operations",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transportation-research-part-b-methodological"
+      "Link": "https://www.sciencedirect.com/journal/transportation-research-part-b-methodological"
     },
     {
       "Sr": "j3105",
@@ -33591,7 +33591,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transportation-research-part-c-emerging-technologies"
+      "Link": "https://www.sciencedirect.com/journal/transportation-research-part-c-emerging-technologies"
     },
     {
       "Sr": "j3106",
@@ -33604,7 +33604,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transportation-research-part-d-transport-and-environment"
+      "Link": "https://www.sciencedirect.com/journal/transportation-research-part-d-transport-and-environment"
     },
     {
       "Sr": "j3107",
@@ -33617,7 +33617,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transportation-research-part-e-logistics-and-transportation-review"
+      "Link": "https://www.sciencedirect.com/journal/transportation-research-part-e-logistics-and-transportation-review"
     },
     {
       "Sr": "j3108",
@@ -33630,7 +33630,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transportation-research-part-f-traffic-psychology-and-behaviour"
+      "Link": "https://www.sciencedirect.com/journal/transportation-research-part-f-traffic-psychology-and-behaviour"
     },
     {
       "Sr": "j3109",
@@ -33695,7 +33695,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/travel-behaviour-and-society"
+      "Link": "https://www.sciencedirect.com/journal/travel-behaviour-and-society"
     },
     {
       "Sr": "j3115",
@@ -33894,13 +33894,13 @@
     },
     {
       "Sr": "j3131",
-      "Journal Title": "Urban Studies: an international journal for research in urban studies",
+      "Journal Title": "Urban Studies",
       "Publisher": "Sage Publications",
       "ISSN": "0042-0980",
       "Year Founded": "1964",
       "Field Label": "Urban, Regional Planning & Environmental Studies",
       "ABDC Rank": "A*",
-      "ABS Rank": "",
+      "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://journals.sagepub.com/home/usj"
@@ -33929,7 +33929,7 @@
       "ABS Rank": "",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/value-in-health"
+      "Link": "https://www.sciencedirect.com/journal/value-in-health"
     },
     {
       "Sr": "j3136",
@@ -34076,13 +34076,13 @@
     },
     {
       "Sr": "j3151",
-      "Journal Title": "Voluntas: International Journal of Voluntary and Non-Profit Organizations",
+      "Journal Title": "VOLUNTAS: International Journal of Voluntary and Nonprofit Organizations",
       "Publisher": "Springer International Publishing",
       "ISSN": "0957-8765",
       "Year Founded": "1990",
       "Field Label": "Strategic Management, Organisational Behaviour & General Management",
       "ABDC Rank": "B",
-      "ABS Rank": "",
+      "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://www.springer.com/social+sciences/journal/11266"
@@ -34193,13 +34193,13 @@
     },
     {
       "Sr": "j3161",
-      "Journal Title": "Work & Stress: An international Journal of Work, Health and Organisations",
+      "Journal Title": "Work & Stress",
       "Publisher": "Taylor & Francis Online",
       "ISSN": "0267-8373",
       "Year Founded": "1987",
       "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
       "ABDC Rank": "A",
-      "ABS Rank": "",
+      "ABS Rank": "4",
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/twst20"
@@ -34280,7 +34280,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/386/description#description"
+      "Link": "https://www.sciencedirect.com/journal/world-development"
     },
     {
       "Sr": "j3171",
@@ -34452,58 +34452,6 @@
       "Link": "https://hrcak.srce.hr/en/zireb"
     },
     {
-      "Sr": "j281",
-      "Journal Title": "Auditing",
-      "Publisher": "American Accounting Association",
-      "ISSN": "0278-0380",
-      "Year Founded": "1982",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://publications.aaahq.org/ajpt"
-    },
-    {
-      "Sr": "j513",
-      "Journal Title": "Comptabilite Controle Audit",
-      "Publisher": "Francophone Association of Accounting",
-      "ISSN": "1262-2788",
-      "Year Founded": "1995",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q4",
-      "FT50": false,
-      "Link": "https://www.afc-cca.com/pages/revue-cca"
-    },
-    {
-      "Sr": "j704",
-      "Journal Title": "EDPACS",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0736-6981",
-      "Year Founded": "1973",
-      "Field Label": "Information Systems, Digital Technology, Cybersecurity & Privacy",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q4",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/uedp20"
-    },
-    {
-      "Sr": "j1498",
-      "Journal Title": "Journal of Accounting and Management Information Systems",
-      "Publisher": "Editura ASE, Romania",
-      "ISSN": "1583-4387",
-      "Year Founded": "2002",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "http://jamis.ase.ro/"
-    },
-    {
       "Sr": "j1501",
       "Journal Title": "Journal of Accounting and Taxation",
       "Publisher": "Academic Journals",
@@ -34517,19 +34465,6 @@
       "Link": "https://academicjournals.org/journal/JAT"
     },
     {
-      "Sr": "j1791",
-      "Journal Title": "Journal of Forensic and Investigative Accounting (previously Journal of Forensic Accounting)",
-      "Publisher": "NACVA-National Association of Certified Valuators and Analysts",
-      "ISSN": "",
-      "Year Founded": "2009",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "https://www.nacva.com/jfia"
-    },
-    {
       "Sr": "j2720",
       "Journal Title": "Revista Contabilidade & Finanças",
       "Publisher": "Universidade de São Paulo",
@@ -34541,71 +34476,6 @@
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "http://www.eac.fea.usp.br/eac/revista"
-    },
-    {
-      "Sr": "j2721",
-      "Journal Title": "Revista de Contabilidad-Spanish Accounting Review",
-      "Publisher": "Elsevier",
-      "ISSN": "1138-4891",
-      "Year Founded": "1998",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://www.journals.elsevier.com/revista-de-contabilidad-spanish-accounting-review"
-    },
-    {
-      "Sr": "j2726",
-      "Journal Title": "Revista Espanola de Financiacion y Contabilidad",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0210-2412",
-      "Year Founded": "1972",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "http://www.tandfonline.com/refc"
-    },
-    {
-      "Sr": "j660",
-      "Journal Title": "Economic History Review",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0013-0117",
-      "Year Founded": "1927",
-      "Field Label": "Economic Theory, Game Theory & Mathematical Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "4",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/14680289"
-    },
-    {
-      "Sr": "j298",
-      "Journal Title": "Australian Economic History Review",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0004-8992",
-      "Year Founded": "1961",
-      "Field Label": "Economic Theory, Game Theory & Mathematical Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1467-8446"
-    },
-    {
-      "Sr": "j470",
-      "Journal Title": "Cliometrica",
-      "Publisher": "Springer Nature",
-      "ISSN": "1863-2505",
-      "Year Founded": "2007",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://www.springer.com/economics/economic+theory/journal/11698"
     },
     {
       "Sr": "j756",
@@ -34660,45 +34530,6 @@
       "Link": "http://www.unternehmensgeschichte.de/?seite=zug"
     },
     {
-      "Sr": "j421",
-      "Journal Title": "Canadian Journal of Economics",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0008-4085",
-      "Year Founded": "1968",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1540-5982"
-    },
-    {
-      "Sr": "j666",
-      "Journal Title": "Economic Policy",
-      "Publisher": "Oxford University Press",
-      "ISSN": "0266-4658",
-      "Year Founded": "1987",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://academic.oup.com/economicpolicy"
-    },
-    {
-      "Sr": "j978",
-      "Journal Title": "Health Economics (United Kingdom)",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "1057-9230",
-      "Year Founded": "1992",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1099-1050"
-    },
-    {
       "Sr": "j1940",
       "Journal Title": "Journal of Legal Studies",
       "Publisher": "University of Chicago Press",
@@ -34723,32 +34554,6 @@
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/0731-9053"
-    },
-    {
-      "Sr": "j99",
-      "Journal Title": "Agricultural Economics (United Kingdom)",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0169-5150",
-      "Year Founded": "1987",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1574-0862"
-    },
-    {
-      "Sr": "j417",
-      "Journal Title": "Canadian Journal of Agricultural Economics",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0008-3976",
-      "Year Founded": "1952",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/17447976"
     },
     {
       "Sr": "j518",
@@ -34788,19 +34593,6 @@
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://onlinelibrary.wiley.com/journal/14710366"
-    },
-    {
-      "Sr": "j1711",
-      "Journal Title": "Journal of Economics/ Zeitschrift fur Nationalokonomie",
-      "Publisher": "Springer Nature",
-      "ISSN": "0931-8658",
-      "Year Founded": "1930",
-      "Field Label": "Economic Theory, Game Theory & Mathematical Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/712"
     },
     {
       "Sr": "j2863",
@@ -34868,19 +34660,6 @@
       "Link": "https://annals.ensae.fr"
     },
     {
-      "Sr": "j198",
-      "Journal Title": "Applied Health Economics and Heath Policy",
-      "Publisher": "Springer Nature",
-      "ISSN": "1175-5652",
-      "Year Founded": "2002",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/40258"
-    },
-    {
       "Sr": "j337",
       "Journal Title": "Behavioural Public Policy",
       "Publisher": "Cambridge University Press",
@@ -34946,19 +34725,6 @@
       "Link": "http://www.economics-sociology.eu/index.php"
     },
     {
-      "Sr": "j713",
-      "Journal Title": "Ekonomicheskaya Politika / Economic Policy",
-      "Publisher": "The Russian Academy of National Economy and Public Administration (RANEPA)",
-      "ISSN": "1994-5124",
-      "Year Founded": "2006",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://ecpolicy.ru/en"
-    },
-    {
       "Sr": "j714",
       "Journal Title": "Ekonomista",
       "Publisher": "Polish Economic Society; Institute of Economics Polish Academy of Sciences",
@@ -34970,19 +34736,6 @@
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "https://ekonomista.pte.pl/"
-    },
-    {
-      "Sr": "j898",
-      "Journal Title": "FinanzArchiv",
-      "Publisher": "JCB Mohr",
-      "ISSN": "0015-2218",
-      "Year Founded": "1884",
-      "Field Label": "Econometrics, Statistical Modelling & Quantitative Methods",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q4",
-      "FT50": false,
-      "Link": "http://www.mohr.de/fa.html"
     },
     {
       "Sr": "j947",
@@ -35024,19 +34777,6 @@
       "Link": "https://ijebl.co.uk/"
     },
     {
-      "Sr": "j1110",
-      "Journal Title": "Intereconomics",
-      "Publisher": "Sciendo",
-      "ISSN": "0020-5346",
-      "Year Founded": "1966",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/10272"
-    },
-    {
       "Sr": "j1124",
       "Journal Title": "International Economics",
       "Publisher": "Elsevier",
@@ -35047,7 +34787,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-economics"
+      "Link": "https://www.sciencedirect.com/journal/international-economics"
     },
     {
       "Sr": "j1198",
@@ -35074,19 +34814,6 @@
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "http://www.inderscience.com/jhome.php?jcode=IJHD"
-    },
-    {
-      "Sr": "j1477",
-      "Journal Title": "Jahrbucher fur Nationalokonomie und Statistik",
-      "Publisher": "Walter de Gruyter",
-      "ISSN": "0021-4027",
-      "Year Founded": "1863",
-      "Field Label": "Econometrics, Statistical Modelling & Quantitative Methods",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "http://www.jbnst.de"
     },
     {
       "Sr": "j1489",
@@ -35141,19 +34868,6 @@
       "Link": "https://journal.sesric.org/"
     },
     {
-      "Sr": "j1911",
-      "Journal Title": "Journal of International Trade and Economic Development",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0963-8199",
-      "Year Founded": "1992",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/rjte20"
-    },
-    {
       "Sr": "j1979",
       "Journal Title": "Journal of Mechanism and Institution Design",
       "Publisher": "Society for the Promotion of Mechanism and Institution Design",
@@ -35167,19 +34881,6 @@
       "Link": "http://www.mechanism-design.org/"
     },
     {
-      "Sr": "j2164",
-      "Journal Title": "Journal of the Economic Science Association",
-      "Publisher": "Springer Nature",
-      "ISSN": "2199-6776",
-      "Year Founded": "2015",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "https://link.springer.com/journal/40881"
-    },
-    {
       "Sr": "j2288",
       "Journal Title": "Man and the Economy",
       "Publisher": "Walter de Gruyter",
@@ -35191,19 +34892,6 @@
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "http://www.degruyter.com/view/j/me"
-    },
-    {
-      "Sr": "j2350",
-      "Journal Title": "Metroeconomica",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0026-1386",
-      "Year Founded": "1949",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/1467999X"
     },
     {
       "Sr": "j2370",
@@ -35230,19 +34918,6 @@
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "http://lawschool.unm.edu/nrj/index.html"
-    },
-    {
-      "Sr": "j2387",
-      "Journal Title": "NETNOMICS: Economic Research and Electronic Networking",
-      "Publisher": "Springer Nature",
-      "ISSN": "1385-9587",
-      "Year Founded": "1999",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/11066"
     },
     {
       "Sr": "j2549",
@@ -35282,19 +34957,6 @@
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "http://www.aimspress.com/journal/QFE"
-    },
-    {
-      "Sr": "j2767",
-      "Journal Title": "SERIEs",
-      "Publisher": "Springer Nature",
-      "ISSN": "1869-4187",
-      "Year Founded": "2010",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/13209"
     },
     {
       "Sr": "j2868",
@@ -35386,19 +35048,6 @@
       "Scopus Quantile": "Q4",
       "FT50": false,
       "Link": "http://www.inderscience.com/jhome.php?jcode=ijmed"
-    },
-    {
-      "Sr": "j1733",
-      "Journal Title": "Journal of Enterprising Communities",
-      "Publisher": "Emerald",
-      "ISSN": "1750-6204",
-      "Year Founded": "2007",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/1750-6204"
     },
     {
       "Sr": "j1735",
@@ -35503,45 +35152,6 @@
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rajm20"
-    },
-    {
-      "Sr": "j373",
-      "Journal Title": "BRQ Business Research Quarterly",
-      "Publisher": "Elsevier",
-      "ISSN": "2340-9436",
-      "Year Founded": "2014",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.journals.elsevier.com/brq-business-research-quarterly"
-    },
-    {
-      "Sr": "j415",
-      "Journal Title": "Canadian Journal of Administrative Sciences",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0825-0383",
-      "Year Founded": "1984",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "http://onlinelibrary.wiley.com/journal/10.1002/(ISSN)1936-4490"
-    },
-    {
-      "Sr": "j778",
-      "Journal Title": "Equality, Diversity and Inclusion: an International Journal",
-      "Publisher": "Emerald",
-      "ISSN": "2040-7149",
-      "Year Founded": "2011",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/2040-7149"
     },
     {
       "Sr": "j840",
@@ -35792,19 +35402,6 @@
       "Link": "http://www.ijmess.com/index.php"
     },
     {
-      "Sr": "j1463",
-      "Journal Title": "Iranian Journal of Management Studies",
-      "Publisher": "University of Tehran",
-      "ISSN": "2008-7055",
-      "Year Founded": "2006",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "http://ijms.ut.ac.ir/"
-    },
-    {
       "Sr": "j1487",
       "Journal Title": "Journal for Global Business Advancement",
       "Publisher": "Inderscience Publishers",
@@ -35935,19 +35532,6 @@
       "Link": "https://www.emerald.com/insight/publication/issn/2399-1747"
     },
     {
-      "Sr": "j2619",
-      "Journal Title": "RAE Revista de Administracao de Empresas",
-      "Publisher": "Fundacao Getulio Vargas, Escola de Administracao de Empresas de Sao Paulo",
-      "ISSN": "0034-7590",
-      "Year Founded": "1961",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "http://www.scielo.br/scielo.php?script=sci_serial&pid=0034-7590&lng=en&nrm=iso"
-    },
-    {
       "Sr": "j2624",
       "Journal Title": "RAUSP Management Journal",
       "Publisher": "Emerald",
@@ -36013,19 +35597,6 @@
       "Link": "https://journals.sagepub.com/home/vik"
     },
     {
-      "Sr": "j893",
-      "Journal Title": "Financial Review",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0732-8516",
-      "Year Founded": "1966",
-      "Field Label": "Banking, Corporate Finance, Investment & Insurance",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/15406288"
-    },
-    {
       "Sr": "j156",
       "Journal Title": "Annals of Corporate Governance",
       "Publisher": "Now Publishers Inc.",
@@ -36039,19 +35610,6 @@
       "Link": "http://www.nowpublishers.com/ACG"
     },
     {
-      "Sr": "j555",
-      "Journal Title": "Corporate Governance (Bingley)",
-      "Publisher": "Emerald",
-      "ISSN": "1472-0701",
-      "Year Founded": "2001",
-      "Field Label": "Banking, Corporate Finance, Investment & Insurance",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/1472-0701"
-    },
-    {
       "Sr": "j1934",
       "Journal Title": "Journal of Law, Finance, and Accounting",
       "Publisher": "Now Publishers Inc.",
@@ -36063,19 +35621,6 @@
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://www.nowpublishers.com/LFA"
-    },
-    {
-      "Sr": "j2467",
-      "Journal Title": "Pacific Basin Finance Journal",
-      "Publisher": "Elsevier",
-      "ISSN": "0927-538X",
-      "Year Founded": "1993",
-      "Field Label": "Banking, Corporate Finance, Investment & Insurance",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.journals.elsevier.com/pacific-basin-finance-journal"
     },
     {
       "Sr": "j2680",
@@ -36141,19 +35686,6 @@
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://businessperspectives.org/journals/insurance-markets-and-companies?category_id=30"
-    },
-    {
-      "Sr": "j1104",
-      "Journal Title": "Intelligent Systems in Accounting, Finance and Management",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "1550-1949",
-      "Year Founded": "1992",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/1055615X"
     },
     {
       "Sr": "j1461",
@@ -36247,19 +35779,6 @@
       "Link": "https://businessperspectives.org/journals/public-and-municipal-finance#general-information"
     },
     {
-      "Sr": "j2610",
-      "Journal Title": "Quarterly Journal of Finance and Accounting (QJFA)",
-      "Publisher": "Creighton University",
-      "ISSN": "1939-8123",
-      "Year Founded": "1962",
-      "Field Label": "Accounting, Financial Reporting, Auditing & Accountability",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": ""
-    },
-    {
       "Sr": "j3002",
       "Journal Title": "The Journal of Beta Investment Strategies",
       "Publisher": "Portfolio Management Research",
@@ -36284,58 +35803,6 @@
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://jfds.pm-research.com"
-    },
-    {
-      "Sr": "j1057",
-      "Journal Title": "Industrial Relations",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0019-8676",
-      "Year Founded": "1961",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "4",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/1468232X"
-    },
-    {
-      "Sr": "j649",
-      "Journal Title": "Economic and Industrial Democracy",
-      "Publisher": "Sage Publications",
-      "ISSN": "0143-831X",
-      "Year Founded": "1980",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://journals.sagepub.com/home/eid"
-    },
-    {
-      "Sr": "j1033",
-      "Journal Title": "ILR Review",
-      "Publisher": "Sage Publications",
-      "ISSN": "0019-7939",
-      "Year Founded": "1947",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://journals.sagepub.com/home/ilr"
-    },
-    {
-      "Sr": "j221",
-      "Journal Title": "Asia Pacific Journal of Human Resources",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "1038-4111",
-      "Year Founded": "1963",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1744-7941"
     },
     {
       "Sr": "j438",
@@ -36377,19 +35844,6 @@
       "Link": "https://www.emerald.com/insight/publication/issn/2514-7641"
     },
     {
-      "Sr": "j2245",
-      "Journal Title": "Labour and Industry: a journal of social and economic relations of work",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "1030-1763",
-      "Year Founded": "1987",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/rlab20"
-    },
-    {
       "Sr": "j3092",
       "Journal Title": "Transfer",
       "Publisher": "Sage Publications",
@@ -36416,19 +35870,6 @@
       "Link": "https://bristoluniversitypressdigital.com/view/journals/wge/wge"
     },
     {
-      "Sr": "j3188",
-      "Journal Title": "Zeitschrift für Personalforschung (German Journal of Research in Human Resource Management)",
-      "Publisher": "Sage Publications",
-      "ISSN": "2397-0022",
-      "Year Founded": "1987",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://journals.sagepub.com/home/gjh"
-    },
-    {
       "Sr": "j67",
       "Journal Title": "Advances in Industrial and Labor Relations",
       "Publisher": "Emerald",
@@ -36453,32 +35894,6 @@
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "https://unisapressjournals.co.za/index.php/AJER"
-    },
-    {
-      "Sr": "j310",
-      "Journal Title": "Australian Journal of Labour Economics",
-      "Publisher": "The Bankwest Curtin Economics Centre",
-      "ISSN": "1328-1143",
-      "Year Founded": "1997",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "https://ajle.org/index.php/ajle_home"
-    },
-    {
-      "Sr": "j862",
-      "Journal Title": "Evidence-based HRM",
-      "Publisher": "Emerald",
-      "ISSN": "2049-3983",
-      "Year Founded": "2013",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/2049-3983"
     },
     {
       "Sr": "j1050",
@@ -36611,19 +36026,6 @@
       "Link": "https://www.emerald.com/insight/publication/issn/1012-8255"
     },
     {
-      "Sr": "j229",
-      "Journal Title": "Asia Pacific Management Review",
-      "Publisher": "Elsevier",
-      "ISSN": "1029-3132",
-      "Year Founded": "1996",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.journals.elsevier.com/asia-pacific-management-review"
-    },
-    {
       "Sr": "j1160",
       "Journal Title": "International Journal of Business and Emerging Markets",
       "Publisher": "Inderscience Publishers",
@@ -36676,32 +36078,6 @@
       "Link": "http://www.inderscience.com/browse/index.php?journalID=182"
     },
     {
-      "Sr": "j1548",
-      "Journal Title": "Journal of Asia-Pacific Business",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "1059-9231",
-      "Year Founded": "1996",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/wapb20"
-    },
-    {
-      "Sr": "j1600",
-      "Journal Title": "Journal of Chinese Economic and Business Studies",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "1476-5284",
-      "Year Founded": "2003",
-      "Field Label": "Applied Economics, Development Economics & Agricultural Economics",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/rcea20"
-    },
-    {
       "Sr": "j2254",
       "Journal Title": "Latin American Business Review",
       "Publisher": "Taylor & Francis",
@@ -36726,19 +36102,6 @@
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.emerald.com/insight/publication/issn/2177-8736"
-    },
-    {
-      "Sr": "j2363",
-      "Journal Title": "MIS Quarterly: Management Information Systems",
-      "Publisher": "University of Minnesota",
-      "ISSN": "0276-7783",
-      "Year Founded": "1977",
-      "Field Label": "Information Systems, Digital Technology, Cybersecurity & Privacy",
-      "ABDC Rank": "",
-      "ABS Rank": "4*",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://www.misq.org/"
     },
     {
       "Sr": "j1626",
@@ -36842,20 +36205,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/information-processing-and-management/"
-    },
-    {
-      "Sr": "j1262",
-      "Journal Title": "International Journal of Human Computer Studies",
-      "Publisher": "Elsevier",
-      "ISSN": "1071-5819",
-      "Year Founded": "1993",
-      "Field Label": "Information Systems, Digital Technology, Cybersecurity & Privacy",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-human-computer-studies"
+      "Link": "https://www.sciencedirect.com/journal/information-processing-and-management"
     },
     {
       "Sr": "j1854",
@@ -36881,7 +36231,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/505732/description"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-systems-and-software"
     },
     {
       "Sr": "j2644",
@@ -36920,7 +36270,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/expert-systems-with-applications"
+      "Link": "https://www.sciencedirect.com/journal/expert-systems-with-applications"
     },
     {
       "Sr": "j919",
@@ -37115,7 +36465,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/journal-of-informetrics/"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-informetrics"
     },
     {
       "Sr": "j2182",
@@ -37167,7 +36517,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q3",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/software-impacts"
+      "Link": "https://www.sciencedirect.com/journal/software-impacts"
     },
     {
       "Sr": "j2829",
@@ -37183,19 +36533,6 @@
       "Link": "https://sajim.co.za/index.php/sajim"
     },
     {
-      "Sr": "j2617",
-      "Journal Title": "R and D Management",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0033-6807",
-      "Year Founded": "1970",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/14679310"
-    },
-    {
       "Sr": "j1284",
       "Journal Title": "International Journal of Innovation Management",
       "Publisher": "World Scientific",
@@ -37209,19 +36546,6 @@
       "Link": "http://www.worldscinet.com/ijim/ijim.shtml"
     },
     {
-      "Sr": "j1730",
-      "Journal Title": "Journal of Engineering and Technology Management - JET-M",
-      "Publisher": "Elsevier",
-      "ISSN": "0923-4748",
-      "Year Founded": "1984",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-engineering-and-technology-management"
-    },
-    {
       "Sr": "j1821",
       "Journal Title": "Journal of High Technology Management Research",
       "Publisher": "Elsevier",
@@ -37232,7 +36556,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/the-journal-of-high-technology-management-research"
+      "Link": "https://www.sciencedirect.com/journal/the-journal-of-high-technology-management-research"
     },
     {
       "Sr": "j2081",
@@ -37246,32 +36570,6 @@
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/tjri20"
-    },
-    {
-      "Sr": "j2544",
-      "Journal Title": "Prometheus",
-      "Publisher": "Pluto Journals",
-      "ISSN": "0810-9028",
-      "Year Founded": "1983",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/cpro20"
-    },
-    {
-      "Sr": "j2663",
-      "Journal Title": "Research Technology Management",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0895-6308",
-      "Year Founded": "1958",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/urtm20"
     },
     {
       "Sr": "j2757",
@@ -37480,32 +36778,6 @@
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "http://www.inderscience.com/jhome.php?jcode=ijdh"
-    },
-    {
-      "Sr": "j1866",
-      "Journal Title": "Journal of Innovation Economics & Management",
-      "Publisher": "De Boeck Supérieur",
-      "ISSN": "",
-      "Year Founded": "2008",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "http://www.cairn.info/revue-journal-of-innovation-economics.htm"
-    },
-    {
-      "Sr": "j1868",
-      "Journal Title": "Journal of Innovation Management (JIM)",
-      "Publisher": "University of Porto (UNIVERSIDADE DO PORTO), Portugal",
-      "ISSN": "",
-      "Year Founded": "2013",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "https://journalsojs3.fe.up.pt/index.php/jim"
     },
     {
       "Sr": "j2943",
@@ -37755,19 +37027,6 @@
       "Link": "http://www.inderscience.com/browse/index.php?journalCODE=ijtcs"
     },
     {
-      "Sr": "j1485",
-      "Journal Title": "Journal for Advancement of Marketing Education",
-      "Publisher": "Marketing Management Association",
-      "ISSN": "2326-3296",
-      "Year Founded": "1993",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q4",
-      "FT50": false,
-      "Link": "https://www.mmaglobal.org/journal-for-advancement-of-marketing-education"
-    },
-    {
       "Sr": "j1580",
       "Journal Title": "Journal of Business Ethics Education",
       "Publisher": "NeilsonJournals Publishing",
@@ -37846,32 +37105,6 @@
       "Link": "https://www.emerald.com/insight/publication/issn/2397-7604"
     },
     {
-      "Sr": "j12",
-      "Journal Title": "Academy of Marketing Science Review",
-      "Publisher": "Springer Nature",
-      "ISSN": "1869-814X",
-      "Year Founded": "1997",
-      "Field Label": "Marketing, Advertising, Consumer Behaviour & Retailing",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/13162"
-    },
-    {
-      "Sr": "j2589",
-      "Journal Title": "Qualitative Market Research",
-      "Publisher": "Emerald",
-      "ISSN": "1352-2752",
-      "Year Founded": "1998",
-      "Field Label": "Marketing, Advertising, Consumer Behaviour & Retailing",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/1352-2752"
-    },
-    {
       "Sr": "j2026",
       "Journal Title": "Journal of Philanthropy and Marketing",
       "Publisher": "Wiley-Blackwell",
@@ -37908,20 +37141,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/computers-in-industry"
-    },
-    {
-      "Sr": "j2913",
-      "Journal Title": "Supply Chain Management",
-      "Publisher": "Emerald",
-      "ISSN": "1359-8546",
-      "Year Founded": "1996",
-      "Field Label": "Transportation, Logistics, Supply Chain Management & Operations",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/1359-8546"
+      "Link": "https://www.sciencedirect.com/journal/computers-in-industry"
     },
     {
       "Sr": "j1179",
@@ -37935,32 +37155,6 @@
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/tcim20"
-    },
-    {
-      "Sr": "j1630",
-      "Journal Title": "Journal of Construction Engineering and Management - ASCE",
-      "Publisher": "American Society of Civil Engineers",
-      "ISSN": "0733-9364",
-      "Year Founded": "1983",
-      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://ascelibrary.org/journal/jcemd4"
-    },
-    {
-      "Sr": "j338",
-      "Journal Title": "Benchmarking",
-      "Publisher": "Emerald",
-      "ISSN": "1463-5771",
-      "Year Founded": "1994",
-      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/1463-5771"
     },
     {
       "Sr": "j528",
@@ -38314,19 +37508,6 @@
       "Link": "https://asq.org/quality-progress"
     },
     {
-      "Sr": "j2911",
-      "Journal Title": "Supply Chain Forum",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "1625-8312",
-      "Year Founded": "2000",
-      "Field Label": "Transportation, Logistics, Supply Chain Management & Operations",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/tscf20"
-    },
-    {
       "Sr": "j3177",
       "Journal Title": "World Review of Intermodal Transportation Research",
       "Publisher": "Inderscience Publishers",
@@ -38467,7 +37648,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/discrete-applied-mathematics"
+      "Link": "https://www.sciencedirect.com/journal/discrete-applied-mathematics"
     },
     {
       "Sr": "j623",
@@ -38480,7 +37661,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/discrete-optimization"
+      "Link": "https://www.sciencedirect.com/journal/discrete-optimization"
     },
     {
       "Sr": "j744",
@@ -38587,19 +37768,6 @@
       "Link": "https://www.sciencedirect.com/journal/simulation-modelling-practice-and-theory"
     },
     {
-      "Sr": "j3058",
-      "Journal Title": "Theory and Decision",
-      "Publisher": "Springer Nature",
-      "ISSN": "0040-5833",
-      "Year Founded": "1970",
-      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://www.springer.com/economics/economic+theory/journal/11238"
-    },
-    {
       "Sr": "j238",
       "Journal Title": "Asia-Pacific Journal of Operational Research",
       "Publisher": "World Scientific",
@@ -38637,19 +37805,6 @@
       "Scopus Quantile": "Q3",
       "FT50": false,
       "Link": "https://www.sciencedirect.com/journal/euro-journal-on-decision-processes"
-    },
-    {
-      "Sr": "j1064",
-      "Journal Title": "INFOR: Information Systems and Operational Research",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0315-5986",
-      "Year Founded": "1963",
-      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/tinf20"
     },
     {
       "Sr": "j1144",
@@ -38769,19 +37924,6 @@
       "Link": "https://journals.sagepub.com/home/SIM"
     },
     {
-      "Sr": "j3068",
-      "Journal Title": "TOP",
-      "Publisher": "Springer Nature",
-      "ISSN": "1134-5764",
-      "Year Founded": "1993",
-      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/11750"
-    },
-    {
       "Sr": "j1606",
       "Journal Title": "Journal of Co-operative Organization and Management",
       "Publisher": "Elsevier",
@@ -38792,7 +37934,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-co-operative-organization-and-management"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-co-operative-organization-and-management"
     },
     {
       "Sr": "j2922",
@@ -38987,7 +38129,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-mathematical-psychology"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-mathematical-psychology"
     },
     {
       "Sr": "j2562",
@@ -39393,19 +38535,6 @@
       "Link": "https://www.tandfonline.com/journals/vjrl20"
     },
     {
-      "Sr": "j3163",
-      "Journal Title": "Work and Stress",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0267-8373",
-      "Year Founded": "1987",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "4",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/twst20"
-    },
-    {
       "Sr": "j194",
       "Journal Title": "Applied Ergonomics",
       "Publisher": "Elsevier",
@@ -39416,20 +38545,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/applied-ergonomics"
-    },
-    {
-      "Sr": "j201",
-      "Journal Title": "Applied Psychology",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0269-994X",
-      "Year Founded": "1920",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://iaap-journals.onlinelibrary.wiley.com/journal/14640597"
+      "Link": "https://www.sciencedirect.com/journal/applied-ergonomics"
     },
     {
       "Sr": "j781",
@@ -39481,7 +38597,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-school-psychology"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-school-psychology"
     },
     {
       "Sr": "j2424",
@@ -39536,19 +38652,6 @@
       "Link": "https://link.springer.com/journal/10111"
     },
     {
-      "Sr": "j961",
-      "Journal Title": "Group Dynamics",
-      "Publisher": "American Psychological Association",
-      "ISSN": "1089-2699",
-      "Year Founded": "1997",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "http://www.apa.org/journals/gdn/"
-    },
-    {
       "Sr": "j1115",
       "Journal Title": "International Archives of Occupational and Environmental Health",
       "Publisher": "Springer Nature",
@@ -39572,7 +38675,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-industrial-ergonomics"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-industrial-ergonomics"
     },
     {
       "Sr": "j1998",
@@ -39679,19 +38782,6 @@
       "Link": "https://www.tandfonline.com/journals/uehf21"
     },
     {
-      "Sr": "j1052",
-      "Journal Title": "Industrial and Organizational Psychology",
-      "Publisher": "Cambridge University Press",
-      "ISSN": "1754-9426",
-      "Year Founded": "2008",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.cambridge.org/core/journals/industrial-and-organizational-psychology"
-    },
-    {
       "Sr": "j1118",
       "Journal Title": "International Coaching Psychology Review",
       "Publisher": "The British Psychological Society",
@@ -39742,19 +38832,6 @@
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.emerald.com/ijwhm"
-    },
-    {
-      "Sr": "j1422",
-      "Journal Title": "International Negotiation",
-      "Publisher": "Brill",
-      "ISSN": "1382-340X",
-      "Year Founded": "1996",
-      "Field Label": "Human Resource Management, Industrial Relations & Workplace Learning",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://brill.com/view/journals/iner/iner-overview.xml?language=en&srsltid=AU7gw4WVkEl_KrDtNrQfUgY5JuZPR_Nh1bRzJS63cKPqXRxn8i6uwros"
     },
     {
       "Sr": "j2075",
@@ -39965,32 +39042,6 @@
       "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1468-0491"
     },
     {
-      "Sr": "j2563",
-      "Journal Title": "Public Administration",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "0033-3298",
-      "Year Founded": "1922",
-      "Field Label": "Public Administration, Governance & Policy Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "4",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1467-9299"
-    },
-    {
-      "Sr": "j2502",
-      "Journal Title": "Policy and Politics",
-      "Publisher": "Policy Press (Bristol University Press)",
-      "ISSN": "0305-5736",
-      "Year Founded": "1972",
-      "Field Label": "Public Administration, Governance & Policy Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://www.ingentaconnect.com/content/tpp/pap"
-    },
-    {
       "Sr": "j861",
       "Journal Title": "Evidence and Policy",
       "Publisher": "Policy Press (Bristol University Press)",
@@ -40147,19 +39198,6 @@
       "Link": "https://onlinelibrary.wiley.com/journal/17547121"
     },
     {
-      "Sr": "j428",
-      "Journal Title": "Canadian Public Policy/Analyse de politiques",
-      "Publisher": "University of Toronto Press",
-      "ISSN": "0317-0861",
-      "Year Founded": "1975",
-      "Field Label": "Public Administration, Governance & Policy Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://utppublishing.com/journal/cpp"
-    },
-    {
       "Sr": "j1252",
       "Journal Title": "International Journal of Health Governance",
       "Publisher": "Emerald",
@@ -40210,19 +39248,6 @@
       "Scopus Quantile": "Q2",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rapp20"
-    },
-    {
-      "Sr": "j1619",
-      "Journal Title": "Journal of Comparative Policy Analysis",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "1387-6988",
-      "Year Founded": "1999",
-      "Field Label": "Public Administration, Governance & Policy Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/fcpa20"
     },
     {
       "Sr": "j2052",
@@ -40303,19 +39328,6 @@
       "Link": "https://bristoluniversitypressdigital.com/view/journals/vsr/vsr-overview.xml"
     },
     {
-      "Sr": "j758",
-      "Journal Title": "Environment and Planning A",
-      "Publisher": "Sage Publications",
-      "ISSN": "0308-518X",
-      "Year Founded": "1969",
-      "Field Label": "Urban, Regional Planning & Environmental Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://journals.sagepub.com/home/epn"
-    },
-    {
       "Sr": "j2091",
       "Journal Title": "Journal of Rural Studies",
       "Publisher": "Elsevier",
@@ -40326,33 +39338,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-rural-studies"
-    },
-    {
-      "Sr": "j3130",
-      "Journal Title": "Urban Studies",
-      "Publisher": "Sage Publications",
-      "ISSN": "0042-0980",
-      "Year Founded": "1964",
-      "Field Label": "Urban, Regional Planning & Environmental Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://journals.sagepub.com/home/usj"
-    },
-    {
-      "Sr": "j164",
-      "Journal Title": "Annals of Regional Science",
-      "Publisher": "Springer Nature",
-      "ISSN": "0570-1864",
-      "Year Founded": "1967",
-      "Field Label": "Urban, Regional Planning & Environmental Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/168"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-rural-studies"
     },
     {
       "Sr": "j463",
@@ -40365,7 +39351,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/cities"
+      "Link": "https://www.sciencedirect.com/journal/cities"
     },
     {
       "Sr": "j846",
@@ -40420,19 +39406,6 @@
       "Link": "http://www.springer.com/economics/regional+science/journal/10109"
     },
     {
-      "Sr": "j2271",
-      "Journal Title": "Letters in Spatial and Resource Sciences",
-      "Publisher": "Springer Nature",
-      "ISSN": "1864-4031",
-      "Year Founded": "2008",
-      "Field Label": "Urban, Regional Planning & Environmental Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q3",
-      "FT50": false,
-      "Link": "https://link.springer.com/journal/12076"
-    },
-    {
       "Sr": "j2634",
       "Journal Title": "Regional and Federal Studies",
       "Publisher": "Taylor & Francis",
@@ -40446,45 +39419,6 @@
       "Link": "https://www.tandfonline.com/journals/frfs20/"
     },
     {
-      "Sr": "j3110",
-      "Journal Title": "Transportation Research, Series B: Methodological",
-      "Publisher": "Elsevier",
-      "ISSN": "0191-2615",
-      "Year Founded": "1979",
-      "Field Label": "Transportation, Logistics, Supply Chain Management & Operations",
-      "ABDC Rank": "",
-      "ABS Rank": "4",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.journals.elsevier.com/transportation-research-part-b-methodological"
-    },
-    {
-      "Sr": "j1957",
-      "Journal Title": "Journal of Management in Engineering - ASCE",
-      "Publisher": "American Society of Civil Engineers",
-      "ISSN": "0742-597X",
-      "Year Founded": "1985",
-      "Field Label": "Operations Research, Decision Sciences & Engineering Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://ascelibrary.org/journal/jmenea"
-    },
-    {
-      "Sr": "j2266",
-      "Journal Title": "Leisure Sciences",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0149-0400",
-      "Year Founded": "1977",
-      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/ulsc20"
-    },
-    {
       "Sr": "j2374",
       "Journal Title": "Museum Management and Curatorship",
       "Publisher": "Taylor & Francis",
@@ -40496,32 +39430,6 @@
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://www.tandfonline.com/journals/rmmc20"
-    },
-    {
-      "Sr": "j3150",
-      "Journal Title": "Voluntas",
-      "Publisher": "Springer Nature",
-      "ISSN": "0957-8765",
-      "Year Founded": "1990",
-      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "http://www.springer.com/social+sciences/journal/11266"
-    },
-    {
-      "Sr": "j151",
-      "Journal Title": "Anatolia: An International Journal of Tourism and Hospitality Research",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "1303-2917",
-      "Year Founded": "1990",
-      "Field Label": "Tourism, Hospitality & Event Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/rana20"
     },
     {
       "Sr": "j1189",
@@ -40550,19 +39458,6 @@
       "Link": "https://cgscholar.com/publishers/journals/the-international-journal-of-sport-and-society"
     },
     {
-      "Sr": "j1374",
-      "Journal Title": "International Journal of Sport Management and Marketing",
-      "Publisher": "Inderscience Publishers",
-      "ISSN": "1475-8962",
-      "Year Founded": "2005",
-      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q4",
-      "FT50": false,
-      "Link": "https://www.inderscience.com/jhome.php?jcode=ijsmm"
-    },
-    {
       "Sr": "j1980",
       "Journal Title": "Journal of Media Business Studies",
       "Publisher": "Taylor & Francis",
@@ -40589,19 +39484,6 @@
       "Link": "https://www.tandfonline.com/journals/tjti20"
     },
     {
-      "Sr": "j2314",
-      "Journal Title": "Managing Sports and Leisure",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "1360-6719",
-      "Year Founded": "1996",
-      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/rmle21"
-    },
-    {
       "Sr": "j2422",
       "Journal Title": "Nutrition and Food Science",
       "Publisher": "Emerald",
@@ -40615,19 +39497,6 @@
       "Link": "https://www.emerald.com/insight/publication/issn/0034-6659"
     },
     {
-      "Sr": "j2854",
-      "Journal Title": "Sport, Business and Management: An International Journal",
-      "Publisher": "Emerald",
-      "ISSN": "2042-678X",
-      "Year Founded": "2011",
-      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.emerald.com/sbm"
-    },
-    {
       "Sr": "j2946",
       "Journal Title": "Telecommunications Policy",
       "Publisher": "Elsevier",
@@ -40638,7 +39507,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/telecommunications-policy"
+      "Link": "https://www.sciencedirect.com/journal/telecommunications-policy"
     },
     {
       "Sr": "j3133",
@@ -40651,7 +39520,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/utilities-policy"
+      "Link": "https://www.sciencedirect.com/journal/utilities-policy"
     },
     {
       "Sr": "j2036",
@@ -40703,7 +39572,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/electoral-studies"
+      "Link": "https://www.sciencedirect.com/journal/electoral-studies"
     },
     {
       "Sr": "j772",
@@ -40729,7 +39598,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/environmental-science-and-policy"
+      "Link": "https://www.sciencedirect.com/journal/environmental-science-and-policy"
     },
     {
       "Sr": "j851",
@@ -40743,19 +39612,6 @@
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "https://academic.oup.com/esr/pages/about"
-    },
-    {
-      "Sr": "j950",
-      "Journal Title": "Global Networks",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "1470-2266",
-      "Year Founded": "2001",
-      "Field Label": "Sociology, Social Policy & Development Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "3",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/14710374"
     },
     {
       "Sr": "j1656",
@@ -40781,7 +39637,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/journal-of-environmental-management"
+      "Link": "https://www.sciencedirect.com/journal/journal-of-environmental-management"
     },
     {
       "Sr": "j1752",
@@ -40820,7 +39676,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/research-in-social-stratification-and-mobility"
+      "Link": "https://www.sciencedirect.com/journal/research-in-social-stratification-and-mobility"
     },
     {
       "Sr": "j2807",
@@ -40833,7 +39689,7 @@
       "ABS Rank": "3",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/social-science-research"
+      "Link": "https://www.sciencedirect.com/journal/social-science-research"
     },
     {
       "Sr": "j2821",
@@ -40898,7 +39754,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.elsevier.com/wps/find/journaldescription.cws_home/344/description#description"
+      "Link": "https://www.sciencedirect.com/journal/geoforum"
     },
     {
       "Sr": "j1008",
@@ -40976,7 +39832,7 @@
       "ABS Rank": "2",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "http://www.journals.elsevier.com/social-networks"
+      "Link": "https://www.sciencedirect.com/journal/social-networks"
     },
     {
       "Sr": "j208",
@@ -40990,19 +39846,6 @@
       "Scopus Quantile": "Q1",
       "FT50": false,
       "Link": "http://onlinelibrary.wiley.com/journal/10.1111/(ISSN)1475-4762"
-    },
-    {
-      "Sr": "j212",
-      "Journal Title": "Arts and the Market",
-      "Publisher": "Emerald",
-      "ISSN": "2056-4945",
-      "Year Founded": "2011",
-      "Field Label": "Sport, Recreation, Real Estate, Hospitality & Leisure Services",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q2",
-      "FT50": false,
-      "Link": "https://www.emerald.com/insight/publication/issn/2056-4945"
     },
     {
       "Sr": "j458",
@@ -41106,7 +39949,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q2",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/international-journal-of-law-crime-and-justice"
+      "Link": "https://www.sciencedirect.com/journal/international-journal-of-law-crime-and-justice"
     },
     {
       "Sr": "j1552",
@@ -41174,19 +40017,6 @@
       "Link": "https://journals.sagepub.com/home/jsi"
     },
     {
-      "Sr": "j2357",
-      "Journal Title": "Millennial Asia",
-      "Publisher": "Sage Publications",
-      "ISSN": "0976-3996",
-      "Year Founded": "2010",
-      "Field Label": "Sociology, Social Policy & Development Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://journals.sagepub.com/home/mla"
-    },
-    {
       "Sr": "j2383",
       "Journal Title": "Négociations",
       "Publisher": "De Boeck Supérieur",
@@ -41198,32 +40028,6 @@
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "https://shs.cairn.info/journal-negociations?lang=en&tab=apercu"
-    },
-    {
-      "Sr": "j2508",
-      "Journal Title": "Policy Sciences",
-      "Publisher": "Springer Nature",
-      "ISSN": "0032-2687",
-      "Year Founded": "1968",
-      "Field Label": "Public Administration, Governance & Policy Studies",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.springer.com/journal/11077"
-    },
-    {
-      "Sr": "j2524",
-      "Journal Title": "Population Studies",
-      "Publisher": "Taylor & Francis",
-      "ISSN": "0032-4728",
-      "Year Founded": "1947",
-      "Field Label": "Population Studies, Demography & Migration",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://www.tandfonline.com/journals/rpst20"
     },
     {
       "Sr": "j2689",
@@ -41262,7 +40066,7 @@
       "ABS Rank": "1",
       "Scopus Quantile": "Q1",
       "FT50": false,
-      "Link": "https://www.journals.elsevier.com/she-ji-the-journal-of-design-economics-and-innovation"
+      "Link": "https://www.sciencedirect.com/journal/she-ji-the-journal-of-design-economics-and-innovation"
     },
     {
       "Sr": "j2906",
@@ -41356,19 +40160,6 @@
       "Link": "https://jorgdesign.springeropen.com"
     },
     {
-      "Sr": "j2890",
-      "Journal Title": "Strategic Change",
-      "Publisher": "Wiley-Blackwell",
-      "ISSN": "1086-1718",
-      "Year Founded": "1992",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "2",
-      "Scopus Quantile": "Q1",
-      "FT50": false,
-      "Link": "https://onlinelibrary.wiley.com/journal/10991697"
-    },
-    {
       "Sr": "j444",
       "Journal Title": "Central European Management Journal",
       "Publisher": "Emerald",
@@ -41419,19 +40210,6 @@
       "Scopus Quantile": "",
       "FT50": false,
       "Link": "https://journals.sagepub.com/home/jsc"
-    },
-    {
-      "Sr": "j2281",
-      "Journal Title": "M@n@gement",
-      "Publisher": "Association Internationale de Management Stratégique",
-      "ISSN": "",
-      "Year Founded": "1998",
-      "Field Label": "Strategic Management, Organisational Behaviour & General Management",
-      "ABDC Rank": "",
-      "ABS Rank": "1",
-      "Scopus Quantile": "",
-      "FT50": false,
-      "Link": "https://management-aims.com/index.php/mgmt"
     },
     {
       "Sr": "j2719",
