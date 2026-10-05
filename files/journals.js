@@ -32,36 +32,54 @@ const ABS_CLS  = {'4*':'abs-4star','4':'abs-4','3':'abs-3','2':'abs-2','1':'abs-
 const SQ_CLS   = {'Q1':'sq-q1','Q2':'sq-q2','Q3':'sq-q3','Q4':'sq-q4'};
 const CARD_CLS = {'A*':'rank-astar','A':'rank-a','B':'rank-b','C':'rank-c'};
 
+// Does a journal pass every active filter? `skip` leaves one filter group out,
+// so each pill can show how many journals it would match alongside the others.
+function matches(j, skip){
+  const qq = q.toLowerCase().trim();
+  if(qq && !j.t.toLowerCase().includes(qq) && !j.pub.toLowerCase().includes(qq) && !j.issn.toLowerCase().includes(qq)) return false;
+  if(skip !== 'abdc' && selAbdc.size && !selAbdc.has(j.abdc)) return false;
+  if(skip !== 'abs'  && selAbs.size  && !selAbs.has(j.abs))   return false;
+  if(skip !== 'sq'   && selSq.size   && !selSq.has(j.sq))     return false;
+  if(selFor  && j.fl !== selFor) return false;
+  if(selFt50 && !j.ft)           return false;
+  return true;
+}
+
 function updateStats(src){
-  const abdcCount = v => src.filter(j => j.abdc === v).length;
-  const absCount = v => src.filter(j => j.abs === v).length;
-  const scopusCount = v => src.filter(j => j.sq === v).length;
   const setStat = (id, value) => {
     const el = document.getElementById(id);
     if(el) el.textContent = value.toLocaleString();
   };
+  const tally = (key, skip) => {
+    const counts = {};
+    RAW.forEach(j => { if(j[key] && matches(j, skip)) counts[j[key]] = (counts[j[key]] || 0) + 1; });
+    return v => counts[v] || 0;
+  };
 
   setStat('stat-total', src.length);
   setStat('stat-total-abdc', src.filter(j => j.abdc).length);
+  setStat('stat-total-abs', src.filter(j => j.abs).length);
+  setStat('stat-total-scopus', src.filter(j => j.sq).length);
+  setStat('stat-ft50', src.filter(j => j.ft).length);
+
+  const abdcCount = tally('abdc', 'abdc');
   setStat('stat-astar', abdcCount('A*'));
   setStat('stat-a', abdcCount('A'));
   setStat('stat-b', abdcCount('B'));
   setStat('stat-c', abdcCount('C'));
 
-  setStat('stat-total-abs', src.filter(j => j.abs).length);
+  const absCount = tally('abs', 'abs');
   setStat('stat-abs4s', absCount('4*'));
   setStat('stat-abs4', absCount('4'));
   setStat('stat-abs3', absCount('3'));
   setStat('stat-abs2', absCount('2'));
   setStat('stat-abs1', absCount('1'));
 
-  setStat('stat-total-scopus', src.filter(j => j.sq).length);
-  setStat('stat-q4', scopusCount('Q4'));
-  setStat('stat-q3', scopusCount('Q3'));
-  setStat('stat-q2', scopusCount('Q2'));
+  const scopusCount = tally('sq', 'sq');
   setStat('stat-q1', scopusCount('Q1'));
-
-  setStat('stat-ft50', src.filter(j => j.ft).length);
+  setStat('stat-q2', scopusCount('Q2'));
+  setStat('stat-q3', scopusCount('Q3'));
+  setStat('stat-q4', scopusCount('Q4'));
 }
 
 function buildFieldDropdown(){
@@ -76,16 +94,7 @@ function buildFieldDropdown(){
 }
 
 function filter(){
-  const qq = q.toLowerCase().trim();
-  filtered = RAW.filter(j => {
-    if(qq && !j.t.toLowerCase().includes(qq) && !j.issn.includes(qq)) return false;
-    if(selAbdc.size && !selAbdc.has(j.abdc)) return false;
-    if(selAbs.size  && !selAbs.has(j.abs))   return false;
-    if(selSq.size   && !selSq.has(j.sq))     return false;
-    if(selFor       && j.fl !== selFor)       return false;
-    if(selFt50      && !j.ft)                return false;
-    return true;
-  });
+  filtered = RAW.filter(j => matches(j));
   pg = 1;
   render();
 }
@@ -172,19 +181,12 @@ function pageRange(cur, tot){
 
 window.goPage = function(p){
   pg=p; render();
-  document.getElementById('jrk').scrollIntoView({behavior:'smooth'});
+  document.getElementById('jrk-results').scrollIntoView({behavior:'smooth'});
 };
 
 // ── Event listeners ────────────────────────────────────────────
 const searchInput = document.getElementById('jrk-search');
 const searchClear = document.getElementById('jrk-search-clear');
-const statsTabs = document.querySelectorAll('[data-stats-tab]');
-const statsPanels = document.querySelectorAll('[data-stats-panel]');
-
-function setStatsPanel(panel){
-  statsTabs.forEach(tab => tab.classList.toggle('on', tab.dataset.statsTab === panel));
-  statsPanels.forEach(row => row.classList.toggle('on', row.dataset.statsPanel === panel));
-}
 
 searchInput.addEventListener('input', e => {
   q = e.target.value;
@@ -198,10 +200,6 @@ searchClear.addEventListener('click', () => {
   searchClear.classList.remove('visible');
   searchInput.focus();
   filter();
-});
-
-statsTabs.forEach(tab => {
-  tab.addEventListener('click', () => setStatsPanel(tab.dataset.statsTab));
 });
 
 document.querySelectorAll('[data-abdc]').forEach(btn => {
@@ -245,6 +243,7 @@ document.getElementById('jrk-for').addEventListener('change', e => {
 document.getElementById('jrk-clear').addEventListener('click', () => {
   q=''; selAbdc=new Set(); selAbs=new Set(); selSq=new Set(); selFor=''; selFt50=false;
   document.getElementById('jrk-search').value='';
+  searchClear.classList.remove('visible');
   document.getElementById('jrk-for').value='';
   document.getElementById('jrk-for').className='';
   document.querySelectorAll('[data-abdc],[data-abs],[data-sq],[data-ft50]').forEach(b=>b.classList.remove('on'));
@@ -275,6 +274,10 @@ fetch('journals.json', {cache: 'no-cache'})
     document.getElementById('jrk-total').textContent = RAW.length.toLocaleString();
     buildFieldDropdown();
     updateStats(RAW);
+    // Unfiltered counts are the largest each pill will show: reserve that width
+    document.querySelectorAll('#jrk .pill-n').forEach(el => {
+      el.style.minWidth = (el.textContent.length + 0.25) + 'ch';
+    });
     filter();
   })
   .catch(() => {
