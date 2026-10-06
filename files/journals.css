@@ -56,7 +56,7 @@ body {
 
 #jrk .jrk-container {
   width: 93%;
-  max-width: 1600px;
+  max-width: 1400px;
   margin-inline: auto;
 }
 
@@ -601,7 +601,19 @@ body {
 #jrk .jrk-footer strong { color: #fff; font-weight: 600; }
 
 /* ── Responsive ──────────────────────────────────────────────── */
-@media (max-width: 1399.98px) {
+/* Laptops and larger: the same layout everywhere — one filter row, four cards per row */
+@media (min-width: 1200px) {
+  #jrk .jrk-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+}
+/* Smaller laptop screens: same layout, slightly tighter so the filter row still fits */
+@media (min-width: 1200px) and (max-width: 1499.98px) {
+  #jrk .jrk-container { width: 96%; }
+  #jrk .jrk-filter-row { padding: 0.85rem 0.75rem; }
+  #jrk .jrk-pills { gap: 0.3rem; }
+  #jrk .jrk-pill { padding: 0.32rem 0.5rem; gap: 0.3rem; font-size: 0.76rem; }
+  #jrk .pill-n { font-size: 0.66rem; }
+}
+@media (max-width: 1199.98px) {
   #jrk .jrk-filters { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   #jrk .jrk-pills { flex-wrap: wrap; }
   #jrk .jrk-filter-row { border-bottom: 1px solid var(--rule); }
