@@ -310,6 +310,29 @@ The coefficient differs by country and period. It depends on labour laws, hours 
 India: most workers are informal or self-employed, so output falls often show up as lower hours and earnings rather than open unemployment. The Okun link is usually weaker.
 
 ---
+## Okun's Law
+
+### Output and unemployment move in opposite directions
+
+$$
+\%\Delta Y = g - \beta \times \Delta u
+$$
+
+**Where:**
+- %ΔY = growth rate of real GDP
+- g = normal growth rate of output when unemployment is stable
+- β = Okun's coefficient, the fall in growth for each 1-point rise in unemployment
+- Δu = change in the unemployment rate (percentage points)
+
+**Example (US, Mankiw):** g = 3% and β = 2. If unemployment rises by 1 point, GDP grows by 3% − 2 × 1 = 1%.
+
+Note:
+Source: Mankiw, Macroeconomics, using US data.
+β is not a universal constant. It varies across economies and over time, with labour laws, hours flexibility and informality.
+Gap form: when unemployment is above its natural rate, output is below potential. This links back to u = u* + cyclical unemployment.
+India: most workers are informal or self-employed. A slowdown often shows up as fewer hours and lower earnings, not open unemployment, so the Okun link is weaker.
+
+---
 ---
 
 ## All layouts: text
