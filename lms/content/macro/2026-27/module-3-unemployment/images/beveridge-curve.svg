@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1000 921" font-family="Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker></defs>
+<rect x="0" y="40" width="1000" height="921" fill="#ffffff"/>
+<line x1="110" y1="60" x2="110" y2="841" stroke="#555c61" stroke-width="3"/>
+<line x1="110" y1="841" x2="970" y2="841" stroke="#555c61" stroke-width="3"/>
+<text x="62" y="450" font-size="34" fill="#555c61" text-anchor="middle" transform="rotate(-90 62 450)">Vacancy rate</text>
+<text x="540" y="896" font-size="34" fill="#555c61" text-anchor="middle">Unemployment rate</text>
+<path d="M 360 96 C 420 486, 610 628, 950 664" fill="none" stroke="#c0504d" stroke-width="6" stroke-dasharray="16 11"/>
+<path d="M 175 96 C 235 585, 420 749, 860 791" fill="none" stroke="#3d8296" stroke-width="8"/>
+<text x="870" y="771" font-size="34" font-weight="700" fill="#3d8296" text-anchor="end">BC₁</text>
+<text x="955" y="644" font-size="34" font-weight="700" fill="#c0504d" text-anchor="end">BC₂</text>
+<line x1="329" y1="526" x2="415" y2="430" stroke="#555c61" stroke-width="4" marker-end="url(#ar)"/>
+<text x="502" y="424" font-size="30" fill="#555c61">Outward shift</text>
+<circle cx="202" cy="258" r="15" fill="#3d8296"/>
+<text x="168" y="270" font-size="34" font-weight="700" fill="#3d8296" text-anchor="middle">A</text>
+<circle cx="548" cy="723" r="15" fill="#c0504d"/>
+<text x="548" y="775" font-size="34" font-weight="700" fill="#c0504d" text-anchor="middle">B</text>
+<text x="960" y="120" font-size="30" font-weight="700" fill="#3d8296" text-anchor="end">A = Tight market</text>
+<text x="960" y="165" font-size="30" font-weight="700" fill="#c0504d" text-anchor="end">B = Weak market</text>
+</svg>

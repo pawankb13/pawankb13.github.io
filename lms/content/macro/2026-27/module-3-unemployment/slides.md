@@ -245,6 +245,48 @@ Numerical example from earlier: 14.29% = 5% + 9.29%.
 India: the PLFS rate (CWS, 15+) was 5.0% in September 2026, close to the estimated natural rate of about 5%, so cyclical unemployment was close to zero.
 
 ---
+## Why Duration Matters
+
+### Short spells vs long-term unemployment
+
+**1. Short-Duration Unemployment**
+- Search can improve job matching and wage fit.
+- Some unemployment is part of a dynamic labour market.
+
+**2. Long-Duration Unemployment**
+- Skills depreciate, networks weaken and employers may infer lower employability.
+- This raises the risk of persistent exclusion from work.
+
+> **Hysteresis:** A temporary recession can leave a lasting rise in unemployment if displaced workers lose skills, labour-force attachment or bargaining power.
+
+**Managerial implication:** Reskilling is not only an HR issue. It affects national productivity.
+
+Note:
+Hysteresis means the natural rate itself can rise after a long recession. Long-term unemployed workers stop competing for jobs, so they no longer hold wages down.
+India link: Singh (2025) finds mild hysteresis in India's unemployment after shocks such as COVID-19.
+
+---
+---
+<!-- layout: image-left -->
+## The Beveridge Curve
+
+### Vacancies vs unemployment
+
+![](images/beveridge-curve.svg)
+
+**1. Movement along the curve**
+- Demand changes move the economy between A and B.
+
+**2. Outward shift (BC₁ to BC₂)**
+- Worse matching: more vacancies and more unemployment.
+- Causes: skill and location mismatch.
+
+Note:
+Movement along the curve is cyclical. A shift of the curve is structural, so an outward shift means a higher natural rate.
+Example: after 2008 and after COVID-19, the US curve shifted out. Firms posted many vacancies, but unemployment stayed high.
+India has no official vacancy series, so the curve is hard to draw with Indian data.
+
+---
 ---
 
 ## All layouts: text
