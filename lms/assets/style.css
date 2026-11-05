@@ -127,7 +127,7 @@ main.inner { padding-block: 40px 56px; }
 .year-pill[aria-current="page"] { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
 .year-pill small { font-weight: 400; font-size: 0.78rem; opacity: 0.8; }
 
-.year-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 20px; }   /* space between a year's heading and its table or list */
+.year-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 6px 16px; margin-bottom: 40px; }   /* space between a year's heading and its table or list */
 .year-head h2 { color: var(--heading); margin: 0; font-family: var(--f-head); font-weight: 600; font-size: 1.5rem; }
 .year-meta { color: var(--muted); font-size: 0.92rem; }
 .year-note { margin: 0 0 20px; color: var(--muted); max-width: 70ch; }
