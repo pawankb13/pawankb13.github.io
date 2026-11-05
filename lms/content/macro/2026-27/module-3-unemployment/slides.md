@@ -288,6 +288,29 @@ India has no official vacancy series, so the curve is hard to draw with Indian d
 
 ---
 ---
+## The Costs of Unemployment
+
+### Why high unemployment hurts the whole economy
+
+**1. Output Loss**
+- Labour is underused, so actual GDP falls below potential GDP.
+
+**2. Human Capital**
+- Skills depreciate. Long joblessness can reduce future productivity.
+
+**3. Distribution**
+- Income loss falls on affected households. Inequality and poverty risks rise.
+
+> **Okun's Law:** When unemployment rises above its natural rate, output falls below potential. The link is negative, but its size varies across economies and over time.
+
+
+Note:
+Mankiw's US version: % change in real GDP = 3% − 2 × (change in the unemployment rate). So a 1 point rise in unemployment goes with about 2% lower output growth.
+The coefficient differs by country and period. It depends on labour laws, hours flexibility and how much work is informal.
+India: most workers are informal or self-employed, so output falls often show up as lower hours and earnings rather than open unemployment. The Okun link is usually weaker.
+
+---
+---
 
 ## All layouts: text
 
