@@ -8,45 +8,73 @@ Dr. Pawan Ashok Kamble
 
 ## How layouts work
 
+### One layout line, then the content
+
 - Write a layout line as the **first line** of a slide: `<!-- layout: image-right -->`
 - Add options after the name: `<!-- layout: image-full cover -->`
 - A slide with no layout line is a plain bullet slide
-- Open this file in a text editor, copy the slide you want, and change the text
+- Copy the slide you want and change the text
 
 Note:
 Every slide in this deck uses one layout. The text on the slide says which one.
 
 ---
 
-## All layouts
+## Title and subheading
 
-|||
+### The subheading goes on the line after the title
+
+- Title: one line starting with `##`
+- Subheading: one line starting with `###`, right after the title
+- Keep the subheading to one short line
+- Leave it out if the slide does not need it
+
+Note:
+Section, quote and end slides do not take a subheading. They already have a subtitle line. In compare and two-column slides, a `###` after `|||` is a column title, not the subheading.
+
+---
+
+## Fit above the footer
+
+### Limits for one slide
+
+- Bullets: four at most, about ten words each
+- Tables: six rows at most, short cells
+- Stats: three numbers at most
+- Move detail into `Note:` and split long slides
+
+Note:
+These limits assume a title and a subheading. A slide without a subheading has room for one more bullet or row.
+
+---
+
+## All layouts: text
+
+### Write the name in the layout line
 
 | Text | Use |
 |---|---|
 | (none) | Plain bullets |
-| Three bars on one line | Two columns |
+| Three bars on one line | Two or three columns |
 | `compare` | Two ideas side by side |
 | `callout` | Key idea or definition |
 | `quote` | A quotation |
 | `stat` | Big numbers |
-| `equation` | One large formula |
-| `table` | Table, larger text |
-| `code` | Code and explanation |
 
-|||
+---
 
-| Flow | Use |
+## All layouts: more
+
+### Formulas, flow, media and closing
+
+| Text | Use |
 |---|---|
-| `steps` | Process in steps |
-| `agenda` | Plan for the session |
-| `takeaways` | Summary points |
-| `activity` | Class exercise |
-| `discussion` | Open question |
-| `case` | Case study |
-| `section` | Section divider |
-| `references` | Reading list |
-| `end` | Closing slide |
+| `equation`, `table`, `code` | Formula, table, code |
+| `agenda`, `steps`, `takeaways` | Plans and summaries |
+| `activity`, `discussion`, `case` | Class work |
+| `image-right`, `image-left`, `image-full`, `image-grid` | Images |
+| `interactive`, `interactive-right`, `interactive-left`, `video` | Interactives and video |
+| `section`, `references`, `end` | Structure |
 
 ---
 
@@ -59,15 +87,17 @@ Ways to set out words and numbers
 
 ## Plain bullets (default)
 
-No layout line needed.
+### No layout line needed
 
 - Keep each bullet to one idea
-- Use four to six bullets at most
+- Use four bullets at most
 - Bold the key term: **price elasticity**
 
 ---
 
 ## Two columns
+
+### Split the slide with three bars
 
 |||
 
@@ -90,6 +120,8 @@ $$MR = MC$$
 <!-- layout: compare -->
 ## Layout: compare
 
+### Two market structures side by side
+
 |||
 
 ### Perfect competition
@@ -111,6 +143,8 @@ $$MR = MC$$
 <!-- layout: callout -->
 ## Layout: callout
 
+### The one rule to remember
+
 > A rational decision maker compares **marginal benefit** with **marginal cost**.
 
 Use this for a definition, a rule, or the one thing students must remember.
@@ -126,6 +160,8 @@ Name, Source and year
 
 <!-- layout: stat -->
 ## Layout: stat
+
+### Say where the numbers come from
 
 |||
 
@@ -150,6 +186,8 @@ Label for the third number
 <!-- layout: equation -->
 ## Layout: equation
 
+### The quantity theory of money
+
 $$MV = PY$$
 
 M is the money supply, V is velocity, P is the price level and Y is real output.
@@ -158,6 +196,8 @@ M is the money supply, V is velocity, P is the price level and Y is real output.
 
 <!-- layout: table -->
 ## Layout: table
+
+### Market structures compared
 
 | Structure | Sellers | Price power |
 |---|---|---|
@@ -170,6 +210,8 @@ M is the money supply, V is velocity, P is the price level and Y is real output.
 
 <!-- layout: code -->
 ## Layout: code
+
+### A wage regression in R
 
 |||
 
@@ -195,6 +237,8 @@ Plans, steps, exercises and summaries
 <!-- layout: agenda -->
 ## Layout: agenda
 
+### Four parts, about 60 minutes
+
 1. Recap of last session
 2. New concept: elasticity
 3. Worked example
@@ -204,6 +248,8 @@ Plans, steps, exercises and summaries
 
 <!-- layout: steps -->
 ## Layout: steps
+
+### How to run the simulation
 
 1. **Plan**: set a starting price
 2. **Run**: play each day
@@ -215,7 +261,7 @@ Plans, steps, exercises and summaries
 <!-- layout: activity -->
 ## Price a new product
 
-Groups of four. Ten minutes.
+### Groups of four. Ten minutes.
 
 1. Choose a product
 2. Set a price
@@ -229,12 +275,16 @@ Walk around the room. Pick two groups to share.
 <!-- layout: discussion -->
 ## Should the RBI raise the repo rate?
 
+### Weigh inflation against growth
+
 Think for one minute, then discuss with the person next to you.
 
 ---
 
 <!-- layout: case -->
 ## Case title goes here
+
+### One line on the setting
 
 **Situation:** Two or three lines that set the scene.
 
@@ -246,6 +296,8 @@ Think for one minute, then discuss with the person next to you.
 
 <!-- layout: takeaways -->
 ## Layout: takeaways
+
+### Three ideas to remember
 
 - Elasticity measures how strongly demand responds to price
 - Revenue rises with price only when demand is inelastic
@@ -263,7 +315,8 @@ Charts, photos and diagrams
 <!-- layout: image-right -->
 ## Layout: image-right
 
-- Text on the left, image on the right
+### Text on the left, image on the right
+
 - The image is shown whole, never cut
 - The words in the brackets become the caption
 
@@ -274,7 +327,8 @@ Charts, photos and diagrams
 <!-- layout: image-left -->
 ## Layout: image-left
 
-- Image on the left, text on the right
+### Image on the left, text on the right
+
 - Good for a chart you then explain point by point
 
 ![Sample chart. Source: add your source here](images/chart-bars.svg)
@@ -286,7 +340,7 @@ Charts, photos and diagrams
 
 ## Layout: image-full
 
-A title band keeps the text readable on any image.
+### A title band keeps the text readable on any image
 
 ---
 
@@ -295,14 +349,16 @@ A title band keeps the text readable on any image.
 
 ## Layout: image-full cover
 
-Add the word cover to fill the slide. The edges may be trimmed.
+### Add the word cover to fill the slide
+
+The edges may be trimmed.
 
 ---
 
 <!-- layout: image-grid -->
 ## Layout: image-grid
 
-Use two to four images to compare.
+### Use two to four images to compare
 
 ![Before](images/chart-line.svg)
 ![After](images/chart-bars.svg)
@@ -319,7 +375,9 @@ HTML files shown inside the slide
 <!-- layout: interactive -->
 ## Layout: interactive
 
-Move the sliders. The interactive fills the rest of the slide.
+### Move the sliders
+
+The interactive fills the rest of the slide.
 
 @[IS-LM interactive](interactives/is-lm.html)
 
@@ -328,8 +386,9 @@ Move the sliders. The interactive fills the rest of the slide.
 <!-- layout: interactive-right -->
 ## Layout: interactive-right
 
+### The interactive gets most of the width
+
 - Short instructions on the left
-- The interactive gets most of the width
 
 @[IS-LM interactive](interactives/is-lm.html)
 
@@ -338,7 +397,8 @@ Move the sliders. The interactive fills the rest of the slide.
 <!-- layout: interactive-left -->
 ## Layout: interactive-left
 
-- The interactive on the left
+### The interactive on the left
+
 - Notes and prompts on the right
 
 @[IS-LM interactive](interactives/is-lm.html)
@@ -347,16 +407,19 @@ Move the sliders. The interactive fills the rest of the slide.
 
 ## Video
 
-Use the `video` layout with a YouTube embed link.
+### Use the video layout with a YouTube embed link
 
 - First line of the slide: `<!-- layout: video -->`
 - Then a title line starting with `##`
+- Then a subheading line starting with `###`
 - Then the video: `@[Video title](https://www.youtube.com/embed/VIDEO_ID)`
 
 ---
 
 <!-- layout: references -->
 ## Layout: references
+
+### Textbooks and sources
 
 - Mankiw, N. G. *Principles of Economics*. Cengage.
 - Dornbusch, R., Fischer, S. and Startz, R. *Macroeconomics*. McGraw Hill.
