@@ -19,15 +19,19 @@ Faculty Cabin (F61)
 
 ---
 
-<!-- layout: image-right -->
-## Layout: image-right
+<!-- layout: image-left -->
+## Measuring Unemployment:
 
-### Text on the left, image on the right
+### Population Divided by Labor-Market Status
 
-- The image is shown whole, never cut
-- The words in the brackets become the caption
+$$ \text{Unemployment Rate} = \left(\frac{\text{Unemployed}}{\text{Labor Force}}\right) \times 100
+$$
+Where:
+$$
+\text{Labor Force} = \text{Employed} + \text{Unemployed}
+$$
 
-![Sample chart. Source: add your source here](images/chart-line.svg)
+![Sample chart. Source: add your source here](images/image1.png)
 
 ---
 <!-- layout: image-left -->
