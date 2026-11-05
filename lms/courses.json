@@ -92,11 +92,11 @@
               "visibility": "hidden"
             },
             {
-              "id": "unemployment",
-              "title": "Unemployment",
+              "id": "inflation-unemployment",
+              "title": "Inflation and Unemployment",
               "type": "Module",
               "number": 3,
-              "file": "content/macro/2026-27/module-3-unemployment/slides.md",
+              "file": "content/macro/2026-27/module-3-inflation-unemployment/slides.md",
               "updated": "2026-11-06",
               "visibility": "public"
             },

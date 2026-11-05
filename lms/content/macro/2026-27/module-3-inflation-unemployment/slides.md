@@ -1412,5 +1412,3 @@ The last takeaway is the long-run Phillips curve: in the long run, unemployment 
 
 <!-- layout: end -->
 # Questions?
-
-Dr. Pawan Ashok Kamble · BIMTECH
