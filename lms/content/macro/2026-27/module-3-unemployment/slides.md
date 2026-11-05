@@ -18,6 +18,18 @@ Faculty Cabin (F61)
 5. Policy trade-offs using short-run and long-run. 
 
 ---
+
+<!-- layout: image-right -->
+## Layout: image-right
+
+### Text on the left, image on the right
+
+- The image is shown whole, never cut
+- The words in the brackets become the caption
+
+![Sample chart. Source: add your source here](images/chart-line.svg)
+
+---
 <!-- layout: image-left -->
 ## Measuring Unemployment:
 
@@ -32,7 +44,7 @@ $$
 
 ___
 
-
+<!-- layout: Topics -->
 ## Title and subheading
 
 ### The subheading goes on the line after the title
