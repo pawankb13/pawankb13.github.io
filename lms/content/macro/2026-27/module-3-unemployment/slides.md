@@ -419,6 +419,28 @@ Late 1990s: a productivity boom let unemployment and inflation fall together.
 Lesson: the short-run curve shifts with expectations and supply shocks. It is not a stable menu.
 
 ---
+<!-- layout: steps -->
+## Stagflation
+
+### A negative supply shock raises prices and cuts output
+
+1. **Input shock**: oil or food costs rise
+2. **Supply falls**: SRAS shifts left
+3. **Prices rise**: cost-push inflation
+4. **Output falls**: firms produce less
+5. **Jobs lost**: labour demand weakens
+
+> **Policy dilemma:** Tightening cuts inflation but deepens the slowdown. Supporting demand protects jobs but prolongs inflation.
+
+The right response depends on shock length, expectations and policy credibility.
+
+Note:
+Input shocks include oil, food and logistics costs.
+In the Phillips curve equation, the supply shock is v > 0. Inflation rises at every unemployment rate, so the short-run curve shifts up.
+Examples: the 1970s oil shocks in the US. In India, the 2022 food and fuel price rise was a supply shock, though it did not cause a large rise in unemployment.
+If expectations stay anchored, a credible central bank can wait for a temporary shock to pass. If expectations rise, it must tighten even at the cost of jobs.
+
+---
 <!-- layout: image-left -->
 ## Stagflation in AD-AS
 
@@ -439,11 +461,92 @@ At E₂ the price level is higher and output is lower. Lower output means firms 
 AD has not moved. This is why demand policy faces the dilemma on the previous slide: raising AD restores output but pushes prices higher still; cutting AD lowers prices but deepens the fall in output.
 
 ---
+---
+## Disinflation and the Sacrifice Ratio
 
+### Lowering inflation has a short-run cost
 
+**1. Disinflation**
+- A fall in the rate of inflation. Prices still rise, but more slowly.
+- Not deflation: in deflation, the price level itself falls.
 
+**2. Sacrifice Ratio**
+- Percent of a year's real GDP lost to cut inflation by 1 percentage point.
 
+**3. Why disinflation rise unemployment in the Short Run**
+- Tight monetary policy reduces aggregate demand.
+- Firms sell and produce less, so hiring weakens.
+- If expectations adjust slowly, output and jobs bear more of the cost.
 
+Note:
+Example: inflation falling from 6% to 4% is disinflation. Inflation of −1% is deflation.
+Deflation can be harmful: people delay spending, and the real burden of debt rises.
+Mankiw cites a typical US sacrifice ratio of about 5: cutting inflation by 1 percentage point costs about 5% of one year's GDP.
+Example: the US Volcker disinflation of the early 1980s cut inflation sharply, but unemployment rose to about 10%.
+Credibility lowers the sacrifice ratio. If people believe the central bank, expected inflation falls quickly and less output is lost. This links to π = π^e − α(u − u*) + v.
+India: CPI inflation fell from about 10% in 2013 to about 4% by 2017, as the RBI moved to inflation targeting.
+
+---
+<!-- layout: table -->
+## Policy Responses
+
+### Match the policy to the type of unemployment
+
+| Diagnosis | Possible response | Policy logic |
+|---|---|---|
+| **Cyclical** | Targeted fiscal support; monetary easing if inflation allows | Restore demand, watch inflation expectations |
+| **Frictional** | Job information, placement services, mobility support | Cut search time, improve matching |
+| **Structural** | Reskilling, apprenticeships, industry-education links | Fix skill and location mismatch |
+| **Supply shock (stagflation)** | Protect vulnerable households; ease bottlenecks; anchor expectations | Do not treat a supply shock as excess demand |
+
+> The same unemployment rate can come from very different problems.
+
+Note:
+India examples: cyclical, PM Garib Kalyan Yojana and RBI rate cuts in 2020; frictional, the National Career Service portal; structural, Skill India and the PM Internship Scheme; supply shock, export curbs and buffer stock releases for food prices.
+Diagnose first, then choose the tool. Using demand stimulus for structural unemployment raises inflation without fixing the mismatch.
+
+---
+---
+<!-- layout: case -->
+## Mini Case: A Difficult Trade-off
+
+### Provide policy suggestions (5 minutes)
+
+**Output:** Growth slows for two consecutive quarters.
+
+**Labour market:** Unemployment rises and vacancies fall.
+
+**Prices:** Food and fuel inflation stay high.
+
+**Questions:**
+1. Is this demand-deficient unemployment, supply-shock stagflation, or both?
+2. What evidence would you check before recommending a policy?
+3. Would a broad interest-rate cut solve the problem? What could go wrong?
+
+Note:
+Suggested answer: likely a combination. Falling vacancies and rising unemployment point to weak demand (a move along the Beveridge curve). High food and fuel inflation points to a supply shock.
+Evidence to check: core inflation (excluding food and fuel), inflation expectations, wage growth, capacity use, credit growth, and whether the price shock is temporary.
+Rate cut risk: it supports demand, but if expectations are rising it can push inflation higher and hurt RBI credibility. Better mix: targeted fiscal support for affected households, supply-side steps on food and fuel, and rate cuts only if core inflation and expectations stay stable.
+
+---
+<!-- layout: takeaways -->
+## Takeaways
+
+### The labour market completes the inflation story
+
+- Read the unemployment rate with participation and employment data.
+- Frictional and structural unemployment remain at full employment. Cyclical unemployment follows the business cycle.
+- The Beveridge curve shows matching efficiency. Okun's Law links unemployment and output.
+- The short-run Phillips curve depends on expectations and supply shocks.
+- Surprise inflation cannot buy lower unemployment for long. Credible policy and better labour markets can.
+
+> **Question to leave with:** When inflation is high and unemployment is rising, what kind of shock is the economy facing?
+
+Note:
+Answer to the closing question: most likely a negative supply shock (stagflation), as in the AD-AS slide. Check core inflation and expectations to confirm.
+The last takeaway is the long-run Phillips curve: in the long run, unemployment returns to the natural rate whatever the inflation rate.
+
+---
 
 
 
