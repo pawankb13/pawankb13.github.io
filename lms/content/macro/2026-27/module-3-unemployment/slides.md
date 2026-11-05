@@ -333,6 +333,30 @@ Gap form: when unemployment is above its natural rate, output is below potential
 India: most workers are informal or self-employed. A slowdown often shows up as fewer hours and lower earnings, not open unemployment, so the Okun link is weaker.
 
 ---
+## Bridge from Inflation
+
+### Recall: inflation is driven by demand, costs and expectations
+
+**1. Demand-Pull Inflation**
+- AD rises → labour demand rises → unemployment falls → wage pressure builds.
+
+**2. Cost-Push Inflation**
+- Energy or input costs rise → prices rise even if output and jobs weaken.
+
+**3. Expectations**
+- Expected inflation shapes wage bargaining and firms' price setting.
+
+> **Key idea:** Unemployment is not just a labour-market outcome. It also signals demand pressure and possible wage-price dynamics.
+
+Low unemployment does not automatically cause inflation. Supply shocks and expectations also matter.
+
+Note:
+This slide links the inflation chapter to unemployment and sets up the Phillips curve.
+Productivity and firms' market power also affect inflation.
+Slack means unused labour. High unemployment means more slack and less wage pressure. Low unemployment means less slack and more wage pressure.
+India example: the 2022 inflation spike came mainly from food and fuel costs (cost-push), not from a tight labour market.
+
+---
 ---
 
 ## All layouts: text
