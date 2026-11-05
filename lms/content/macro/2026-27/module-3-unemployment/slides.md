@@ -374,378 +374,93 @@ Note:
 Moving from B to A: demand rises, unemployment falls and inflation rises. Moving from A to B is the reverse.
 Not a permanent menu: the curve holds only for given inflation expectations. If policy keeps unemployment below the natural rate, expectations rise and the curve shifts up. In the long run, unemployment returns to the natural rate.
 This sets up the next slide on expectations and the long-run Phillips curve.
-
 ---
----
+## Expectations-Augmented Phillips Curve
 
-## All layouts: text
+### Expected inflation shifts the short-run curve
 
-### Write the name in the layout line
+$$
+\pi = \pi^{e} - \alpha\,(u - u^{*}) + v
+$$
 
-| Text | Use |
-|---|---|
-| (none) | Plain bullets |
-| Three bars on one line | Two or three columns |
-| `compare` | Two ideas side by side |
-| `callout` | Key idea or definition |
-| `quote` | A quotation |
-| `stat` | Big numbers |
+**Where:**
+- π = actual inflation
+- π<sup>e</sup> = expected inflation
+- α = how strongly inflation responds to the unemployment gap
+- u − u* = unemployment gap (actual minus natural rate)
+- v = supply shock, such as an oil price rise
 
----
-
-## All layouts: more
-
-### Formulas, flow, media and closing
-
-| Text | Use |
-|---|---|
-| `equation`, `table`, `code` | Formula, table, code |
-| `agenda`, `steps`, `takeaways` | Plans and summaries |
-| `activity`, `discussion`, `case` | Class work |
-| `image-right`, `image-left`, `image-full`, `image-grid` | Images |
-| `interactive`, `interactive-right`, `interactive-left`, `video` | Interactives and video |
-| `section`, `references`, `end` | Structure |
-
----
-
-<!-- layout: section -->
-# Part 1: Text layouts
-
-Ways to set out words and numbers
-
----
-
-## Plain bullets (default)
-
-### No layout line needed
-
-- Keep each bullet to one idea
-- Use four bullets at most
-- Bold the key term: **price elasticity**
-
----
-
-## Two columns
-
-### Split the slide with three bars
-
-|||
-
-**Left column**
-
-- Put `|||` on its own line to split the slide
-- Works for text, lists and tables
-
-|||
-
-**Right column**
-
-- Add a third `|||` for three columns
-- Put an equation or example here
-
-$$MR = MC$$
-
----
-
-<!-- layout: compare -->
-## Layout: compare
-
-### Two market structures side by side
-
-|||
-
-### Perfect competition
-
-- Many sellers
-- Price taker
-- Zero long-run profit
-
-|||
-
-### Monopoly
-
-- One seller
-- Price maker
-- Profit can last
-
----
-
-<!-- layout: callout -->
-## Layout: callout
-
-### The one rule to remember
-
-> A rational decision maker compares **marginal benefit** with **marginal cost**.
-
-Use this for a definition, a rule, or the one thing students must remember.
-
----
-
-<!-- layout: quote -->
-> Write the quotation here. Keep it to one or two lines.
-
-Name, Source and year
-
----
-
-<!-- layout: stat -->
-## Layout: stat
-
-### Say where the numbers come from
-
-|||
-
-# 6.5%
-
-Label for the first number
-
-|||
-
-# 25
-
-Label for the second number
-
-|||
-
-# 7
-
-Label for the third number
-
----
-
-<!-- layout: equation -->
-## Layout: equation
-
-### The quantity theory of money
-
-$$MV = PY$$
-
-M is the money supply, V is velocity, P is the price level and Y is real output.
-
----
-
-<!-- layout: table -->
-## Layout: table
-
-### Market structures compared
-
-| Structure | Sellers | Price power |
-|---|---|---|
-| Perfect competition | Many | None |
-| Monopolistic competition | Many | Some |
-| Oligopoly | Few | Large |
-| Monopoly | One | Largest |
-
----
-
-<!-- layout: code -->
-## Layout: code
-
-### A wage regression in R
-
-|||
-
-```r
-model <- lm(wage ~ educ + exper, data = d)
-summary(model)
-```
-
-|||
-
-- `lm` fits a linear model
-- `summary` prints the coefficients and standard errors
-
----
-
-<!-- layout: section -->
-# Part 2: Session flow
-
-Plans, steps, exercises and summaries
-
----
-
-<!-- layout: agenda -->
-## Layout: agenda
-
-### Four parts, about 60 minutes
-
-1. Recap of last session
-2. New concept: elasticity
-3. Worked example
-4. Group exercise
-
----
-
-<!-- layout: steps -->
-## Layout: steps
-
-### How to run the simulation
-
-1. **Plan**: set a starting price
-2. **Run**: play each day
-3. **Record**: fill in the sheet
-4. **Review**: find what raised profit
-
----
-
-<!-- layout: activity -->
-## Price a new product
-
-### Groups of four. Ten minutes.
-
-1. Choose a product
-2. Set a price
-3. Predict how sales change if the price rises by 10%
+**Interpretation:** If u is below u*, inflation rises above expected inflation. If u is above u*, inflation falls below expected inflation.
 
 Note:
-Walk around the room. Pick two groups to share.
+Source: Mankiw, Macroeconomics. Mankiw writes the same equation with β in place of α and u^n in place of u*.
+A rise in π^e shifts the short-run curve up. This explains the 1970s stagflation on the previous slide: higher expectations plus oil shocks (v > 0).
+Long run: expectations catch up, so π = π^e. With no supply shock, the equation then gives u = u*. The long-run Phillips curve is vertical at the natural rate.
 
 ---
+## The Phillips Curve in US Data
 
-<!-- layout: discussion -->
-## Should the RBI raise the repo rate?
+### The trade-off holds in some periods and breaks down in others
 
-### Weigh inflation against growth
+<div style="text-align: center;">
 
-Think for one minute, then discuss with the person next to you.
+<img src="images/us-phillips-history.png" alt="US unemployment rate and CPI inflation, 1948 to 2023"
+     style="width: 80%; height: auto;">
 
----
+</div>
 
-<!-- layout: case -->
-## Case title goes here
+Source: FRED, Federal Reserve Bank of St. Louis. Red = unemployment rate, blue = CPI inflation.
 
-### One line on the setting
-
-**Situation:** Two or three lines that set the scene.
-
-**Question:** The decision students must make.
-
-**Data:** Point to a table or a link.
-
----
-
-<!-- layout: takeaways -->
-## Layout: takeaways
-
-### Three ideas to remember
-
-- Elasticity measures how strongly demand responds to price
-- Revenue rises with price only when demand is inelastic
-- Check both the sign and the size before you act
+Note:
+1950s and 1960s: the classic inverse relationship. Low unemployment came with higher inflation.
+1970s stagflation: oil shocks and rising inflation expectations shifted the short-run curve up. High unemployment and high inflation came together.
+Late 1990s: a productivity boom let unemployment and inflation fall together.
+2008 and 2020 recessions: unemployment jumped and inflation fell, so the inverse link returned.
+Lesson: the short-run curve shifts with expectations and supply shocks. It is not a stable menu.
 
 ---
-
-<!-- layout: section -->
-# Part 3: Images
-
-Charts, photos and diagrams
-
----
-
-<!-- layout: image-right -->
-## Layout: image-right
-
-### Text on the left, image on the right
-
-- The image is shown whole, never cut
-- The words in the brackets become the caption
-
-![Sample chart. Source: add your source here](images/chart-line.svg)
-
----
-
 <!-- layout: image-left -->
-## Layout: image-left
+## Stagflation in AD-AS
 
-### Image on the left, text on the right
+### A negative supply shock
 
-- Good for a chart you then explain point by point
+![](images/ad-as-supply-shock.svg)
 
-![Sample chart. Source: add your source here](images/chart-bars.svg)
+- SRAS shifts left: SRAS₁ to SRAS₂.
+- Prices rise: P₁ to P₂.
+- Output falls: Y₁ to Y₂, below potential.
 
----
+> Higher inflation and higher unemployment together.
 
-<!-- layout: image-full -->
-![Sample diagram](images/diagram.svg)
-
-## Layout: image-full
-
-### A title band keeps the text readable on any image
-
----
-
-<!-- layout: image-full cover -->
-![Sample photo](images/photo.svg)
-
-## Layout: image-full cover
-
-### Add the word cover to fill the slide
-
-The edges may be trimmed.
+Note:
+Start at E₁, where output is at potential (Y* on LRAS) and unemployment is at the natural rate.
+An oil or food price shock raises firms' costs, so SRAS shifts left. The new equilibrium is E₂.
+At E₂ the price level is higher and output is lower. Lower output means firms need fewer workers, so unemployment rises above the natural rate.
+AD has not moved. This is why demand policy faces the dilemma on the previous slide: raising AD restores output but pushes prices higher still; cutting AD lowers prices but deepens the fall in output.
 
 ---
 
-<!-- layout: image-grid -->
-## Layout: image-grid
 
-### Use two to four images to compare
 
-![Before](images/chart-line.svg)
-![After](images/chart-bars.svg)
 
----
 
-<!-- layout: section -->
-# Part 4: Interactives and video
 
-HTML files shown inside the slide
 
----
 
-<!-- layout: interactive -->
-## Layout: interactive
 
-### Move the sliders
 
-The interactive fills the rest of the slide.
 
-@[IS-LM interactive](interactives/is-lm.html)
+
+
+
+
+
+
+
+
+
 
 ---
-
-<!-- layout: interactive-right -->
-## Layout: interactive-right
-
-### The interactive gets most of the width
-
-- Short instructions on the left
-
-@[IS-LM interactive](interactives/is-lm.html)
-
----
-
-<!-- layout: interactive-left -->
-## Layout: interactive-left
-
-### The interactive on the left
-
-- Notes and prompts on the right
-
-@[IS-LM interactive](interactives/is-lm.html)
-
----
-
-## Video
-
-### Use the video layout with a YouTube embed link
-
-- First line of the slide: `<!-- layout: video -->`
-- Then a title line starting with `##`
-- Then a subheading line starting with `###`
-- Then the video: `@[Video title](https://www.youtube.com/embed/VIDEO_ID)`
-
----
-
 <!-- layout: references -->
 ## Layout: references
 
