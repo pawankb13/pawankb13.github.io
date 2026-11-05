@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 40 1000 921" font-family="Arial, sans-serif">
+<rect x="0" y="40" width="1000" height="921" fill="#ffffff"/>
+<line x1="110" y1="60" x2="110" y2="841" stroke="#555c61" stroke-width="3"/>
+<line x1="110" y1="841" x2="970" y2="841" stroke="#555c61" stroke-width="3"/>
+<text x="62" y="450" font-size="34" fill="#555c61" text-anchor="middle" transform="rotate(-90 62 450)">Inflation (π)</text>
+<text x="540" y="896" font-size="34" fill="#555c61" text-anchor="middle">Unemployment rate (u)</text>
+<path d="M 185 110 C 260 543, 450 706, 900 763" fill="none" stroke="#3d8296" stroke-width="8"/>
+<text x="905" y="738" font-size="34" font-weight="700" fill="#3d8296" text-anchor="end">SRPC</text>
+<circle cx="230" cy="298" r="15" fill="#c0504d"/>
+<text x="260" y="310" font-size="34" font-weight="700" fill="#c0504d">A</text>
+<circle cx="543" cy="670" r="15" fill="#3d8296"/>
+<text x="543" y="722" font-size="34" font-weight="700" fill="#3d8296" text-anchor="middle">B</text>
+<text x="960" y="120" font-size="30" font-weight="700" fill="#c0504d" text-anchor="end">A = Low u, high π</text>
+<text x="960" y="165" font-size="30" font-weight="700" fill="#3d8296" text-anchor="end">B = High u, low π</text>
+</svg>

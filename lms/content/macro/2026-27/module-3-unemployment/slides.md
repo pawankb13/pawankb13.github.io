@@ -357,6 +357,25 @@ Slack means unused labour. High unemployment means more slack and less wage pres
 India example: the 2022 inflation spike came mainly from food and fuel costs (cost-push), not from a tight labour market.
 
 ---
+<!-- layout: image-left -->
+## The Short-Run Phillips Curve
+
+### The short-run trade-off
+
+![](images/phillips-curve-sr.svg)
+
+- Strong demand raises labour demand.
+- Firms compete for workers, so wages rise.
+- Firms pass higher costs on to prices.
+
+> A short-run link, not a permanent policy menu.
+
+Note:
+Moving from B to A: demand rises, unemployment falls and inflation rises. Moving from A to B is the reverse.
+Not a permanent menu: the curve holds only for given inflation expectations. If policy keeps unemployment below the natural rate, expectations rise and the curve shifts up. In the long run, unemployment returns to the natural rate.
+This sets up the next slide on expectations and the long-run Phillips curve.
+
+---
 ---
 
 ## All layouts: text
