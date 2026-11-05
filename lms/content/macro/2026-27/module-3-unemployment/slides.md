@@ -47,28 +47,46 @@ Faculty Cabin (F61)
 
 ### Population Divided by Labor-Market Status
 
-$$ \text{Unemployment Rate} = \left(\frac{\text{Unemployed}}{\text{Labor Force}}\right) \times 100
 $$
-Where:
-$$
-\text{Labor Force} = \text{Employed} + \text{Unemployed}
+\text{Unemployment Rate} =
+\left(\frac{\text{Unemployed}}{\text{Labor Force}}\right)\times 100
 $$
 
+**Where:**
 
-___
+$$
+\text{Labor Force} =
+\text{Employed}+\text{Unemployed}
+$$
 
-## Title and subheading
+---
+## Types of Unemployment
 
-### The subheading goes on the line after the title
+### Major Forms of Unemployment
 
-- Title: one line starting with `##`
-- Subheading: one line starting with `###`, right after the title
-- Keep the subheading to one short line
-- Leave it out if the slide does not need it
+**1. Frictional Unemployment**
+- Temporary unemployment when individuals move between jobs or enter the labour market.
+- Example: An MBA graduate searching for their first job.
 
-Note:
-Section, quote and end slides do not take a subheading. They already have a subtitle line. In compare and two-column slides, a `###` after `|||` is a column title, not the subheading.
+**2. Structural Unemployment**
+- Occurs when workers' skills do not match the requirements of available jobs.
+- Example: Workers in traditional manufacturing displaced by automation.
 
+**3. Cyclical Unemployment**
+- Arises due to a decline in aggregate demand during an economic slowdown or recession.
+- Example: Layoffs in the automobile industry during an economic downturn.
+---
+## Types of Unemployment: Other types
+
+### Major Forms of Unemployment
+
+**4. Seasonal Unemployment**
+- Occurs when employment opportunities are available only during particular seasons.
+- Example: Agricultural labourers during the off-season.
+
+**5. Disguised Unemployment**
+- Occurs when more workers are engaged in an activity than actually required, resulting in near-zero marginal productivity of additional workers.
+- Example: Five family members working on a farm when three could produce the same output.
 ---
 
 ## Fit above the footer
