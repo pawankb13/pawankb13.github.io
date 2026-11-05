@@ -12,31 +12,48 @@
 <style>
 #main{text-align:center}
 #main .lede{margin-inline:auto}
-.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 28px}
-.tab{padding:8px 18px;border:1px solid var(--accent);border-radius:999px;background:transparent;color:var(--accent);font:600 .92rem var(--f-body,inherit);cursor:pointer}
+.groups{display:flex;gap:20px 28px;flex-wrap:wrap;justify-content:center;margin:0 0 28px}
+.group{display:flex;flex-direction:column;align-items:center;gap:8px}
+.group-label{font-size:.75rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted)}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}
+.tab{padding:7px 16px;border:1px solid var(--accent);border-radius:999px;background:transparent;color:var(--accent);font:600 .9rem var(--f-body,inherit);cursor:pointer}
 .tab[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+.tab.danger{border-color:#b42318;color:#b42318}
+.tab.danger[aria-selected="true"]{background:#b42318;color:#fff}
+:root.dark-mode .tab.danger{border-color:#f87171;color:#f87171}
+:root.dark-mode .tab.danger[aria-selected="true"]{background:#f87171;color:#1a0505}
 form.mg{display:grid;gap:16px;max-width:560px;margin:0 auto 28px;text-align:left}
 form.mg[hidden]{display:none}
 .mg label{display:grid;gap:6px;font-weight:600;font-size:.92rem;color:var(--heading)}
 .mg label small{font-weight:400;color:var(--muted)}
 .mg input[type=text],.mg select{font:inherit;font-weight:400;padding:9px 12px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
 .mg input:focus,.mg select:focus{outline:2px solid var(--accent);outline-offset:1px}
-.mg .check{display:flex;gap:10px;align-items:center;font-weight:400}
-.mg .check input{width:18px;height:18px;accent-color:var(--accent)}
-.go,.copy{padding:9px 20px;border:1px solid var(--accent);border-radius:999px;background:var(--accent);color:var(--on-accent);font:600 .92rem var(--f-body,inherit);cursor:pointer;justify-self:center}
+.mg .check{display:flex;gap:10px;align-items:flex-start;font-weight:400}
+.mg .check input{width:18px;height:18px;margin-top:2px;accent-color:var(--accent)}
+.mg .info{margin:0;padding:10px 14px;border:1px solid var(--line);background:var(--surface);border-radius:4px;color:var(--muted);font-size:.92rem}
+.go,.copy{padding:9px 20px;border:1px solid var(--accent);border-radius:999px;background:var(--accent);color:var(--on-accent);font:600 .92rem var(--f-body,inherit);cursor:pointer;justify-self:center;text-decoration:none}
+.go.danger{background:#b42318;border-color:#b42318;color:#fff}
 .copy{padding:6px 16px;background:transparent;color:var(--accent)}
 .err{color:#b42318;font-weight:600;margin:0;text-align:center}
 :root.dark-mode .err{color:#fca5a5}
 .out{display:none;max-width:860px;margin:0 auto;text-align:left}
 .out.show{display:block}
-.out h2{font-size:1.25rem;margin:0 0 4px;color:var(--heading)}
+.out h2{font-size:1.25rem;margin:0 0 4px;color:var(--heading);text-align:center}
 .out .step{margin:0 0 28px}
-.out .copy{display:block;margin-inline:auto}
-.out>p,.out .step h2,.out .step p{text-align:center}
-.out p{margin:4px 0 10px;color:var(--muted)}
+.out .step p{margin:4px 0 10px;color:var(--muted);text-align:center}
+.out>p{text-align:center;color:var(--muted)}
 .out pre,.out .path{margin:0 0 10px;padding:12px 14px;background:var(--code);border:1px solid var(--line);border-radius:4px;overflow:auto;max-height:280px;font:.82rem/1.5 var(--f-mono,monospace);color:var(--ink);white-space:pre}
 .out .path{white-space:pre-wrap;word-break:break-all;max-height:none}
+.out .copy,.out .go{display:block;margin-inline:auto;width:max-content}
+.out .go{margin-bottom:10px}
 .done{padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--surface);border-radius:4px;margin:0 auto 24px;max-width:860px;text-align:left}
+.done.warn{border-left-color:#b42318}
+.done ul{margin:6px 0 0;padding-left:20px}
+.report{max-width:700px;margin:0 auto;text-align:left}
+.report li{margin:4px 0}
+.report .bad{color:#b42318;font-weight:600}
+:root.dark-mode .report .bad{color:#fca5a5}
+.report .ok{color:var(--accent);font-weight:600}
 </style>
 </head>
 <body>
@@ -60,32 +77,59 @@ form.mg[hidden]{display:none}
 <main class="inner" id="main">
   <h1 class="page-title">Manage courses</h1>
   <p class="lede">Make a change here. The page writes the new courses.json for you to paste on GitHub. Nothing is saved until you paste it.</p>
-  <div class="tabs" role="tablist">
-    <button class="tab" role="tab" data-mode="add" aria-selected="true">Add a session</button>
-    <button class="tab" role="tab" data-mode="archive" aria-selected="false">Archive a year</button>
-    <button class="tab" role="tab" data-mode="newyear" aria-selected="false">Start a new year</button>
-    <button class="tab" role="tab" data-mode="course" aria-selected="false">Add a course</button>
+
+  <div class="groups" role="tablist">
+    <div class="group"><span class="group-label">Courses</span><div class="tabs">
+      <button class="tab" role="tab" data-mode="addcourse" aria-selected="false">Add</button>
+      <button class="tab danger" role="tab" data-mode="delcourse" aria-selected="false">Delete</button></div></div>
+    <div class="group"><span class="group-label">Modules</span><div class="tabs">
+      <button class="tab" role="tab" data-mode="addmod" aria-selected="true">Add</button>
+      <button class="tab danger" role="tab" data-mode="delmod" aria-selected="false">Delete</button></div></div>
+    <div class="group"><span class="group-label">Years</span><div class="tabs">
+      <button class="tab" role="tab" data-mode="newyear" aria-selected="false">Start a new year</button>
+      <button class="tab" role="tab" data-mode="archive" aria-selected="false">Archive a year</button></div></div>
+    <div class="group"><span class="group-label">Portal</span><div class="tabs">
+      <button class="tab" role="tab" data-mode="check" aria-selected="false">Check for problems</button></div></div>
   </div>
 
-  <form class="mg" id="f-add" data-mode="add">
+  <form class="mg" data-mode="addcourse" hidden>
+    <label>Course title <small>For example Public Policy</small><input type="text" name="title" required></label>
+    <label>Short description <small>One line shown on the course page</small><input type="text" name="description"></label>
+    <label>First year <small>For example 2026-27. Letters, numbers and hyphens only</small><input type="text" name="year" required></label>
+    <label>Programme <input type="text" name="programme" value="PGDM"></label>
+    <p class="err" hidden></p>
+    <button class="go" type="submit">Make the changes</button>
+  </form>
+
+  <form class="mg" data-mode="delcourse" hidden>
+    <label>Course to delete <select name="course"></select></label>
+    <p class="info" data-info></p>
+    <label class="check"><input type="checkbox" name="sure"> I understand. The course and all its years and modules leave the website.</label>
+    <p class="err" hidden></p>
+    <button class="go danger" type="submit">Delete this course</button>
+  </form>
+
+  <form class="mg" data-mode="addmod">
     <label>Course <select name="course"></select></label>
     <label>Year <select name="year"></select></label>
-    <label>Session title <small>What students see, for example Elasticity</small><input type="text" name="title" required></label>
+    <label>Module title <small>What students see, for example Elasticity</small><input type="text" name="title" required></label>
     <label>Label <small>For example Session 4 or Module 4</small><input type="text" name="label" required></label>
     <p class="err" hidden></p>
     <button class="go" type="submit">Make the changes</button>
   </form>
 
-  <form class="mg" id="f-archive" data-mode="archive" hidden>
+  <form class="mg" data-mode="delmod" hidden>
     <label>Course <select name="course"></select></label>
-    <label>Year to archive <select name="year"></select></label>
+    <label>Year <select name="year"></select></label>
+    <label>Module to delete <select name="module"></select></label>
+    <label class="check"><input type="checkbox" name="sure"> I understand. This module leaves the website.</label>
     <p class="err" hidden></p>
-    <button class="go" type="submit">Make the changes</button>
+    <button class="go danger" type="submit">Delete this module</button>
   </form>
 
-  <form class="mg" id="f-newyear" data-mode="newyear" hidden>
+  <form class="mg" data-mode="newyear" hidden>
     <label>Course <select name="course"></select></label>
-    <label>New year <small>For example 2027-28</small><input type="text" name="year" required></label>
+    <label>New year <small>For example 2027-28. Letters, numbers and hyphens only</small><input type="text" name="year" required></label>
     <label>Programme <input type="text" name="programme" value="PGDM"></label>
     <label>One line about this offering <small>Can be empty</small><input type="text" name="note"></label>
     <label class="check"><input type="checkbox" name="archiveOld" checked> Move the current year to the Archive</label>
@@ -93,13 +137,16 @@ form.mg[hidden]{display:none}
     <button class="go" type="submit">Make the changes</button>
   </form>
 
-  <form class="mg" id="f-course" data-mode="course" hidden>
-    <label>Course title <small>For example Public Policy</small><input type="text" name="title" required></label>
-    <label>Short description <small>One line shown on the course page</small><input type="text" name="description"></label>
-    <label>First year <small>For example 2026-27</small><input type="text" name="year" required></label>
-    <label>Programme <input type="text" name="programme" value="PGDM"></label>
+  <form class="mg" data-mode="archive" hidden>
+    <label>Course <select name="course"></select></label>
+    <label>Year to archive <select name="year"></select></label>
     <p class="err" hidden></p>
     <button class="go" type="submit">Make the changes</button>
+  </form>
+
+  <form class="mg" data-mode="check" hidden>
+    <p class="info">Looks at every course page and every module file listed in courses.json and tells you if one is missing.</p>
+    <button class="go" type="submit">Run the check</button>
   </form>
 
   <div class="out" id="out" aria-live="polite"></div>
@@ -109,10 +156,57 @@ form.mg[hidden]{display:none}
 (() => {
   "use strict";
   const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-  let data, starter = "# Session title\n\n---\n\n## First slide\n\n- Point one\n";
+  const clone = (x) => JSON.parse(JSON.stringify(x));
+  const isArch = (y) => y.status === "archived";
+  const yearOk = (s) => /^[A-Za-z0-9-]+$/.test(s);
+  let data;
+  let starterFallback = "# Session title\n\n---\n\n## First slide\n\n- Point one\n";
 
+  /* ---------- GitHub links ---------- */
+  const gh = () => Object.assign({ repo: "pawankb13/pawankb13.github.io", branch: "main", folder: "teaching" }, (data.site || {}).github || {});
+  const inRepo = (p) => [gh().folder, p].filter(Boolean).join("/");
+  function ghNew(path, text) {
+    const i = path.lastIndexOf("/"), g = gh();
+    return `https://github.com/${g.repo}/new/${g.branch}/${inRepo(path.slice(0, i))}?filename=${encodeURIComponent(path.slice(i + 1))}&value=${encodeURIComponent(text)}`;
+  }
+  const ghTree = (p) => `https://github.com/${gh().repo}/tree/${gh().branch}/${inRepo(p)}`;
+  const ghFile = (p) => `https://github.com/${gh().repo}/blob/${gh().branch}/${inRepo(p)}`;
+  const ghEdit = (p) => `https://github.com/${gh().repo}/edit/${gh().branch}/${inRepo(p)}`;
+  const blankSlides = (title, course, label) =>
+    `# ${title}\n\n${course} · ${label}\n\n${(data.site || {}).instructor || ""}\n\n---\n\n## First slide\n\n- Point one\n- Point two\n`;
+
+  async function courseTemplate(model, id, title) {
+    try {
+      const r = await fetch(`courses/${model.id}.html`);
+      if (!r.ok) throw 0;
+      return (await r.text()).replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`).replace(/data-course="[^"]*"/, `data-course="${id}"`);
+    } catch (e) {
+      return `Copy courses/${model.id}.html, then change the title line and data-course="${model.id}" to data-course="${id}".`;
+    }
+  }
+
+  /* ---------- Checks on the new file, before it is shown ---------- */
+  function validate(d) {
+    const errs = [], ids = new Set();
+    if (!Array.isArray(d.courses)) return ["courses is missing."];
+    d.courses.forEach((c) => {
+      if (!c.id || !c.title) errs.push("A course has no id or title.");
+      if (ids.has(c.id)) errs.push(`Two courses share the id ${c.id}.`);
+      ids.add(c.id);
+      const yi = new Set();
+      (c.years || []).forEach((y) => {
+        if (yi.has(y.id)) errs.push(`${c.title} has the year ${y.id} twice.`);
+        yi.add(y.id);
+        (y.decks || []).forEach((k) => { if (!k.title || !k.file) errs.push(`${c.title} ${y.id} has a module without a title or file.`); });
+      });
+    });
+    return errs;
+  }
+
+  /* ---------- Page setup ---------- */
   async function init() {
     try {
       const r = await fetch("courses.json", { cache: "no-cache" });
@@ -122,7 +216,7 @@ form.mg[hidden]{display:none}
       $("#main").innerHTML = '<div class="notice"><h2>courses.json did not load</h2><p>Open this page from the published site or from a local server.</p></div>';
       return;
     }
-    fetch("_new-session/slides.md").then((r) => r.ok ? r.text() : null).then((t) => { if (t) starter = t; }).catch(() => {});
+    fetch("_new-session/slides.md").then((r) => r.ok ? r.text() : null).then((t) => { if (t) starterFallback = t; }).catch(() => {});
     const s = data.site || {};
     $("#brand").textContent = s.instructor || "Home";
     if (s.homepage) $("#brand").href = s.homepage;
@@ -130,110 +224,195 @@ form.mg[hidden]{display:none}
     $("#foot").textContent = [s.instructor, s.institution].filter(Boolean).join(", ");
 
     const courses = data.courses.filter((c) => !c.hidden);
-    document.querySelectorAll("select[name=course]").forEach((sel) => {
-      sel.innerHTML = courses.map((c) => `<option value="${esc(c.id)}">${esc(c.title)}</option>`).join("");
+    $$("select[name=course]").forEach((sel) => {
+      sel.innerHTML = courses.length ? courses.map((c) => `<option value="${esc(c.id)}">${esc(c.title)}</option>`).join("") : '<option value="">No courses yet</option>';
     });
-    const fillYears = (form, onlyCurrent) => {
-      const c = data.courses.find((x) => x.id === $("[name=course]", form).value);
-      const ys = c.years.filter((y) => !onlyCurrent || y.status !== "archived");
-      $("[name=year]", form).innerHTML = ys.map((y) => `<option value="${esc(y.id)}">${esc(y.label || y.id)} (${esc(y.status || "current")})</option>`).join("");
+    const course = (f) => data.courses.find((x) => x.id === $("[name=course]", f).value);
+    const fillYears = (f, current) => {
+      const c = course(f), sel = $("[name=year]", f);
+      if (!c) { sel.innerHTML = ""; return; }
+      const ys = c.years.filter((y) => !current || !isArch(y));
+      sel.innerHTML = ys.length ? ys.map((y) => `<option value="${esc(y.id)}">${esc(y.label || y.id)} (${esc(y.status || "current")})</option>`).join("") : '<option value="">None available</option>';
     };
-    const fa = $("#f-add"), fr = $("#f-archive");
+    const fillMods = (f) => {
+      const c = course(f), y = c && c.years.find((x) => x.id === $("[name=year]", f).value), sel = $("[name=module]", f);
+      const ds = (y && y.decks) || [];
+      sel.innerHTML = ds.length ? ds.map((k, i) => `<option value="${i}">${esc(k.label || "")} ${esc(k.title)}</option>`).join("") : '<option value="">No modules in this year</option>';
+    };
+    const form = (m) => $(`form[data-mode=${m}]`);
+    const fa = form("addmod"), fd = form("delmod"), fr = form("archive"), fx = form("delcourse");
+    const info = () => {
+      const c = course(fx);
+      $("[data-info]", fx).textContent = c ? `${c.title}: ${c.years.length} year(s), ${c.years.reduce((n, y) => n + (y.decks || []).length, 0)} module(s).` : "No course selected.";
+    };
     $("[name=course]", fa).onchange = () => fillYears(fa, false);
+    $("[name=course]", fd).onchange = () => { fillYears(fd, false); fillMods(fd); };
+    $("[name=year]", fd).onchange = () => fillMods(fd);
     $("[name=course]", fr).onchange = () => fillYears(fr, true);
-    fillYears(fa, false); fillYears(fr, true);
+    $("[name=course]", fx).onchange = info;
+    fillYears(fa, false); fillYears(fd, false); fillMods(fd); fillYears(fr, true); info();
 
-    document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
-      document.querySelectorAll(".tab").forEach((x) => x.setAttribute("aria-selected", String(x === t)));
-      document.querySelectorAll("form.mg").forEach((f) => f.hidden = f.dataset.mode !== t.dataset.mode);
+    $$(".tab").forEach((t) => t.onclick = () => {
+      $$(".tab").forEach((x) => x.setAttribute("aria-selected", String(x === t)));
+      $$("form.mg").forEach((f) => { f.hidden = f.dataset.mode !== t.dataset.mode; const e = $(".err", f); if (e) e.hidden = true; });
       $("#out").className = "out"; $("#out").innerHTML = "";
     });
-    document.querySelectorAll("form.mg").forEach((f) => f.onsubmit = (e) => { e.preventDefault(); run(f); });
+    $$("form.mg").forEach((f) => f.onsubmit = (e) => { e.preventDefault(); run(f).catch((err) => fail(f, "Something went wrong: " + err.message)); });
   }
 
-  function fail(f, msg) { const p = $(".err", f); p.textContent = msg; p.hidden = !msg; return !msg; }
-  const val = (f, n) => ($("[name=" + n + "]", f).value || "").trim();
+  const fail = (f, msg) => { const p = $(".err", f); if (p) { p.textContent = msg; p.hidden = !msg; } return false; };
+  const val = (f, n) => ($(`[name=${n}]`, f).value || "").trim();
 
-  async function courseTemplate(model, id, title) {
-    try {
-      const r = await fetch(`courses/${model.id}.html`);
-      if (!r.ok) throw 0;
-      let t = await r.text();
-      t = t.replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`).replace(/data-course="[^"]*"/, `data-course="${id}"`);
-      return t;
-    } catch (e) {
-      return `Copy courses/${model.id}.html, then change the title line and data-course="${model.id}" to data-course="${id}".`;
-    }
-  }
-
+  /* ---------- Each change ---------- */
   async function run(f) {
-    const d = JSON.parse(JSON.stringify(data));
     const mode = f.dataset.mode;
-    const c = mode === "course" ? null : d.courses.find((x) => x.id === val(f, "course"));
-    let summary, extra = "";
-    if (mode === "course") {
+    fail(f, "");
+    if (mode === "check") return runCheck();
+    const d = clone(data);
+    const c = mode === "addcourse" ? null : d.courses.find((x) => x.id === (f.querySelector("[name=course]") || {}).value);
+    const notes = []; let extra = "", summary = "";
+
+    if (mode === "addcourse") {
       const title = val(f, "title"), yid = val(f, "year");
-      if (!title || !yid) return fail(f, "Enter a title and a year.") || null;
+      if (!title || !yid) return fail(f, "Enter a title and a year.");
+      if (!yearOk(yid)) return fail(f, "Use letters, numbers and hyphens only in the year.");
       const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "").slice(0, 24);
-      if (!id) return fail(f, "Use letters or numbers in the title.") || null;
-      if (d.courses.some((x) => x.id === id)) return fail(f, "A course with this name already exists.") || null;
-      fail(f, "");
+      if (!id) return fail(f, "Use letters or numbers in the title.");
+      if (d.courses.some((x) => x.id === id)) return fail(f, "A course with this name already exists.");
       d.courses.push({ id, title, description: val(f, "description"), years: [
-        { id: yid, label: yid, status: "current", programme: val(f, "programme"), note: "", decks: [] }] });
+        { id: yid, label: yid, status: "current", programme: val(f, "programme"), term: "", note: "", decks: [] }] });
       const model = data.courses.find((x) => !x.hidden) || data.courses[0];
       const page = await courseTemplate(model, id, title);
       summary = `Added the course <strong>${esc(title)}</strong> with ${esc(yid)} as its current year.`;
+      const link = ghNew(`courses/${id}.html`, page);
       extra = `<div class="step"><h2>Step 2. Create the course page</h2>
-        <p>On GitHub, open the courses folder inside your portal folder, click Add file, then Create new file. Type this name exactly, then paste the page below and commit.</p>
+        ${link.length < 7500
+          ? `<p>This opens GitHub with the file name and the page already filled in. Click <strong>Commit changes</strong> there.</p>
+             <a class="go" href="${esc(link)}" target="_blank" rel="noopener">Create the course page on GitHub</a>
+             <p>If it does not open filled in, use the file name and page below.</p>`
+          : `<p>On GitHub, open the courses folder inside your portal folder, click Add file, then Create new file. Type this name exactly, then paste the page below and commit.</p>`}
         <div class="path" id="p-path">courses/${esc(id)}.html</div><button class="copy" data-copy="p-path" type="button">Copy file name</button>
         <pre id="p-page">${esc(page)}</pre><button class="copy" data-copy="p-page" type="button">Copy page</button></div>
-        <p>Then use Add a session to put sessions in this course.</p>`;
-    } else if (mode === "add") {
-      const y = c.years.find((x) => x.id === val(f, "year"));
+        <p>Then use Add under Modules to put modules in this course.</p>`;
+
+    } else if (mode === "delcourse") {
+      if (!c) return fail(f, "Choose a course.");
+      if (!$("[name=sure]", f).checked) return fail(f, "Tick the box to confirm.");
+      d.courses = d.courses.filter((x) => x.id !== c.id);
+      summary = `<strong>${esc(c.title)}</strong> is removed from the website.`;
+      notes.push("The course page and the slides stay in your repository until you delete them. They are no longer shown or linked.");
+      extra = `<div class="step"><h2>Step 2. Delete the files (recommended)</h2>
+        <p>Delete these on GitHub so nothing old is left behind. In each, use the three dots menu, then <strong>Delete</strong>.</p>
+        <a class="go" href="${esc(ghFile(`courses/${c.id}.html`))}" target="_blank" rel="noopener">Open the course page file</a>
+        <a class="go" href="${esc(ghTree(`content/${c.id}`))}" target="_blank" rel="noopener">Open the slides folder</a></div>`;
+
+    } else if (mode === "addmod") {
+      const y = c && c.years.find((x) => x.id === val(f, "year"));
       const title = val(f, "title"), label = val(f, "label");
-      if (!title || !label) return fail(f, "Enter a title and a label.") || null;
+      if (!y) return fail(f, "Choose a course and a year.");
+      if (!title || !label) return fail(f, "Enter a title and a label.");
       const folder = slug(label + " " + title);
+      if (!folder) return fail(f, "Use letters or numbers in the title and label.");
       const rel = `content/${c.id}/${y.id}/${folder}/slides.md`;
-      if ((y.decks || []).some((k) => k.file === rel)) return fail(f, "A session with this name already exists.") || null;
-      fail(f, "");
+      if ((y.decks || []).some((k) => k.file === rel)) return fail(f, "A module with this name already exists in this year.");
       (y.decks = y.decks || []).push({ title, label, updated: new Date().toISOString().slice(0, 10), file: rel });
       summary = `Added <strong>${esc(label)}: ${esc(title)}</strong> to ${esc(c.title)} ${esc(y.label || y.id)}.`;
-      extra = `<div class="step"><h2>Step 2. Create the slides file</h2>
-        <p>On GitHub, open your portal folder, click Add file, then Create new file. Type this name exactly, then paste the starter slides below and commit.</p>
-        <div class="path" id="p-path">${esc(rel)}</div><button class="copy" data-copy="p-path" type="button">Copy file name</button>
-        <pre id="p-start">${esc(starter)}</pre><button class="copy" data-copy="p-start" type="button">Copy starter slides</button></div>`;
+      extra = `<div class="step"><h2>Step 2. Create the blank slides</h2>
+        <p>This opens GitHub with the file name and a blank slide deck already filled in. Click <strong>Commit changes</strong> there.</p>
+        <a class="go" href="${esc(ghNew(rel, blankSlides(title, c.title, label)))}" target="_blank" rel="noopener">Create slides.md on GitHub</a>
+        <p>File: <code>${esc(rel)}</code></p></div>`;
+
+    } else if (mode === "delmod") {
+      const y = c && c.years.find((x) => x.id === val(f, "year"));
+      const i = parseInt(val(f, "module"), 10);
+      if (!y || !(y.decks || [])[i]) return fail(f, "Choose a module to delete.");
+      if (!$("[name=sure]", f).checked) return fail(f, "Tick the box to confirm.");
+      const k = y.decks.splice(i, 1)[0];
+      const folder = k.file.replace(/\/[^\/]*$/, "");
+      summary = `<strong>${esc(k.label || "")} ${esc(k.title)}</strong> is removed from ${esc(c.title)} ${esc(y.label || y.id)}.`;
+      notes.push("The slides stay in your repository until you delete the folder. They are no longer shown or linked.");
+      extra = `<div class="step"><h2>Step 2. Delete the folder (recommended)</h2>
+        <p>On GitHub, open the folder, use the three dots menu, then <strong>Delete directory</strong>.</p>
+        <a class="go" href="${esc(ghTree(folder))}" target="_blank" rel="noopener">Open the module folder</a>
+        <p>Folder: <code>${esc(folder)}</code></p></div>`;
+
+    } else if (mode === "newyear") {
+      const yid = val(f, "year");
+      if (!c) return fail(f, "Choose a course.");
+      if (!yid) return fail(f, "Enter the new year.");
+      if (!yearOk(yid)) return fail(f, "Use letters, numbers and hyphens only in the year.");
+      if (c.years.some((x) => x.id === yid)) return fail(f, "This year already exists for this course.");
+      const arch = $("[name=archiveOld]", f).checked;
+      if (arch) c.years.forEach((x) => { if (!isArch(x)) x.status = "archived"; });
+      c.years.unshift({ id: yid, label: yid, status: "current", programme: val(f, "programme"), term: "", note: val(f, "note"), decks: [] });
+      summary = `<strong>${esc(c.title)} ${esc(yid)}</strong> is now the current year.` + (arch ? " Earlier years move to the Archive." : "");
+      if (!arch && c.years.filter((x) => !isArch(x)).length > 1) notes.push("More than one year is marked current. The newest one is shown first on the course page.");
+
     } else if (mode === "archive") {
-      const y = c.years.find((x) => x.id === val(f, "year"));
-      if (!y) return fail(f, "There is no current year to archive.") || null;
-      fail(f, "");
+      const y = c && c.years.find((x) => x.id === val(f, "year"));
+      if (!y || isArch(y)) return fail(f, "There is no current year to archive.");
       y.status = "archived";
       summary = `<strong>${esc(c.title)} ${esc(y.label || y.id)}</strong> moves to the Archive.`;
-    } else {
-      const yid = val(f, "year");
-      if (!yid) return fail(f, "Enter the new year.") || null;
-      if (c.years.some((x) => x.id === yid)) return fail(f, "This year already exists.") || null;
-      fail(f, "");
-      if ($("[name=archiveOld]", f).checked) c.years.forEach((x) => { if (x.status !== "archived") x.status = "archived"; });
-      c.years.unshift({ id: yid, label: yid, status: "current", programme: val(f, "programme"), note: val(f, "note"), decks: [] });
-      summary = `<strong>${esc(c.title)} ${esc(yid)}</strong> is now the current year.` + ($("[name=archiveOld]", f).checked ? " Earlier years move to the Archive." : "");
+      if (!c.years.some((x) => !isArch(x))) notes.push("This course now has no current year. Use Start a new year to add one.");
     }
+
+    const problems = validate(d);
+    if (problems.length) return fail(f, "Stopped. The result would not be valid: " + problems[0]);
     const json = JSON.stringify(d, null, 2) + "\n";
+    try { JSON.parse(json); } catch (e) { return fail(f, "Stopped. The result is not valid JSON."); }
+
     const o = $("#out");
     o.className = "out show";
-    o.innerHTML = `<div class="done">${summary}</div>
+    o.innerHTML = `<div class="done${mode.startsWith("del") ? " warn" : ""}">${summary}${notes.length ? "<ul>" + notes.map((n) => `<li>${esc(n)}</li>`).join("") + "</ul>" : ""}</div>
       <div class="step"><h2>Step 1. Replace courses.json</h2>
         <p>On GitHub, open courses.json and click the pencil icon. Select all, paste this, and commit.</p>
+        <a class="go" href="${esc(ghEdit("courses.json"))}" target="_blank" rel="noopener">Open courses.json on GitHub</a>
         <pre id="p-json">${esc(json)}</pre>
-        <button class="copy" data-copy="p-json" type="button">Copy courses.json</button></div>
+        <button class="copy" data-copy="p-json" type="button">Copy courses.json</button>
+        <button class="copy" id="dl" type="button" style="margin-top:8px">Download courses.json</button></div>
       ${extra}
       <p>After you commit, reload this page so it reads the new file.</p>`;
-    o.querySelectorAll("[data-copy]").forEach((b) => b.onclick = async () => {
-      const t = document.getElementById(b.dataset.copy).textContent;
-      try { await navigator.clipboard.writeText(t); b.textContent = "Copied"; }
-      catch (e) { const r = document.createRange(); r.selectNodeContents(document.getElementById(b.dataset.copy)); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected. Press Ctrl+C"; }
-      setTimeout(() => { b.textContent = b.dataset.copy === "p-json" ? "Copy courses.json" : b.dataset.copy === "p-path" ? "Copy file name" : b.dataset.copy === "p-page" ? "Copy page" : "Copy starter slides"; }, 2000);
+    $("#dl", o).onclick = () => {
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(new Blob([json], { type: "application/json" })); a.download = "courses.json"; a.click();
+    };
+    const labels = { "p-json": "Copy courses.json", "p-path": "Copy file name", "p-page": "Copy page" };
+    $$("[data-copy]", o).forEach((b) => b.onclick = async () => {
+      const el = document.getElementById(b.dataset.copy);
+      try { await navigator.clipboard.writeText(el.textContent); b.textContent = "Copied"; }
+      catch (e) { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected. Press Ctrl+C"; }
+      setTimeout(() => { b.textContent = labels[b.dataset.copy]; }, 2000);
     });
     o.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  /* ---------- Check for problems ---------- */
+  async function exists(url) {
+    try {
+      let r = await fetch(url, { method: "HEAD", cache: "no-cache" });
+      if (!r.ok && r.status === 405) r = await fetch(url, { cache: "no-cache" });
+      return r.ok;
+    } catch (e) { return false; }
+  }
+  async function runCheck() {
+    const o = $("#out");
+    o.className = "out show"; o.innerHTML = "<p>Checking…</p>";
+    const bad = [], tasks = [];
+    let n = 0;
+    data.courses.forEach((c) => {
+      tasks.push(exists(`courses/${c.id}.html`).then((ok) => { n++; if (!ok) bad.push(`The page for ${c.title} is missing: courses/${c.id}.html`); }));
+      if (!(c.years || []).length) bad.push(`${c.title} has no years.`);
+      else if (!c.hidden && !c.years.some((y) => !isArch(y))) bad.push(`${c.title} has no current year.`);
+      (c.years || []).forEach((y) => (y.decks || []).forEach((k) => {
+        if (/\.html?$/i.test(k.file)) return;
+        tasks.push(exists(k.file).then((ok) => { n++; if (!ok) bad.push(`Missing file for ${c.title} ${y.id}, ${k.label || ""} ${k.title}: ${k.file}`); }));
+      }));
+    });
+    await Promise.all(tasks);
+    const list = validate(data); list.forEach((e) => bad.push(e));
+    o.innerHTML = bad.length
+      ? `<div class="report"><div class="done warn"><strong>${bad.length} problem(s) found.</strong><ul>${bad.map((b) => `<li class="bad">${esc(b)}</li>`).join("")}</ul></div></div>`
+      : `<div class="report"><div class="done"><span class="ok">No problems found.</span> Checked ${n} files and the structure of courses.json.</div></div>`;
   }
   init();
 })();

@@ -86,6 +86,7 @@
         ? `<a class="switch-btn" href="#${esc(now.id)}">‹ Current year ${esc(now.label || now.id)}</a>` : "";
       const toArchive = archived.length ? `<a class="switch-btn" href="#archive">Archive ›</a>` : "";
       const foot = (btn) => `<div class="switch">${btn}</div>`;
+      sortState.key = ""; sortState.dir = 1;
 
       if (inArchiveList) {
         $("main").innerHTML = head(c, "") + archiveList(c, archived) + foot(toCurrent);
@@ -93,8 +94,10 @@
         $("main").innerHTML = head(c, "") + `<div class="notice"><h2>No years yet</h2><p>Add a year for this course in courses.json.</p></div>`;
       } else if (inArchive) {
         $("main").innerHTML = head(c, `<a href="#archive">‹ Archive</a>`) + sessionList(c, y) + foot(toCurrent);
+        bindSort(c, y);
       } else {
         $("main").innerHTML = head(c, "") + sessionList(c, y, true) + (toArchive ? foot(toArchive) : "");
+        bindSort(c, y);
       }
     };
     addEventListener("hashchange", draw);
@@ -121,17 +124,64 @@
       </section>`;
   }
 
-  /* The sessions of one year, in the order listed in courses.json. */
-  function sessionList(c, y, isCurrent) {
-    const decks = y.decks || [];
-    const list = decks.length
-      ? `<div class="deck-head" aria-hidden="true"><span>Session</span><span>Topic</span><span></span><span>Updated</span></div>
-        <ol class="deck-list">${decks.map((d, i) => `<li><a class="deck" href="${deckHref(c, y, i, d)}">
+  /* The sessions of one year. Order follows courses.json until a column heading is clicked. */
+  const sortState = { key: "", dir: 1 };
+  const num = (s) => { const m = /\d+/.exec(s || ""); return m ? parseInt(m[0], 10) : Infinity; };
+  function sortedDecks(decks) {
+    const rows = decks.map((d, i) => ({ d, i }));
+    const { key, dir } = sortState;
+    if (!key) return rows;
+    rows.sort((p, q) => {
+      let r;
+      if (key === "updated") {
+        const a = p.d.updated || "", b = q.d.updated || "";
+        if (!a && !b) return p.i - q.i;
+        if (!a) return 1;           /* no date: always last */
+        if (!b) return -1;
+        r = a < b ? -1 : a > b ? 1 : 0;
+      } else {
+        r = num(p.d.label) - num(q.d.label);
+        if (!r || !isFinite(r)) r = String(p.d.label || "").localeCompare(String(q.d.label || ""), undefined, { numeric: true });
+      }
+      return r * dir || p.i - q.i;
+    });
+    return rows;
+  }
+  function sortBtn(key, text) {
+    const on = sortState.key === key;
+    const up = on && sortState.dir === 1, down = on && sortState.dir === -1;
+    return `<button type="button" class="sort${on ? " on" : ""}" data-sort="${key}" aria-label="Sort by ${text.toLowerCase()}, ${up ? "now ascending" : down ? "now descending" : "not sorted"}">
+        ${text}<span class="arrows" aria-hidden="true"><span class="${up ? "act" : ""}">▲</span><span class="${down ? "act" : ""}">▼</span></span></button>`;
+  }
+  function deckRows(c, y, decks) {
+    return `<ol class="deck-list">${sortedDecks(decks).map(({ d, i }) => `<li><a class="deck" href="${deckHref(c, y, i, d)}">
             <span class="deck-no">${esc(d.label || "Session " + (i + 1))}</span>
             <span class="deck-title">${esc(d.title)}</span>
             <span class="deck-open">Open slides</span>
             <span class="deck-date"><span class="deck-date-label">Updated </span>${esc(fmtDate(d.updated))}</span>
-          </a></li>`).join("")}</ol>`
+          </a></li>`).join("")}</ol>`;
+  }
+  function deckTable(c, y, decks) {
+    return `<div class="deck-head" role="group" aria-label="Sort sessions">${sortBtn("session", "Session")}<span class="head-topic">Topic</span><span class="head-gap"></span>${sortBtn("updated", "Updated")}</div>
+        ${deckRows(c, y, decks)}`;
+  }
+  function bindSort(c, y) {
+    const wrap = $("deck-wrap");
+    if (!wrap) return;
+    wrap.addEventListener("click", (e) => {
+      const b = e.target.closest("[data-sort]");
+      if (!b) return;
+      const key = b.dataset.sort;
+      if (sortState.key === key) sortState.dir = -sortState.dir; else { sortState.key = key; sortState.dir = 1; }
+      wrap.innerHTML = deckTable(c, y, y.decks || []);
+      const again = wrap.querySelector(`[data-sort="${key}"]`);
+      if (again) again.focus();
+    });
+  }
+  function sessionList(c, y, isCurrent) {
+    const decks = y.decks || [];
+    const list = decks.length
+      ? `<div id="deck-wrap">${deckTable(c, y, decks)}</div>`
       : `<div class="notice"><h2>No slides for ${esc(y.label || y.id)} yet</h2>
           <p>Add a session to this year's <code>decks</code> list in courses.json.</p></div>`;
     const meta = [y.programme, y.term, plural(decks.length, "session", "sessions")].filter(Boolean).map(esc).join(" · ");

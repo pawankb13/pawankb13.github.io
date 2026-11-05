@@ -50,6 +50,9 @@ def add_session(d):
     if dest.exists():
         print("That folder already exists:", rel); return
     shutil.copytree(ROOT / "_new-session", dest)
+    f = dest / "slides.md"
+    t = f.read_text(encoding="utf-8").replace("# Session title", "# " + title, 1).replace("Course name · Session number", f'{c["title"]} · {label}', 1)
+    f.write_text(t, encoding="utf-8")
     y.setdefault("decks", []).append(
         {"title": title, "label": label, "updated": date.today().isoformat(), "file": f"{rel}/slides.md"})
     save(d)

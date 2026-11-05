@@ -52,7 +52,7 @@ Folder names: `session-01-topic`, `module-5-topic` or `class-03-topic`. Use lowe
 { "title": "The Monetary System", "label": "Module 4", "updated": "2026-11-05", "file": "content/macro/2026-27/module-4-money/slides.md" }
 ```
 
-The order of the list is the order on the course page. The Updated column fills itself. See "Automatic update dates" below.
+The order of the list is the order on the course page. Visitors can sort it by clicking the Session or Updated heading (up and down arrows). The Updated column fills itself. See "Automatic update dates" below.
 
 ## Archive
 
@@ -197,4 +197,15 @@ After this, each time you commit a change under `content/`, GitHub updates `cour
 
 ## Manage page (form)
 
-Open `manage.html` on your published site, for example `https://pawankb13.github.io/teaching/manage.html`. Choose Add a session, Archive a year, Start a new year, or Add a course, fill the short form, and click **Make the changes**. The page gives you the new `courses.json` to paste on GitHub, and for a new session or course, the file name and the file contents to paste. It saves nothing by itself, and no page links to it.
+Open `manage.html` on your published site, for example `https://pawankb13.github.io/teaching/manage.html`. No page links to it.
+
+| Group | What you can do |
+|---|---|
+| Courses | Add a course. Delete a course. |
+| Modules | Add a module. Delete a module. |
+| Years | Start a new year. Archive a year. |
+| Portal | Check for problems: finds missing course pages and slide files. |
+
+Each change gives you the new `courses.json` to paste on GitHub (with a button that opens the file for you, a Copy button and a Download button). Adding gives a button that opens GitHub with the new slides or course page already filled in. Deleting gives links to the files and folders to remove on GitHub. Deleting asks you to tick a confirmation box first. The page checks the new file before showing it, and stops if it would be invalid.
+
+The buttons use the `github` setting in `courses.json` (`repo`, `branch`, `folder`). Change it if your repository, branch or folder name differs.
