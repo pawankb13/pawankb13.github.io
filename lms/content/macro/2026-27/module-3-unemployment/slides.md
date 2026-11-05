@@ -31,13 +31,27 @@ Individuals who are of working age and have performed some economic activity for
 ### Unemployed: 
 Individuals of working age who are not currently employed but are actively seeking employment and are available to work during a specified reference period.
 
----
 
+---
 <!-- layout: image-full -->
 ## Measuring Unemployment
 
-![Labour Market Status](images/image1.png)
+```mermaid
+flowchart TD
+    A["**Working-age population**<br/>People in the relevant age group"]
 
+    A --> B["**Labour force**<br/>Employed + unemployed"]
+    A --> C["**Outside labour force**<br/>Not employed and not actively seeking / available"]
+
+    B --> D["**Employed**<br/>Has work"]
+    B --> E["**Unemployed**<br/>No work + seeking / available"]
+
+    style A fill:#F1F5F9,stroke:#CBD5E1,color:#2563EB
+    style B fill:#F1F5F9,stroke:#CBD5E1,color:#0D9488
+    style C fill:#F1F5F9,stroke:#CBD5E1,color:#F59E0B
+    style D fill:#F1F5F9,stroke:#CBD5E1,color:#2563EB
+    style E fill:#F1F5F9,stroke:#CBD5E1,color:#DC4B43
+```
 ---
 
 ## Measuring Unemployment
