@@ -184,18 +184,25 @@ Okun's law links the two sides: when output falls below potential, unemployment 
 Indian example: during the April to June 2020 lockdown, urban unemployment rose to 20.8% (PLFS Quarterly Bulletin).
 
 ---
+## Natural Rate of Unemployment
 
-## Fit above the footer
+### Unemployment that remains when the economy is at full employment
 
-### Limits for one slide
+> **Natural rate** = Frictional unemployment + Structural unemployment
 
-- Bullets: four at most, about ten words each
-- Tables: six rows at most, short cells
-- Stats: three numbers at most
-- Move detail into `Note:` and split long slides
+- It exists even when the economy produces at potential output.
+- Full employment means unemployment equals the natural rate, not zero.
+- Cyclical unemployment = Actual rate − Natural rate.
+- Example: actual rate 7%, natural rate 5%, so cyclical unemployment is 2%.
 
-Note:
-These limits assume a title and a subheading. A slide without a subheading has room for one more bullet or row.
+---
+## Natural Rate of Unemployment
+
+- Mankiw defines the natural rate as the normal rate around which the actual rate moves.
+- It changes slowly. Labour laws, skill gaps, job-matching speed and demographics shift it.
+- In a recession the actual rate rises above the natural rate. In a boom it can fall below it.
+
+---
 
 ---
 
