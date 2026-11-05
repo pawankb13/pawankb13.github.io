@@ -19,12 +19,20 @@ Faculty Cabin (F61)
 5. Policy trade-offs using short-run and long-run. 
 
 ---
-## Measuring Unemployment:
+<!-- layout: image-right -->
+# Measuring Unemployment:
 
-### Population Divded by Labor-market Status
+### Population Divided by Labor-Market Status
+
+- 
+
 
 ![Sample chart. Source: add your source here](images/image1.png)
+||
+Hi
+#### 
 
+||
 ___
 
 
