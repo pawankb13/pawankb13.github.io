@@ -33,7 +33,7 @@ Individuals of working age who are not currently employed but are actively seeki
 
 
 ---
-<!-- layout: image-full -->
+
 ## Measuring Unemployment
 
 ```mermaid
