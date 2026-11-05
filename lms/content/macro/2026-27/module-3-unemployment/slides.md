@@ -41,7 +41,7 @@ Faculty Cabin (F61)
 
 **4. Economic and Social Stability**
    - Persistent unemployment can increase poverty and inequality.
-   - It can create social and economic insecurity as well as inequality.
+   - It can create social and economic insecurity.
 
 >Key Takeway: Unemployment is not just a labour-market problem; it represents a loss of productive resources and economic welfare.
 
@@ -91,6 +91,47 @@ $$
 $$
 
 ---
+## Numerical Example: 
+
+### Problem
+
+Consider an economy with a working-age population of 1 million people. Out of these, 600,000 people are employed, while 100,000 people are unemployed and actively seeking or available for work.
+
+Calculate the unemployment rate of this economy.
+
+---
+## Numerical Example: 
+### Solution
+
+**Step 1: Calculate the Labour Force**
+
+$$
+LF = E + U
+$$
+
+$$
+LF = 600,000 + 100,000 = 700,000
+$$
+
+**Step 2: Calculate the Unemployment Rate**
+
+$$
+UR = \frac{U}{LF}\times 100
+$$
+
+$$
+UR = \frac{100,000}{700,000}\times 100
+$$
+
+$$
+\boxed{UR = 14.29\%}
+$$
+
+**Answer:** The unemployment rate in this economy is **14.29%**.
+
+
+---
+
 ## Types of Unemployment
 
 ### Major Forms of Unemployment
