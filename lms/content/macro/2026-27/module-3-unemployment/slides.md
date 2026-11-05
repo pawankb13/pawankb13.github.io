@@ -159,6 +159,28 @@ $$
 **5. Disguised Unemployment**
 - Occurs when more workers are engaged in an activity than actually required, resulting in near-zero marginal productivity of additional workers.
 - Example: Five family members working on a farm when three could produce the same output.
+
+
+---
+---
+<!-- layout: steps -->
+## Business Cycle Channel of Rising Unemployment
+
+### How a fall in aggregate demand leads to job losses
+
+1. **Demand falls**: households and firms spend less
+2. **Sales fall**: unsold stock builds up
+3. **Output falls**: firms cut production
+4. **Jobs lost**: firms lay off workers
+5. **Income falls**: spending falls again
+
+> This is **cyclical unemployment**. It falls when demand recovers.
+
+Note:
+Step 5 feeds back into step 1. Laid-off workers spend less, so demand falls again. This is the multiplier at work.
+Okun's law links the two sides: when output falls below potential, unemployment rises above the natural rate.
+Indian example: during the April to June 2020 lockdown, urban unemployment rose to 20.8% (PLFS Quarterly Bulletin).
+
 ---
 
 ## Fit above the footer
