@@ -6,12 +6,22 @@ Dr. Pawan Ashok Kamble \
 Assistant Professor \
 Faculty Cabin (F61)
 
-
 ---
 
-## How layouts work
+<!-- layout: Topics -->
+## Topics
 
-### One layout line, then the content
+1. Employment, Unemployment, labor force, unemployment rate
+1. Types of unemployment
+2. Natural rate of unemployment and full employment
+3. Beveridge Curve and labor market matching
+4. Wage pressure, inflation expectations and the Phillips curve
+5. Policy trade-offs using short-run and long-run. 
+
+---
+## Measuring Unemployment:
+
+### Population and Labour Market Status
 
 - Write a layout line as the **first line** of a slide: `<!-- layout: image-right -->`
 - Add options after the name: `<!-- layout: image-full cover -->`
