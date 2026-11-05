@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Course portal: courses.json",
+  "description": "VS Code reads this file to check courses.json and to suggest fields as you type.",
+  "type": "object",
+  "required": ["site", "courses"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "site": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "instructor": { "type": "string" },
+        "institution": { "type": "string" },
+        "intro": { "type": "string", "description": "A line shown under the heading on the home page." },
+        "homepage": { "type": "string", "description": "Where the name in the header links to." },
+        "showNotes": { "type": "boolean", "description": "false hides the speaker notes button on every deck." },
+        "github": {
+          "type": "object",
+          "description": "Used by the Manage page to open the right files on GitHub.",
+          "additionalProperties": false,
+          "properties": {
+            "repo": { "type": "string", "examples": ["pawankb13/pawankb13.github.io"] },
+            "branch": { "type": "string", "examples": ["master"] },
+            "folder": { "type": "string", "description": "The portal's folder inside the repository.", "examples": ["lms"] }
+          }
+        }
+      }
+    },
+    "courses": { "type": "array", "items": { "$ref": "#/definitions/course" } },
+    "templates": {
+      "type": "object",
+      "description": "The Slide Templates reference page (courses/templates.html). Not listed on the home page.",
+      "required": ["decks"],
+      "additionalProperties": false,
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "label": { "type": "string", "description": "Heading for the list. Default: Reference." },
+        "note": { "type": "string" },
+        "decks": { "type": "array", "items": { "$ref": "#/definitions/deck" } }
+      }
+    }
+  },
+  "definitions": {
+    "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$", "description": "Lower-case letters, numbers and hyphens. Used in web addresses, so do not change it once shared." },
+    "visibility": {
+      "enum": ["public", "unlisted", "hidden"],
+      "default": "public",
+      "description": "public: listed and opens. unlisted: opens from a link but is not listed. hidden: not listed and does not open."
+    },
+    "course": {
+      "type": "object",
+      "required": ["id", "title", "years"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9]+$", "description": "Letters and numbers only. Must match courses/<id>.html." },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "programme": { "type": "string", "description": "Default programme for every year of this course, e.g. PGDM. A year can override it." },
+        "visibility": { "$ref": "#/definitions/visibility" },
+        "years": { "type": "array", "items": { "$ref": "#/definitions/year" } }
+      }
+    },
+    "year": {
+      "type": "object",
+      "required": ["id", "status", "decks"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[A-Za-z0-9-]+$", "examples": ["2026-27"] },
+        "label": { "type": "string", "description": "Only needed when the name shown should differ from the id." },
+        "status": { "enum": ["current", "archived"] },
+        "programme": { "type": "string", "description": "Only needed when it differs from the course's programme." },
+        "term": { "type": "string" },
+        "note": { "type": "string", "description": "One line about this offering." },
+        "decks": { "type": "array", "items": { "$ref": "#/definitions/deck" } }
+      }
+    },
+    "deck": {
+      "type": "object",
+      "required": ["id", "title", "file"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "$ref": "#/definitions/id" },
+        "title": { "type": "string" },
+        "type": { "type": "string", "examples": ["Session", "Module", "Class"] },
+        "number": { "type": "integer", "minimum": 0 },
+        "label": { "type": "string", "description": "Use instead of type and number for an unnumbered item, e.g. All layouts." },
+        "file": { "type": "string", "pattern": "\\.(md|html?)$" },
+        "updated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Filled in by the GitHub workflow. Do not edit by hand." },
+        "visibility": { "$ref": "#/definitions/visibility" }
+      }
+    }
+  }
+}

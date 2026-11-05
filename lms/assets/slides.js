@@ -1,5 +1,5 @@
 /* Slide viewer for Markdown decks.
-   Address: slides.html#<course>-<year>-<deck number>[-<slide number>]   e.g. #macro-2026-27-2-4
+   Address: slides.html#<course>/<year>/<session id>[/<slide number>]   e.g. #macro/2026-27/is-lm/4
    In a deck file:  a line with only ---    starts a new slide
                     a line with only |||    splits the slide into columns
                     a line starting Note:   begins speaker notes (hidden from the slide)
@@ -20,24 +20,20 @@
 
   /* ---------- Load ---------- */
   async function init() {
-    const m = location.hash.replace(/^#/, "").match(/^([a-z0-9]+)-(\d{4}-\d{2})-(\d+)(?:-(\d+))?$/i);
     let data;
     try {
-      const res = await fetch(url("courses.json"), { cache: "no-cache" });
-      if (!res.ok) throw new Error();
-      data = await res.json();
+      data = await LMS.load(root);
     } catch (e) {
       return fail("The course list did not load", "Open the site through a web server or GitHub Pages. The README explains how.");
     }
     st.allowNotes = (data.site || {}).showNotes !== false;
     $("notes-btn").hidden = !st.allowNotes;
-    if (!m) return fail("No deck selected", "Open a deck from a course page.");
-    const c = data.courses.find((x) => x.id === m[1]);
-    const y = c && c.years.find((x) => x.id === m[2]);
-    const d = y && (y.decks || [])[+m[3] - 1];
-    if (!d) return fail("Deck not found", "Check the deck list in courses.json.");
+    if (!location.hash.replace(/^#/, "")) return fail("No deck selected", "Open a deck from a course page.");
+    const found = LMS.find(data, location.hash);
+    if (!found) return fail("Deck not found", "Check the deck list in courses.json.");
+    const { c, y, d } = found;
 
-    st.key = `${c.id}-${y.id}-${m[3]}`;
+    st.key = LMS.key(c, y, d);
     st.deckUrl = new URL(url(d.file), location.href).href;
     const back = url(c.page || `courses/${c.id}.html`) + "#" + y.id;
     $("back").href = back;
@@ -54,7 +50,7 @@
       return fail("Slides file not found", `Create ${d.file}, or fix its path in courses.json.`);
     }
     build(src, `${c.title} · ${y.label || y.id}`);
-    show(Math.max(0, Math.min(st.slides.length - 1, (+m[4] || 1) - 1)));
+    show(Math.max(0, Math.min(st.slides.length - 1, (found.slide || 1) - 1)));
     typesetAll();
   }
 
@@ -222,7 +218,7 @@
     $("prev").disabled = i === 0;
     $("next").disabled = i === n - 1;
     renderNotes();
-    try { history.replaceState(null, "", `#${st.key}-${i + 1}`); } catch (e) { /* ignore */ }
+    try { history.replaceState(null, "", `#${st.key}/${i + 1}`); } catch (e) { /* ignore */ }
   }
 
   /* Shrink text on a slide that holds too much, so nothing is cut off. */
@@ -335,7 +331,7 @@
   /* A new address: same deck jumps to the slide, a different deck reloads. */
   addEventListener("hashchange", () => {
     const h = location.hash.replace(/^#/, "");
-    if (st.key && h.startsWith(st.key + "-")) show((+h.slice(st.key.length + 1) || 1) - 1);
+    if (st.key && h.startsWith(st.key + "/")) show((+h.slice(st.key.length + 1) || 1) - 1);
     else location.reload();
   });
 

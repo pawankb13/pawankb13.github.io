@@ -1,5 +1,5 @@
 /* Reading material for one session.
-   Address:  readings.html#<course>-<year>-<session number>   (same as the slides address)
+   Address:  readings.html#<course>/<year>/<session id>   (same as the slides address)
    The content comes from readings.md in that session's own folder. */
 (() => {
   "use strict";
@@ -10,9 +10,7 @@
   async function init() {
     let data;
     try {
-      const res = await fetch("courses.json", { cache: "no-cache" });
-      if (!res.ok) throw new Error();
-      data = await res.json();
+      data = await LMS.load(".");
     } catch (e) {
       $("main").innerHTML = `<div class="notice"><h2>The page did not load</h2><p>Open the site from GitHub Pages or a local server.</p></div>`;
       return;
@@ -23,25 +21,17 @@
     $("site-sub").textContent = s.institution || "";
     $("foot").textContent = [s.instructor, s.institution].filter(Boolean).join(", ");
 
-    const hash = decodeURIComponent(location.hash.replace(/^#/, ""));
-    let found = null;
-    data.courses.forEach((c) => c.years.forEach((y) => {
-      const pre = `${c.id}-${y.id}-`;
-      if (hash.startsWith(pre) && /^\d+$/.test(hash.slice(pre.length))) {
-        const d = (y.decks || [])[parseInt(hash.slice(pre.length), 10) - 1];
-        if (d) found = { c, y, d, n: parseInt(hash.slice(pre.length), 10) };
-      }
-    }));
+    const found = LMS.find(data, location.hash);
     if (!found) {
       $("main").innerHTML = `<div class="notice"><h2>Session not found</h2><p>Open this page from the Reading Material link on a course page.</p></div>`;
       return;
     }
-    const { c, y, d, n } = found;
+    const { c, y, d } = found;
     document.title = `Reading: ${d.title}`;
     const folder = d.file.replace(/[^\/]*$/, "");
     const mdUrl = new URL(folder + "readings.md", location.href);
     const back = `courses/${c.id}.html` + (y.status === "archived" ? `#${y.id}` : "");
-    const slides = /\.html?$/i.test(d.file) ? d.file : `slides.html#${c.id}-${y.id}-${n}`;
+    const slides = /\.html?$/i.test(d.file) ? d.file : `slides.html#${LMS.key(c, y, d)}`;
 
     $("main").innerHTML = `
       <p class="crumb"><a href="${esc(back)}">\u2039 ${esc(c.title)}</a></p>

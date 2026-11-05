@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
 <link rel="stylesheet" href="./assets/style.css">
 <script src="./assets/theme.js"></script>
+<script src="./assets/data.js"></script>
 <style>
 #main{text-align:center}
 #main .lede{margin-inline:auto}
@@ -163,10 +164,14 @@ form.mg[hidden]{display:none}
   const isArch = (y) => y.status === "archived";
   const yearOk = (s) => /^[A-Za-z0-9-]+$/.test(s);
   let data;
+  const VIS = ["public", "unlisted", "hidden"];
+  /* "Session 4" -> { type: "Session", number: 4 }. Anything without a number at the end stays a label. */
+  const splitLabel = (s) => { const m = /^(.*?)\s*(\d+)$/.exec(s); return m && m[1] ? { type: m[1], number: +m[2] } : { label: s }; };
+  const deckLabel = (k) => k.label || [k.type, k.number].filter((v) => v !== undefined && v !== "").join(" ");
   let starterFallback = "# Session title\n\n---\n\n## First slide\n\n- Point one\n";
 
   /* ---------- GitHub links ---------- */
-  const gh = () => Object.assign({ repo: "pawankb13/pawankb13.github.io", branch: "main", folder: "teaching" }, (data.site || {}).github || {});
+  const gh = () => Object.assign({ repo: "pawankb13/pawankb13.github.io", branch: "master", folder: "lms" }, (data.site || {}).github || {});
   const inRepo = (p) => [gh().folder, p].filter(Boolean).join("/");
   function ghNew(path, text) {
     const i = path.lastIndexOf("/"), g = gh();
@@ -208,13 +213,21 @@ form.mg[hidden]{display:none}
     if (!Array.isArray(d.courses)) return ["courses is missing."];
     d.courses.forEach((c) => {
       if (!c.id || !c.title) errs.push("A course has no id or title.");
+      if (c.id === "templates") errs.push("The course id templates is kept for the Slide Templates page.");
+      if (c.visibility !== undefined && !VIS.includes(c.visibility)) errs.push(`${c.title} has visibility "${c.visibility}". Use public, unlisted or hidden.`);
       if (ids.has(c.id)) errs.push(`Two courses share the id ${c.id}.`);
       ids.add(c.id);
       const yi = new Set();
       (c.years || []).forEach((y) => {
         if (yi.has(y.id)) errs.push(`${c.title} has the year ${y.id} twice.`);
         yi.add(y.id);
-        (y.decks || []).forEach((k) => { if (!k.title || !k.file) errs.push(`${c.title} ${y.id} has a module without a title or file.`); });
+        const di = new Set();
+        (y.decks || []).forEach((k) => {
+          if (!k.id || !k.title || !k.file) errs.push(`${c.title} ${y.id} has a module without an id, title or file.`);
+          if (di.has(k.id)) errs.push(`${c.title} ${y.id} has the module id ${k.id} twice.`);
+          di.add(k.id);
+          if (k.visibility !== undefined && !VIS.includes(k.visibility)) errs.push(`${c.title} ${y.id}, ${k.title} has visibility "${k.visibility}". Use public, unlisted or hidden.`);
+        });
       });
     });
     return errs;
@@ -237,7 +250,7 @@ form.mg[hidden]{display:none}
     $("#site-sub").textContent = s.institution || "";
     $("#foot").textContent = [s.instructor, s.institution].filter(Boolean).join(", ");
 
-    const courses = data.courses.filter((c) => !c.hidden);
+    const courses = data.courses;
     $$("select[name=course]").forEach((sel) => {
       sel.innerHTML = courses.length ? courses.map((c) => `<option value="${esc(c.id)}">${esc(c.title)}</option>`).join("") : '<option value="">No courses yet</option>';
     });
@@ -251,7 +264,7 @@ form.mg[hidden]{display:none}
     const fillMods = (f) => {
       const c = course(f), y = c && c.years.find((x) => x.id === $("[name=year]", f).value), sel = $("[name=module]", f);
       const ds = (y && y.decks) || [];
-      sel.innerHTML = ds.length ? ds.map((k, i) => `<option value="${i}">${esc(k.label || "")} ${esc(k.title)}</option>`).join("") : '<option value="">No modules in this year</option>';
+      sel.innerHTML = ds.length ? ds.map((k, i) => `<option value="${i}">${esc(deckLabel(k))} ${esc(k.title)}</option>`).join("") : '<option value="">No modules in this year</option>';
     };
     const form = (m) => $(`form[data-mode=${m}]`);
     const fa = form("addmod"), fd = form("delmod"), fr = form("archive"), fx = form("delcourse");
@@ -293,9 +306,12 @@ form.mg[hidden]{display:none}
       const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "").slice(0, 24);
       if (!id) return fail(f, "Use letters or numbers in the title.");
       if (d.courses.some((x) => x.id === id)) return fail(f, "A course with this name already exists.");
-      d.courses.push({ id, title, description: val(f, "description"), years: [
-        { id: yid, label: yid, status: "current", programme: val(f, "programme"), term: "", note: "", decks: [] }] });
-      const model = data.courses.find((x) => !x.hidden) || data.courses[0];
+      const nc = { id, title, description: val(f, "description") };
+      if (val(f, "programme")) nc.programme = val(f, "programme");
+      nc.visibility = "public";
+      nc.years = [{ id: yid, status: "current", decks: [] }];
+      d.courses.push(nc);
+      const model = data.courses[0] || { id: "templates" };
       const page = await courseTemplate(model, id, title);
       summary = `Added the course <strong>${esc(title)}</strong> with ${esc(yid)} as its current year.`;
       const link = ghNew(`courses/${id}.html`, page);
@@ -329,7 +345,10 @@ form.mg[hidden]{display:none}
       if (!folder) return fail(f, "Use letters or numbers in the title and label.");
       const rel = `content/${c.id}/${y.id}/${folder}/slides.md`;
       if ((y.decks || []).some((k) => k.file === rel)) return fail(f, "A module with this name already exists in this year.");
-      (y.decks = y.decks || []).push({ title, label, updated: new Date().toISOString().slice(0, 10), file: rel });
+      let mid = slug(title) || folder;
+      for (let n = 2; (y.decks || []).some((k) => k.id === mid); n++) mid = `${slug(title) || folder}-${n}`;
+      (y.decks = y.decks || []).push(Object.assign({ id: mid, title }, splitLabel(label),
+        { file: rel, updated: new Date().toISOString().slice(0, 10), visibility: "public" }));
       summary = `Added <strong>${esc(label)}: ${esc(title)}</strong> to ${esc(c.title)} ${esc(y.label || y.id)}.`;
       const dir = rel.replace(/\/[^\/]*$/, "");
       extra = `<div class="step"><h2>Step 2. Create the two files for this module</h2>
@@ -345,7 +364,7 @@ form.mg[hidden]{display:none}
       if (!$("[name=sure]", f).checked) return fail(f, "Tick the box to confirm.");
       const k = y.decks.splice(i, 1)[0];
       const folder = k.file.replace(/\/[^\/]*$/, "");
-      summary = `<strong>${esc(k.label || "")} ${esc(k.title)}</strong> is removed from ${esc(c.title)} ${esc(y.label || y.id)}.`;
+      summary = `<strong>${esc(deckLabel(k))} ${esc(k.title)}</strong> is removed from ${esc(c.title)} ${esc(y.label || y.id)}.`;
       notes.push("The slides stay in your repository until you delete the folder. They are no longer shown or linked.");
       extra = `<div class="step"><h2>Step 2. Delete the folder (recommended)</h2>
         <p>On GitHub, open the folder, use the three dots menu, then <strong>Delete directory</strong>.</p>
@@ -360,7 +379,11 @@ form.mg[hidden]{display:none}
       if (c.years.some((x) => x.id === yid)) return fail(f, "This year already exists for this course.");
       const arch = $("[name=archiveOld]", f).checked;
       if (arch) c.years.forEach((x) => { if (!isArch(x)) x.status = "archived"; });
-      c.years.unshift({ id: yid, label: yid, status: "current", programme: val(f, "programme"), term: "", note: val(f, "note"), decks: [] });
+      const ny = { id: yid, status: "current" };
+      if (val(f, "programme") && val(f, "programme") !== (c.programme || "")) ny.programme = val(f, "programme");
+      if (val(f, "note")) ny.note = val(f, "note");
+      ny.decks = [];
+      c.years.unshift(ny);
       summary = `<strong>${esc(c.title)} ${esc(yid)}</strong> is now the current year.` + (arch ? " Earlier years move to the Archive." : "");
       if (!arch && c.years.filter((x) => !isArch(x)).length > 1) notes.push("More than one year is marked current. The newest one is shown first on the course page.");
 
@@ -415,15 +438,15 @@ form.mg[hidden]{display:none}
     o.className = "out show"; o.innerHTML = "<p>Checking…</p>";
     const bad = [], tasks = [];
     let n = 0;
-    data.courses.forEach((c) => {
+    LMS.normalise(data).courses.forEach((c) => {
       tasks.push(exists(`courses/${c.id}.html`).then((ok) => { n++; if (!ok) bad.push(`The page for ${c.title} is missing: courses/${c.id}.html`); }));
       if (!(c.years || []).length) bad.push(`${c.title} has no years.`);
-      else if (!c.hidden && !c.years.some((y) => !isArch(y))) bad.push(`${c.title} has no current year.`);
+      else if (LMS.listed(c) && !c.years.some((y) => !isArch(y))) bad.push(`${c.title} has no current year.`);
       (c.years || []).forEach((y) => (y.decks || []).forEach((k) => {
         if (/\.html?$/i.test(k.file)) return;
-        tasks.push(exists(k.file).then((ok) => { n++; if (!ok) bad.push(`Missing file for ${c.title} ${y.id}, ${k.label || ""} ${k.title}: ${k.file}`); }));
+        tasks.push(exists(k.file).then((ok) => { n++; if (!ok) bad.push(`Missing file for ${c.title} ${y.id}, ${k.label} ${k.title}: ${k.file}`); }));
         const rd = k.file.replace(/[^\/]*$/, "") + "readings.md";
-        tasks.push(exists(rd).then((ok) => { n++; if (!ok) bad.push(`No reading page for ${c.title} ${y.id}, ${k.label || ""} ${k.title}. Create ${rd}`); }));
+        tasks.push(exists(rd).then((ok) => { n++; if (!ok) bad.push(`No reading page for ${c.title} ${y.id}, ${k.label} ${k.title}. Create ${rd}`); }));
       }));
     });
     await Promise.all(tasks);

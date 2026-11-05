@@ -32,12 +32,20 @@ def pick(title, items, label):
 def slug(s):
     return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", s.lower())).strip("-")
 
+def deck_label(k):
+    return k.get("label") or " ".join(str(k[f]) for f in ("type", "number") if k.get(f) not in (None, ""))
+
+def split_label(s):
+    """'Session 4' -> {'type': 'Session', 'number': 4}. Anything without a number at the end stays a label."""
+    m = re.match(r"^(.*?)\s*(\d+)$", s)
+    return {"type": m.group(1), "number": int(m.group(2))} if m and m.group(1) else {"label": s}
+
 def pick_course(d):
-    return pick("Which course?", [c for c in d["courses"] if not c.get("hidden")], lambda c: c["title"])
+    return pick("Which course?", d["courses"], lambda c: c["title"])
 
 def pick_year(c, only_current=False):
     ys = [y for y in c["years"] if not only_current or y.get("status") != "archived"]
-    return pick("Which year?", ys, lambda y: f'{y["label"]}  ({y.get("status", "current")})')
+    return pick("Which year?", ys, lambda y: f'{y.get("label", y["id"])}  ({y.get("status", "current")})')
 
 def add_session(d):
     c = pick_course(d)
@@ -53,8 +61,13 @@ def add_session(d):
     f = dest / "slides.md"
     t = f.read_text(encoding="utf-8").replace("# Session title", "# " + title, 1).replace("Course name · Session number", f'{c["title"]} · {label}', 1)
     f.write_text(t, encoding="utf-8")
-    y.setdefault("decks", []).append(
-        {"title": title, "label": label, "updated": date.today().isoformat(), "file": f"{rel}/slides.md"})
+    ids = {k.get("id") for k in y.get("decks", [])}
+    base = slug(title) or folder
+    mid, n = base, 2
+    while mid in ids:
+        mid, n = f"{base}-{n}", n + 1
+    y.setdefault("decks", []).append({"id": mid, "title": title, **split_label(label),
+        "file": f"{rel}/slides.md", "updated": date.today().isoformat(), "visibility": "public"})
     save(d)
     print(f"\nDone. Write your slides in:\n  {rel}/slides.md\nPut images in its images/ folder and interactives in interactives/.")
 
@@ -63,7 +76,7 @@ def update_date(d):
     y = pick_year(c)
     if not y.get("decks"):
         print("This year has no sessions."); return
-    k = pick("Which session?", y["decks"], lambda k: f'{k.get("label", "")}  {k["title"]}  (updated {k.get("updated", "-")})')
+    k = pick("Which session?", y["decks"], lambda k: f'{deck_label(k)}  {k["title"]}  (updated {k.get("updated", "-")})')
     k["updated"] = ask("New date (YYYY-MM-DD)", date.today().isoformat())
     save(d)
     print("Date updated.")
@@ -73,7 +86,7 @@ def archive_year(d):
     y = pick_year(c, only_current=True)
     y["status"] = "archived"
     save(d)
-    print(f'\n{c["title"]} {y["label"]} is now in the Archive.')
+    print(f'\n{c["title"]} {y.get("label", y["id"])} is now in the Archive.')
     if ask("Start the next year now? (y/n)", "y").lower().startswith("y"):
         new_year(d, c)
 
@@ -82,10 +95,15 @@ def new_year(d, c=None):
     yid = ask("Year, for example 2027-28")
     if any(y["id"] == yid for y in c["years"]):
         print("That year already exists."); return
-    prog = ask("Programme", "PGDM")
+    prog = ask("Programme", c.get("programme") or "PGDM")
     note = ask("One line about this offering (can be empty)", "") or ""
-    c["years"].insert(0, {"id": yid, "label": yid, "status": "current", "programme": prog,
-                          "note": note, "decks": []})
+    ny = {"id": yid, "status": "current"}
+    if prog and prog != c.get("programme"):
+        ny["programme"] = prog
+    if note:
+        ny["note"] = note
+    ny["decks"] = []
+    c["years"].insert(0, ny)
     (ROOT / "content" / c["id"] / yid).mkdir(parents=True, exist_ok=True)
     save(d)
     print(f'\nDone. {c["title"]} {yid} is the current year. Add sessions with option 1.')

@@ -16,17 +16,17 @@ def last_commit_date(folder: Path):
 def main():
     d = json.loads(DATA.read_text(encoding="utf-8"))
     changed = 0
-    for c in d["courses"]:
-        for y in c["years"]:
-            for k in y.get("decks", []):
-                if k["file"].lower().endswith((".html", ".htm")):
-                    folder = (ROOT / k["file"])
-                else:
-                    folder = (ROOT / k["file"]).parent
-                day = last_commit_date(folder)
-                if day and k.get("updated") != day:
-                    k["updated"] = day
-                    changed += 1
+    decks = [k for c in d["courses"] for y in c["years"] for k in y.get("decks", [])]
+    decks += d.get("templates", {}).get("decks", [])
+    for k in decks:
+        if k["file"].lower().endswith((".html", ".htm")):
+            folder = ROOT / k["file"]
+        else:
+            folder = (ROOT / k["file"]).parent
+        day = last_commit_date(folder)
+        if day and k.get("updated") != day:
+            k["updated"] = day
+            changed += 1
     if changed:
         DATA.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
     print(f"Dates changed: {changed}")

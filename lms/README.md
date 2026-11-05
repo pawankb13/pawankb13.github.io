@@ -50,10 +50,42 @@ Folder names: `session-01-topic`, `module-5-topic` or `class-03-topic`. Use lowe
 3. Add one entry to that year's `decks` list in `courses.json`:
 
 ```json
-{ "title": "The Monetary System", "label": "Module 4", "updated": "2026-11-05", "file": "content/macro/2026-27/module-4-money/slides.md" }
+{
+  "id": "money",
+  "title": "The Monetary System",
+  "type": "Module",
+  "number": 4,
+  "file": "content/macro/2026-27/module-4-money/slides.md",
+  "updated": "2026-11-05",
+  "visibility": "public"
+}
 ```
 
-The order of the list is the order on the course page. Visitors can sort it by clicking the Session or Updated heading (up and down arrows). The Updated column fills itself. See "Automatic update dates" below.
+- `id` is the session's address: `slides.html#macro/2026-27/money`. Use lowercase and hyphens, unique within the year. **Do not change it once you have shared the link.** You can reorder, rename or delete other sessions and the link still works.
+- `type` and `number` make the label "Module 4". For something without a number, write `"label": "All layouts"` instead.
+- `updated` fills itself. See "Automatic update dates" below.
+
+The order of the list is the order on the course page. Visitors can sort it by clicking the Type or Updated heading (up and down arrows).
+
+## Show or hide a session or course
+
+Every session and every course has a `visibility` field with one of three values:
+
+| Value | Listed on the site | Opens from a link |
+|---|---|---|
+| `"public"` (or no field) | Yes | Yes |
+| `"unlisted"` | No | Yes |
+| `"hidden"` | No | No |
+
+- On a **session**: `"unlisted"` keeps it off the course page but its slides and Reading Material still open, for example to share with one group first. `"hidden"` switches it off completely.
+- On a **course**: `"unlisted"` keeps it off the home page but its course page works. `"hidden"` makes the course page say it is not available, and none of its slides or Reading Material open.
+- Counts on the home page and the Archive count only public sessions.
+
+Use it to prepare a session before class and switch it to `"public"` when you are ready. The files stay in the repository, and anyone who looks through the repository on GitHub can still read them.
+
+## Checking courses.json as you type
+
+The first line of `courses.json` points to `courses.schema.json`. VS Code reads it, suggests field names and values as you type, and underlines mistakes in red, for example `"visibility": "Public"`, `"status": "archieved"` or a session without an `id`.
 
 ## Archive
 
@@ -64,12 +96,14 @@ A course page opens on the current year, with one **Archive** button at the bott
 Add a year to the course's `years` list in `courses.json`, with `"status": "current"`. Change the old year to `"archived"` and it moves to the Archive. Then create `content/<course>/<year>/`.
 
 ```json
-{ "id": "2027-28", "label": "2027-28", "status": "current", "programme": "PGDM", "note": "One line about this offering.", "decks": [] }
+{ "id": "2027-28", "status": "current", "note": "One line about this offering.", "decks": [] }
 ```
+
+Leave out any field you do not need. `programme` is set once on the course (`"programme": "PGDM"`) and every year uses it. Add `"programme"` to a year only when that year is different. Add `"label"` only when the name shown should differ from the `id`. `term` and `note` are optional.
 
 ## Add a new course
 
-1. Add the course to `courses.json` with a short lowercase `id` (letters and numbers only).
+1. Add the course to `courses.json` with a short lowercase `id` (letters and numbers only), a `title`, a `description`, a `programme` and `"visibility": "public"`.
 2. Copy any file in `courses/`, rename it `<id>.html`, and change `data-course="..."` and the `<title>`.
 
 ## Writing slides
@@ -86,7 +120,7 @@ The first slide is the title slide. Text shrinks if a slide holds too much.
 
 ## Slide templates
 
-Open **Slide Templates** (`slides.html#templates-2026-27-1`) to see every layout. Its source is `content/templates/2026-27/all-layouts/slides.md`. Copy a slide from it and change the content.
+Open **Slide Templates** (`slides.html#templates/reference/all-layouts`) to see every layout. It is listed in the `templates` section at the end of `courses.json`, not under `courses`, so it never appears on the home page. Its source is `content/templates/2026-27/all-layouts/slides.md`. Copy a slide from it and change the content.
 
 | Layout line | Use |
 |---|---|
@@ -142,7 +176,7 @@ You can also put small demos straight into a slide with `<script>`. See `content
 
 - Right arrow, Space or Page Down: next. Left arrow or Page Up: previous.
 - F: full screen. N: speaker notes. P or the **Download PDF** button: opens the print dialog. Choose "Save as PDF" as the destination (one slide per page, light colours).
-- Each slide has its own address, for example `slides.html#macro-2026-27-2-4` (course, year, deck, slide).
+- Each slide has its own address, for example `slides.html#macro/2026-27/is-lm/4` (course, year, session id, slide). Older addresses such as `#macro-2026-27-2-4` still open, by position in the list.
 - Swipe on a phone or tablet.
 
 ## Notes, prices and code blocks

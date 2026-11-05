@@ -1,4 +1,4 @@
-/* Landing page and course pages. Both read courses.json.
+/* Landing page and course pages. Both read courses.json through assets/data.js (window.LMS).
    <body data-page="home">                         -> list of courses
    <body data-page="course" data-course="macro">   -> one course: current years, Archive, sessions
    Course page addresses:  courses/macro.html (current year)  |  #archive  |  #2025-26 (an archived year)
@@ -15,9 +15,10 @@
 
   const coursePage = (c) => url(c.page || `courses/${c.id}.html`);
   const isHtmlDeck = (d) => /\.html?$/i.test(d.file || "");
-  const deckHref = (c, y, i, d) => isHtmlDeck(d) ? url(d.file) : url("slides.html") + `#${c.id}-${y.id}-${i + 1}`;
+  const deckHref = (c, y, d) => isHtmlDeck(d) ? url(d.file) : url("slides.html") + "#" + LMS.key(c, y, d);
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
   const isArchived = (y) => y.status === "archived";
+  const { listed, opens } = LMS;   /* visibility: public = listed, unlisted = opens from a link only, hidden = off */
   /* "2026-11-05" -> "5 Nov 2026". Anything unreadable is shown as written; a missing date shows a dash. */
   const fmtDate = (v) => {
     if (!v) return "–";
@@ -30,9 +31,7 @@
   async function init() {
     let data;
     try {
-      const res = await fetch(url("courses.json"), { cache: "no-cache" });
-      if (!res.ok) throw new Error("HTTP " + res.status);
-      data = await res.json();
+      data = await LMS.load(root);
     } catch (err) {
       $("main").innerHTML = `<div class="notice"><h2>The course list did not load</h2>
         <p>The site reads <code>courses.json</code> through the browser. Browsers block this when a page is
@@ -51,8 +50,8 @@
 
   function renderHome(data) {
     const s = data.site || {};
-    const rows = data.courses.filter((c) => !c.hidden).map((c) => {
-      const decks = c.years.reduce((n, y) => n + (y.decks || []).length, 0);
+    const rows = data.courses.filter(listed).map((c) => {
+      const decks = c.years.reduce((n, y) => n + y.decks.filter(listed).length, 0);
       return `<li><a class="course-link" href="${coursePage(c)}">
           <div><h2>${esc(c.title)}</h2><p>${esc(c.description)}</p></div>
           <div class="course-stats">${plural(decks, "slide deck", "slide decks")}</div>
@@ -66,6 +65,11 @@
 
   function renderCourse(data) {
     const c = data.courses.find((x) => x.id === body.dataset.course);
+    if (c && !opens(c)) {
+      $("main").innerHTML = `<div class="notice"><h2>Course not available</h2>
+        <p>This course is not open yet. <a href="${url("index.html")}">See all courses</a>.</p></div>`;
+      return;
+    }
     if (!c) {
       $("main").innerHTML = `<div class="notice"><h2>Course not found</h2>
         <p>No course with id <code>${esc(body.dataset.course)}</code> in courses.json.</p></div>`;
@@ -111,7 +115,7 @@
         <p>When a year ends, set its <code>status</code> to <code>"archived"</code> in courses.json and it will appear here.</p></div></section>`;
     }
     const rows = archived.map((y) => {
-      const n = (y.decks || []).length;
+      const n = y.decks.filter(listed).length;
       const sub = [y.programme, y.term].filter(Boolean).join(" · ");
       return `<li><a class="course-link" href="#${esc(y.id)}">
           <div><h2>${esc(y.label || y.id)}</h2>${sub || y.note ? `<p>${esc([sub, y.note].filter(Boolean).join(". "))}</p>` : ""}</div>
@@ -128,7 +132,7 @@
   const sortState = { key: "", dir: 1 };
   const num = (s) => { const m = /\d+/.exec(s || ""); return m ? parseInt(m[0], 10) : Infinity; };
   function sortedDecks(decks) {
-    const rows = decks.map((d, i) => ({ d, i }));
+    const rows = decks.filter(listed).map((d) => ({ d, i: d.index }));
     const { key, dir } = sortState;
     if (!key) return rows;
     rows.sort((p, q) => {
@@ -140,7 +144,7 @@
         if (!b) return -1;
         r = a < b ? -1 : a > b ? 1 : 0;
       } else {
-        r = num(p.d.label) - num(q.d.label);
+        r = (p.d.number ?? num(p.d.label)) - (q.d.number ?? num(q.d.label));
         if (!r || !isFinite(r)) r = String(p.d.label || "").localeCompare(String(q.d.label || ""), undefined, { numeric: true });
       }
       return r * dir || p.i - q.i;
@@ -153,14 +157,14 @@
     return `<button type="button" class="sort${on ? " on" : ""}" data-sort="${key}" aria-label="Sort by ${text.toLowerCase()}, ${up ? "now ascending" : down ? "now descending" : "not sorted"}">
         ${text}<span class="arrows" aria-hidden="true"><span class="${up ? "act" : ""}">▲</span><span class="${down ? "act" : ""}">▼</span></span></button>`;
   }
-  const readingsHref = (c, y, i) => url("readings.html") + `#${c.id}-${y.id}-${i + 1}`;
+  const readingsHref = (c, y, d) => url("readings.html") + "#" + LMS.key(c, y, d);
   function deckRows(c, y, decks) {
     return `<ol class="deck-list">${sortedDecks(decks).map(({ d, i }) => `<li class="deck">
             <span class="deck-no">${esc(d.label || "Session " + (i + 1))}</span>
-            <a class="deck-title" href="${deckHref(c, y, i, d)}">${esc(d.title)}</a>
+            <a class="deck-title" href="${deckHref(c, y, d)}">${esc(d.title)}</a>
             <span class="deck-links">
-              <a class="deck-read" href="${readingsHref(c, y, i)}">Reading Material</a>
-              <a class="deck-open" href="${deckHref(c, y, i, d)}">Open slides</a>
+              <a class="deck-read" href="${readingsHref(c, y, d)}">Reading Material</a>
+              <a class="deck-open" href="${deckHref(c, y, d)}">Open slides</a>
             </span>
             <span class="deck-date"><span class="deck-date-label">Updated </span>${esc(fmtDate(d.updated))}</span>
           </li>`).join("")}</ol>`;
@@ -177,15 +181,15 @@
       if (!b) return;
       const key = b.dataset.sort;
       if (sortState.key === key) sortState.dir = -sortState.dir; else { sortState.key = key; sortState.dir = 1; }
-      wrap.innerHTML = deckTable(c, y, y.decks || []);
+      wrap.innerHTML = deckTable(c, y, y.decks);
       const again = wrap.querySelector(`[data-sort="${key}"]`);
       if (again) again.focus();
     });
   }
   function sessionList(c, y, isCurrent) {
-    const decks = y.decks || [];
+    const decks = y.decks.filter(listed);
     const list = decks.length
-      ? `<div id="deck-wrap">${deckTable(c, y, decks)}</div>`
+      ? `<div id="deck-wrap">${deckTable(c, y, y.decks)}</div>`
       : `<div class="notice"><h2>No slides for ${esc(y.label || y.id)} yet</h2>
           <p>Add a session to this year's <code>decks</code> list in courses.json.</p></div>`;
     const meta = [y.programme, y.term, plural(decks.length, "session", "sessions")].filter(Boolean).map(esc).join(" · ");
