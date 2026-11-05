@@ -20,35 +20,31 @@ Faculty Cabin (F61)
 ---
 ## Measuring Unemployment
 
-### The subheading goes on the line after the title
+### Working-Age Population:
+Individuals who fall within the age range considered suitable for participation in economic activities, as defined by a country's statistical standards. 
 
-- Title: one line starting with `##`
-- Subheading: one line starting with `###`, right after the title
-- Keep the subheading to one short line
-- Leave it out if the slide does not need it
+For India, individuals aged 15 years and above, as defined by the Periodic Labour Force Survey (PLFS). 
 
-Note:
-Section, quote and end slides do not take a subheading. They already have a subtitle line. In compare and two-column slides, a `###` after `|||` is a column title, not the subheading.
+### Employed:
+Individuals who are of working age and have performed some economic activity for pay or profit during a specified reference period.
+
+### Unemployed: 
+Individuals of working age who are not currently employed but are actively seeking employment and are available to work during a specified reference period.
+
+
 
 ---
 
-<!-- layout: image-left -->
+---
+
+<!-- layout: image-full -->
 ## Measuring Unemployment
 
-### Population Divided by Labor-Market Status
-
-$$ \text{Unemployment Rate} = \left(\frac{\text{Unemployed}}{\text{Labor Force}}\right) \times 100
-$$
-Where:
-$$
-\text{Labor Force} = \text{Employed} + \text{Unemployed}
-$$
-
-(images/image1.png)
+![Labour Market Status](images/image1.png)
 
 ---
-<!-- layout: image-left -->
-## Measuring Unemployment:
+
+## Measuring Unemployment
 
 ### Population Divided by Labor-Market Status
 
