@@ -34,6 +34,11 @@ Faculty Cabin (F61)
 - Unemployment reduces household income and purchasing power.
 - Lower income can reduce consumption and economic well-being.
 
+---
+## Why Do We Study Unemployment?
+
+### Unemployment as an Indicator of Economic Health
+
 **4. Economic and Social Stability**
 - Persistent unemployment can increase poverty and inequality.
 - It can create social and economic insecurity.
