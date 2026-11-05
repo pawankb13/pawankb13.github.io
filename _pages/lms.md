@@ -1,6 +1,6 @@
 ---
-permalink: /readings/
-title: "Readings"
+permalink: /lms/
+title: "LMS"
 author_profile: false
 ---
 
