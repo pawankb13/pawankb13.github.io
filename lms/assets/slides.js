@@ -105,11 +105,11 @@
   }
 
   /* ---------- Layouts: <!-- layout: name option --> as the first line of a slide ---------- */
-  /* Images, interactives and scripts in a deck are found next to the deck's own file. */
+  /* Images, interactives, scripts and links to files (readings) in a deck are found next to the deck's own file. */
   function resolveSrc(html) {
     if (!st.deckUrl) return html;
-    return html.replace(/(\ssrc=")([^"]+)(")/g, (m, a, p, z) =>
-      /^([a-z][a-z0-9+.-]*:|\/\/|#)/i.test(p) ? m : a + new URL(p, st.deckUrl).href + z);
+    return html.replace(/(\s(?:src|href)=")([^"]+)(")/g, (m, a, p, z) =>
+      /^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(p) ? m : a + new URL(p, st.deckUrl).href + z);
   }
 
   function parseLayout(src) {

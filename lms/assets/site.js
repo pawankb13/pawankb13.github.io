@@ -153,16 +153,20 @@
     return `<button type="button" class="sort${on ? " on" : ""}" data-sort="${key}" aria-label="Sort by ${text.toLowerCase()}, ${up ? "now ascending" : down ? "now descending" : "not sorted"}">
         ${text}<span class="arrows" aria-hidden="true"><span class="${up ? "act" : ""}">▲</span><span class="${down ? "act" : ""}">▼</span></span></button>`;
   }
+  const readingsHref = (c, y, i) => url("readings.html") + `#${c.id}-${y.id}-${i + 1}`;
   function deckRows(c, y, decks) {
-    return `<ol class="deck-list">${sortedDecks(decks).map(({ d, i }) => `<li><a class="deck" href="${deckHref(c, y, i, d)}">
+    return `<ol class="deck-list">${sortedDecks(decks).map(({ d, i }) => `<li class="deck">
             <span class="deck-no">${esc(d.label || "Session " + (i + 1))}</span>
-            <span class="deck-title">${esc(d.title)}</span>
-            <span class="deck-open">Open slides</span>
+            <a class="deck-title" href="${deckHref(c, y, i, d)}">${esc(d.title)}</a>
+            <span class="deck-links">
+              <a class="deck-read" href="${readingsHref(c, y, i)}">Reading Material</a>
+              <a class="deck-open" href="${deckHref(c, y, i, d)}">Open slides</a>
+            </span>
             <span class="deck-date"><span class="deck-date-label">Updated </span>${esc(fmtDate(d.updated))}</span>
-          </a></li>`).join("")}</ol>`;
+          </li>`).join("")}</ol>`;
   }
   function deckTable(c, y, decks) {
-    return `<div class="deck-head" role="group" aria-label="Sort sessions">${sortBtn("session", "Session")}<span class="head-topic">Topic</span><span class="head-gap"></span>${sortBtn("updated", "Updated")}</div>
+    return `<div class="deck-head" role="group" aria-label="Sort sessions">${sortBtn("session", "Type")}<span class="head-topic">Topic</span><span class="head-gap"></span>${sortBtn("updated", "Updated")}</div>
         ${deckRows(c, y, decks)}`;
   }
   function bindSort(c, y) {

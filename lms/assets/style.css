@@ -134,13 +134,16 @@ main.inner { padding-block: 40px 56px; }
 .deck-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .deck {
   display: grid; grid-template-columns: 110px minmax(0, 1fr) auto 110px; gap: 4px 20px; align-items: center;
-  padding: 16px 12px; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none;
+  padding: 16px 12px; border-bottom: 1px solid var(--line); color: var(--ink);
 }
+.deck-links { display: flex; align-items: center; gap: 8px 24px; flex-wrap: wrap; justify-content: flex-end; }
+.deck-read, .deck-open { color: var(--accent); font-weight: 600; font-size: 0.92rem; text-decoration: none; }
+.deck-read:hover, .deck-open:hover { text-decoration: underline; }
 .deck:hover { background: var(--raised); }
 .deck-no { color: var(--muted); font-size: 0.88rem; font-weight: 600; font-variant-numeric: tabular-nums; }
-.deck-title { font-weight: 600; font-size: 1.1rem; }
+.deck-title { font-weight: 600; font-size: 1.1rem; color: var(--ink); text-decoration: none; }
 .deck:hover .deck-title { color: var(--accent); }
-.deck-open { color: var(--accent); font-weight: 600; font-size: 0.92rem; white-space: nowrap; }
+.deck-open { white-space: nowrap; }
 .deck-date { color: var(--muted); font-size: 0.88rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .deck-date-label { display: none; }
 .deck-head {
@@ -173,6 +176,7 @@ main.inner { padding-block: 40px 56px; }
   .course-link { grid-template-columns: minmax(0, 1fr); padding-inline: 4px; }
   .course-stats { text-align: left; }
   .deck { grid-template-columns: minmax(0, 1fr); padding-inline: 4px; }
+  .deck-links { justify-content: flex-start; margin: 2px 0; }
   .deck-head { display: flex; gap: 24px; padding: 0 4px 10px; }
   .deck-head .head-topic, .deck-head .head-gap { display: none; }
   .deck-date-label { display: inline; }
@@ -208,3 +212,11 @@ main.inner { padding-block: 40px 56px; }
     color-scheme: light;
   }
 }
+
+/* Reading material page */
+.reading-body { max-width: 70ch; margin: 8px 0 32px; }
+.reading-body ul, .reading-body ol { padding-left: 1.3em; }
+.reading-body li { margin: 8px 0; }
+.reading-body a { color: var(--accent); }
+.reading-body img { max-width: 100%; }
+.reading-actions { margin: 0 0 40px; }

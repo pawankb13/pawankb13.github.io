@@ -175,6 +175,20 @@ form.mg[hidden]{display:none}
   const ghTree = (p) => `https://github.com/${gh().repo}/tree/${gh().branch}/${inRepo(p)}`;
   const ghFile = (p) => `https://github.com/${gh().repo}/blob/${gh().branch}/${inRepo(p)}`;
   const ghEdit = (p) => `https://github.com/${gh().repo}/edit/${gh().branch}/${inRepo(p)}`;
+  const blankReadings = () => `<!--
+  READING MATERIAL for this session.
+  Paste your links below, one per line, in this format:
+
+  - [Title of the reading](https://link-to-the-reading)
+
+  For a file you saved in this folder's readings/ folder:
+
+  - [Chapter 11](readings/chapter-11.pdf)
+
+  Anything that is not a link is shown as plain text.
+-->
+
+`;
   const blankSlides = (title, course, label) =>
     `# ${title}\n\n${course} · ${label}\n\n${(data.site || {}).instructor || ""}\n\n---\n\n## First slide\n\n- Point one\n- Point two\n`;
 
@@ -317,10 +331,12 @@ form.mg[hidden]{display:none}
       if ((y.decks || []).some((k) => k.file === rel)) return fail(f, "A module with this name already exists in this year.");
       (y.decks = y.decks || []).push({ title, label, updated: new Date().toISOString().slice(0, 10), file: rel });
       summary = `Added <strong>${esc(label)}: ${esc(title)}</strong> to ${esc(c.title)} ${esc(y.label || y.id)}.`;
-      extra = `<div class="step"><h2>Step 2. Create the blank slides</h2>
-        <p>This opens GitHub with the file name and a blank slide deck already filled in. Click <strong>Commit changes</strong> there.</p>
-        <a class="go" href="${esc(ghNew(rel, blankSlides(title, c.title, label)))}" target="_blank" rel="noopener">Create slides.md on GitHub</a>
-        <p>File: <code>${esc(rel)}</code></p></div>`;
+      const dir = rel.replace(/\/[^\/]*$/, "");
+      extra = `<div class="step"><h2>Step 2. Create the two files for this module</h2>
+        <p>Each button opens GitHub with the file name and content already filled in. Click <strong>Commit changes</strong> on each.</p>
+        <a class="go" href="${esc(ghNew(rel, blankSlides(title, c.title, label)))}" target="_blank" rel="noopener">1. Create slides.md on GitHub</a>
+        <a class="go" href="${esc(ghNew(dir + "/readings.md", blankReadings()))}" target="_blank" rel="noopener">2. Create readings.md on GitHub</a>
+        <p>Folder: <code>${esc(dir)}</code>. You paste reading links into <code>readings.md</code> later.</p></div>`;
 
     } else if (mode === "delmod") {
       const y = c && c.years.find((x) => x.id === val(f, "year"));
@@ -406,6 +422,8 @@ form.mg[hidden]{display:none}
       (c.years || []).forEach((y) => (y.decks || []).forEach((k) => {
         if (/\.html?$/i.test(k.file)) return;
         tasks.push(exists(k.file).then((ok) => { n++; if (!ok) bad.push(`Missing file for ${c.title} ${y.id}, ${k.label || ""} ${k.title}: ${k.file}`); }));
+        const rd = k.file.replace(/[^\/]*$/, "") + "readings.md";
+        tasks.push(exists(rd).then((ok) => { n++; if (!ok) bad.push(`No reading page for ${c.title} ${y.id}, ${k.label || ""} ${k.title}. Create ${rd}`); }));
       }));
     });
     await Promise.all(tasks);

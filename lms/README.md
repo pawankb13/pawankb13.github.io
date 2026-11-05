@@ -24,6 +24,7 @@ content/
         slides.md           The slides
         images/             Images used in these slides
         interactives/       HTML interactives used in these slides
+        readings/           PDFs and other reading material for this session
       module-5-is-lm/
         slides.md
         images/
@@ -104,7 +105,7 @@ Open **Slide Templates** (`slides.html#templates-2026-27-1`) to see every layout
 | `discussion` | Open question |
 | `case` | Case study |
 | `takeaways` | Summary points with ticks |
-| `references` | Reading list |
+| `references` | Reading list (links work too; the full list lives in `readings.md`) |
 | `end` | Closing slide |
 | `image-right` / `image-left` | Text on one side, one image on the other |
 | `image-full` | One image across the slide, title on a band |
@@ -209,3 +210,33 @@ Open `manage.html` on your published site, for example `https://pawankb13.github
 Each change gives you the new `courses.json` to paste on GitHub (with a button that opens the file for you, a Copy button and a Download button). Adding gives a button that opens GitHub with the new slides or course page already filled in. Deleting gives links to the files and folders to remove on GitHub. Deleting asks you to tick a confirmation box first. The page checks the new file before showing it, and stops if it would be invalid.
 
 The buttons use the `github` setting in `courses.json` (`repo`, `branch`, `folder`). Change it if your repository, branch or folder name differs.
+
+## Reading material
+
+1. Put the files (PDF, Word, Excel) in the session's `readings/` folder, for example `content/macro/2026-27/module-5-is-lm/readings/mankiw-ch11.pdf`.
+2. Add a reading list slide at the end of that session's `slides.md`:
+
+```
+<!-- layout: references -->
+## Reading
+
+- [Mankiw, Chapter 11: Aggregate demand](readings/mankiw-ch11.pdf)
+- [RBI Monetary Policy Report](https://www.rbi.org.in/)
+- Dornbusch, Fischer and Startz. *Macroeconomics*. McGraw Hill.
+```
+
+A link to a file in `readings/` opens from the slide. A link starting with `https://` opens the website in a new tab. A line with no link is a plain reference. Keep files small, since GitHub Pages is not built for large files.
+
+## Reading Material page (one per session)
+
+Each session row on the course page has a **Reading Material** link before **Open slides**. It opens a page for that session only. The page shows the file `readings.md` from the session's own folder, for example `content/macro/2026-27/module-5-is-lm/readings.md`.
+
+To add links, open that file on GitHub, click the pencil icon, paste your links, and commit:
+
+```
+- [Title of the reading](https://link-to-the-reading)
+- [Chapter 11](readings/chapter-11.pdf)
+- A book reference with no link
+```
+
+The second line opens a file saved in the session's `readings/` folder. Every session folder has a `readings.md`, including the `_new-session/` starter. The Manage page's Add module gives a button that creates it. Editing `readings.md` also changes the session's Updated date.
