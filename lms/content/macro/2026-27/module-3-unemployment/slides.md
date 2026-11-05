@@ -21,23 +21,26 @@ Faculty Cabin (F61)
 ## Measuring Unemployment
 
 ### Working-Age Population:
-Individuals who fall within the age range considered suitable for participation in economic activities, as defined by a country's statistical standards. 
+- Individuals who fall within the age range considered suitable for participation in economic activities, as defined by a country's statistical standards. 
 
-For India, individuals aged 15 years and above, as defined by the Periodic Labour Force Survey (PLFS). 
+- For India, individuals aged 15 years and above, as defined by the Periodic Labour Force Survey (PLFS). 
 
 ### Employed:
-Individuals who are of working age and have performed some economic activity for pay or profit during a specified reference period.
+- Individuals who are of working age and have performed some economic activity for pay or profit during a specified reference period.
 
 ### Unemployed: 
-Individuals of working age who are not currently employed but are actively seeking employment and are available to work during a specified reference period.
+- Individuals of working age who are not currently employed but are actively seeking employment and are available to work during a specified reference period.
 
 
 ---
 ## Measuring Unemployment
 
-## Measuring Unemployment
+<div style="text-align: center;">
 
-![Labour Market Classification](images/image1.png)
+<img src="images/image1.png" 
+     style="width: 75%; height: auto; object-fit: contain;">
+
+</div>
 
 ---
 ## Measuring Unemployment
@@ -50,6 +53,7 @@ Where:
 $$
 \text{Labor Force} = \text{Employed} + \text{Unemployed}
 $$
+
 
 ___
 
