@@ -89,7 +89,7 @@
               "number": 1,
               "file": "content/macro/2026-27/module-1-measuring-output/slides.md",
               "updated": "2026-07-20",
-              "visibility": "public"
+              "visibility": "hidden"
             },
             {
               "id": "unemployment",
@@ -107,13 +107,15 @@
               "number": 5,
               "file": "content/macro/2026-27/module-5-is-lm/slides.md",
               "updated": "2026-10-14",
-              "visibility": "public"
+              "visibility": "hidden"
             }
           ]
         },
         {
           "id": "2025-26",
+          
           "status": "archived",
+          
           "decks": [
             {
               "id": "introduction",
@@ -122,7 +124,7 @@
               "number": 1,
               "file": "content/macro/2025-26/session-01-introduction/slides.md",
               "updated": "2026-02-18",
-              "visibility": "public"
+              "visibility": "hidden"
             }
           ]
         }
