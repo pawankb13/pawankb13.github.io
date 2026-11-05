@@ -41,7 +41,7 @@ Faculty Cabin (F61)
 
 **4. Economic and Social Stability**
    - Persistent unemployment can increase poverty and inequality.
-   - It can create social and economic insecurity.
+   - It can create social and economic insecurity as well as inequality.
 
 >Key Takeway: Unemployment is not just a labour-market problem; it represents a loss of productive resources and economic welfare.
 
