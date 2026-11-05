@@ -18,9 +18,22 @@ Faculty Cabin (F61)
 5. Policy trade-offs using short-run and long-run. 
 
 ---
+## Measuring Unemployment
+
+### The subheading goes on the line after the title
+
+- Title: one line starting with `##`
+- Subheading: one line starting with `###`, right after the title
+- Keep the subheading to one short line
+- Leave it out if the slide does not need it
+
+Note:
+Section, quote and end slides do not take a subheading. They already have a subtitle line. In compare and two-column slides, a `###` after `|||` is a column title, not the subheading.
+
+---
 
 <!-- layout: image-left -->
-## Measuring Unemployment:
+## Measuring Unemployment
 
 ### Population Divided by Labor-Market Status
 
@@ -31,7 +44,7 @@ $$
 \text{Labor Force} = \text{Employed} + \text{Unemployed}
 $$
 
-![Sample chart. Source: add your source here](images/image1.png)
+(images/image1.png)
 
 ---
 <!-- layout: image-left -->
@@ -48,7 +61,6 @@ $$
 
 ___
 
-<!-- layout: Topics -->
 ## Title and subheading
 
 ### The subheading goes on the line after the title
