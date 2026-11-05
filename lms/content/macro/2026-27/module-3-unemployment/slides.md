@@ -31,10 +31,6 @@ Individuals who are of working age and have performed some economic activity for
 ### Unemployed: 
 Individuals of working age who are not currently employed but are actively seeking employment and are available to work during a specified reference period.
 
-
-
----
-
 ---
 
 <!-- layout: image-full -->
