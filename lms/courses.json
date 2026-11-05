@@ -23,7 +23,7 @@
       "title": "Managerial Economics",
       "description": "Microeconomic tools for business decisions: demand, elasticity, costs, market structure and pricing.",
       "programme": "PGDM",
-      "visibility": "public",
+      "visibility": "hidden",
       "years": [
         {
           "id": "2026-27",
@@ -138,7 +138,7 @@
       "title": "Behavioral Economics",
       "description": "How real people decide: heuristics, biases, prospect theory, time preferences and nudges.",
       "programme": "PGDM",
-      "visibility": "public",
+      "visibility": "hidden",
       "years": [
         {
           "id": "2026-27",
@@ -167,7 +167,7 @@
       "id": "econometrics",
       "title": "Econometrics",
       "description": "Regression and causal inference with applied examples from development and finance.",
-      "visibility": "public",
+      "visibility": "hidden",
       "years": [
         {
           "id": "2026-27",
@@ -195,7 +195,7 @@
       "id": "research",
       "title": "Research Courses",
       "description": "Research design, literature review, data and academic writing.",
-      "visibility": "public",
+      "visibility": "hidden",
       "years": [
         {
           "id": "2026-27",
