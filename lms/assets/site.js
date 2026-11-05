@@ -1,6 +1,7 @@
 /* Landing page and course pages. Both read courses.json.
    <body data-page="home">                         -> list of courses
-   <body data-page="course" data-course="macro">   -> one course, years of teaching, slide decks
+   <body data-page="course" data-course="macro">   -> one course: current years, Archive, sessions
+   Course page addresses:  courses/macro.html (current year)  |  #archive  |  #2025-26 (an archived year)
    data-root points from the page to the site folder ("." or ".."). */
 (() => {
   "use strict";
@@ -16,6 +17,15 @@
   const isHtmlDeck = (d) => /\.html?$/i.test(d.file || "");
   const deckHref = (c, y, i, d) => isHtmlDeck(d) ? url(d.file) : url("slides.html") + `#${c.id}-${y.id}-${i + 1}`;
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
+  const isArchived = (y) => y.status === "archived";
+  /* "2026-11-05" -> "5 Nov 2026". Anything unreadable is shown as written; a missing date shows a dash. */
+  const fmtDate = (v) => {
+    if (!v) return "–";
+    const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(v);
+    if (!m) return v;
+    const dt = new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
+    return dt.toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric", timeZone: "UTC" });
+  };
 
   async function init() {
     let data;
@@ -30,7 +40,9 @@
       return;
     }
     const s = data.site || {};
-    $("brand").textContent = s.instructor || "Courses";
+    const brand = $("brand");
+    brand.textContent = s.instructor || "Home";
+    if (s.homepage) brand.href = s.homepage;
     $("site-sub").textContent = s.institution || "";
     $("foot").textContent = [s.instructor, s.institution].filter(Boolean).join(", ");
     if (body.dataset.page === "course") renderCourse(data);
@@ -60,48 +72,78 @@
       return;
     }
     document.title = c.title;
+    const current = c.years.filter((y) => !isArchived(y));
+    const archived = c.years.filter(isArchived);
 
     const draw = () => {
       const want = location.hash.replace(/^#/, "");
-      const y = c.years.find((x) => x.id === want) || c.years.find((x) => x.status === "current") || c.years[0];
-      if (!y) {
-        $("main").innerHTML = head(c) + `<div class="notice"><h2>No years yet</h2><p>Add a year for this course in courses.json.</p></div>`;
-        return;
+      const inArchiveList = want === "archive";
+      const y = inArchiveList ? null : (c.years.find((x) => x.id === want) || current[0] || archived[0]);
+      const inArchive = inArchiveList || (y && isArchived(y));
+
+      const now = current[0];
+      const toCurrent = now
+        ? `<a class="switch-btn" href="#${esc(now.id)}">‹ Current year ${esc(now.label || now.id)}</a>` : "";
+      const toArchive = archived.length ? `<a class="switch-btn" href="#archive">Archive ›</a>` : "";
+      const foot = (btn) => `<div class="switch">${btn}</div>`;
+
+      if (inArchiveList) {
+        $("main").innerHTML = head(c, "") + archiveList(c, archived) + foot(toCurrent);
+      } else if (!y) {
+        $("main").innerHTML = head(c, "") + `<div class="notice"><h2>No years yet</h2><p>Add a year for this course in courses.json.</p></div>`;
+      } else if (inArchive) {
+        $("main").innerHTML = head(c, `<a href="#archive">‹ Archive</a>`) + sessionList(c, y) + foot(toCurrent);
+      } else {
+        $("main").innerHTML = head(c, "") + sessionList(c, y, true) + (toArchive ? foot(toArchive) : "");
       }
-      const pills = c.years.map((yr) => {
-        const cur = yr.id === y.id ? ' aria-current="page"' : "";
-        const tag = yr.status === "current" ? " <small>Current</small>" : "";
-        return `<a class="year-pill" href="#${esc(yr.id)}"${cur}>${esc(yr.label || yr.id)}${tag}</a>`;
-      }).join("");
-
-      const decks = y.decks || [];
-      const list = decks.length
-        ? `<ol class="deck-list">${decks.map((d, i) => `<li><a class="deck" href="${deckHref(c, y, i, d)}">
-              <span class="deck-no">${esc(d.label || "Deck " + (i + 1))}</span>
-              <span class="deck-title">${esc(d.title)}</span>
-              <span class="deck-open">Open slides<span class="deck-kind">${isHtmlDeck(d) ? "HTML file" : "Markdown"}</span></span>
-            </a></li>`).join("")}</ol>`
-        : `<div class="notice"><h2>No slides for ${esc(y.label || y.id)} yet</h2>
-            <p>Add a deck to this year's <code>decks</code> list in courses.json.</p></div>`;
-
-      const meta = [y.programme, y.term, plural(decks.length, "deck", "decks")].filter(Boolean).map(esc).join(" · ");
-      $("main").innerHTML = head(c) + `
-        <section class="years" aria-label="Year of teaching">
-          <span class="label">Year of teaching</span>
-          <nav class="year-nav">${pills}</nav>
-        </section>
-        <section aria-label="Slides for ${esc(y.label || y.id)}">
-          <div class="year-head"><h2>${esc(y.label || y.id)} lecture slides</h2><span class="year-meta">${meta}</span></div>
-          ${y.note ? `<p class="year-note">${esc(y.note)}</p>` : ""}
-          ${list}
-        </section>`;
     };
     addEventListener("hashchange", draw);
     draw();
   }
 
-  function head(c) {
-    return `<p class="crumb"><a href="${url("index.html")}">‹ All courses</a></p>
+  /* Previous years: one row per archived year. A click opens that year's sessions. */
+  function archiveList(c, archived) {
+    if (!archived.length) {
+      return `<section aria-label="Archive"><div class="notice"><h2>No archived years yet</h2>
+        <p>When a year ends, set its <code>status</code> to <code>"archived"</code> in courses.json and it will appear here.</p></div></section>`;
+    }
+    const rows = archived.map((y) => {
+      const n = (y.decks || []).length;
+      const sub = [y.programme, y.term].filter(Boolean).join(" · ");
+      return `<li><a class="course-link" href="#${esc(y.id)}">
+          <div><h2>${esc(y.label || y.id)}</h2>${sub || y.note ? `<p>${esc([sub, y.note].filter(Boolean).join(". "))}</p>` : ""}</div>
+          <div class="course-stats">${plural(n, "session", "sessions")}</div>
+        </a></li>`;
+    }).join("");
+    return `<section aria-label="Archive">
+        <div class="year-head"><h2>Archive</h2><span class="year-meta">Previous years of teaching</span></div>
+        <ul class="course-list">${rows}</ul>
+      </section>`;
+  }
+
+  /* The sessions of one year, in the order listed in courses.json. */
+  function sessionList(c, y, isCurrent) {
+    const decks = y.decks || [];
+    const list = decks.length
+      ? `<div class="deck-head" aria-hidden="true"><span>Session</span><span>Topic</span><span></span><span>Updated</span></div>
+        <ol class="deck-list">${decks.map((d, i) => `<li><a class="deck" href="${deckHref(c, y, i, d)}">
+            <span class="deck-no">${esc(d.label || "Session " + (i + 1))}</span>
+            <span class="deck-title">${esc(d.title)}</span>
+            <span class="deck-open">Open slides</span>
+            <span class="deck-date"><span class="deck-date-label">Updated </span>${esc(fmtDate(d.updated))}</span>
+          </a></li>`).join("")}</ol>`
+      : `<div class="notice"><h2>No slides for ${esc(y.label || y.id)} yet</h2>
+          <p>Add a session to this year's <code>decks</code> list in courses.json.</p></div>`;
+    const meta = [y.programme, y.term, plural(decks.length, "session", "sessions")].filter(Boolean).map(esc).join(" · ");
+    return `<section aria-label="Sessions for ${esc(y.label || y.id)}">
+        <div class="year-head"><h2>${esc(y.label || y.id)} sessions${isCurrent ? ' <small class="now">Current</small>' : ""}</h2><span class="year-meta">${meta}</span></div>
+        ${y.note ? `<p class="year-note">${esc(y.note)}</p>` : ""}
+        ${list}
+      </section>`;
+  }
+
+  function head(c, extraCrumb) {
+    return `<p class="crumb"><a href="${url("index.html")}">‹ All courses</a>${extraCrumb ? ` <span class="crumb-sep">/</span> ${extraCrumb}` : ""}</p>
       <h1 class="page-title">${esc(c.title)}</h1>
       <p class="lede">${esc(c.description)}</p>`;
   }

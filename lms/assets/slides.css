@@ -2,6 +2,7 @@
 html, body { height: 100%; }
 .deck-body {
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto minmax(0, 1fr) auto auto;
   background: var(--raised);
   overflow: hidden;
@@ -215,3 +216,27 @@ html, body { height: 100%; }
 .layout-code .cols { grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr); }
 .layout-code pre { white-space: pre-wrap; overflow-wrap: anywhere; }
 .slide:not(.opt-cover) .media img { object-position: center bottom; }
+
+@media print {
+  @page { size: 1280px 720px; margin: 0; }
+  html, body { height: auto; background: #fff; }
+  .deck-body { display: block; overflow: visible; background: #fff; }
+  .deck-bar, .deck-controls, .notes { display: none !important; }
+  .viewport { display: block; padding: 0; }
+  .frame { width: 1280px !important; height: auto !important; }
+  .stage { position: static; width: 1280px; height: auto; transform: none !important; }
+  .slide, .slide[hidden] {
+    display: flex !important; position: relative; inset: auto; width: 1280px; height: 720px;
+    box-shadow: none; border: 0; break-after: page; page-break-after: always;
+  }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+}
+
+.rotate-hint { display: none; }
+.deck-controls .btn { white-space: nowrap; }
+@media (max-width: 640px) {
+  .deck-controls .btn { font-size: 0.9rem; padding: 8px 10px; }
+}
+@media (max-width: 640px) and (orientation: portrait) {
+  .rotate-hint { display: block; margin: 0; padding: 6px 16px; font-size: 0.85rem; color: var(--muted); text-align: center; background: var(--surface); border-top: 1px solid var(--line); }
+}

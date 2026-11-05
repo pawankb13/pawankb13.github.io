@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Manage Courses</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="./assets/style.css">
+<script src="./assets/theme.js"></script>
+<style>
+#main{text-align:center}
+#main .lede{margin-inline:auto}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin:0 0 28px}
+.tab{padding:8px 18px;border:1px solid var(--accent);border-radius:999px;background:transparent;color:var(--accent);font:600 .92rem var(--f-body,inherit);cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);color:var(--on-accent)}
+form.mg{display:grid;gap:16px;max-width:560px;margin:0 auto 28px;text-align:left}
+form.mg[hidden]{display:none}
+.mg label{display:grid;gap:6px;font-weight:600;font-size:.92rem;color:var(--heading)}
+.mg label small{font-weight:400;color:var(--muted)}
+.mg input[type=text],.mg select{font:inherit;font-weight:400;padding:9px 12px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink);width:100%;box-sizing:border-box}
+.mg input:focus,.mg select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.mg .check{display:flex;gap:10px;align-items:center;font-weight:400}
+.mg .check input{width:18px;height:18px;accent-color:var(--accent)}
+.go,.copy{padding:9px 20px;border:1px solid var(--accent);border-radius:999px;background:var(--accent);color:var(--on-accent);font:600 .92rem var(--f-body,inherit);cursor:pointer;justify-self:center}
+.copy{padding:6px 16px;background:transparent;color:var(--accent)}
+.err{color:#b42318;font-weight:600;margin:0;text-align:center}
+:root.dark-mode .err{color:#fca5a5}
+.out{display:none;max-width:860px;margin:0 auto;text-align:left}
+.out.show{display:block}
+.out h2{font-size:1.25rem;margin:0 0 4px;color:var(--heading)}
+.out .step{margin:0 0 28px}
+.out .copy{display:block;margin-inline:auto}
+.out>p,.out .step h2,.out .step p{text-align:center}
+.out p{margin:4px 0 10px;color:var(--muted)}
+.out pre,.out .path{margin:0 0 10px;padding:12px 14px;background:var(--code);border:1px solid var(--line);border-radius:4px;overflow:auto;max-height:280px;font:.82rem/1.5 var(--f-mono,monospace);color:var(--ink);white-space:pre}
+.out .path{white-space:pre-wrap;word-break:break-all;max-height:none}
+.done{padding:14px 16px;border:1px solid var(--line);border-left:4px solid var(--accent);background:var(--surface);border-radius:4px;margin:0 auto 24px;max-width:860px;text-align:left}
+</style>
+</head>
+<body>
+<header class="site">
+  <div class="inner">
+    <div class="site-id">
+      <a class="brand" id="brand" href="https://pawankb13.github.io">Courses</a>
+      <span class="site-sub" id="site-sub"></span>
+    </div>
+    <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+      <span class="theme-toggle__track">
+        <span class="theme-toggle__thumb">
+          <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"></path></svg>
+          <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        </span>
+      </span>
+      <span class="screen-reader-text">Toggle dark mode</span>
+    </button>
+  </div>
+</header>
+<main class="inner" id="main">
+  <h1 class="page-title">Manage courses</h1>
+  <p class="lede">Make a change here. The page writes the new courses.json for you to paste on GitHub. Nothing is saved until you paste it.</p>
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" data-mode="add" aria-selected="true">Add a session</button>
+    <button class="tab" role="tab" data-mode="archive" aria-selected="false">Archive a year</button>
+    <button class="tab" role="tab" data-mode="newyear" aria-selected="false">Start a new year</button>
+    <button class="tab" role="tab" data-mode="course" aria-selected="false">Add a course</button>
+  </div>
+
+  <form class="mg" id="f-add" data-mode="add">
+    <label>Course <select name="course"></select></label>
+    <label>Year <select name="year"></select></label>
+    <label>Session title <small>What students see, for example Elasticity</small><input type="text" name="title" required></label>
+    <label>Label <small>For example Session 4 or Module 4</small><input type="text" name="label" required></label>
+    <p class="err" hidden></p>
+    <button class="go" type="submit">Make the changes</button>
+  </form>
+
+  <form class="mg" id="f-archive" data-mode="archive" hidden>
+    <label>Course <select name="course"></select></label>
+    <label>Year to archive <select name="year"></select></label>
+    <p class="err" hidden></p>
+    <button class="go" type="submit">Make the changes</button>
+  </form>
+
+  <form class="mg" id="f-newyear" data-mode="newyear" hidden>
+    <label>Course <select name="course"></select></label>
+    <label>New year <small>For example 2027-28</small><input type="text" name="year" required></label>
+    <label>Programme <input type="text" name="programme" value="PGDM"></label>
+    <label>One line about this offering <small>Can be empty</small><input type="text" name="note"></label>
+    <label class="check"><input type="checkbox" name="archiveOld" checked> Move the current year to the Archive</label>
+    <p class="err" hidden></p>
+    <button class="go" type="submit">Make the changes</button>
+  </form>
+
+  <form class="mg" id="f-course" data-mode="course" hidden>
+    <label>Course title <small>For example Public Policy</small><input type="text" name="title" required></label>
+    <label>Short description <small>One line shown on the course page</small><input type="text" name="description"></label>
+    <label>First year <small>For example 2026-27</small><input type="text" name="year" required></label>
+    <label>Programme <input type="text" name="programme" value="PGDM"></label>
+    <p class="err" hidden></p>
+    <button class="go" type="submit">Make the changes</button>
+  </form>
+
+  <div class="out" id="out" aria-live="polite"></div>
+</main>
+<footer class="foot"><div class="inner" id="foot"></div></footer>
+<script>
+(() => {
+  "use strict";
+  const $ = (s, r = document) => r.querySelector(s);
+  const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  let data, starter = "# Session title\n\n---\n\n## First slide\n\n- Point one\n";
+
+  async function init() {
+    try {
+      const r = await fetch("courses.json", { cache: "no-cache" });
+      if (!r.ok) throw 0;
+      data = await r.json();
+    } catch (e) {
+      $("#main").innerHTML = '<div class="notice"><h2>courses.json did not load</h2><p>Open this page from the published site or from a local server.</p></div>';
+      return;
+    }
+    fetch("_new-session/slides.md").then((r) => r.ok ? r.text() : null).then((t) => { if (t) starter = t; }).catch(() => {});
+    const s = data.site || {};
+    $("#brand").textContent = s.instructor || "Home";
+    if (s.homepage) $("#brand").href = s.homepage;
+    $("#site-sub").textContent = s.institution || "";
+    $("#foot").textContent = [s.instructor, s.institution].filter(Boolean).join(", ");
+
+    const courses = data.courses.filter((c) => !c.hidden);
+    document.querySelectorAll("select[name=course]").forEach((sel) => {
+      sel.innerHTML = courses.map((c) => `<option value="${esc(c.id)}">${esc(c.title)}</option>`).join("");
+    });
+    const fillYears = (form, onlyCurrent) => {
+      const c = data.courses.find((x) => x.id === $("[name=course]", form).value);
+      const ys = c.years.filter((y) => !onlyCurrent || y.status !== "archived");
+      $("[name=year]", form).innerHTML = ys.map((y) => `<option value="${esc(y.id)}">${esc(y.label || y.id)} (${esc(y.status || "current")})</option>`).join("");
+    };
+    const fa = $("#f-add"), fr = $("#f-archive");
+    $("[name=course]", fa).onchange = () => fillYears(fa, false);
+    $("[name=course]", fr).onchange = () => fillYears(fr, true);
+    fillYears(fa, false); fillYears(fr, true);
+
+    document.querySelectorAll(".tab").forEach((t) => t.onclick = () => {
+      document.querySelectorAll(".tab").forEach((x) => x.setAttribute("aria-selected", String(x === t)));
+      document.querySelectorAll("form.mg").forEach((f) => f.hidden = f.dataset.mode !== t.dataset.mode);
+      $("#out").className = "out"; $("#out").innerHTML = "";
+    });
+    document.querySelectorAll("form.mg").forEach((f) => f.onsubmit = (e) => { e.preventDefault(); run(f); });
+  }
+
+  function fail(f, msg) { const p = $(".err", f); p.textContent = msg; p.hidden = !msg; return !msg; }
+  const val = (f, n) => ($("[name=" + n + "]", f).value || "").trim();
+
+  async function courseTemplate(model, id, title) {
+    try {
+      const r = await fetch(`courses/${model.id}.html`);
+      if (!r.ok) throw 0;
+      let t = await r.text();
+      t = t.replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`).replace(/data-course="[^"]*"/, `data-course="${id}"`);
+      return t;
+    } catch (e) {
+      return `Copy courses/${model.id}.html, then change the title line and data-course="${model.id}" to data-course="${id}".`;
+    }
+  }
+
+  async function run(f) {
+    const d = JSON.parse(JSON.stringify(data));
+    const mode = f.dataset.mode;
+    const c = mode === "course" ? null : d.courses.find((x) => x.id === val(f, "course"));
+    let summary, extra = "";
+    if (mode === "course") {
+      const title = val(f, "title"), yid = val(f, "year");
+      if (!title || !yid) return fail(f, "Enter a title and a year.") || null;
+      const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "").slice(0, 24);
+      if (!id) return fail(f, "Use letters or numbers in the title.") || null;
+      if (d.courses.some((x) => x.id === id)) return fail(f, "A course with this name already exists.") || null;
+      fail(f, "");
+      d.courses.push({ id, title, description: val(f, "description"), years: [
+        { id: yid, label: yid, status: "current", programme: val(f, "programme"), note: "", decks: [] }] });
+      const model = data.courses.find((x) => !x.hidden) || data.courses[0];
+      const page = await courseTemplate(model, id, title);
+      summary = `Added the course <strong>${esc(title)}</strong> with ${esc(yid)} as its current year.`;
+      extra = `<div class="step"><h2>Step 2. Create the course page</h2>
+        <p>On GitHub, open the courses folder inside your portal folder, click Add file, then Create new file. Type this name exactly, then paste the page below and commit.</p>
+        <div class="path" id="p-path">courses/${esc(id)}.html</div><button class="copy" data-copy="p-path" type="button">Copy file name</button>
+        <pre id="p-page">${esc(page)}</pre><button class="copy" data-copy="p-page" type="button">Copy page</button></div>
+        <p>Then use Add a session to put sessions in this course.</p>`;
+    } else if (mode === "add") {
+      const y = c.years.find((x) => x.id === val(f, "year"));
+      const title = val(f, "title"), label = val(f, "label");
+      if (!title || !label) return fail(f, "Enter a title and a label.") || null;
+      const folder = slug(label + " " + title);
+      const rel = `content/${c.id}/${y.id}/${folder}/slides.md`;
+      if ((y.decks || []).some((k) => k.file === rel)) return fail(f, "A session with this name already exists.") || null;
+      fail(f, "");
+      (y.decks = y.decks || []).push({ title, label, updated: new Date().toISOString().slice(0, 10), file: rel });
+      summary = `Added <strong>${esc(label)}: ${esc(title)}</strong> to ${esc(c.title)} ${esc(y.label || y.id)}.`;
+      extra = `<div class="step"><h2>Step 2. Create the slides file</h2>
+        <p>On GitHub, open your portal folder, click Add file, then Create new file. Type this name exactly, then paste the starter slides below and commit.</p>
+        <div class="path" id="p-path">${esc(rel)}</div><button class="copy" data-copy="p-path" type="button">Copy file name</button>
+        <pre id="p-start">${esc(starter)}</pre><button class="copy" data-copy="p-start" type="button">Copy starter slides</button></div>`;
+    } else if (mode === "archive") {
+      const y = c.years.find((x) => x.id === val(f, "year"));
+      if (!y) return fail(f, "There is no current year to archive.") || null;
+      fail(f, "");
+      y.status = "archived";
+      summary = `<strong>${esc(c.title)} ${esc(y.label || y.id)}</strong> moves to the Archive.`;
+    } else {
+      const yid = val(f, "year");
+      if (!yid) return fail(f, "Enter the new year.") || null;
+      if (c.years.some((x) => x.id === yid)) return fail(f, "This year already exists.") || null;
+      fail(f, "");
+      if ($("[name=archiveOld]", f).checked) c.years.forEach((x) => { if (x.status !== "archived") x.status = "archived"; });
+      c.years.unshift({ id: yid, label: yid, status: "current", programme: val(f, "programme"), note: val(f, "note"), decks: [] });
+      summary = `<strong>${esc(c.title)} ${esc(yid)}</strong> is now the current year.` + ($("[name=archiveOld]", f).checked ? " Earlier years move to the Archive." : "");
+    }
+    const json = JSON.stringify(d, null, 2) + "\n";
+    const o = $("#out");
+    o.className = "out show";
+    o.innerHTML = `<div class="done">${summary}</div>
+      <div class="step"><h2>Step 1. Replace courses.json</h2>
+        <p>On GitHub, open courses.json and click the pencil icon. Select all, paste this, and commit.</p>
+        <pre id="p-json">${esc(json)}</pre>
+        <button class="copy" data-copy="p-json" type="button">Copy courses.json</button></div>
+      ${extra}
+      <p>After you commit, reload this page so it reads the new file.</p>`;
+    o.querySelectorAll("[data-copy]").forEach((b) => b.onclick = async () => {
+      const t = document.getElementById(b.dataset.copy).textContent;
+      try { await navigator.clipboard.writeText(t); b.textContent = "Copied"; }
+      catch (e) { const r = document.createRange(); r.selectNodeContents(document.getElementById(b.dataset.copy)); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Selected. Press Ctrl+C"; }
+      setTimeout(() => { b.textContent = b.dataset.copy === "p-json" ? "Copy courses.json" : b.dataset.copy === "p-path" ? "Copy file name" : b.dataset.copy === "p-page" ? "Copy page" : "Copy starter slides"; }, 2000);
+    });
+    o.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  init();
+})();
+</script>
+</body>
+</html>

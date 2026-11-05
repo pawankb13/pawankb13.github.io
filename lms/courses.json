@@ -1,9 +1,11 @@
 {
   "site": {
-    "title": "Courses Taught",
+    "title": "Courses",
     "instructor": "Dr. Pawan Ashok Kamble",
-    "institution": "",
-    "intro": "Courses"
+    "institution": "BIMTECH, Greater Noida",
+    "intro": "Courses I have taught, with lecture slides.",
+    "homepage": "https://pawankb13.github.io",
+    "showNotes": true
   },
   "courses": [
     {
@@ -22,12 +24,14 @@
             {
               "title": "How Economists Think",
               "label": "Session 1",
-              "file": "content/managerial/2026-27/session-01-how-economists-think/slides.md"
+              "file": "content/managerial/2026-27/session-01-how-economists-think/slides.md",
+              "updated": "2026-08-12"
             },
             {
               "title": "Elasticity and Its Application",
               "label": "Session 3",
-              "file": "content/managerial/2026-27/session-03-elasticity/slides.md"
+              "file": "content/managerial/2026-27/session-03-elasticity/slides.md",
+              "updated": "2026-09-02"
             }
           ]
         },
@@ -42,7 +46,8 @@
             {
               "title": "Demand and Supply",
               "label": "Session 2",
-              "file": "content/managerial/2025-26/session-02-demand-supply/slides.md"
+              "file": "content/managerial/2025-26/session-02-demand-supply/slides.md",
+              "updated": "2026-03-10"
             }
           ]
         }
@@ -64,12 +69,14 @@
             {
               "title": "Measuring a Nation's Output",
               "label": "Module 1",
-              "file": "content/macro/2026-27/module-1-measuring-output/slides.md"
+              "file": "content/macro/2026-27/module-1-measuring-output/slides.md",
+              "updated": "2026-07-20"
             },
             {
               "title": "The IS-LM Model",
               "label": "Module 5",
-              "file": "content/macro/2026-27/module-5-is-lm/slides.md"
+              "file": "content/macro/2026-27/module-5-is-lm/slides.md",
+              "updated": "2026-10-14"
             }
           ]
         },
@@ -84,7 +91,8 @@
             {
               "title": "Introduction to Macroeconomics",
               "label": "Session 1",
-              "file": "content/macro/2025-26/session-01-introduction/slides.md"
+              "file": "content/macro/2025-26/session-01-introduction/slides.md",
+              "updated": "2026-02-18"
             }
           ]
         }
@@ -106,7 +114,8 @@
             {
               "title": "Prospect Theory and Loss Aversion",
               "label": "Class 3",
-              "file": "content/behavioural/2026-27/class-03-prospect-theory/slides.md"
+              "file": "content/behavioural/2026-27/class-03-prospect-theory/slides.md",
+              "updated": "2026-10-28"
             }
           ]
         },
@@ -137,7 +146,8 @@
             {
               "title": "The OLS Estimator",
               "label": "Session 2",
-              "file": "content/econometrics/2026-27/session-02-ols/slides.md"
+              "file": "content/econometrics/2026-27/session-02-ols/slides.md",
+              "updated": "2026-09-25"
             }
           ]
         }
@@ -159,7 +169,8 @@
             {
               "title": "Framing a Research Question",
               "label": "Session 1",
-              "file": "content/research/2026-27/session-01-research-question/slides.md"
+              "file": "content/research/2026-27/session-01-research-question/slides.md",
+              "updated": "2026-08-30"
             }
           ]
         }
@@ -182,7 +193,8 @@
             {
               "title": "Slide Templates",
               "label": "All layouts",
-              "file": "content/templates/2026-27/all-layouts/slides.md"
+              "file": "content/templates/2026-27/all-layouts/slides.md",
+              "updated": "2026-11-05"
             }
           ]
         }

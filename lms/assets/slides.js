@@ -5,7 +5,7 @@
                     a line starting Note:   begins speaker notes (hidden from the slide)
                     <!-- layout: name option -->   first line of a slide, picks a template (see README)
                     @[Title](interactives/file.html)   embeds an HTML interactive in the slide
-   Keys: Right/Space/PageDown next, Left/PageUp previous, Home/End, F full screen, N notes. */
+   Keys: Right/Space/PageDown next, Left/PageUp previous, Home/End, F full screen, N notes, P print. */
 (() => {
   "use strict";
 
@@ -16,7 +16,7 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-  const st = { slides: [], notes: [], i: 0, key: "", showNotes: false };
+  const st = { slides: [], notes: [], i: 0, key: "", showNotes: false, allowNotes: true };
 
   /* ---------- Load ---------- */
   async function init() {
@@ -29,6 +29,8 @@
     } catch (e) {
       return fail("The course list did not load", "Open the site through a web server or GitHub Pages. The README explains how.");
     }
+    st.allowNotes = (data.site || {}).showNotes !== false;
+    $("notes-btn").hidden = !st.allowNotes;
     if (!m) return fail("No deck selected", "Open a deck from a course page.");
     const c = data.courses.find((x) => x.id === m[1]);
     const y = c && c.years.find((x) => x.id === m[2]);
@@ -63,9 +65,21 @@
   }
 
   /* ---------- Parse and render ---------- */
+  /* A line with only --- starts a new slide. Lines inside a code block are left alone. */
+  function splitSlides(src) {
+    const out = []; let cur = [], fence = null;
+    for (const line of src.split("\n")) {
+      const f = line.match(/^[ \t]*(`{3,}|~{3,})/);
+      if (f) { if (!fence) fence = f[1][0]; else if (f[1][0] === fence) fence = null; }
+      if (!fence && /^[ \t]*---[ \t]*$/.test(line)) { out.push(cur.join("\n")); cur = []; }
+      else cur.push(line);
+    }
+    out.push(cur.join("\n"));
+    return out.map((x) => x.trim()).filter(Boolean);
+  }
+
   function build(src, footText) {
-    const chunks = src.replace(/\r\n?/g, "\n").split(/^[ \t]*---[ \t]*$/m)
-      .map((s) => s.trim()).filter(Boolean);
+    const chunks = splitSlides(src.replace(/\r\n?/g, "\n"));
     const stage = $("stage");
     stage.innerHTML = "";
     chunks.forEach((chunk, i) => {
@@ -113,8 +127,7 @@
     return `<figure class="media"><img src="${esc(src)}" alt="${esc(alt)}">${alt ? `<figcaption>${esc(alt)}</figcaption>` : ""}</figure>`;
   }
   function embedHtml(title, path) {
-    const href = /^(https?:)?\/\//i.test(path) ? path : path;
-    return `<div class="interactive"><iframe src="${esc(href)}" title="${esc(title || "Interactive")}" loading="lazy" allow="fullscreen; encrypted-media" allowfullscreen></iframe></div>`;
+    return `<div class="interactive"><iframe src="${esc(path)}" title="${esc(title || "Interactive")}" loading="lazy" allow="fullscreen; encrypted-media" allowfullscreen></iframe></div>`;
   }
   function splitHtml(text, sideHtml, sideFirst) {
     let head = "";
@@ -163,17 +176,14 @@
   /* Protect code and scripts, then protect LaTeX from the Markdown parser. */
   function renderMarkdown(src) {
     const code = [], math = [];
-    src = src.replace(/^@\[([^\]]*)\]\(([^)\s]+)\)[ \t]*$/gm, (m, title, path) => {
-      const href = /^(https?:)?\/\//i.test(path) ? path : path;
-      return `\n<div class="interactive"><iframe src="${esc(href)}" title="${esc(title || "Interactive")}" loading="lazy" allow="fullscreen; encrypted-media" allowfullscreen></iframe></div>\n`;
-    });
+    src = src.replace(/^@\[([^\]]*)\]\(([^)\s]+)\)[ \t]*$/gm, (m, title, path) => `\n${embedHtml(title, path)}\n`);
     src = src.replace(/<script[\s\S]*?<\/script>|```[\s\S]*?```|`[^`\n]+`/g, (m) => { code.push(m); return `CODESLOT${code.length - 1}END`; });
     const keep = (m) => { math.push(m); return `MATHSLOT${math.length - 1}END`; };
     src = src
       .replace(/\$\$[\s\S]+?\$\$/g, keep)
       .replace(/\\\[[\s\S]+?\\\]/g, keep)
       .replace(/\\\([\s\S]+?\\\)/g, keep)
-      .replace(/(^|[^\\$])\$(?=\S)([^$\n]+?)\$/g, (m, pre, b) => pre + keep("$" + b + "$"));
+      .replace(/(^|[^\\$\w])\$(?=[^\s$])([^$\n]*?[^\s$\\])\$(?!\d)/g, (m, pre, b) => pre + keep("\\(" + b + "\\)"));
     src = src.replace(/CODESLOT(\d+)END/g, (m, n) => code[+n]);
     const html = window.marked ? window.marked.parse(src, { gfm: true }) : `<pre>${esc(src)}</pre>`;
     return html.replace(/MATHSLOT(\d+)END/g, (m, n) => esc(math[+n]));
@@ -259,6 +269,7 @@
     if (p && p.catch) p.catch(() => {});
   }
   function toggleNotes() {
+    if (!st.allowNotes) return;
     st.showNotes = !st.showNotes;
     $("notes-btn").setAttribute("aria-pressed", String(st.showNotes));
     renderNotes();
@@ -268,6 +279,7 @@
   $("next").addEventListener("click", next);
   $("prev").addEventListener("click", prev);
   $("fs-btn").addEventListener("click", toggleFullscreen);
+  $("pdf-btn").addEventListener("click", () => window.print());
   $("notes-btn").addEventListener("click", toggleNotes);
 
   function handleKey(key) {
@@ -278,6 +290,7 @@
       case "End": show(st.slides.length - 1); break;
       case "f": case "F": toggleFullscreen(); break;
       case "n": case "N": toggleNotes(); break;
+      case "p": case "P": window.print(); break;
       case "Escape":
         if (document.activeElement && document.activeElement.tagName === "IFRAME") document.activeElement.blur();
         break;
@@ -287,6 +300,7 @@
   }
   document.addEventListener("keydown", (e) => {
     if (typing(e.target) || e.altKey || e.ctrlKey || e.metaKey) return;
+    if ((e.key === " " || e.key === "Enter") && e.target.closest && e.target.closest("button, a")) return;
     if (handleKey(e.key)) e.preventDefault();
   });
 
@@ -310,6 +324,13 @@
     if (Math.abs(dx) > 50) { dx < 0 ? next() : prev(); }
     else if (document.fullscreenElement) next();
   });
+
+  /* Printing or saving as PDF: every slide on its own page, notes left out. */
+  function showAll(on) {
+    st.slides.forEach((sl, i) => { sl.hidden = on ? false : i !== st.i; if (on) fitSlide(sl); });
+  }
+  addEventListener("beforeprint", () => showAll(true));
+  addEventListener("afterprint", () => { showAll(false); fitSlide(st.slides[st.i]); });
 
   /* A new address: same deck jumps to the slide, a different deck reloads. */
   addEventListener("hashchange", () => {

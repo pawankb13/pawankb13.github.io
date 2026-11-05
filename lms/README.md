@@ -49,17 +49,21 @@ Folder names: `session-01-topic`, `module-5-topic` or `class-03-topic`. Use lowe
 3. Add one entry to that year's `decks` list in `courses.json`:
 
 ```json
-{ "title": "The Monetary System", "label": "Module 4", "file": "content/macro/2026-27/module-4-money/slides.md" }
+{ "title": "The Monetary System", "label": "Module 4", "updated": "2026-11-05", "file": "content/macro/2026-27/module-4-money/slides.md" }
 ```
 
-The order of the list is the order on the course page.
+The order of the list is the order on the course page. The Updated column fills itself. See "Automatic update dates" below.
+
+## Archive
+
+A course page opens on the current year, with one **Archive** button at the bottom. That button switches the whole page to the previous years. A click on a year opens that year's sessions. In the Archive, one button at the bottom returns to the current year. A year goes to the Archive when its `status` in `courses.json` is `"archived"`.
 
 ## Add a new year of teaching
 
-Add a year to the course's `years` list in `courses.json`. Put the newest year first, mark it `"status": "current"`, and change the old year to `"archived"`. Then create `content/<course>/<year>/`.
+Add a year to the course's `years` list in `courses.json`, with `"status": "current"`. Change the old year to `"archived"` and it moves to the Archive. Then create `content/<course>/<year>/`.
 
 ```json
-{ "id": "2027-28", "label": "2027-28", "status": "current", "programme": "PGDM", "term": "Term II", "note": "One line about this offering.", "decks": [] }
+{ "id": "2027-28", "label": "2027-28", "status": "current", "programme": "PGDM", "note": "One line about this offering.", "decks": [] }
 ```
 
 ## Add a new course
@@ -73,7 +77,7 @@ Add a year to the course's `years` list in `courses.json`. Put the newest year f
 |---|---|
 | A line with only `---` | A new slide |
 | A line with only three bars | Splits the slide into columns |
-| `Note:` on its own line | Speaker notes, hidden from students |
+| `Note:` on its own line | Speaker notes, shown only through the Notes button |
 | `$x^2$` and `$$ ... $$` | Equations (LaTeX) |
 | `<!-- layout: name -->` as the first line | A slide template (below) |
 
@@ -136,9 +140,15 @@ You can also put small demos straight into a slide with `<script>`. See `content
 ## Presenting
 
 - Right arrow, Space or Page Down: next. Left arrow or Page Up: previous.
-- F: full screen. N: speaker notes.
+- F: full screen. N: speaker notes. P or the **Download PDF** button: opens the print dialog. Choose "Save as PDF" as the destination (one slide per page, light colours).
 - Each slide has its own address, for example `slides.html#macro-2026-27-2-4` (course, year, deck, slide).
 - Swipe on a phone or tablet.
+
+## Notes, prices and code blocks
+
+- Speaker notes sit in the Markdown file, which anyone can open. Keep private material out of them. Set `"showNotes": false` under `site` in `courses.json` to remove the Notes button.
+- Prices such as `$5 and $10` are safe. A formula needs no space just inside the dollar signs: `$x^2$`.
+- A line of three dashes inside a code block does not start a new slide.
 
 ## Run on your computer
 
@@ -161,3 +171,30 @@ The sample years, sessions and images are examples. Replace them with your own.
 ## Libraries
 
 Loaded from jsDelivr, nothing to install: marked 12.0.2 (Markdown) and MathJax 3.2.2 (equations).
+
+## Easy way to add and archive: lms.py
+
+Run `python lms.py` in this folder. It shows a menu:
+
+1. Add a new session: asks for course, year, title and label. It creates the session folder from `_new-session/`, adds the entry to `courses.json` and sets today as the update date.
+2. Archive a year: moves the current year to the Archive, then offers to start the next year.
+3. Start a new year: makes it the current year and creates its folder.
+
+Then write your slides in the new `slides.md`.
+
+## Automatic update dates
+
+The Updated column shows the date of the last change to that session's folder (slides, images or interactives). GitHub works it out from your commits. You never type a date.
+
+One-time setup, on github.com:
+1. In your repository, click **Add file**, then **Create new file**.
+2. Name it `.github/workflows/update-dates.yml`.
+3. Paste the contents of `.github-workflow/update-dates.yml` from this portal. If your portal folder is not called `teaching`, change the three lines marked CHANGE.
+4. Click **Commit changes**.
+5. In the repository, open **Settings**, then **Actions**, then **General**. Under Workflow permissions, choose **Read and write permissions** and save.
+
+After this, each time you commit a change under `content/`, GitHub updates `courses.json` within a minute, and the site shows the new date. Until then, the date in `courses.json` is used.
+
+## Manage page (form)
+
+Open `manage.html` on your published site, for example `https://pawankb13.github.io/teaching/manage.html`. Choose Add a session, Archive a year, Start a new year, or Add a course, fill the short form, and click **Make the changes**. The page gives you the new `courses.json` to paste on GitHub, and for a new session or course, the file name and the file contents to paste. It saves nothing by itself, and no page links to it.
