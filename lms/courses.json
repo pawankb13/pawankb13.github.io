@@ -3,7 +3,7 @@
     "title": "Courses",
     "instructor": "Dr. Pawan Ashok Kamble",
     "institution": "BIMTECH, Greater Noida",
-    "intro": "Courses I have taught, with lecture slides.",
+    "intro": "",
     "homepage": "https://pawankb13.github.io",
     "showNotes": true,
     "github": {
@@ -24,7 +24,7 @@
           "status": "current",
           "programme": "PGDM",
           "term": "",
-          "note": "Textbook: Mankiw, Principles of Economics. Group assignment: Lemonade Stand simulation.",
+          "note": "",
           "decks": [
             {
               "title": "How Economists Think",
@@ -69,7 +69,7 @@
           "status": "current",
           "programme": "PGDM",
           "term": "",
-          "note": "25 contact hours in 7 modules. Reference books: Mankiw; Dornbusch, Fischer and Startz.",
+          "note": "",
           "decks": [
             {
               "title": "Measuring a Nation's Output",
