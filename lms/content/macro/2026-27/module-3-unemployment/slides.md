@@ -18,6 +18,31 @@ Faculty Cabin (F61)
 5. Policy trade-offs using short-run and long-run. 
 
 ---
+## Why Do We Study Unemployment?
+
+### Unemployment as an Indicator of Economic Health
+
+**1. Utilisation of Human Resources**
+- Labour is a key factor of production.
+- Unemployment indicates that available human resources are not being fully utilised.
+
+**2. Loss of Economic Output**
+- Unemployed workers represent potential productive capacity that remains unused.
+- The economy may produce below its potential output.
+
+**3. Household Income and Living Standards**
+- Unemployment reduces household income and purchasing power.
+- Lower income can reduce consumption and economic well-being.
+
+**4. Economic and Social Stability**
+- Persistent unemployment can increase poverty and inequality.
+- It can create social and economic insecurity.
+
+**Key Takeaway:** Unemployment is not just a labour-market problem; it represents a loss of productive resources and economic welfare.
+
+---
+---
+
 ## Measuring Unemployment
 
 ### Working-Age Population:
@@ -41,6 +66,7 @@ Faculty Cabin (F61)
      style="width: 75%; height: auto; object-fit: contain;">
 
 </div>
+
 
 ---
 ## Measuring Unemployment
