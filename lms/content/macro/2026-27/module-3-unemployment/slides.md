@@ -7,7 +7,6 @@ Assistant Professor \
 Faculty Cabin (F61)
 
 ---
-
 <!-- layout: Topics -->
 ## Topics
 
@@ -19,8 +18,8 @@ Faculty Cabin (F61)
 5. Policy trade-offs using short-run and long-run. 
 
 ---
-<!-- layout: image-right -->
-# Measuring Unemployment:
+<!-- layout: image-left -->
+## Measuring Unemployment:
 
 ### Population Divided by Labor-Market Status
 
@@ -31,13 +30,6 @@ $$
 \text{Labor Force} = \text{Employed} + \text{Unemployed}
 $$
 
-
-![Sample chart. Source: add your source here](images/image1.png)
-||
-Hi
-#### 
-
-||
 ___
 
 
