@@ -21,7 +21,7 @@ main:
     url: /resources/
 
   - title: "LMS"
-    url: /lms/    
+    url: https://pawankb13.github.io/lms/
 
   #- title: "Portfolio"
   #  url: /portfolio/

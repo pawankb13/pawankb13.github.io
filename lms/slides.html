@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lecture Slides</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="./assets/style.css">
+<script src="./assets/theme.js"></script>
+<link rel="stylesheet" href="./assets/slides.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [["$", "$"], ["\\(", "\\)"]], displayMath: [["$$", "$$"], ["\\[", "\\]"]] },
+    svg: { fontCache: "global" },
+    startup: { typeset: false, ready() { MathJax.startup.defaultReady(); window.dispatchEvent(new Event("mathjax-ready")); } }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js" defer></script>
+</head>
+<body class="deck-body" data-root=".">
+<header class="deck-bar">
+  <a class="back" id="back" href="./index.html">‹ Course</a>
+  <div class="deck-name"><span id="deck-course"></span><strong id="deck-title">Loading slides…</strong></div>
+  <span class="counter" id="counter"></span>
+  <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+    <span class="theme-toggle__track">
+      <span class="theme-toggle__thumb">
+        <svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A8.5 8.5 0 1 1 11.2 3a6.5 6.5 0 0 0 9.8 9.8z"></path></svg>
+        <svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+      </span>
+    </span>
+    <span class="screen-reader-text">Toggle dark mode</span>
+  </button>
+</header>
+<main class="viewport" id="viewport"><div class="frame" id="frame"><div class="stage" id="stage"></div></div></main>
+<aside class="notes" id="notes" hidden></aside>
+<footer class="deck-controls">
+  <button class="btn" id="prev" type="button">Previous</button>
+  <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+  <button class="btn" id="notes-btn" type="button" aria-pressed="false">Notes</button>
+  <button class="btn" id="fs-btn" type="button">Full screen</button>
+  <button class="btn primary" id="next" type="button">Next</button>
+</footer>
+<script src="./assets/slides.js"></script>
+</body>
+</html>
