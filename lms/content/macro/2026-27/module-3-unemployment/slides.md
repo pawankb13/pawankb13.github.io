@@ -129,6 +129,8 @@ $$
 
 **Answer:** The unemployment rate in this economy is **14.29%**.
 
+**Remember:** The other 300,000 people are outside the labor force, so they are not counted.
+
 
 ---
 
