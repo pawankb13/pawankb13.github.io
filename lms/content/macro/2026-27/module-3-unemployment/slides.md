@@ -24,7 +24,12 @@ Faculty Cabin (F61)
 
 ### Population Divided by Labor-Market Status
 
-- 
+$$ \text{Unemployment Rate} = \left(\frac{\text{Unemployed}}{\text{Labor Force}}\right) \times 100
+$$
+Where:
+$$
+\text{Labor Force} = \text{Employed} + \text{Unemployed}
+$$
 
 
 ![Sample chart. Source: add your source here](images/image1.png)
