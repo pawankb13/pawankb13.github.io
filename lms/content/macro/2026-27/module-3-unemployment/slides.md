@@ -21,17 +21,12 @@ Faculty Cabin (F61)
 ---
 ## Measuring Unemployment:
 
-### Population and Labour Market Status
+### Population Divded by Labor-market Status
 
-- Write a layout line as the **first line** of a slide: `<!-- layout: image-right -->`
-- Add options after the name: `<!-- layout: image-full cover -->`
-- A slide with no layout line is a plain bullet slide
-- Copy the slide you want and change the text
+![Sample chart. Source: add your source here](images/image1.png)
 
-Note:
-Every slide in this deck uses one layout. The text on the slide says which one.
+___
 
----
 
 ## Title and subheading
 
