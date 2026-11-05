@@ -195,15 +195,56 @@ Indian example: during the April to June 2020 lockdown, urban unemployment rose 
 - Cyclical unemployment = Actual rate − Natural rate.
 - Example: actual rate 7%, natural rate 5%, so cyclical unemployment is 2%.
 
----
-## Natural Rate of Unemployment
-
-- Mankiw defines the natural rate as the normal rate around which the actual rate moves.
-- It changes slowly. Labour laws, skill gaps, job-matching speed and demographics shift it.
-- In a recession the actual rate rises above the natural rate. In a boom it can fall below it.
+Note:
+Mankiw defines the natural rate as the normal rate around which the actual rate moves.
+It changes slowly. Labour laws, skill gaps, job-matching speed and demographics shift it.
+In a recession the actual rate rises above the natural rate. In a boom it can fall below it.
 
 ---
 
+---
+<!-- layout: table -->
+## India's Unemployment: Latest PLFS Data
+
+### September 2026, current weekly status, age 15 and above
+
+| Group | Unemployment rate |
+|---|---|
+| All India | 5.0% |
+| Rural | 4.2% |
+| Urban | 6.9% |
+| Urban women | 9.2% |
+| Youth, 15 to 29 years | 15.2% |
+| Urban youth, 15 to 29 years | 19.0% |
+
+Source: MoSPI, PLFS Monthly Bulletin, September 2026 (released 15 October 2026)
+
+Note:
+Check with the formula. LFPR = 55.5% and WPR = 52.7% of the population aged 15+.
+Unemployment rate = (LFPR − WPR) / LFPR × 100 = (55.5 − 52.7) / 55.5 × 100 ≈ 5.0%.
+Discussion point: overall unemployment is low, but urban youth unemployment is almost four times higher. Ask students why educated young people wait for jobs.
+
+---
+---
+<!-- layout: equation -->
+## Actual Rate and the Natural Rate
+
+### Actual unemployment splits into a natural part and a cyclical part
+
+$$
+u = u^{*} + u_{c}
+$$
+
+u is the actual rate, u* is the natural rate and u<sub>c</sub> is cyclical unemployment.
+
+**India, September 2026:** 5.0% = 5% + 0%, so cyclical unemployment was close to zero.
+
+Note:
+Rearranged: u_c = u − u*. In a recession u_c is positive, so u rises above u*. In a boom u_c can be negative, so u falls below u*.
+Numerical example from earlier: 14.29% = 5% + 9.29%.
+India: the PLFS rate (CWS, 15+) was 5.0% in September 2026, close to the estimated natural rate of about 5%, so cyclical unemployment was close to zero.
+
+---
 ---
 
 ## All layouts: text
