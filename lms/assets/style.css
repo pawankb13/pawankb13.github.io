@@ -157,15 +157,3 @@ main.inner { padding-block: 40px 56px; }
   .course-stats { text-align: left; }
   .deck { grid-template-columns: minmax(0, 1fr); padding-inline: 4px; }
 }
-
-/* Home link back to the main website */
-.home-link {
-  display: inline-flex; align-items: center; gap: 6px; flex: none;
-  color: var(--heading); text-decoration: none; font-weight: 600; font-size: 0.95rem;
-  padding: 4px 10px; border: 1px solid var(--line); border-radius: 999px;
-}
-.home-link:hover { background: var(--line); }
-.home-link:focus-visible { outline: none; box-shadow: 0 0 0 3px var(--focus-ring); }
-.home-link svg { width: 16px; height: 16px; }
-.site .home-link { margin-left: auto; }
-@media (max-width: 420px) { .home-link span { display: none; } .home-link { padding: 6px; } }
