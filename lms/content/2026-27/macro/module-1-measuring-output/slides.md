@@ -640,7 +640,7 @@ Rearranged, this is the same identity we derive later: (S − I) = (G − T) + (
 <!-- layout: table -->
 ## Gross Domestic Product
 
-### Market value of all final goods and services produced in a country in a period
+### Market value of all final goods and services produced within a country in a given period
 
 | Term | Meaning | Example |
 |---|---|---|
