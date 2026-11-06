@@ -11,6 +11,16 @@
       "visibility": "public"
     },
 
+      {
+      "id": "production-growth",
+      "title": "Production and Growth",
+      "type": "Module",
+      "number": 2,
+      "folder": "module-2-production-growth",
+      "updated": "2026-11-06",
+      "visibility": "public"
+    },
+
     {
       "id": "inflation-unemployment",
       "title": "Inflation and Unemployment",

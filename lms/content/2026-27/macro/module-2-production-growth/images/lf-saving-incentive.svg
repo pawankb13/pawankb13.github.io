@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 760" font-family="Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker></defs>
+<rect width="1100" height="760" fill="#fff"/>
+<line x1="120" y1="70" x2="120" y2="650" stroke="#555c61" stroke-width="3"/><line x1="120" y1="650" x2="940" y2="650" stroke="#555c61" stroke-width="3"/>
+<text x="60" y="370.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 60 370.0)">Real interest rate, r</text>
+<text x="520.0" y="730" font-size="30" fill="#555c61" text-anchor="middle">Loanable funds (₹)</text>
+<line x1="160" y1="572" x2="840" y2="191" stroke="#9aa0a4" stroke-width="5" stroke-dasharray="12 9"/>
+<text x="848" y="201" font-size="28" font-weight="700" fill="#9aa0a4">S₀</text>
+<line x1="160" y1="168" x2="840" y2="549" stroke="#c0504d" stroke-width="6" />
+<text x="848" y="559" font-size="28" font-weight="700" fill="#c0504d">D</text>
+<line x1="320" y1="572" x2="880" y2="258" stroke="#3d8296" stroke-width="6" />
+<text x="888" y="268" font-size="28" font-weight="700" fill="#3d8296">S₁</text>
+<line x1="120" y1="370" x2="520" y2="370" stroke="#555c61" stroke-width="2" stroke-dasharray="6 6"/><line x1="520" y1="370" x2="520" y2="650" stroke="#555c61" stroke-width="2" stroke-dasharray="6 6"/>
+<circle cx="520" cy="370" r="11" fill="#9aa0a4"/>
+<text x="108" y="380" font-size="28" font-weight="700" fill="#9aa0a4" text-anchor="end">r₀</text>
+<text x="520" y="680" font-size="26" font-weight="700" fill="#9aa0a4" text-anchor="middle">Q₀</text>
+<line x1="120" y1="415" x2="600" y2="415" stroke="#555c61" stroke-width="2" stroke-dasharray="6 6"/><line x1="600" y1="415" x2="600" y2="650" stroke="#555c61" stroke-width="2" stroke-dasharray="6 6"/>
+<circle cx="600" cy="415" r="11" fill="#2f3437"/>
+<text x="108" y="425" font-size="28" font-weight="700" fill="#2f3437" text-anchor="end">r₁</text>
+<text x="600" y="680" font-size="26" font-weight="700" fill="#2f3437" text-anchor="middle">Q₁</text>
+<line x1="648" y1="268" x2="784" y2="268" stroke="#555c61" stroke-width="4" marker-end="url(#ar)"/>
+</svg>
