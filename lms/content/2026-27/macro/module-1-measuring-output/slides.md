@@ -4,7 +4,7 @@
 
 Dr. Pawan Ashok Kamble \
 Assistant Professor \
-Faculty Cabin: F63 (First Floor)
+Faculty Cabin: F61
 
 ---
 <!-- layout: agenda -->
@@ -1270,4 +1270,3 @@ Illegal activity, such as smuggling, is excluded but still uses resources.
 <!-- layout: end -->
 # Questions?
 
-Dr. Pawan Ashok Kamble · BIMTECH
