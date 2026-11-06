@@ -1184,7 +1184,7 @@ $$
 
 **Where:**
 - %ΔY = growth rate of real GDP
-- g = normal growth rate of output when unemployment is stable
+- g = normal growth (potential) rate of output when unemployment is stable
 - β = Okun's coefficient, the fall in growth for each 1-point rise in unemployment
 - Δu = change in the unemployment rate (percentage points)
 
