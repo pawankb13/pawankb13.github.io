@@ -1116,6 +1116,41 @@ Example: after 2008 and after COVID-19, the US curve shifted out. Firms posted m
 India has no official vacancy series, so the curve is hard to draw with Indian data.
 
 ---
+## Reading the Beveridge Curve
+
+### Business cycle and matching efficiency
+
+<div style="display: flex; gap: 44px; align-items: center;">
+
+<img src="images/beveridge-efficiency.svg" alt="Beveridge curve with an outward shift" style="width: 38%; flex: none;">
+
+<div>
+
+**1. Along the Curve: Business Cycle**
+- Boom: firms post more vacancies and the unemployed find jobs fast (up-left).
+- Recession: hiring stops, so vacancies fall and unemployment rises (down-right).
+
+**2. Shift of the Curve: Matching Efficiency**
+- Out (BC₁ → BC₂): more vacancies and more unemployed together, due to skill or location mismatch.
+- In (BC₂ → BC₁): better matching through job portals, training or mobility.
+
+**3. The v = u Line**
+- Above it: more jobs than job seekers, so wages rise. Below it: slack.
+
+> An outward shift raises the natural rate of unemployment.
+
+</div>
+
+</div>
+
+Note:
+Start with the axes: the vacancy rate on the vertical axis and the unemployment rate on the horizontal axis. Each point is one state of the labour market.
+Movement along the curve is cyclical unemployment. A shift of the curve is structural and frictional unemployment.
+Where the curve crosses the v = u line is a rough guide to the natural rate. An outward shift moves this point to the right.
+Example: after COVID-19 the US curve shifted out. Firms reported record vacancies while many people were still unemployed.
+Ask the class: a city has many unfilled software jobs and many unemployed factory workers. Is this a move along the curve or a shift? (Answer: a shift, due to skill mismatch.)
+
+---
 ---
 ## The Costs of Unemployment
 
@@ -1394,7 +1429,7 @@ The last takeaway is the long-run Phillips curve: in the long run, unemployment 
 
 ---
 <!-- layout: references -->
-## Layout: references
+## References
 
 ### Textbooks and sources
 
