@@ -468,7 +468,7 @@ General formula for f(k) = k^θ: k* = (s / (n + d))^(1/(1 − θ)).
 <!-- layout: interactive -->
 ## Interactive: The Solow Model
 
-@[Solow growth model](shared/interactives/solow.html)
+@[Solow growth model](/interactives/solow.html)
 
 Note:
 Suggested sequence for class:
