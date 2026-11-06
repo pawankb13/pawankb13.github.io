@@ -73,7 +73,7 @@ Ask: why does fiscal expansion crowd out investment? Link to RBI and Union Budge
 
 ## Try it: policy in IS-LM
 
-@[IS-LM interactive](interactives/is-lm.html)
+@[IS-LM interactive](shared/interactives/is-lm.html)
 
 Note:
 Raise G first and ask students to predict r before you move the slider. Then raise M with G still high. Ask: which mix keeps the interest rate where it started?

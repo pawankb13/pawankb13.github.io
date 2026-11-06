@@ -1,7 +1,8 @@
 /* Landing page and course pages. Both read courses.json through assets/data.js (window.LMS).
    <body data-page="home">                         -> list of courses
-   <body data-page="course" data-course="macro">   -> one course: current years, Archive, sessions
-   Course page addresses:  courses/macro.html (current year)  |  #archive  |  #2025-26 (an archived year)
+   <body data-page="course">                       -> one course (course.html?c=macro): current years, Archive, sessions
+   Course page addresses:  course.html?c=macro (current year)  |  ...#archive  |  ...#2025-26 (an archived year)
+   (data-course="macro" on the body still works, for a page made for one course.)
    data-root points from the page to the site folder ("." or ".."). */
 (() => {
   "use strict";
@@ -13,7 +14,7 @@
   const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) =>
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
-  const coursePage = (c) => url(c.page || `courses/${c.id}.html`);
+  const coursePage = (c) => url(LMS.coursePage(c));
   const isHtmlDeck = (d) => /\.html?$/i.test(d.file || "");
   const deckHref = (c, y, d) => isHtmlDeck(d) ? url(d.file) : url("slides.html") + "#" + LMS.key(c, y, d);
   const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
@@ -64,7 +65,8 @@
   }
 
   function renderCourse(data) {
-    const c = data.courses.find((x) => x.id === body.dataset.course);
+    const id = body.dataset.course || new URLSearchParams(location.search).get("c") || "";
+    const c = data.courses.find((x) => x.id === id);
     if (c && !opens(c)) {
       $("main").innerHTML = `<div class="notice"><h2>Course not available</h2>
         <p>This course is not open yet. <a href="${url("index.html")}">See all courses</a>.</p></div>`;
@@ -72,7 +74,7 @@
     }
     if (!c) {
       $("main").innerHTML = `<div class="notice"><h2>Course not found</h2>
-        <p>No course with id <code>${esc(body.dataset.course)}</code> in courses.json.</p></div>`;
+        <p>No course with id <code>${esc(id)}</code> in courses.json. <a href="${url("index.html")}">See all courses</a>.</p></div>`;
       return;
     }
     document.title = c.title;

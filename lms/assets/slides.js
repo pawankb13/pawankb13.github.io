@@ -35,7 +35,7 @@
 
     st.key = LMS.key(c, y, d);
     st.deckUrl = new URL(url(d.file), location.href).href;
-    const back = url(c.page || `courses/${c.id}.html`) + "#" + y.id;
+    const back = url(LMS.coursePage(c)) + "#" + y.id;
     $("back").href = back;
     $("deck-course").textContent = `${c.title} · ${y.label || y.id}`;
     $("deck-title").textContent = d.title;
@@ -101,11 +101,12 @@
   }
 
   /* ---------- Layouts: <!-- layout: name option --> as the first line of a slide ---------- */
-  /* Images, interactives, scripts and links to files (readings) in a deck are found next to the deck's own file. */
+  /* Images, interactives, scripts and links to files (readings) in a deck are found next to the deck's own file.
+     A path starting with shared/ is found in the course's shared folder instead: content/<course>/shared/. */
   function resolveSrc(html) {
     if (!st.deckUrl) return html;
     return html.replace(/(\s(?:src|href)=")([^"]+)(")/g, (m, a, p, z) =>
-      /^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(p) ? m : a + new URL(p, st.deckUrl).href + z);
+      /^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(p) ? m : a + LMS.resolve(p, st.deckUrl) + z);
   }
 
   function parseLayout(src) {

@@ -146,7 +146,7 @@ form.mg[hidden]{display:none}
   </form>
 
   <form class="mg" data-mode="check" hidden>
-    <p class="info">Looks at every course page and every module file listed in courses.json and tells you if one is missing.</p>
+    <p class="info">Looks at the course page and every module and reading file listed in courses.json and tells you if one is missing.</p>
     <button class="go" type="submit">Run the check</button>
   </form>
 
@@ -178,7 +178,6 @@ form.mg[hidden]{display:none}
     return `https://github.com/${g.repo}/new/${g.branch}/${inRepo(path.slice(0, i))}?filename=${encodeURIComponent(path.slice(i + 1))}&value=${encodeURIComponent(text)}`;
   }
   const ghTree = (p) => `https://github.com/${gh().repo}/tree/${gh().branch}/${inRepo(p)}`;
-  const ghFile = (p) => `https://github.com/${gh().repo}/blob/${gh().branch}/${inRepo(p)}`;
   const ghEdit = (p) => `https://github.com/${gh().repo}/edit/${gh().branch}/${inRepo(p)}`;
   const blankReadings = () => `<!--
   READING MATERIAL for this session.
@@ -196,16 +195,6 @@ form.mg[hidden]{display:none}
 `;
   const blankSlides = (title, course, label) =>
     `# ${title}\n\n${course} · ${label}\n\n${(data.site || {}).instructor || ""}\n\n---\n\n## First slide\n\n- Point one\n- Point two\n`;
-
-  async function courseTemplate(model, id, title) {
-    try {
-      const r = await fetch(`courses/${model.id}.html`);
-      if (!r.ok) throw 0;
-      return (await r.text()).replace(/<title>[^<]*<\/title>/, `<title>${esc(title)}</title>`).replace(/data-course="[^"]*"/, `data-course="${id}"`);
-    } catch (e) {
-      return `Copy courses/${model.id}.html, then change the title line and data-course="${model.id}" to data-course="${id}".`;
-    }
-  }
 
   /* ---------- Checks on the new file, before it is shown ---------- */
   function validate(d) {
@@ -311,29 +300,20 @@ form.mg[hidden]{display:none}
       nc.visibility = "public";
       nc.years = [{ id: yid, status: "current", decks: [] }];
       d.courses.push(nc);
-      const model = data.courses[0] || { id: "templates" };
-      const page = await courseTemplate(model, id, title);
       summary = `Added the course <strong>${esc(title)}</strong> with ${esc(yid)} as its current year.`;
-      const link = ghNew(`courses/${id}.html`, page);
-      extra = `<div class="step"><h2>Step 2. Create the course page</h2>
-        ${link.length < 7500
-          ? `<p>This opens GitHub with the file name and the page already filled in. Click <strong>Commit changes</strong> there.</p>
-             <a class="go" href="${esc(link)}" target="_blank" rel="noopener">Create the course page on GitHub</a>
-             <p>If it does not open filled in, use the file name and page below.</p>`
-          : `<p>On GitHub, open the courses folder inside your portal folder, click Add file, then Create new file. Type this name exactly, then paste the page below and commit.</p>`}
-        <div class="path" id="p-path">courses/${esc(id)}.html</div><button class="copy" data-copy="p-path" type="button">Copy file name</button>
-        <pre id="p-page">${esc(page)}</pre><button class="copy" data-copy="p-page" type="button">Copy page</button></div>
-        <p>Then use Add under Modules to put modules in this course.</p>`;
+      extra = `<div class="step"><h2>Step 2. Nothing else to create</h2>
+        <p>The course page works as soon as courses.json is committed. Its address is:</p>
+        <div class="path" id="p-path">${esc(LMS.coursePage(nc))}</div><button class="copy" data-copy="p-path" type="button">Copy address</button>
+        <p>Then use Add under Modules to put modules in this course.</p></div>`;
 
     } else if (mode === "delcourse") {
       if (!c) return fail(f, "Choose a course.");
       if (!$("[name=sure]", f).checked) return fail(f, "Tick the box to confirm.");
       d.courses = d.courses.filter((x) => x.id !== c.id);
       summary = `<strong>${esc(c.title)}</strong> is removed from the website.`;
-      notes.push("The course page and the slides stay in your repository until you delete them. They are no longer shown or linked.");
+      notes.push("The slides stay in your repository until you delete them. They are no longer shown or linked.");
       extra = `<div class="step"><h2>Step 2. Delete the files (recommended)</h2>
-        <p>Delete these on GitHub so nothing old is left behind. In each, use the three dots menu, then <strong>Delete</strong>.</p>
-        <a class="go" href="${esc(ghFile(`courses/${c.id}.html`))}" target="_blank" rel="noopener">Open the course page file</a>
+        <p>Delete the course's folder on GitHub so nothing old is left behind. Open it, use the three dots menu, then <strong>Delete directory</strong>.</p>
         <a class="go" href="${esc(ghTree(`content/${c.id}`))}" target="_blank" rel="noopener">Open the slides folder</a></div>`;
 
     } else if (mode === "addmod") {
@@ -415,7 +395,7 @@ form.mg[hidden]{display:none}
       const a = document.createElement("a");
       a.href = URL.createObjectURL(new Blob([json], { type: "application/json" })); a.download = "courses.json"; a.click();
     };
-    const labels = { "p-json": "Copy courses.json", "p-path": "Copy file name", "p-page": "Copy page" };
+    const labels = { "p-json": "Copy courses.json", "p-path": "Copy address" };
     $$("[data-copy]", o).forEach((b) => b.onclick = async () => {
       const el = document.getElementById(b.dataset.copy);
       try { await navigator.clipboard.writeText(el.textContent); b.textContent = "Copied"; }
@@ -438,8 +418,9 @@ form.mg[hidden]{display:none}
     o.className = "out show"; o.innerHTML = "<p>Checking…</p>";
     const bad = [], tasks = [];
     let n = 0;
+    tasks.push(exists("course.html").then((ok) => { n++; if (!ok) bad.push("The course page is missing: course.html"); }));
     LMS.normalise(data).courses.forEach((c) => {
-      tasks.push(exists(`courses/${c.id}.html`).then((ok) => { n++; if (!ok) bad.push(`The page for ${c.title} is missing: courses/${c.id}.html`); }));
+      if (c.page) tasks.push(exists(c.page).then((ok) => { n++; if (!ok) bad.push(`The page for ${c.title} is missing: ${c.page}`); }));
       if (!(c.years || []).length) bad.push(`${c.title} has no years.`);
       else if (LMS.listed(c) && !c.years.some((y) => !isArch(y))) bad.push(`${c.title} has no current year.`);
       (c.years || []).forEach((y) => (y.decks || []).forEach((k) => {

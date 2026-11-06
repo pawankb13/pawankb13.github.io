@@ -5,20 +5,23 @@ A course website built with Markdown, HTML, CSS and JavaScript. No build step an
 ## How the site is organised
 
 1. **Landing page** (`index.html`): lists every course you have taught.
-2. **Course page** (`courses/<course>.html`): one page per course, with the years of teaching and the sessions for the selected year.
+2. **Course page** (`course.html?c=<course>`): one page serves every course. It shows the years of teaching and the sessions for the selected year.
 3. **Slides** (`slides.html`): presents a session's `slides.md` as HTML slides.
 
 ## Folder structure: one folder per session
 
 ```
 index.html
-courses/                    One page per course
+course.html                 The course page, for every course (course.html?c=macro)
+courses/                    Old course addresses, kept so links you shared still work
 slides.html                 Slide viewer
 courses.json                Courses, years and sessions. Edit this to add anything.
 assets/                     Styles and scripts
 _new-session/               Copy this folder to start a new session
 content/
   macro/                    Course
+    shared/                 Images and interactives used by more than one session
+      interactives/is-lm.html
     2026-27/                Year of teaching
       module-1-measuring-output/     One folder per session or module
         slides.md           The slides
@@ -26,9 +29,8 @@ content/
         interactives/       HTML interactives used in these slides
         readings/           PDFs and other reading material for this session
       module-5-is-lm/
-        slides.md
+        slides.md           Uses shared/interactives/is-lm.html
         images/
-        interactives/is-lm.html
     2025-26/
       session-01-introduction/
         ...
@@ -40,6 +42,17 @@ content/
 ```
 
 Everything a session needs sits in its own folder. Paths in `slides.md` are relative to that folder, so you write `images/gdp.png` and `interactives/is-lm.html`. Move or copy a session folder and it still works.
+
+### Files used by more than one session: shared/
+
+When several sessions of a course use the same image or interactive, keep one copy in `content/<course>/shared/` instead of a copy in each session. In `slides.md` or `readings.md`, start the path with `shared/`:
+
+```
+@[IS-LM interactive](shared/interactives/is-lm.html)
+![Phillips curve](shared/images/phillips.svg)
+```
+
+`shared/` always means the course's shared folder, `content/<course>/shared/`, whichever session or year the slides are in. Every other path still means the session's own folder. An interactive in `shared/interactives/` needs four `../` to reach the site's `assets/` folder (see HTML interactives below). Changing a shared file does not change any session's Updated date.
 
 Folder names: `session-01-topic`, `module-5-topic` or `class-03-topic`. Use lowercase and hyphens.
 
@@ -103,8 +116,9 @@ Leave out any field you do not need. `programme` is set once on the course (`"pr
 
 ## Add a new course
 
-1. Add the course to `courses.json` with a short lowercase `id` (letters and numbers only), a `title`, a `description`, a `programme` and `"visibility": "public"`.
-2. Copy any file in `courses/`, rename it `<id>.html`, and change `data-course="..."` and the `<title>`.
+Add the course to `courses.json` with a short lowercase `id` (letters and numbers only), a `title`, a `description`, a `programme` and `"visibility": "public"`. That is all. Its page is `course.html?c=<id>`, for example `course.html?c=macro`, and the home page links to it. There is no page file to create.
+
+Old addresses such as `courses/macro.html` still open, because `courses/` keeps a small file for each course that existed before the change and sends visitors to the new address. New courses do not need one.
 
 ## Writing slides
 
@@ -159,7 +173,7 @@ Add `cover` after an image layout to fill the space and trim the edges, for exam
 ## HTML interactives
 
 1. Save the interactive in the session's `interactives/` folder.
-2. Add this line to its `<head>`. The `../` steps go up to the site root, so count the folders from your file to the root. In `content/macro/2026-27/module-5-is-lm/interactives/` it is five:
+2. Add this line to its `<head>`. The `../` steps go up to the site root, so count the folders from your file to the root. In a session's `interactives/` folder, such as `content/macro/2026-27/module-1-measuring-output/interactives/`, it is five. In a course's `shared/interactives/` it is four:
 
 ```html
 <script src="../../../../../assets/interactive.js"></script>
@@ -168,7 +182,7 @@ Add `cover` after an image layout to fill the space and trim the edges, for exam
    It makes the interactive follow the light and dark switch, and keeps the arrow keys working for the slides. Esc hands control back to the slides.
 3. Show it in a slide with `@[Title](interactives/file.html)`.
 
-For dark mode, define the interactive's colours under `:root.dark-mode`. If it draws on a canvas, redraw on the `themechange` event. See `content/macro/2026-27/module-5-is-lm/interactives/is-lm.html`.
+For dark mode, define the interactive's colours under `:root.dark-mode`. If it draws on a canvas, redraw on the `themechange` event. See `content/macro/shared/interactives/is-lm.html`.
 
 You can also put small demos straight into a slide with `<script>`. See `content/managerial/2026-27/session-03-elasticity/slides.md`.
 
@@ -219,29 +233,34 @@ Then write your slides in the new `slides.md`.
 
 ## Automatic update dates
 
-The Updated column shows the date of the last change to that session's folder (slides, images or interactives). GitHub works it out from your commits. You never type a date.
+The Updated column shows the date of the last change to that session's folder (slides, images, interactives or readings). GitHub works it out from your commits. You never type a date.
 
-One-time setup, on github.com:
-1. In your repository, click **Add file**, then **Create new file**.
-2. Name it `.github/workflows/update-dates.yml`.
-3. Paste the contents of `.github-workflow/update-dates.yml` from this portal. If your portal folder is not called `teaching`, change the three lines marked CHANGE.
-4. Click **Commit changes**.
-5. In the repository, open **Settings**, then **Actions**, then **General**. Under Workflow permissions, choose **Read and write permissions** and save.
+This is done by `.github/workflows/update-dates.yml` at the root of the repository (not inside `lms/`). Each time you push a change under `lms/content/`, GitHub runs `tools/set_dates.py`, and if a date changed it commits `courses.json` as **github-actions[bot]** within a minute or two. You can also start it by hand: open the **Actions** tab, choose **Update session dates**, then **Run workflow**.
 
-After this, each time you commit a change under `content/`, GitHub updates `courses.json` within a minute, and the site shows the new date. Until then, the date in `courses.json` is used.
+Because GitHub commits to the repository, run `git pull` before you edit `courses.json` on your computer, or your push may be refused.
+
+Only the dates change. The rest of `courses.json`, including its spacing, stays as you wrote it.
+
+To see what would change without changing anything, run this in the `lms` folder:
+
+```
+python tools/set_dates.py --check
+```
+
+If the run fails with a permission error, open **Settings**, then **Actions**, then **General** in the repository. Under Workflow permissions, choose **Read and write permissions** and save.
 
 ## Manage page (form)
 
-Open `manage.html` on your published site, for example `https://pawankb13.github.io/teaching/manage.html`. No page links to it.
+Open `manage.html` on your published site, for example `https://pawankb13.github.io/lms/manage.html`. No page links to it.
 
 | Group | What you can do |
 |---|---|
 | Courses | Add a course. Delete a course. |
 | Modules | Add a module. Delete a module. |
 | Years | Start a new year. Archive a year. |
-| Portal | Check for problems: finds missing course pages and slide files. |
+| Portal | Check for problems: finds missing slide and reading files. |
 
-Each change gives you the new `courses.json` to paste on GitHub (with a button that opens the file for you, a Copy button and a Download button). Adding gives a button that opens GitHub with the new slides or course page already filled in. Deleting gives links to the files and folders to remove on GitHub. Deleting asks you to tick a confirmation box first. The page checks the new file before showing it, and stops if it would be invalid.
+Each change gives you the new `courses.json` to paste on GitHub (with a button that opens the file for you, a Copy button and a Download button). Adding a module gives buttons that open GitHub with the new `slides.md` and `readings.md` already filled in. Adding a course needs only the new `courses.json`. Deleting gives links to the files and folders to remove on GitHub. Deleting asks you to tick a confirmation box first. The page checks the new file before showing it, and stops if it would be invalid.
 
 The buttons use the `github` setting in `courses.json` (`repo`, `branch`, `folder`). Change it if your repository, branch or folder name differs.
 

@@ -56,6 +56,14 @@
   const listed = (x) => x.visibility === "public";    /* shown in lists and counts */
   const opens = (x) => x.visibility !== "hidden";     /* its page or slides can be opened */
   const key = (c, y, d) => [c.id, y.id, d.id].map(encodeURIComponent).join("/");
+  /* Address of a course page, relative to the site folder. One page, course.html, serves every course.
+     Add "#<year id>" to open an archived year. A course can point elsewhere with "page" in courses.json. */
+  const coursePage = (c) => c.page || "course.html?c=" + encodeURIComponent(c.id);
+  /* A path in a session's slides.md or readings.md, made into a full address. fileUrl is that file's address.
+     Most paths are relative to the session folder (images/x.png). A path starting with shared/ points to
+     the course's shared folder, content/<course>/shared/, two folders up from the session. */
+  const resolve = (path, fileUrl) =>
+    /^shared\//.test(path) ? new URL("../../" + path, fileUrl).href : new URL(path, fileUrl).href;
 
   /* Finds the session in an address. Returns null when it does not exist or is hidden. */
   function find(data, hash) {
@@ -80,5 +88,5 @@
     return { c, y, d, slide };
   }
 
-  window.LMS = { load, normalise, find, key, listed, opens };
+  window.LMS = { load, normalise, find, key, coursePage, resolve, listed, opens };
 })();

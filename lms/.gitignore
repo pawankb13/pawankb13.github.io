@@ -1,0 +1,6 @@
+# Videos are too large for GitHub Pages. Put them on YouTube and use the video layout.
+*.mp4
+*.mov
+*.m4v
+*.webm
+.DS_Store

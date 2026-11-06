@@ -4,7 +4,7 @@
 
 Dr. Pawan Ashok Kamble \
 Assistant Professor \
-Faculty Cabin (F61)
+Faculty Cabin -F61
 
 ---
 <!-- layout: section -->

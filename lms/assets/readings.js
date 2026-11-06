@@ -30,7 +30,7 @@
     document.title = `Reading: ${d.title}`;
     const folder = d.file.replace(/[^\/]*$/, "");
     const mdUrl = new URL(folder + "readings.md", location.href);
-    const back = `courses/${c.id}.html` + (y.status === "archived" ? `#${y.id}` : "");
+    const back = LMS.coursePage(c) + (y.status === "archived" ? `#${y.id}` : "");
     const slides = /\.html?$/i.test(d.file) ? d.file : `slides.html#${LMS.key(c, y, d)}`;
 
     $("main").innerHTML = `
@@ -47,15 +47,16 @@
     } catch (e) { /* shown as empty below */ }
     const box = $("body");
     box.innerHTML = window.marked ? marked.parse(md) : `<pre>${esc(md)}</pre>`;
-    /* Links to files in the session folder (readings/...) are found next to readings.md. */
+    /* Links to files in the session folder (readings/...) are found next to readings.md,
+       and shared/... in the course's shared folder. */
     box.querySelectorAll("a[href]").forEach((a) => {
       const h = a.getAttribute("href");
-      if (!/^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(h)) a.href = new URL(h, mdUrl).href;
+      if (!/^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(h)) a.href = LMS.resolve(h, mdUrl);
       if (/^https?:/i.test(a.href)) { a.target = "_blank"; a.rel = "noopener"; }
     });
     box.querySelectorAll("img[src]").forEach((im) => {
       const h = im.getAttribute("src");
-      if (!/^([a-z][a-z0-9+.-]*:|\/\/|data:)/i.test(h)) im.src = new URL(h, mdUrl).href;
+      if (!/^([a-z][a-z0-9+.-]*:|\/\/|data:)/i.test(h)) im.src = LMS.resolve(h, mdUrl);
     });
     if (!box.textContent.trim() && !box.querySelector("img")) {
       box.innerHTML = `<p class="year-note">No reading material has been added for this session yet.</p>`;
