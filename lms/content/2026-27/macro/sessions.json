@@ -1,6 +1,17 @@
 {
   "$schema": "../../../sessions.schema.json",
   "sessions": [
+
+    {
+      "id": "modules",
+      "title": "Modules",
+      "type": "Module",
+      "number": 0,
+      "folder": "module-0-modules",
+      "updated": "2026-11-07",
+      "visibility": "public"
+    },
+
     {
       "id": "measuring-output",
       "title": "Macroeconomic Issues and Measuring a Nation's Output",
