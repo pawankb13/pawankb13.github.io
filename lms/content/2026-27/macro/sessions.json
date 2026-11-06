@@ -3,12 +3,12 @@
   "sessions": [
     {
       "id": "measuring-output",
-      "title": "Measuring a Nation's Output",
+      "title": "Macroeconomics and Measuring a Nation's Output",
       "type": "Module",
       "number": 1,
       "folder": "module-1-measuring-output",
-      "updated": "2026-11-05",
-      "visibility": "hidden"
+      "updated": "2026-11-06",
+      "visibility": "public"
     },
 
     {
