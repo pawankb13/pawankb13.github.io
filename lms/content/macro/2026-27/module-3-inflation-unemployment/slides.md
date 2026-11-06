@@ -835,7 +835,7 @@ Two more points to stress: hyperinflation comes from printing money to finance d
 
 ---
 
-<!-- layout: Topics -->
+<!-- layout: agenda -->
 
 ## Topics
 
