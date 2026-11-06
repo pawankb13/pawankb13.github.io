@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../sessions.schema.json",
+  "sessions": [
+    {
+      "id": "demand-supply",
+      "title": "Demand and Supply",
+      "type": "Session",
+      "number": 2,
+      "folder": "session-02-demand-supply",
+      "updated": "2026-11-05",
+      "visibility": "public"
+    }
+  ]
+}

@@ -30,6 +30,7 @@
     document.title = `Reading: ${d.title}`;
     const folder = d.file.replace(/[^\/]*$/, "");
     const mdUrl = new URL(folder + "readings.md", location.href);
+    const sharedUrl = new URL(LMS.sharedFolder(c), location.href).href;
     const back = LMS.coursePage(c) + (y.status === "archived" ? `#${y.id}` : "");
     const slides = /\.html?$/i.test(d.file) ? d.file : `slides.html#${LMS.key(c, y, d)}`;
 
@@ -51,12 +52,12 @@
        and shared/... in the course's shared folder. */
     box.querySelectorAll("a[href]").forEach((a) => {
       const h = a.getAttribute("href");
-      if (!/^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(h)) a.href = LMS.resolve(h, mdUrl);
+      if (!/^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(h)) a.href = LMS.resolve(h, mdUrl, sharedUrl);
       if (/^https?:/i.test(a.href)) { a.target = "_blank"; a.rel = "noopener"; }
     });
     box.querySelectorAll("img[src]").forEach((im) => {
       const h = im.getAttribute("src");
-      if (!/^([a-z][a-z0-9+.-]*:|\/\/|data:)/i.test(h)) im.src = LMS.resolve(h, mdUrl);
+      if (!/^([a-z][a-z0-9+.-]*:|\/\/|data:)/i.test(h)) im.src = LMS.resolve(h, mdUrl, sharedUrl);
     });
     if (!box.textContent.trim() && !box.querySelector("img")) {
       box.innerHTML = `<p class="year-note">No reading material has been added for this session yet.</p>`;

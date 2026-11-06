@@ -1,0 +1,24 @@
+{
+  "$schema": "../../../../sessions.schema.json",
+  "sessions": [
+    {
+      "id": "how-economists-think",
+      "title": "How Economists Think",
+      "type": "Session",
+      "number": 1,
+      "folder": "session-01-how-economists-think",
+      "updated": "2026-11-05",
+      "visibility": "public"
+    },
+
+    {
+      "id": "elasticity",
+      "title": "Elasticity and Its Application",
+      "type": "Session",
+      "number": 3,
+      "folder": "session-03-elasticity",
+      "updated": "2026-11-05",
+      "visibility": "public"
+    }
+  ]
+}

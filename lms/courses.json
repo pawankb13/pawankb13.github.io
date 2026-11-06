@@ -11,11 +11,6 @@
       "branch": "master",
       "folder": "lms"
     }
-
-
-
-
-
   },
   "courses": [
     {
@@ -23,199 +18,50 @@
       "title": "Managerial Economics",
       "description": "Microeconomic tools for business decisions: demand, elasticity, costs, market structure and pricing.",
       "programme": "PGDM",
-      "visibility": "hidden",
-      "years": [
-        {
-          "id": "2026-27",
-          "status": "current",
-          "decks": [
-            {
-              "id": "how-economists-think",
-              "title": "How Economists Think",
-              "type": "Session",
-              "number": 1,
-              "file": "content/managerial/2026-27/session-01-how-economists-think/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "public"
-            },
-            {
-              "id": "elasticity",
-              "title": "Elasticity and Its Application",
-              "type": "Session",
-              "number": 3,
-              "file": "content/managerial/2026-27/session-03-elasticity/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "public"
-            }
-          ]
-        },
-        {
-          "id": "2025-26",
-          "status": "archived",
-          "decks": [
-            {
-              "id": "demand-supply",
-              "title": "Demand and Supply",
-              "type": "Session",
-              "number": 2,
-              "file": "content/managerial/2025-26/session-02-demand-supply/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "public"
-            }
-          ]
-        }
-      ]
+      "visibility": "hidden"
     },
-
-
-
-
 
     {
       "id": "macro",
       "title": "Macroeconomics",
       "description": "Output, growth, money, inflation and the IS-LM and AD-AS frameworks for managers.",
       "programme": "PGDM",
-      "visibility": "public",
-      "years": [
-        {
-          "id": "2026-27",
-          "status": "current",
-          "decks": [
-            {
-              "id": "measuring-output",
-              "title": "Measuring a Nation's Output",
-              "type": "Module",
-              "number": 1,
-              "file": "content/macro/2026-27/module-1-measuring-output/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "hidden"
-            },
-            {
-              "id": "inflation-unemployment",
-              "title": "Inflation and Unemployment",
-              "type": "Module",
-              "number": 3,
-              "file": "content/macro/2026-27/module-3-inflation-unemployment/slides.md",
-              "updated": "2026-11-06",
-              "visibility": "public"
-            },
-
-            {
-              "id": "is-lm",
-              "title": "The IS-LM Model",
-              "type": "Module",
-              "number": 5,
-              "file": "content/macro/2026-27/module-5-is-lm/slides.md",
-              "updated": "2026-11-06",
-              "visibility": "hidden"
-            }
-          ]
-        },
-        {
-          "id": "2025-26",
-          
-          "status": "archived",
-          
-          "decks": [
-            {
-              "id": "introduction",
-              "title": "Introduction to Macroeconomics",
-              "type": "Session",
-              "number": 1,
-              "file": "content/macro/2025-26/session-01-introduction/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "hidden"
-            }
-          ]
-        }
-      ]
+      "visibility": "public"
     },
-
-
-
-
 
     {
       "id": "behavioural",
       "title": "Behavioral Economics",
       "description": "How real people decide: heuristics, biases, prospect theory, time preferences and nudges.",
       "programme": "PGDM",
-      "visibility": "hidden",
-      "years": [
-        {
-          "id": "2026-27",
-          "status": "current",
-          "note": "10 classes of 3 hours each.",
-          "decks": [
-            {
-              "id": "prospect-theory",
-              "title": "Prospect Theory and Loss Aversion",
-              "type": "Class",
-              "number": 3,
-              "file": "content/behavioural/2026-27/class-03-prospect-theory/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "public"
-            }
-          ]
-        }
-      ]
+      "visibility": "hidden"
     },
-
-
-
-
 
     {
       "id": "econometrics",
       "title": "Econometrics",
       "description": "Regression and causal inference with applied examples from development and finance.",
-      "visibility": "hidden",
-      "years": [
-        {
-          "id": "2026-27",
-          "status": "current",
-          "decks": [
-            {
-              "id": "ols",
-              "title": "The OLS Estimator",
-              "type": "Session",
-              "number": 2,
-              "file": "content/econometrics/2026-27/session-02-ols/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "public"
-            }
-          ]
-        }
-      ]
+      "visibility": "hidden"
     },
 
-
-
-
-    
     {
       "id": "research",
       "title": "Research Courses",
       "description": "Research design, literature review, data and academic writing.",
-      "visibility": "hidden",
-      "years": [
-        {
-          "id": "2026-27",
-          "status": "current",
-          "decks": [
-            {
-              "id": "research-question",
-              "title": "Framing a Research Question",
-              "type": "Session",
-              "number": 1,
-              "file": "content/research/2026-27/session-01-research-question/slides.md",
-              "updated": "2026-11-05",
-              "visibility": "public"
-            }
-          ]
-        }
-      ]
+      "visibility": "hidden"
+    }
+  ],
+  "years": [
+    {
+      "id": "2026-27",
+      "status": "current",
+      "courses": ["managerial", "macro", "behavioural", "econometrics", "research"]
+    },
+
+    {
+      "id": "2025-26",
+      "status": "archived",
+      "courses": ["managerial", "macro"]
     }
   ],
   "templates": {
@@ -227,7 +73,7 @@
         "id": "all-layouts",
         "title": "Slide Templates",
         "label": "All layouts",
-        "file": "content/templates/2026-27/all-layouts/slides.md",
+        "file": "content/templates/all-layouts/slides.md",
         "updated": "2026-11-06"
       }
     ]

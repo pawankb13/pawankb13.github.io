@@ -1,0 +1,15 @@
+{
+  "$schema": "../../../../sessions.schema.json",
+  "note": "10 classes of 3 hours each.",
+  "sessions": [
+    {
+      "id": "prospect-theory",
+      "title": "Prospect Theory and Loss Aversion",
+      "type": "Class",
+      "number": 3,
+      "folder": "class-03-prospect-theory",
+      "updated": "2026-11-05",
+      "visibility": "public"
+    }
+  ]
+}

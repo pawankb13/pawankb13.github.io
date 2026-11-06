@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../sessions.schema.json",
+  "sessions": [
+    {
+      "id": "research-question",
+      "title": "Framing a Research Question",
+      "type": "Session",
+      "number": 1,
+      "folder": "session-01-research-question",
+      "updated": "2026-11-05",
+      "visibility": "public"
+    }
+  ]
+}

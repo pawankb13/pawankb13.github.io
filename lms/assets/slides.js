@@ -30,11 +30,12 @@
     $("notes-btn").hidden = !st.allowNotes;
     if (!location.hash.replace(/^#/, "")) return fail("No deck selected", "Open a deck from a course page.");
     const found = LMS.find(data, location.hash);
-    if (!found) return fail("Deck not found", "Check the deck list in courses.json.");
+    if (!found) return fail("Deck not found", "Check the course's sessions.json for this year.");
     const { c, y, d } = found;
 
     st.key = LMS.key(c, y, d);
     st.deckUrl = new URL(url(d.file), location.href).href;
+    st.sharedUrl = new URL(url(LMS.sharedFolder(c)), location.href).href;
     const back = url(LMS.coursePage(c)) + "#" + y.id;
     $("back").href = back;
     $("deck-course").textContent = `${c.title} · ${y.label || y.id}`;
@@ -47,7 +48,7 @@
       if (!res.ok) throw new Error();
       src = await res.text();
     } catch (e) {
-      return fail("Slides file not found", `Create ${d.file}, or fix its path in courses.json.`);
+      return fail("Slides file not found", `Create ${d.file}, or fix the session's "folder" in ${y.sessionsFile || "courses.json"}.`);
     }
     build(src, `${c.title} · ${y.label || y.id}`);
     show(Math.max(0, Math.min(st.slides.length - 1, (found.slide || 1) - 1)));
@@ -102,11 +103,11 @@
 
   /* ---------- Layouts: <!-- layout: name option --> as the first line of a slide ---------- */
   /* Images, interactives, scripts and links to files (readings) in a deck are found next to the deck's own file.
-     A path starting with shared/ is found in the course's shared folder instead: content/<course>/shared/. */
+     A path starting with shared/ is found in the course's shared folder instead: content/shared/<course>/. */
   function resolveSrc(html) {
     if (!st.deckUrl) return html;
     return html.replace(/(\s(?:src|href)=")([^"]+)(")/g, (m, a, p, z) =>
-      /^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(p) ? m : a + LMS.resolve(p, st.deckUrl) + z);
+      /^([a-z][a-z0-9+.-]*:|\/\/|#|\?)/i.test(p) ? m : a + LMS.resolve(p, st.deckUrl, st.sharedUrl) + z);
   }
 
   function parseLayout(src) {

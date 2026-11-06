@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../sessions.schema.json",
+  "sessions": [
+    {
+      "id": "introduction",
+      "title": "Introduction to Macroeconomics",
+      "type": "Session",
+      "number": 1,
+      "folder": "session-01-introduction",
+      "updated": "2026-11-05",
+      "visibility": "hidden"
+    }
+  ]
+}

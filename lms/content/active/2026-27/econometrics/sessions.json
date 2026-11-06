@@ -1,0 +1,14 @@
+{
+  "$schema": "../../../../sessions.schema.json",
+  "sessions": [
+    {
+      "id": "ols",
+      "title": "The OLS Estimator",
+      "type": "Session",
+      "number": 2,
+      "folder": "session-02-ols",
+      "updated": "2026-11-05",
+      "visibility": "public"
+    }
+  ]
+}

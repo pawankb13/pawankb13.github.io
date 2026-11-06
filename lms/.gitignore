@@ -4,3 +4,4 @@
 *.m4v
 *.webm
 .DS_Store
+__pycache__/

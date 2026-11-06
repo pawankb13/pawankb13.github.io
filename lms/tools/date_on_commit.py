@@ -1,50 +1,56 @@
 #!/usr/bin/env python3
 """Called by the git hook lms/tools/hooks/pre-commit, just before each commit.
 
-For every session in courses.json whose folder has a change in this commit (slides, images,
-interactives or readings), it sets "updated" to today and adds courses.json to the same commit.
-Sessions that were not changed keep their date. Only the date values change in courses.json;
-its layout and spacing stay as they are.
+For every session whose folder has a change in this commit (slides, images, interactives or readings),
+it sets "updated" to today in that course's sessions.json and adds that file to the same commit.
+Sessions that were not changed keep their date. A folder that was only moved (for example when a year
+goes to the archive) does not count as a change.
 
 If anything goes wrong, it prints a line and lets the commit go ahead."""
-import json, subprocess, sys
+import subprocess, sys
 from datetime import date
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent.parent          # the lms folder
-DATA = ROOT / "courses.json"
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from set_dates import set_date                           # changes one session's date, nothing else
+from portal import ROOT, all_sessions, write_date
 
 def git(*args, cwd=ROOT):
     return subprocess.run(["git", *args], cwd=cwd, capture_output=True, text=True, check=True).stdout
 
+def changed_paths(top, prefix):
+    """Paths inside lms/ that this commit adds, changes or deletes. Pure moves (100% renames) are left out."""
+    out = git("diff", "--cached", "--name-status", "-M", "-z", cwd=top).split("\0")
+    paths, i = [], 0
+    while i < len(out) and out[i]:
+        status = out[i]
+        if status[0] in "RC":
+            old, new = out[i + 1], out[i + 2]
+            i += 3
+            if status in ("R100", "C100"):
+                continue
+            paths.append(new)
+        else:
+            paths.append(out[i + 1])
+            i += 2
+    return [p[len(prefix) + 1:] for p in paths if p.startswith(prefix + "/")]
+
 def main():
     top = Path(git("rev-parse", "--show-toplevel").strip())
     prefix = ROOT.resolve().relative_to(top.resolve()).as_posix()      # "lms"
-    staged = [p for p in git("diff", "--cached", "--name-only", "-z", cwd=top).split("\0") if p]
-    staged = [p[len(prefix) + 1:] for p in staged if p.startswith(prefix + "/")]   # paths inside lms/
+    staged = changed_paths(top, prefix)
     if not any(p.startswith("content/") for p in staged):
         return
-
-    text = DATA.read_text(encoding="utf-8")
-    d = json.loads(text)
-    decks = [k for c in d.get("courses", []) for y in c.get("years", []) for k in y.get("decks", [])]
-    decks += d.get("templates", {}).get("decks", [])
     today = date.today().isoformat()
-    changed = []
-    for k in decks:
-        file = k.get("file", "")
-        folder = file if file.lower().endswith((".html", ".htm")) else file.rsplit("/", 1)[0] + "/"
-        if any(p == folder or p.startswith(folder) for p in staged) and k.get("updated") != today:
-            text = set_date(text, file, today)
-            changed.append(k.get("title", file))
-    if not changed:
-        return
-    json.loads(text)                     # never write a broken courses.json
-    DATA.write_text(text, encoding="utf-8")
-    git("add", "--", str(DATA))
-    print("Updated date set to " + today + ": " + ", ".join(changed))
+    touched, names = set(), []
+    for rel, folder, s in all_sessions():
+        f = folder + "/"
+        if s.get("updated") != today and any(p.startswith(f) for p in staged):
+            touched.add(write_date(rel, s, today))
+            names.append(s.get("title", folder))
+    for rel in sorted(touched):
+        git("add", "--", str(ROOT / rel))
+    if names:
+        print("Updated date set to " + today + ": " + ", ".join(names))
 
 if __name__ == "__main__":
     try:

@@ -97,7 +97,7 @@
       if (inArchiveList) {
         $("main").innerHTML = head(c, "") + archiveList(c, archived) + foot(toCurrent);
       } else if (!y) {
-        $("main").innerHTML = head(c, "") + `<div class="notice"><h2>No years yet</h2><p>Add a year for this course in courses.json.</p></div>`;
+        $("main").innerHTML = head(c, "") + `<div class="notice"><h2>No years yet</h2><p>Add this course to a year's <code>courses</code> list in courses.json.</p></div>`;
       } else if (inArchive) {
         $("main").innerHTML = head(c, `<a href="#archive">‹ Archive</a>`) + sessionList(c, y) + foot(toCurrent);
         bindSort(c, y);
@@ -114,7 +114,7 @@
   function archiveList(c, archived) {
     if (!archived.length) {
       return `<section aria-label="Archive"><div class="notice"><h2>No archived years yet</h2>
-        <p>When a year ends, set its <code>status</code> to <code>"archived"</code> in courses.json and it will appear here.</p></div></section>`;
+        <p>When you start a new year with <code>python lms.py</code>, the current year moves here.</p></div></section>`;
     }
     const rows = archived.map((y) => {
       const n = y.decks.filter(listed).length;
@@ -130,7 +130,7 @@
       </section>`;
   }
 
-  /* The sessions of one year. Order follows courses.json until a column heading is clicked. */
+  /* The sessions of one year. Order follows sessions.json until a column heading is clicked. */
   const sortState = { key: "", dir: 1 };
   const num = (s) => { const m = /\d+/.exec(s || ""); return m ? parseInt(m[0], 10) : Infinity; };
   function sortedDecks(decks) {
@@ -192,8 +192,11 @@
     const decks = y.decks.filter(listed);
     const list = decks.length
       ? `<div id="deck-wrap">${deckTable(c, y, y.decks)}</div>`
+      : y.missing
+      ? `<div class="notice"><h2>Sessions file missing</h2>
+          <p>courses.json lists this course for ${esc(y.label || y.id)}, but <code>${esc(y.sessionsFile)}</code> was not found.</p></div>`
       : `<div class="notice"><h2>No slides for ${esc(y.label || y.id)} yet</h2>
-          <p>Add a session to this year's <code>decks</code> list in courses.json.</p></div>`;
+          <p>Add a session to <code>${esc(y.sessionsFile || "sessions.json")}</code>.</p></div>`;
     const meta = [y.programme, y.term, plural(decks.length, "session", "sessions")].filter(Boolean).map(esc).join(" · ");
     return `<section aria-label="Sessions for ${esc(y.label || y.id)}">
         <div class="year-head"><h2>${esc(y.label || y.id)} sessions${isCurrent ? ' <small class="now">Current</small>' : ""}</h2><span class="year-meta">${meta}</span></div>
