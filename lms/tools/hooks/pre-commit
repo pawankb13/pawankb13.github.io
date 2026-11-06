@@ -1,9 +1,13 @@
 #!/bin/sh
-# Runs before every commit. Sets today's date on each session whose folder is in the commit.
-# The work is done by lms/tools/date_on_commit.py. It never stops a commit.
+# Runs before every commit. It never stops a commit.
+#   1. Sets today's date on each session whose folder is in the commit (lms/tools/date_on_commit.py).
+#   2. Rebuilds lms/index.json, the one file the site reads, and adds it to the commit (lms/tools/build_index.py).
 # One-time setup on each computer, in the repository folder:
 #   git config core.hooksPath lms/tools/hooks
 top=$(git rev-parse --show-toplevel) || exit 0
 py=$(command -v python3 || command -v python) || exit 0
 "$py" "$top/lms/tools/date_on_commit.py" || true
+if "$py" "$top/lms/tools/build_index.py"; then
+  git -C "$top" add -- lms/index.json || true
+fi
 exit 0

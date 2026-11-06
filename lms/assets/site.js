@@ -177,12 +177,18 @@
       readingsCheck.get(p).then((has) => { a.hidden = !has; });
     });
   }
+  /* index.json already says whether readings.md has content; otherwise the link starts hidden and is checked. */
+  function readingsLink(c, y, d) {
+    if (d.hasReadings === false) return "";
+    const check = d.hasReadings === true ? "" : ` data-readings="${esc(readingsPath(d))}" hidden`;
+    return `<a class="deck-read" href="${readingsHref(c, y, d)}"${check}>Reading Material</a>`;
+  }
   function deckRows(c, y, decks) {
     return `<ol class="deck-list">${sortedDecks(decks).map(({ d, i }) => `<li class="deck">
             <span class="deck-no">${esc(d.label || "Session " + (i + 1))}</span>
             <a class="deck-title" href="${deckHref(c, y, d)}">${esc(d.title)}</a>
             <span class="deck-links">
-              <a class="deck-read" href="${readingsHref(c, y, d)}" data-readings="${esc(readingsPath(d))}" hidden>Reading Material</a>
+              ${readingsLink(c, y, d)}
               <a class="deck-open" href="${deckHref(c, y, d)}">Open slides</a>
             </span>
             <span class="deck-date"><span class="deck-date-label">Updated </span>${esc(fmtDate(d.updated))}</span>

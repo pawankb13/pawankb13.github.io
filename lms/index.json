@@ -1,0 +1,246 @@
+{
+ "_note": "Made by tools/build_index.py. Do not edit: change courses.json, year.json or sessions.json instead.",
+ "version": 1,
+ "raw": {
+  "$schema": "./courses.schema.json",
+  "site": {
+   "title": "Courses",
+   "instructor": "Dr. Pawan Ashok Kamble",
+   "institution": "",
+   "homepage": "https://pawankb13.github.io",
+   "showNotes": true,
+   "github": {
+    "repo": "pawankb13/pawankb13.github.io",
+    "branch": "master",
+    "folder": "lms"
+   }
+  },
+  "courses": [
+   {
+    "id": "managerial",
+    "title": "Managerial Economics",
+    "description": "Microeconomic tools for business decisions: demand, elasticity, costs, market structure and pricing.",
+    "programme": "PGDM",
+    "visibility": "hidden"
+   },
+   {
+    "id": "macro",
+    "title": "Macroeconomics",
+    "description": "Output, growth, money, inflation and the IS-LM and AD-AS frameworks for managers.",
+    "programme": "PGDM",
+    "visibility": "public"
+   },
+   {
+    "id": "behavioural",
+    "title": "Behavioral Economics",
+    "description": "How real people decide: heuristics, biases, prospect theory, time preferences and nudges.",
+    "programme": "PGDM",
+    "visibility": "hidden"
+   },
+   {
+    "id": "econometrics",
+    "title": "Econometrics",
+    "description": "Regression and causal inference with applied examples from development and finance.",
+    "visibility": "hidden"
+   },
+   {
+    "id": "research",
+    "title": "Research Courses",
+    "description": "Research design, literature review, data and academic writing.",
+    "visibility": "hidden"
+   }
+  ],
+  "years": [
+   "2026-27",
+   "2025-26"
+  ],
+  "templates": {
+   "title": "Slide Templates",
+   "description": "Every slide layout, ready to copy.",
+   "note": "Open the Markdown file, copy a slide, and change the content.",
+   "decks": [
+    {
+     "id": "all-layouts",
+     "title": "Slide Templates",
+     "label": "All layouts",
+     "file": "content/templates/all-layouts/slides.md",
+     "updated": "2026-11-06"
+    }
+   ]
+  }
+ },
+ "years": [
+  {
+   "$schema": "../../year.schema.json",
+   "status": "current",
+   "courses": [
+    "managerial",
+    "macro",
+    "behavioural",
+    "econometrics",
+    "research"
+   ],
+   "id": "2026-27"
+  },
+  {
+   "$schema": "../../year.schema.json",
+   "status": "archived",
+   "courses": [
+    "managerial",
+    "macro"
+   ],
+   "id": "2025-26"
+  }
+ ],
+ "files": {
+  "2026-27/managerial": {
+   "$schema": "../../../sessions.schema.json",
+   "sessions": [
+    {
+     "id": "how-economists-think",
+     "title": "How Economists Think",
+     "type": "Session",
+     "number": 1,
+     "folder": "session-01-how-economists-think",
+     "updated": "2026-11-05",
+     "visibility": "public"
+    },
+    {
+     "id": "elasticity",
+     "title": "Elasticity and Its Application",
+     "type": "Session",
+     "number": 3,
+     "folder": "session-03-elasticity",
+     "updated": "2026-11-05",
+     "visibility": "public"
+    }
+   ]
+  },
+  "2026-27/macro": {
+   "$schema": "../../../sessions.schema.json",
+   "sessions": [
+    {
+     "id": "modules",
+     "title": "Modules",
+     "type": "Module",
+     "number": 0,
+     "folder": "module-0-modules",
+     "updated": "2026-11-07",
+     "visibility": "public"
+    },
+    {
+     "id": "measuring-output",
+     "title": "Macroeconomic Issues and Measuring a Nation's Output",
+     "type": "Module",
+     "number": 1,
+     "folder": "module-1-measuring-output",
+     "updated": "2026-11-07",
+     "visibility": "public"
+    },
+    {
+     "id": "production-growth",
+     "title": "Production and Growth",
+     "type": "Module",
+     "number": 2,
+     "folder": "module-2-production-growth",
+     "updated": "2026-11-07",
+     "visibility": "public"
+    },
+    {
+     "id": "inflation-unemployment",
+     "title": "Inflation and Unemployment",
+     "type": "Module",
+     "number": 3,
+     "folder": "module-3-inflation-unemployment",
+     "updated": "2026-11-07",
+     "visibility": "public"
+    },
+    {
+     "id": "is-lm",
+     "title": "The IS-LM Model",
+     "type": "Module",
+     "number": 5,
+     "folder": "module-5-is-lm",
+     "updated": "2026-11-06",
+     "visibility": "hidden"
+    }
+   ]
+  },
+  "2026-27/behavioural": {
+   "$schema": "../../../sessions.schema.json",
+   "note": "10 classes of 3 hours each.",
+   "sessions": [
+    {
+     "id": "prospect-theory",
+     "title": "Prospect Theory and Loss Aversion",
+     "type": "Class",
+     "number": 3,
+     "folder": "class-03-prospect-theory",
+     "updated": "2026-11-05",
+     "visibility": "public"
+    }
+   ]
+  },
+  "2026-27/econometrics": {
+   "$schema": "../../../sessions.schema.json",
+   "sessions": [
+    {
+     "id": "ols",
+     "title": "The OLS Estimator",
+     "type": "Session",
+     "number": 2,
+     "folder": "session-02-ols",
+     "updated": "2026-11-05",
+     "visibility": "public"
+    }
+   ]
+  },
+  "2026-27/research": {
+   "$schema": "../../../sessions.schema.json",
+   "sessions": [
+    {
+     "id": "research-question",
+     "title": "Framing a Research Question",
+     "type": "Session",
+     "number": 1,
+     "folder": "session-01-research-question",
+     "updated": "2026-11-05",
+     "visibility": "public"
+    }
+   ]
+  },
+  "2025-26/managerial": {
+   "$schema": "../../../sessions.schema.json",
+   "sessions": [
+    {
+     "id": "demand-supply",
+     "title": "Demand and Supply",
+     "type": "Session",
+     "number": 2,
+     "folder": "session-02-demand-supply",
+     "updated": "2026-11-05",
+     "visibility": "public"
+    }
+   ]
+  },
+  "2025-26/macro": {
+   "$schema": "../../../sessions.schema.json",
+   "sessions": [
+    {
+     "id": "introduction",
+     "title": "Introduction to Macroeconomics",
+     "type": "Session",
+     "number": 1,
+     "folder": "session-01-introduction",
+     "updated": "2026-11-05",
+     "visibility": "hidden"
+    }
+   ]
+  }
+ },
+ "readings": [
+  "content/2026-27/macro/module-1-measuring-output/readings.md",
+  "content/2026-27/macro/module-3-inflation-unemployment/readings.md",
+  "content/2026-27/macro/module-5-is-lm/readings.md"
+ ]
+}

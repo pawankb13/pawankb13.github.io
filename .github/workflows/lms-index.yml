@@ -1,0 +1,36 @@
+# Rebuilds lms/index.json after a push that changes the course files, and commits it.
+# This covers edits made on github.com (for example from manage.html), where the local git hook does not run.
+name: Rebuild course index
+on:
+  push:
+    branches: [master]
+    paths:
+      - "lms/courses.json"
+      - "lms/content/**"
+      - "lms/tools/build_index.py"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: lms-index
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python lms/tools/build_index.py
+      - name: Commit index.json if it changed
+        run: |
+          if git diff --quiet -- lms/index.json && git ls-files --error-unmatch lms/index.json >/dev/null 2>&1; then
+            echo "index.json is up to date"; exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898283+github-actions[bot]@users.noreply.github.com"
+          git add lms/index.json
+          git commit -m "Rebuild lms/index.json"
+          git pull --rebase origin master
+          git push origin HEAD:master

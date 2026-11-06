@@ -16,6 +16,7 @@ course.html                 The course page, for every course (course.html?c=mac
 courses/                    Old course addresses, kept so links you shared still work
 slides.html                 Slide viewer
 courses.json                Your courses, and the list of year folders. Small; changes rarely.
+index.json                  Made for you on every commit and push. The site reads only this file. Never edit it.
 courses.schema.json         Checks courses.json as you type (VS Code)
 year.schema.json            Checks every year.json as you type
 sessions.schema.json        Checks every sessions.json as you type
@@ -293,6 +294,16 @@ Run `python lms.py` in the `lms` folder. It shows a menu:
 3. **Start a new year**: marks the current year archived, creates the new year's folder and `year.json` as current, and sets up its course folders. Nothing moves.
 
 Then commit and sync.
+
+## index.json: why pages load fast
+
+The live site reads one file, `index.json`, instead of `courses.json`, every `year.json`, every `sessions.json` and every `readings.md` one after another. `index.json` is all of those merged into one file. **Never edit it.** Keep editing the usual files; `index.json` is rebuilt for you:
+
+- **On your computer**, the git hook `tools/hooks/pre-commit` rebuilds it on every commit and adds it to the commit (same one-time setup as below).
+- **On github.com** (for example after pasting files from `manage.html`), the GitHub Action `.github/workflows/lms-index.yml` rebuilds it after each push and commits it as "Rebuild lms/index.json". The live site shows the change a minute or two later.
+- **By hand**, any time: `python3 tools/build_index.py` in the `lms` folder.
+
+When you preview on your own computer (`localhost`), the site skips `index.json` and reads the separate files, so your edits show before you commit. If `index.json` is ever missing or broken, the live site does the same.
 
 ## Automatic update dates
 

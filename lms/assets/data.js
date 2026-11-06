@@ -1,4 +1,4 @@
-/* Reads courses.json, every year's year.json and every course's sessions.json, fills in the defaults,
+/* Reads index.json (or, on localhost or when it is missing, courses.json, every year.json and every sessions.json), fills in the defaults,
    and gives every page the same shape: courses -> years -> decks. Loaded before site.js, slides.js
    and readings.js. Gives them window.LMS.
 
@@ -33,21 +33,25 @@
 
   /* base: the course folder for that year. A session names its "folder"; its slides are <folder>/slides.md
      unless it sets "file". The Slide Templates decks give the full "file" path instead. */
-  function deck(d, i, base) {
+  function deck(d, i, base, readings) {
     const label = d.label || [d.type, d.number].filter((v) => v !== undefined && v !== "").join(" ");
     const file = d.folder ? base + d.folder + "/" + (d.file || "slides.md") : d.file || "";
     const fallbackId = d.folder || String(file).replace(/\/[^\/]*$/, "").replace(/^.*\//, "");
+    /* hasReadings: true or false when index.json says so; undefined means the page checks readings.md itself. */
+    const hasReadings = readings && file ? readings.has(file.replace(/[^\/]*$/, "") + "readings.md") : undefined;
     return Object.assign({}, d, {
       id: String(d.id || fallbackId || i + 1),
-      file, label, index: i, visibility: visibility(d), updated: d.updated || "",
+      file, label, index: i, visibility: visibility(d), updated: d.updated || "", hasReadings,
     });
   }
 
   /* all = { raw: courses.json, years: [year.json contents plus id, in the order of courses.json],
-             files: { "<year>/<course>": sessions.json, or null when it is missing } }
+             files: { "<year>/<course>": sessions.json, or null when it is missing },
+             readings: [readings.md paths that have content], only when read from index.json }
      A year whose year.json is missing has missing: true and no courses. */
   function normalise(all) {
     const raw = all.raw || {}, files = all.files || {}, years = all.years || [];
+    const readings = Array.isArray(all.readings) ? new Set(all.readings) : null;
     const courses = (raw.courses || []).map((c) => {
       const ys = years.filter((y) => (y.courses || []).includes(c.id)).map((y) => {
         const f = files[y.id + "/" + c.id];
@@ -56,7 +60,7 @@
           id: y.id, label: s.label || y.label || y.id, status: y.status || "current",
           programme: s.programme ?? c.programme ?? "", term: s.term || y.term || "", note: s.note || y.note || "",
           sessionsFile: sessionsFile(y, c.id), missing: f === null,
-          decks: (s.sessions || []).map((d, i) => deck(d, i, courseFolder(y, c.id))),
+          decks: (s.sessions || []).map((d, i) => deck(d, i, courseFolder(y, c.id), readings)),
         };
       });
       return Object.assign({}, c, { description: c.description || "", visibility: visibility(c), years: ys });
@@ -65,7 +69,7 @@
     if (t) courses.push({
       id: "templates", title: t.title || "Slide Templates", description: t.description || "", visibility: "unlisted",
       years: [{ id: "reference", label: t.label || "Reference", status: "current", programme: "", term: "",
-        note: t.note || "", decks: (t.decks || []).map((d, i) => deck(d, i, "")) }],
+        note: t.note || "", decks: (t.decks || []).map((d, i) => deck(d, i, "", readings)) }],
     });
     return { site: raw.site || {}, courses };
   }
@@ -90,8 +94,19 @@
     return { raw, years, files: Object.fromEntries(await Promise.all(jobs)) };
   }
 
+  /* index.json: every file above merged into one, made by tools/build_index.py on each commit and push.
+     One request instead of about fifteen. Returns null when it is missing or not in the expected shape. */
+  async function loadIndex(root) {
+    const ix = await getJson((root || ".") + "/index.json");
+    return ix && ix.version === 1 && ix.raw && ix.files && Array.isArray(ix.years) ? ix : null;
+  }
+
+  /* On your own computer (localhost) the separate files are read, so edits show before you commit.
+     On the live site index.json is read, and the separate files only when index.json is missing or broken. */
+  const isLocal = /^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)?$/.test(location.hostname);
   async function load(root) {
-    return normalise(await loadRaw(root));
+    const ix = isLocal ? null : await loadIndex(root);
+    return normalise(ix || await loadRaw(root));
   }
 
   const listed = (x) => x.visibility === "public";    /* shown in lists and counts */
