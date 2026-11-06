@@ -89,7 +89,7 @@
         "number": { "type": "integer", "minimum": 0 },
         "label": { "type": "string", "description": "Use instead of type and number for an unnumbered item, e.g. All layouts." },
         "file": { "type": "string", "pattern": "\\.(md|html?)$" },
-        "updated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Not needed: GitHub writes each session's date to dates.json. Used only when dates.json has no date for this session." },
+        "updated": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$", "description": "Filled in by the GitHub workflow. Do not edit by hand." },
         "visibility": { "$ref": "#/definitions/visibility" }
       }
     }
