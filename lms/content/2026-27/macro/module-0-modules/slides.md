@@ -2,7 +2,8 @@
 
 ## 7 Modules
 
----
+This course has seven modules for PGDM/MBA students. It covers output, growth, inflation, unemployment, money and policy with examples from the World and India.
+
 <!-- layout: table -->
 ## Course Roadmap
 
