@@ -76,7 +76,7 @@ Folder names: `session-01-topic`, `module-5-topic` or `class-03-topic`. Use lowe
 
 - `id` is the session's address: `slides.html#macro/2026-27/money`. Use lowercase and hyphens, unique within the year. **Do not change it once you have shared the link.** You can reorder, rename or delete other sessions and the link still works.
 - `type` and `number` make the label "Module 4". For something without a number, write `"label": "All layouts"` instead.
-- `updated` fills itself. See "Automatic update dates" below.
+- `updated` fills itself when you commit a change to the session. See "Automatic update dates" below.
 
 The order of the list is the order on the course page. Visitors can sort it by clicking the Type or Updated heading (up and down arrows).
 
@@ -233,21 +233,19 @@ Then write your slides in the new `slides.md`.
 
 ## Automatic update dates
 
-The Updated column shows the date of the last change to that session's folder (slides, images, interactives or readings). GitHub works it out from your commits. You never type a date.
+The Updated column shows the day you last changed that session: its slides, images, interactives or readings. The date is set on your computer at the moment you commit, and goes into the same commit. Nothing is committed for you afterwards, so syncing never clashes.
 
-This is done by `.github/workflows/update-dates.yml` at the root of the repository (not inside `lms/`). Each time you push a change under `lms/content/`, GitHub runs `tools/set_dates.py`, and if a date changed it commits `courses.json` as **github-actions[bot]** within a minute or two. You can also start it by hand: open the **Actions** tab, choose **Update session dates**, then **Run workflow**.
+When a commit includes a change in a session's folder, the git hook `tools/hooks/pre-commit` (which runs `tools/date_on_commit.py`) sets that session's `"updated"` in `courses.json` to today and adds `courses.json` to the commit. Sessions you did not change keep their date. This works for commits from VS Code and the terminal alike. If something goes wrong, the commit still goes through and the date is simply not changed.
 
-Because GitHub commits to the repository, run `git pull` before you edit `courses.json` on your computer, or your push may be refused.
-
-Only the dates change. The rest of `courses.json`, including its spacing, stays as you wrote it.
-
-To see what would change without changing anything, run this in the `lms` folder:
+One-time setup on each computer, in the repository folder (`pawankb13.github.io`):
 
 ```
-python tools/set_dates.py --check
+git config core.hooksPath lms/tools/hooks
 ```
 
-If the run fails with a permission error, open **Settings**, then **Actions**, then **General** in the repository. Under Workflow permissions, choose **Read and write permissions** and save.
+Changes made on github.com (for example a reading link pasted into `readings.md` there) do not set a date. Type that session's date yourself if you want it to show: `"updated": "YYYY-MM-DD"` in `courses.json`.
+
+To set every date from git history at once, run `python tools/set_dates.py` in the `lms` folder (`--check` only shows what would change).
 
 ## Manage page (form)
 

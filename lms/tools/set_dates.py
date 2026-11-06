@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Sets each session's "updated" date in courses.json from git history:
 the date of the last commit that touched that session's folder (slides, images, interactives or readings).
-Runs automatically on GitHub (see .github/workflows/update-dates.yml at the repository root).
-You can also run it by hand:
+Day to day, dates are set at each commit by tools/hooks/pre-commit (see README). This script resets
+all of them from history at once. Run it by hand in the lms folder:
 
     python tools/set_dates.py           change courses.json
     python tools/set_dates.py --check   only show what would change
