@@ -12,6 +12,10 @@
       "folder": "lms"
     }
   },
+
+
+
+
   "courses": [
     {
       "id": "managerial",
@@ -51,6 +55,9 @@
       "visibility": "hidden"
     }
   ],
+
+
+  
   "years": ["2026-27", "2025-26"],
   "templates": {
     "title": "Slide Templates",

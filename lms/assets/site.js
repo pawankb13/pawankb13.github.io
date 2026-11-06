@@ -199,7 +199,7 @@
           <p>Add a session to <code>${esc(y.sessionsFile || "sessions.json")}</code>.</p></div>`;
     const meta = [y.programme, y.term, plural(decks.length, "session", "sessions")].filter(Boolean).map(esc).join(" · ");
     return `<section aria-label="Sessions for ${esc(y.label || y.id)}">
-        <div class="year-head"><h2>${esc(y.label || y.id)} sessions${isCurrent ? ' <small class="now">Current</small>' : ""}</h2><span class="year-meta">${meta}</span></div>
+        <div class="year-head"><h2>${esc(y.label || y.id)} sessions${isCurrent ? ' <small class="now">Active</small>' : ""}</h2><span class="year-meta">${meta}</span></div>
         ${y.note ? `<p class="year-note">${esc(y.note)}</p>` : ""}
         ${list}
       </section>`;

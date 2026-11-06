@@ -15,6 +15,8 @@
   --on-accent: #ffffff;
   --code: #fafafa;
   --ok: #3d8296;
+  --active-bg: #1a7f45;      /* the green Active pill next to the current year */
+  --active-ink: #ffffff;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.06), 0 6px 24px rgba(0, 0, 0, 0.07);
   --toggle-track: #cbd5e1;
   --toggle-thumb: #ffffff;
@@ -28,7 +30,7 @@
   :root:not([data-theme="light"]):not(.light-mode) {
     --bg: #141414; --surface: #1e1e1e; --raised: #1e1e1e; --ink: #d1d5db; --heading: #f3f4f6;
     --muted: #9ca3af; --line: #2a2a2a; --accent: #7dd3fc; --accent-bright: #60a5fa; --accent-soft: #1f2a36;
-    --on-accent: #0b1820; --code: #1e1e1e; --ok: #7dd3fc;
+    --on-accent: #0b1820; --code: #1e1e1e; --ok: #7dd3fc; --active-bg: #4ade80; --active-ink: #052e16;
     --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 24px rgba(0, 0, 0, 0.45);
     --toggle-track: #2a2a2a; --toggle-thumb: #fbbf24; --toggle-icon: #78350f; --focus-ring: rgba(209, 213, 219, 0.22);
     color-scheme: dark;
@@ -38,7 +40,7 @@
 :root[data-theme="dark"]:not(.light-mode) {
   --bg: #141414; --surface: #1e1e1e; --raised: #1e1e1e; --ink: #d1d5db; --heading: #f3f4f6;
   --muted: #9ca3af; --line: #2a2a2a; --accent: #7dd3fc; --accent-bright: #60a5fa; --accent-soft: #1f2a36;
-  --on-accent: #0b1820; --code: #1e1e1e; --ok: #7dd3fc;
+  --on-accent: #0b1820; --code: #1e1e1e; --ok: #7dd3fc; --active-bg: #4ade80; --active-ink: #052e16;
   --shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 6px 24px rgba(0, 0, 0, 0.45);
   --toggle-track: #2a2a2a; --toggle-thumb: #fbbf24; --toggle-icon: #78350f; --focus-ring: rgba(209, 213, 219, 0.22);
   color-scheme: dark;
@@ -196,7 +198,7 @@ main.inner { padding-block: 40px 56px; }
 }
 .switch-btn span { font-weight: 400; font-size: 0.88rem; opacity: 0.85; }
 .switch-btn:hover { background: var(--accent); color: var(--on-accent); }
-.year-head h2 .now { font: 600 0.75rem var(--f-ui); color: var(--accent); margin-left: 8px; letter-spacing: 0.04em; text-transform: uppercase; }
+.year-head h2 .now { display: inline-block; vertical-align: middle; position: relative; top: -2px; margin-left: 10px; padding: 3px 12px; border-radius: 999px; background: var(--active-bg); color: var(--active-ink); font: 700 0.72rem/1.4 var(--f-ui); letter-spacing: 0.06em; text-transform: uppercase; }
 
 /* Smaller, filled button */
 .switch { margin-top: 32px; padding-top: 16px; }
