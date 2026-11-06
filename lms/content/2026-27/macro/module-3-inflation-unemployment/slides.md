@@ -66,11 +66,11 @@ In the long run, Milton Friedman's point applies: "Inflation is always and every
 - AD shifts right, so prices rise.
 - Drivers: easy money and credit, expansionary fiscal policy, wealth booms.
 
-![](images/demand-pull.jpg)
+![Demand-pull inflation: AD shifts right, from AD1 to AD2](images/demand-pull.jpg)
 
 Note:
 In the diagram, AD shifts from AD1 to AD2. The economy moves from E1 to E2: the price level rises from P1 to P2 and output rises from Y1 to Y2.
-So demand-pull inflation comes with higher output and lower unemployment in the short run. This links to the Phillips curve in Module 3.
+So demand-pull inflation comes with higher output and lower unemployment in the short run. This links to the Phillips curve in Part 2 of this module.
 Policy response: tighter monetary policy (higher repo rate) or tighter fiscal policy reduces AD.
 
 ---
@@ -83,7 +83,7 @@ Policy response: tighter monetary policy (higher repo rate) or tighter fiscal po
 - SRAS shifts left, so prices rise and output falls.
 - Triggers: oil or food shocks, wages rising faster than productivity, supply-chain disruptions.
 
-![](images/cost-push.jpg)
+![Cost-push inflation: SRAS shifts left, from SRAS1 to SRAS2](images/cost-push.jpg)
 
 Note:
 In the diagram, SRAS shifts from SRAS1 to SRAS2. The economy moves from E1 to E2: the price level rises and output falls from Y1 to Y2.
@@ -100,7 +100,7 @@ India example: in 2022, global oil and edible oil prices rose sharply after the 
 - Firms raise prices in advance.
 - The loop feeds itself until policy credibility breaks it.
 
-![](images/wage-price-loop.png)
+![The wage-price loop](images/wage-price-loop.png)
 
 Note:
 The loop: prices rise, workers demand higher wages, firms' costs rise, firms raise prices, and the cycle repeats.
@@ -116,7 +116,7 @@ This is why central banks care about inflation expectations. RBI runs a regular 
 - If demand keeps rising too, the price level keeps climbing.
 - A credible central bank breaks the loop by anchoring expectations.
 
-![](images/expectations-ad-as.png)
+![Rising expected inflation shifts SRAS up again and again](images/expectations-ad-as.png)
 
 Note:
 Each round of higher expected inflation shifts SRAS up (SRAS to SRAS 1 to SRAS 2). If AD also shifts up (AD to AD 1), the price level climbs from PL A to PL D.
@@ -760,7 +760,7 @@ Money loses value so fast that people spend it at once, which pushes prices up e
 - The 100-trillion note became a symbol.
 - It could barely buy a staple before Zimbabwe dollarised in 2009.
 
-![](images/zimbabwe-100-trillion.jpg)
+![Zimbabwe's Z$100 trillion note, 2009](images/zimbabwe-100-trillion.jpg)
 
 Note:
 Cause: the government printed money to pay for its spending while farm output collapsed after land reforms.
@@ -789,11 +789,11 @@ Video: Marginal Revolution University.
 | Early 2006 | Z$100,000 | About 1.7 million | A loaf of bread |
 | Mid-2007 | Z$10 million | Over 10 million | A dozen eggs or 2 loaves |
 | June 2008 | Z$100 billion | About 2.6 billion | Basic groceries or a minibus ride |
-| Nov 2008 | Z$100 trillion | About 2.62 trillion | A week's groceries for a small family |
-| Early 2009 | Z$100 trillion | Up to 2.6 decillion | Barely a loaf of bread |
+| Dec 2008 | Z$10 billion (new series) | New series: 10 zeros removed in Aug 2008 | A week's groceries for a small family |
+| Jan 2009 | Z$100 trillion | Up to 2.6 decillion | Barely a loaf of bread |
 
 Note:
-Check before class: the Z$100 trillion note was issued in January 2009, so the November 2008 row should use a smaller note.
+On 1 August 2008 Zimbabwe removed 10 zeros from its currency, so notes before and after that date are not directly comparable. The Z$10 billion note of the new series was issued on 19 December 2008, and the Z$100 trillion note in January 2009.
 
 ---
 ## What Is Deflation?
@@ -839,12 +839,12 @@ Two more points to stress: hyperinflation comes from printing money to finance d
 
 ## Topics
 
-1. Employment, Unemployment, labor force, unemployment rate
-1. Types of unemployment
-2. Natural rate of unemployment and full employment
-3. Beveridge Curve and labor market matching
-4. Wage pressure, inflation expectations and the Phillips curve
-5. Policy trade-offs using short-run and long-run. 
+1. Employment, unemployment, the labour force and the unemployment rate
+2. Types of unemployment
+3. Natural rate of unemployment and full employment
+4. Beveridge curve and labour market matching
+5. Wage pressure, inflation expectations and the Phillips curve
+6. Policy trade-offs in the short run and the long run
 
 ---
 ## Why Do We Study Unemployment?
@@ -872,7 +872,7 @@ Two more points to stress: hyperinflation comes from printing money to finance d
    - Persistent unemployment can increase poverty and inequality.
    - It can create social and economic insecurity.
 
->Key Takeway: Unemployment is not just a labour-market problem; it represents a loss of productive resources and economic welfare.
+> **Key takeaway:** Unemployment is not just a labour-market problem; it represents a loss of productive resources and economic welfare.
 
 ---
 
@@ -896,7 +896,7 @@ Two more points to stress: hyperinflation comes from printing money to finance d
 
 <div style="text-align: center;">
 
-<img src="images/image1.png" 
+<img src="images/image1.png" alt="Working-age population splits into the labour force (employed plus unemployed) and people outside the labour force"
      style="width: 75%; height: auto; object-fit: contain;">
 
 </div>
@@ -905,17 +905,17 @@ Two more points to stress: hyperinflation comes from printing money to finance d
 ---
 ## Measuring Unemployment
 
-### Population Divided by Labor-Market Status
+### Population Divided by Labour-Market Status
 
 $$
 \text{Unemployment Rate} =
-\left(\frac{\text{Unemployed}}{\text{Labor Force}}\right)\times 100
+\left(\frac{\text{Unemployed}}{\text{Labour Force}}\right)\times 100
 $$
 
 **Where:**
 
 $$
-\text{Labor Force} =
+\text{Labour Force} =
 \text{Employed}+\text{Unemployed}
 $$
 
@@ -958,7 +958,7 @@ $$
 
 **Answer:** The unemployment rate in this economy is **14.29%**.
 
-**Remember:** The other 300,000 people are outside the labor force, so they are not counted.
+**Remember:** The other 300,000 people are outside the labour force, so they are not counted.
 
 
 ---
@@ -992,7 +992,6 @@ $$
 - Example: Five family members working on a farm when three could produce the same output.
 
 
----
 ---
 <!-- layout: steps -->
 ## Business Cycle Channel of Rising Unemployment
@@ -1030,8 +1029,6 @@ It changes slowly. Labour laws, skill gaps, job-matching speed and demographics 
 In a recession the actual rate rises above the natural rate. In a boom it can fall below it.
 
 ---
-
----
 <!-- layout: table -->
 ## India's Unemployment: Latest PLFS Data
 
@@ -1053,7 +1050,6 @@ Check with the formula. LFPR = 55.5% and WPR = 52.7% of the population aged 15+.
 Unemployment rate = (LFPR − WPR) / LFPR × 100 = (55.5 − 52.7) / 55.5 × 100 ≈ 5.0%.
 Discussion point: overall unemployment is low, but urban youth unemployment is almost four times higher. Ask students why educated young people wait for jobs.
 
----
 ---
 <!-- layout: equation -->
 ## Actual Rate and the Natural Rate
@@ -1095,13 +1091,12 @@ Hysteresis means the natural rate itself can rise after a long recession. Long-t
 India link: Singh (2025) finds mild hysteresis in India's unemployment after shocks such as COVID-19.
 
 ---
----
 <!-- layout: image-left -->
 ## The Beveridge Curve
 
 ### Vacancies vs unemployment
 
-![](images/beveridge-curve.svg)
+![The Beveridge curve: movement along it, and an outward shift](images/beveridge-curve.svg)
 
 **1. Movement along the curve**
 - Demand changes move the economy between A and B.
@@ -1150,7 +1145,6 @@ Where the curve crosses the v = u line is a rough guide to the natural rate. An 
 Example: after COVID-19 the US curve shifted out. Firms reported record vacancies while many people were still unemployed.
 Ask the class: a city has many unfilled software jobs and many unemployed factory workers. Is this a move along the curve or a shift? (Answer: a shift, due to skill mismatch.)
 
----
 ---
 ## The Costs of Unemployment
 
@@ -1226,7 +1220,7 @@ India example: the 2022 inflation spike came mainly from food and fuel costs (co
 
 ### The short-run trade-off
 
-![](images/phillips-curve-sr.svg)
+![The short-run Phillips curve](images/phillips-curve-sr.svg)
 
 - Strong demand raises labour demand.
 - Firms compete for workers, so wages rise.
@@ -1310,7 +1304,7 @@ If expectations stay anchored, a credible central bank can wait for a temporary 
 
 ### A negative supply shock
 
-![](images/ad-as-supply-shock.svg)
+![A negative supply shock: SRAS₁ shifts left to SRAS₂](images/ad-as-supply-shock.svg)
 
 - SRAS shifts left: SRAS₁ to SRAS₂.
 - Prices rise: P₁ to P₂.
@@ -1325,7 +1319,6 @@ At E₂ the price level is higher and output is lower. Lower output means firms 
 AD has not moved. This is why demand policy faces the dilemma on the previous slide: raising AD restores output but pushes prices higher still; cutting AD lowers prices but deepens the fall in output.
 
 ---
----
 ## Disinflation and the Sacrifice Ratio
 
 ### Lowering inflation has a short-run cost
@@ -1337,7 +1330,7 @@ AD has not moved. This is why demand policy faces the dilemma on the previous sl
 **2. Sacrifice Ratio**
 - Percent of a year's real GDP lost to cut inflation by 1 percentage point.
 
-**3. Why disinflation rise unemployment in the Short Run**
+**3. Why Disinflation Raises Unemployment in the Short Run**
 - Tight monetary policy reduces aggregate demand.
 - Firms sell and produce less, so hiring weakens.
 - If expectations adjust slowly, output and jobs bear more of the cost.
@@ -1369,7 +1362,6 @@ Note:
 India examples: cyclical, PM Garib Kalyan Yojana and RBI rate cuts in 2020; frictional, the National Career Service portal; structural, Skill India and the PM Internship Scheme; supply shock, export curbs and buffer stock releases for food prices.
 Diagnose first, then choose the tool. Using demand stimulus for structural unemployment raises inflation without fixing the mismatch.
 
----
 ---
 <!-- layout: case -->
 ## Mini Case: A Difficult Trade-off
@@ -1409,23 +1401,6 @@ Rate cut risk: it supports demand, but if expectations are rising it can push in
 Note:
 Answer to the closing question: most likely a negative supply shock (stagflation), as in the AD-AS slide. Check core inflation and expectations to confirm.
 The last takeaway is the long-run Phillips curve: in the long run, unemployment returns to the natural rate whatever the inflation rate.
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ---
 <!-- layout: references -->

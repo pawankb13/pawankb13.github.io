@@ -1,6 +1,9 @@
 /* Helper for HTML interactives shown inside slides.
-   Add one line to the <head> of any interactive:
-       <script src="../assets/interactive.js"></script>
+   Add one line to the <head> of any interactive. The ../ steps climb to the lms folder:
+       in a session's interactives/ folder (content/<year>/<course>/<session>/interactives/), five:
+       <script src="../../../../../assets/interactive.js"></script>
+       in content/shared/<course>/interactives/ or content/templates/all-layouts/interactives/, four:
+       <script src="../../../../assets/interactive.js"></script>
    It does two things:
    1. Light and dark: sets the "dark-mode" or "light-mode" class on <html>, matching the slides,
       and fires a "themechange" event if your code needs to redraw.

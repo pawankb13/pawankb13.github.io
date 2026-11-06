@@ -160,12 +160,29 @@
         ${text}<span class="arrows" aria-hidden="true"><span class="${up ? "act" : ""}">▲</span><span class="${down ? "act" : ""}">▼</span></span></button>`;
   }
   const readingsHref = (c, y, d) => url("readings.html") + "#" + LMS.key(c, y, d);
+  /* The Reading Material link shows only when the session's readings.md has something in it.
+     The starter's instructions sit inside <!-- -->, so a file with only those counts as empty.
+     Each file is fetched once per page; a missing file counts as empty. */
+  const readingsPath = (d) => d.file.replace(/[^\/]*$/, "") + "readings.md";
+  const readingsCheck = new Map();     /* readings.md path -> Promise<true if it has content> */
+  function checkReadings(box) {
+    box.querySelectorAll("a[data-readings]").forEach((a) => {
+      const p = a.dataset.readings;
+      if (!readingsCheck.has(p)) {
+        readingsCheck.set(p, fetch(url(p), { cache: "no-cache" })
+          .then((r) => (r.ok ? r.text() : ""))
+          .then((t) => t.replace(/<!--[\s\S]*?(-->|$)/g, "").trim() !== "")
+          .catch(() => false));
+      }
+      readingsCheck.get(p).then((has) => { a.hidden = !has; });
+    });
+  }
   function deckRows(c, y, decks) {
     return `<ol class="deck-list">${sortedDecks(decks).map(({ d, i }) => `<li class="deck">
             <span class="deck-no">${esc(d.label || "Session " + (i + 1))}</span>
             <a class="deck-title" href="${deckHref(c, y, d)}">${esc(d.title)}</a>
             <span class="deck-links">
-              <a class="deck-read" href="${readingsHref(c, y, d)}">Reading Material</a>
+              <a class="deck-read" href="${readingsHref(c, y, d)}" data-readings="${esc(readingsPath(d))}" hidden>Reading Material</a>
               <a class="deck-open" href="${deckHref(c, y, d)}">Open slides</a>
             </span>
             <span class="deck-date"><span class="deck-date-label">Updated </span>${esc(fmtDate(d.updated))}</span>
@@ -178,12 +195,14 @@
   function bindSort(c, y) {
     const wrap = $("deck-wrap");
     if (!wrap) return;
+    checkReadings(wrap);
     wrap.addEventListener("click", (e) => {
       const b = e.target.closest("[data-sort]");
       if (!b) return;
       const key = b.dataset.sort;
       if (sortState.key === key) sortState.dir = -sortState.dir; else { sortState.key = key; sortState.dir = 1; }
       wrap.innerHTML = deckTable(c, y, y.decks);
+      checkReadings(wrap);
       const again = wrap.querySelector(`[data-sort="${key}"]`);
       if (again) again.focus();
     });

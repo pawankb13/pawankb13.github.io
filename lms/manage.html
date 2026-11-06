@@ -137,7 +137,7 @@ form.mg[hidden]{display:none}
   </form>
 
   <form class="mg" data-mode="check" hidden>
-    <p class="info">Looks at courses.json, every year.json and sessions.json, and every slides and reading file they list, and tells you if something is missing.</p>
+    <p class="info">Looks at courses.json, every year.json and sessions.json, and every slides file they list, and tells you if something is missing.</p>
     <button class="go" type="submit">Run the check</button>
   </form>
 
@@ -456,9 +456,7 @@ form.mg[hidden]{display:none}
       if (!c.years.length && c.id !== "templates") bad.push(`${c.title} is not in any year. Add it to a year.json's courses list.`);
       c.years.forEach((y) => y.decks.forEach((k) => {
         tasks.push(exists(k.file).then((ok) => { n++; if (!ok) bad.push(`Missing slides for ${c.title} ${y.id}, ${k.label} ${k.title}: ${k.file}`); }));
-        if (/\.html?$/i.test(k.file)) return;
-        const rd = k.file.replace(/[^\/]*$/, "") + "readings.md";
-        tasks.push(exists(rd).then((ok) => { n++; if (!ok) bad.push(`No reading page for ${c.title} ${y.id}, ${k.label} ${k.title}. Create ${rd}`); }));
+        /* readings.md is optional: without it (or with only the starter text) the Reading Material link is hidden. */
       }));
     });
     await Promise.all(tasks);

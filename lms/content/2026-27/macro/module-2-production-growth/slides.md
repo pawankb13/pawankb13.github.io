@@ -81,7 +81,7 @@ Ask students to list what they see: housing, consumer durables, clothing, transp
 
 Note:
 Check the arithmetic: 1.11^14 ≈ 4.3, so income rises by about 330%.
-Zimbabwe's decline came with land seizures, collapsing farm output and the hyperinflation of 2008 that we studied in the inflation module.
+Zimbabwe's decline came with land seizures, collapsing farm output and the hyperinflation of 2008, which we study in Module 3.
 
 ---
 <!-- layout: table -->

@@ -4,6 +4,7 @@
 
 This course has seven modules for PGDM/MBA students. It covers output, growth, inflation, unemployment, money and policy with examples from the World and India.
 
+---
 <!-- layout: table -->
 ## Course Roadmap
 
@@ -15,7 +16,7 @@ This course has seven modules for PGDM/MBA students. It covers output, growth, i
 | **4** | The Monetary System | How is money created and controlled? |
 | **5** | IS-LM Model and Aggregate Demand | What drives output in the short run? |
 | **6** | International Flow of Goods and Capital | How does India connect to the world? |
-| **7** | Aggregate Supply | How do short and long run connect? |
+| **7** | Aggregate Supply, Phillips Curve and Policy Mix | How do short and long run connect? |
 
 ---
 <!-- layout: compare -->
@@ -139,7 +140,6 @@ Module 5 full title: IS-LM Model and Aggregate Demand. Module 6 full title: Inte
 - **Modules 5, 6:** short-run demand, closed and open
 - **Module 7:** AS links short run and long run
 
----
 ---
 
 <!-- layout: end -->

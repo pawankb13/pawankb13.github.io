@@ -1134,7 +1134,7 @@ $$
 $$
 
 Note:
-India's current base year for real GDP is 2011-12. MoSPI is revising the series to a newer base year.
+India's current base year for real GDP is 2022-23. MoSPI released the new series in February 2026, replacing the 2011-12 base.
 
 ---
 ## The GDP Deflator
@@ -1187,7 +1187,7 @@ $$
 - **Negative gap:** recession, unemployment rises.
 - Okun's Law links the gap to unemployment.
 
-![](images/business-cycle.svg)
+![The business cycle: actual output moves around potential output](images/business-cycle.svg)
 
 Note:
 Phases: expansion, peak, contraction, trough.

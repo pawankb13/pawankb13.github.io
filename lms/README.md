@@ -319,7 +319,7 @@ Open `manage.html` on your published site, for example `https://pawankb13.github
 | Courses | Add a course. Delete a course. |
 | Sessions | Add a session. Delete a session. |
 | Years | Start a new year: the current year becomes archived and the new one current. |
-| Portal | Check for problems: finds missing `sessions.json`, slide and reading files, and mistakes in the JSON files. |
+| Portal | Check for problems: finds missing `sessions.json` and slide files, and mistakes in the JSON files. |
 
 Each change lists the files to update on GitHub: usually one `sessions.json`, and sometimes a `year.json` or `courses.json`. For each there is a button that opens it on GitHub (filled in, for a new file), a Copy button and a Download button. Adding a session also gives buttons that open GitHub with its new `slides.md` and `readings.md` already filled in. Deleting gives links to the folders to remove on GitHub, and asks you to tick a confirmation box first. The page checks the new files before showing them, and stops if they would be invalid.
 
@@ -343,7 +343,9 @@ A link to a file in `readings/` opens from the slide. A link starting with `http
 
 ## Reading Material page (one per session)
 
-Each session row on the course page has a **Reading Material** link before **Open slides**. It opens a page for that session only. The page shows the file `readings.md` from the session's own folder, for example `content/2026-27/macro/module-5-is-lm/readings.md`.
+A session row on the course page shows a **Reading Material** link before **Open slides** only when that session has reading material. It opens a page for that session only.
+
+The link appears by itself: the course page looks at each session's `readings.md` and shows the link when the file has something in it. A file with only the starter instructions (the text between `<!--` and `-->`), an empty file, or no file at all means no link. To remove the link again, delete your lines from `readings.md`. The page shows the file `readings.md` from the session's own folder, for example `content/2026-27/macro/module-5-is-lm/readings.md`.
 
 To add links, open that file on GitHub, click the pencil icon, paste your links, and commit:
 
