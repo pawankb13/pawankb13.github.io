@@ -1,0 +1,5 @@
+{
+  "$schema": "../../year.schema.json",
+  "status": "archived",
+  "courses": ["managerial", "macro"]
+}

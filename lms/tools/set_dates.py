@@ -17,7 +17,7 @@ from portal import ROOT, all_sessions, write_date
 
 def last_change(folder):
     """Newest date on which any file now in the folder was added or edited, following each file
-    back across moves, so moving a year to the archive does not count as a change."""
+    back across moves and renames, so a move does not count as a change."""
     best = None
     for f in (ROOT / folder).rglob("*"):
         if f.is_file() and f.name != ".DS_Store":

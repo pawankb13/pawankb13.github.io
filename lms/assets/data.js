@@ -1,11 +1,11 @@
-/* Reads courses.json and every course's sessions.json, fills in the defaults, and gives every page
-   the same shape: courses -> years -> decks. Loaded before site.js, slides.js and readings.js.
-   Gives them window.LMS.
+/* Reads courses.json, every year's year.json and every course's sessions.json, fills in the defaults,
+   and gives every page the same shape: courses -> years -> decks. Loaded before site.js, slides.js
+   and readings.js. Gives them window.LMS.
 
    Files:
-     courses.json                                    site settings, the courses, the years (newest first)
-     content/active/<year>/<course>/sessions.json    the current year's sessions of one course
-     content/archive/<year>/<course>/sessions.json   an archived year's sessions of one course
+     courses.json                              site settings, the courses, and the list of year folders
+     content/<year>/year.json                  "current" or "archived", and the courses taught that year
+     content/<year>/<course>/sessions.json     that course's sessions that year
    Each session's folder sits next to its sessions.json.
 
    Session address:  #<course>/<year>/<session id>[/<slide number>]   e.g. #macro/2026-27/is-lm/4
@@ -22,8 +22,10 @@
     return "public";
   }
 
-  /* Where a year's folders are: content/active/2026-27/ for the current year, content/archive/2025-26/ for past ones. */
-  const yearFolder = (y) => `content/${y.status === "archived" ? "archive" : "active"}/${y.id}/`;
+  /* A year's folder: content/2026-27/. Whether it is current or archived is written in its year.json. */
+  const yearId = (y) => (typeof y === "string" ? y : y.id);
+  const yearFolder = (y) => `content/${yearId(y)}/`;
+  const yearFile = (y) => yearFolder(y) + "year.json";
   const courseFolder = (y, courseId) => yearFolder(y) + courseId + "/";
   const sessionsFile = (y, courseId) => courseFolder(y, courseId) + "sessions.json";
   /* Files used by several sessions of a course: content/shared/<course>/ */
@@ -41,10 +43,11 @@
     });
   }
 
-  /* files: { "<year>/<course>": the parsed sessions.json, or null when it is missing } */
-  function normalise(raw, files) {
-    files = files || {};
-    const years = raw.years || [];
+  /* all = { raw: courses.json, years: [year.json contents plus id, in the order of courses.json],
+             files: { "<year>/<course>": sessions.json, or null when it is missing } }
+     A year whose year.json is missing has missing: true and no courses. */
+  function normalise(all) {
+    const raw = all.raw || {}, files = all.files || {}, years = all.years || [];
     const courses = (raw.courses || []).map((c) => {
       const ys = years.filter((y) => (y.courses || []).includes(c.id)).map((y) => {
         const f = files[y.id + "/" + c.id];
@@ -67,28 +70,28 @@
     return { site: raw.site || {}, courses };
   }
 
-  /* Fetches every sessions.json listed in courses.json. A missing or broken one gives null. */
-  async function loadFiles(raw, root) {
-    const base = (root || ".") + "/";
-    const jobs = [];
-    (raw.years || []).forEach((y) => (y.courses || []).forEach((cid) => {
-      jobs.push(fetch(base + sessionsFile(y, cid), { cache: "no-cache" })
-        .then((r) => (r.ok ? r.json() : null)).catch(() => null)
-        .then((json) => [y.id + "/" + cid, json]));
-    }));
-    return Object.fromEntries(await Promise.all(jobs));
-  }
+  /* A missing or broken file gives null. */
+  const getJson = (url) => fetch(url, { cache: "no-cache" })
+    .then((r) => (r.ok ? r.json() : null)).catch(() => null);
 
+  /* Fetches courses.json, then every year.json it lists, then every sessions.json those list. */
   async function loadRaw(root) {
-    const res = await fetch((root || ".") + "/courses.json", { cache: "no-cache" });
+    const base = (root || ".") + "/";
+    const res = await fetch(base + "courses.json", { cache: "no-cache" });
     if (!res.ok) throw new Error("HTTP " + res.status);
     const raw = await res.json();
-    return { raw, files: await loadFiles(raw, root) };
+    const ids = (raw.years || []).map(yearId);
+    const years = (await Promise.all(ids.map((id) => getJson(base + yearFile(id)))))
+      .map((y, i) => (y ? Object.assign({}, y, { id: ids[i] }) : { id: ids[i], missing: true, courses: [] }));
+    const jobs = [];
+    years.forEach((y) => (y.courses || []).forEach((cid) => {
+      jobs.push(getJson(base + sessionsFile(y, cid)).then((json) => [y.id + "/" + cid, json]));
+    }));
+    return { raw, years, files: Object.fromEntries(await Promise.all(jobs)) };
   }
 
   async function load(root) {
-    const { raw, files } = await loadRaw(root);
-    return normalise(raw, files);
+    return normalise(await loadRaw(root));
   }
 
   const listed = (x) => x.visibility === "public";    /* shown in lists and counts */
@@ -127,5 +130,5 @@
   }
 
   window.LMS = { load, loadRaw, normalise, find, key, coursePage, resolve, sharedFolder,
-    yearFolder, courseFolder, sessionsFile, listed, opens };
+    yearFolder, yearFile, courseFolder, sessionsFile, listed, opens };
 })();

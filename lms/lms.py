@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Course portal helper. Run:  python lms.py
-Menu: add a session, add a course, start a new year (moves the current year to the archive).
-It edits courses.json and the sessions.json files, and creates or moves folders. Nothing else is touched."""
+Menu: add a session, add a course, start a new year (the current year becomes archived).
+It edits courses.json, year.json and sessions.json files, and creates folders. Nothing is moved or deleted."""
 import re, shutil, sys
 from datetime import date
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "tools"))
-from portal import ROOT, load_courses, save_courses, load_sessions, save_sessions, sessions_path, year_folder
+from portal import (ROOT, load_courses, save_courses, load_years, save_year,
+                    load_sessions, save_sessions, sessions_path, year_folder)
 
 def ask(prompt, default=None):
     s = input(f"{prompt}" + (f" [{default}]" if default else "") + ": ").strip()
@@ -31,19 +32,19 @@ def split_label(s):
     m = re.match(r"^(.*?)\s*(\d+)$", s)
     return {"type": m.group(1), "number": int(m.group(2))} if m and m.group(1) else {"label": s}
 
-def current_year(d):
-    ys = [y for y in d.get("years", []) if y.get("status") != "archived"]
+def current_year(years):
+    ys = [y for y in years if y.get("status") != "archived"]
     return ys[0] if ys else None
 
 def year_label(y):
     return f'{y["id"]}  ({y.get("status", "current")})'
 
 def add_session(d):
-    c = pick("Which course?", d["courses"], lambda c: c["title"])
-    cur = current_year(d)
-    years = d.get("years", [])
+    years = load_years(d)
     if not years:
         print("There is no year yet. Use 'Start a new year' first."); return
+    c = pick("Which course?", d["courses"], lambda c: c["title"])
+    cur = current_year(years)
     y = cur if cur and ask(f"Add it to the current year {cur['id']}? (y/n)", "y").lower().startswith("y") \
         else pick("Which year?", years, year_label)
     title = ask("Session title (what students see)")
@@ -71,7 +72,7 @@ def add_session(d):
     save_sessions(rel, s)
     if c["id"] not in y.setdefault("courses", []):
         y["courses"].append(c["id"])
-        save_courses(d)
+        save_year(y)
     print(f"\nDone. Write your slides in:\n  {dest.relative_to(ROOT)}/slides.md\n"
           f"Put images in its images/ folder and interactives in interactives/.\n"
           f"The session is listed in {rel}.")
@@ -82,8 +83,8 @@ def add_course(d):
         return
     cid = re.sub(r"[^a-z0-9]+", "", title.lower())[:24]
     cid = ask("Short id (letters and numbers only, used in links)", cid)
-    if not re.fullmatch(r"[a-z0-9]+", cid or "") or cid == "templates":
-        print("Use lowercase letters and numbers only (and not 'templates')."); return
+    if not re.fullmatch(r"[a-z0-9]+", cid or "") or cid in ("templates", "shared"):
+        print("Use lowercase letters and numbers only (and not 'templates' or 'shared')."); return
     if any(c["id"] == cid for c in d["courses"]):
         print("A course with this id already exists."); return
     course = {"id": cid, "title": title, "description": ask("One-line description", "") or ""}
@@ -92,51 +93,48 @@ def add_course(d):
         course["programme"] = prog
     course["visibility"] = "public"
     d["courses"].append(course)
-    y = current_year(d)
+    save_courses(d)
+    y = current_year(load_years(d))
     if y:
         y.setdefault("courses", []).append(cid)
+        save_year(y)
         save_sessions(sessions_path(y, cid), {"sessions": []})
-    save_courses(d)
-    print(f"\nDone. Its page is course.html?c={cid}." + (f" Add sessions to it with option 1." if y else ""))
+    print(f"\nDone. Its page is course.html?c={cid}." +
+          (f" It is in {y['id']}. Add sessions to it with option 1." if y else " Start a year to add sessions."))
 
 def new_year(d):
-    cur = current_year(d)
+    years = load_years(d)
+    cur = current_year(years)
     yid = ask("New year, for example 2027-28")
-    if not yid or not re.fullmatch(r"[A-Za-z0-9-]+", yid):
+    if not yid or not re.fullmatch(r"[A-Za-z0-9-]+", yid) or yid in ("templates", "shared"):
         print("Use letters, numbers and hyphens only."); return
-    if any(y["id"] == yid for y in d.get("years", [])):
+    if yid in d.get("years", []) or (ROOT / year_folder(yid)).exists():
         print("That year already exists."); return
+    courses = []
     if cur:
-        src, dst = ROOT / year_folder(cur), ROOT / "content" / "archive" / cur["id"]
-        print(f"\nThis moves {cur['id']} to the Archive:\n  {src.relative_to(ROOT)}  ->  {dst.relative_to(ROOT)}")
+        print(f"\n{cur['id']} becomes an archived year. Its folder stays where it is: {year_folder(cur)}/")
         if not ask("Go ahead? (y/n)", "y").lower().startswith("y"):
             print("Nothing changed."); return
-        if dst.exists():
-            print("The archive already has a folder for", cur["id"], "- nothing changed."); return
-        if src.exists():
-            dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.move(str(src), str(dst))
+        names = ", ".join(c["title"] for c in d["courses"] if c["id"] in cur.get("courses", []))
+        if ask(f"Teach the same courses in {yid}? ({names}) (y/n)", "y").lower().startswith("y"):
+            courses = list(cur.get("courses", []))
         cur["status"] = "archived"
-        carry = cur.get("courses", [])
-        names = ", ".join(c["title"] for c in d["courses"] if c["id"] in carry)
-        keep = ask(f"Teach the same courses in {yid}? ({names}) (y/n)", "y").lower().startswith("y")
-        courses = list(carry) if keep else []
-    else:
-        courses = []
-    ny = {"id": yid, "status": "current", "courses": courses}
+        save_year(cur)
+    ny = {"id": yid, "status": "current"}
     note = ask("One line about this year (can be empty)", "") or ""
     if note:
         ny["note"] = note
-    d.setdefault("years", []).insert(0, ny)
-    (ROOT / year_folder(ny)).mkdir(parents=True, exist_ok=True)
+    ny["courses"] = courses
+    save_year(ny)
     for cid in courses:
         save_sessions(sessions_path(ny, cid), {"sessions": []})
+    d.setdefault("years", []).insert(0, yid)
     save_courses(d)
     print(f"\nDone. {yid} is the current year, in {year_folder(ny)}/. Add sessions with option 1.")
 
 MENU = [("Add a new session", add_session),
         ("Add a new course", add_course),
-        ("Start a new year (moves the current year to the Archive)", new_year)]
+        ("Start a new year (the current year becomes archived)", new_year)]
 
 def main():
     d = load_courses()

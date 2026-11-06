@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Course portal: year.json",
+  "description": "One year of teaching. Lives in content/<year>/; the folder name is the year's id. List the folder in the years list of courses.json so the site shows it.",
+  "type": "object",
+  "required": [
+    "status",
+    "courses"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "current",
+        "archived"
+      ],
+      "description": "current: the year the course pages open on (only one year should be current). archived: shown under the Archive button. Nothing moves when you change it."
+    },
+    "label": {
+      "type": "string",
+      "description": "Only needed when the name shown should differ from the folder name."
+    },
+    "term": {
+      "type": "string"
+    },
+    "note": {
+      "type": "string",
+      "description": "One line shown on every course page this year. A course's sessions.json can set its own."
+    },
+    "courses": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+$"
+      },
+      "description": "Ids of the courses taught this year (from courses.json). Each has a folder here with a sessions.json."
+    }
+  }
+}

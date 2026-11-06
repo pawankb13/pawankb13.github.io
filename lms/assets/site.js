@@ -194,7 +194,7 @@
       ? `<div id="deck-wrap">${deckTable(c, y, y.decks)}</div>`
       : y.missing
       ? `<div class="notice"><h2>Sessions file missing</h2>
-          <p>courses.json lists this course for ${esc(y.label || y.id)}, but <code>${esc(y.sessionsFile)}</code> was not found.</p></div>`
+          <p>content/${esc(y.id)}/year.json lists this course, but <code>${esc(y.sessionsFile)}</code> was not found.</p></div>`
       : `<div class="notice"><h2>No slides for ${esc(y.label || y.id)} yet</h2>
           <p>Add a session to <code>${esc(y.sessionsFile || "sessions.json")}</code>.</p></div>`;
     const meta = [y.programme, y.term, plural(decks.length, "session", "sessions")].filter(Boolean).map(esc).join(" · ");

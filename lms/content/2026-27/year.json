@@ -1,0 +1,5 @@
+{
+  "$schema": "../../year.schema.json",
+  "status": "current",
+  "courses": ["managerial", "macro", "behavioural", "econometrics", "research"]
+}

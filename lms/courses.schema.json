@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft-07/schema#",
   "title": "Course portal: courses.json",
-  "description": "VS Code reads this file to check courses.json and to suggest fields as you type. Each course's sessions for a year are in content/<active|archive>/<year>/<course>/sessions.json (see sessions.schema.json).",
+  "description": "VS Code reads this file to check courses.json and to suggest fields as you type. Each year's folder has a year.json (see year.schema.json) and each course in it a sessions.json (see sessions.schema.json).",
   "type": "object",
   "required": [
     "site",
@@ -74,9 +74,17 @@
     },
     "years": {
       "type": "array",
-      "description": "Newest first. Exactly one year is current; its folders are in content/active/<year>/. Archived years are in content/archive/<year>/.",
+      "uniqueItems": true,
+      "description": "The year folders in content/, newest first, for example [\"2026-27\", \"2025-26\"]. Each has a year.json that says whether it is current or archived. A year folder not listed here is not shown.",
       "items": {
-        "$ref": "#/definitions/year"
+        "type": "string",
+        "pattern": "^[A-Za-z0-9-]+$",
+        "not": {
+          "enum": [
+            "shared",
+            "templates"
+          ]
+        }
       }
     },
     "templates": {
@@ -135,7 +143,7 @@
         "id": {
           "type": "string",
           "pattern": "^[a-z0-9]+$",
-          "description": "Letters and numbers only. Also the course's folder name in each year. The course page is course.html?c=<id>."
+          "description": "Letters and numbers only. Also the course's folder name inside each year. The course page is course.html?c=<id>."
         },
         "title": {
           "type": "string"
@@ -145,7 +153,7 @@
         },
         "programme": {
           "type": "string",
-          "description": "Programme shown for every year, e.g. PGDM. A year's sessions.json can override it."
+          "description": "Programme shown for every year, e.g. PGDM. A course's sessions.json can override it for one year."
         },
         "visibility": {
           "$ref": "#/definitions/visibility"
@@ -153,52 +161,6 @@
         "page": {
           "type": "string",
           "description": "Only for a course whose page is somewhere else. Normally left out."
-        }
-      }
-    },
-    "year": {
-      "type": "object",
-      "required": [
-        "id",
-        "status",
-        "courses"
-      ],
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^[A-Za-z0-9-]+$",
-          "examples": [
-            "2026-27"
-          ],
-          "description": "Also the year's folder name."
-        },
-        "status": {
-          "enum": [
-            "current",
-            "archived"
-          ],
-          "description": "current: folders in content/active/<year>/. archived: in content/archive/<year>/. Use python lms.py to start a new year; it moves the folders for you."
-        },
-        "label": {
-          "type": "string",
-          "description": "Only needed when the name shown should differ from the id."
-        },
-        "term": {
-          "type": "string"
-        },
-        "note": {
-          "type": "string",
-          "description": "One line shown for every course this year. A course's sessions.json can set its own."
-        },
-        "courses": {
-          "type": "array",
-          "uniqueItems": true,
-          "items": {
-            "type": "string",
-            "pattern": "^[a-z0-9]+$"
-          },
-          "description": "Ids of the courses taught this year. Each has a folder with a sessions.json."
         }
       }
     },

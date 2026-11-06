@@ -1,22 +1,26 @@
 """Shared helpers for lms.py, tools/set_dates.py and tools/date_on_commit.py.
 
 Layout (paths inside the lms folder):
-    courses.json                                    site settings, courses, years (newest first)
-    content/active/<year>/<course>/sessions.json    the current year (only one year is ever here)
-    content/archive/<year>/<course>/sessions.json   past years
-    content/active/<year>/<course>/<session folder>/slides.md, readings.md, images/, interactives/, readings/
-    content/shared/<course>/                        files used by several sessions of a course
-    content/templates/all-layouts/                  the Slide Templates deck
+    courses.json                              site settings, courses, and the list of year folders (newest first)
+    content/<year>/year.json                  "status": "current" or "archived", and the courses taught that year
+    content/<year>/<course>/sessions.json     that course's sessions that year
+    content/<year>/<course>/<session folder>/ slides.md, readings.md, images/, interactives/, readings/
+    content/shared/<course>/                  files used by several sessions of a course
+    content/templates/all-layouts/            the Slide Templates deck
 """
 import json, re
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent          # the lms folder
 DATA = ROOT / "courses.json"
-SESSIONS_SCHEMA = "../../../../sessions.schema.json"   # from content/<active|archive>/<year>/<course>/
+YEAR_SCHEMA = "../../year.schema.json"                 # from content/<year>/
+SESSIONS_SCHEMA = "../../../sessions.schema.json"      # from content/<year>/<course>/
 
 def year_folder(y):
-    return f'content/{"archive" if y.get("status") == "archived" else "active"}/{y["id"]}'
+    return f'content/{y if isinstance(y, str) else y["id"]}'
+
+def year_path(y):
+    return f"{year_folder(y)}/year.json"
 
 def sessions_path(y, course_id):
     """Path of sessions.json, relative to the lms folder."""
@@ -24,17 +28,38 @@ def sessions_path(y, course_id):
 
 def dump(obj):
     """The one layout every tool writes: two-space indent, a blank line between courses and between
-    years, and short lists of names on one line. manage.html writes the same layout."""
+    sessions, and short lists of names on one line. manage.html writes the same layout."""
     text = json.dumps(obj, indent=2, ensure_ascii=False) + "\n"
     text = re.sub(r'\[\s*\n\s*("[^"\n]*"(?:,\s*\n\s*"[^"\n]*")*)\s*\n\s*\]',
                   lambda m: "[" + re.sub(r",\s*\n\s*", ", ", m.group(1)) + "]", text)
     return text.replace('\n    },\n    {\n      "id"', '\n    },\n\n    {\n      "id"')
+
+def _with_schema(obj, schema):
+    obj = dict(obj)
+    obj.pop("id", None)                                  # a year's id is its folder name, not stored inside
+    obj.pop("$schema", None)
+    return {"$schema": schema, **obj}
 
 def load_courses():
     return json.loads(DATA.read_text(encoding="utf-8"))
 
 def save_courses(d):
     DATA.write_text(dump(d), encoding="utf-8")
+
+def load_years(d=None):
+    """Every year listed in courses.json, in that order: its year.json plus "id". A missing year.json is skipped."""
+    d = d or load_courses()
+    out = []
+    for yid in d.get("years", []):
+        p = ROOT / year_path(yid)
+        if p.exists():
+            out.append({**json.loads(p.read_text(encoding="utf-8")), "id": yid})
+    return out
+
+def save_year(y):
+    p = ROOT / year_path(y)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(dump(_with_schema(y, YEAR_SCHEMA)), encoding="utf-8")
 
 def load_sessions(rel):
     p = ROOT / rel
@@ -45,15 +70,13 @@ def load_sessions(rel):
 def save_sessions(rel, s):
     p = ROOT / rel
     p.parent.mkdir(parents=True, exist_ok=True)
-    s.setdefault("$schema", SESSIONS_SCHEMA)
-    s = {"$schema": s.pop("$schema"), **s}            # keep $schema first
-    p.write_text(dump(s), encoding="utf-8")
+    p.write_text(dump(_with_schema(s, SESSIONS_SCHEMA)), encoding="utf-8")
 
 def all_sessions(d=None):
     """Yields (sessions.json path, session folder path, session) for every session, both relative to lms/.
     The Slide Templates decks come last, with sessions.json path None (their dates live in courses.json)."""
     d = d or load_courses()
-    for y in d.get("years", []):
+    for y in load_years(d):
         for cid in y.get("courses", []):
             rel = sessions_path(y, cid)
             p = ROOT / rel

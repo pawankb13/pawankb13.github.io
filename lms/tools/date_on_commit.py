@@ -3,8 +3,8 @@
 
 For every session whose folder has a change in this commit (slides, images, interactives or readings),
 it sets "updated" to today in that course's sessions.json and adds that file to the same commit.
-Sessions that were not changed keep their date. A folder that was only moved (for example when a year
-goes to the archive) does not count as a change.
+Sessions that were not changed keep their date. A folder that was only moved or renamed does not
+count as a change.
 
 If anything goes wrong, it prints a line and lets the commit go ahead."""
 import subprocess, sys

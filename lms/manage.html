@@ -128,13 +128,16 @@ form.mg[hidden]{display:none}
   </form>
 
   <form class="mg" data-mode="newyear" hidden>
-    <p class="info">Starting a new year moves the whole current year from <code>content/active/</code> to <code>content/archive/</code>.
-      GitHub's website cannot move folders, so do this on your computer. In the <code>lms</code> folder run
-      <code>python lms.py</code> and choose <strong>Start a new year</strong>. Then commit and sync.</p>
+    <label>New year <small>For example 2027-28. Letters, numbers and hyphens only. It becomes the folder name</small><input type="text" name="year" required></label>
+    <label>One line about this year <small>Can be empty</small><input type="text" name="note"></label>
+    <label class="check"><input type="checkbox" name="same" checked> Teach the same courses as the current year</label>
+    <p class="info" data-info-new></p>
+    <p class="err" hidden></p>
+    <button class="go" type="submit">Make the changes</button>
   </form>
 
   <form class="mg" data-mode="check" hidden>
-    <p class="info">Looks at courses.json, every course's sessions.json, and every slides and reading file they list, and tells you if something is missing.</p>
+    <p class="info">Looks at courses.json, every year.json and sessions.json, and every slides and reading file they list, and tells you if something is missing.</p>
     <button class="go" type="submit">Run the check</button>
   </form>
 
@@ -151,20 +154,24 @@ form.mg[hidden]{display:none}
   const clone = (x) => JSON.parse(JSON.stringify(x));
   const isArch = (y) => y.status === "archived";
   const VIS = ["public", "unlisted", "hidden"];
-  const SCHEMA = "../../../../sessions.schema.json";
-  /* raw: courses.json as written. files: { "<year>/<course>": sessions.json as written, or null if missing } */
-  let raw, files;
+  const RESERVED = ["shared", "templates"];
+  const YEAR_SCHEMA = "../../year.schema.json", SESSIONS_SCHEMA = "../../../sessions.schema.json";
+  /* raw: courses.json. years: each listed year's year.json plus its id (missing: true if not found).
+     files: { "<year>/<course>": sessions.json, or null if missing }. All exactly as written. */
+  let raw, years, files;
   /* "Session 4" -> { type: "Session", number: 4 }. Anything without a number at the end stays a label. */
   const splitLabel = (s) => { const m = /^(.*?)\s*(\d+)$/.exec(s); return m && m[1] ? { type: m[1], number: +m[2] } : { label: s }; };
   const deckLabel = (k) => k.label || [k.type, k.number].filter((v) => v !== undefined && v !== "").join(" ");
-  const currentYear = (d) => (d.years || []).find((y) => !isArch(y));
-  const sessionsOf = (y, cid) => files[y.id + "/" + cid] || { $schema: SCHEMA, sessions: [] };
+  const currentYear = (ys) => ys.find((y) => !y.missing && !isArch(y));
 
   /* The one layout every tool writes (same as tools/portal.py): two-space indent, a blank line between
-     courses, years and sessions, and short lists of names on one line. */
+     courses and between sessions, and short lists of names on one line. */
   const fmt = (o) => (JSON.stringify(o, null, 2) + "\n")
     .replace(/\[\s*\n\s*("[^"\n]*"(?:,\s*\n\s*"[^"\n]*")*)\s*\n\s*\]/g, (m, g) => "[" + g.replace(/,\s*\n\s*/g, ", ") + "]")
     .replace(/\n    \},\n    \{\n      "id"/g, '\n    },\n\n    {\n      "id"');
+  /* A year as stored in its year.json: no id (that is the folder name), $schema first. */
+  const yearText = (y) => { const o = Object.assign({ $schema: YEAR_SCHEMA }, y); delete o.id; delete o.missing; o.$schema = YEAR_SCHEMA; return fmt(o); };
+  const sessionsText = (s) => fmt(Object.assign({ $schema: SESSIONS_SCHEMA }, s, { $schema: SESSIONS_SCHEMA }));
 
   /* ---------- GitHub links ---------- */
   const gh = () => Object.assign({ repo: "pawankb13/pawankb13.github.io", branch: "master", folder: "lms" }, (raw.site || {}).github || {});
@@ -196,24 +203,24 @@ form.mg[hidden]{display:none}
     starter.replace("# Session title", "# " + title).replace("Course name · Session number", `${course} · ${label}`);
 
   /* ---------- Checks on the new files, before they are shown ---------- */
-  function validate(d, fs) {
+  function validate(d, ys, fs) {
     const errs = [], ids = new Set();
     if (!Array.isArray(d.courses)) return ["courses is missing in courses.json."];
     if (!Array.isArray(d.years)) return ["years is missing in courses.json."];
     d.courses.forEach((c) => {
       if (!c.id || !c.title) errs.push("A course has no id or title.");
-      if (c.id === "templates") errs.push("The course id templates is kept for the Slide Templates page.");
+      if (RESERVED.includes(c.id)) errs.push(`The course id ${c.id} is kept for the portal's own folder.`);
       if (c.visibility !== undefined && !VIS.includes(c.visibility)) errs.push(`${c.title} has visibility "${c.visibility}". Use public, unlisted or hidden.`);
       if (ids.has(c.id)) errs.push(`Two courses share the id ${c.id}.`);
       ids.add(c.id);
     });
-    const yi = new Set();
-    if (d.years.filter((y) => !isArch(y)).length > 1) errs.push("More than one year is current. Only one year can be in content/active/.");
-    d.years.forEach((y) => {
-      if (yi.has(y.id)) errs.push(`The year ${y.id} is listed twice.`);
-      yi.add(y.id);
+    if (new Set(d.years).size !== d.years.length) errs.push("A year is listed twice in courses.json.");
+    if (ys.filter((y) => !y.missing && !isArch(y)).length > 1) errs.push("More than one year is current. Set the older one to archived in its year.json.");
+    ys.forEach((y) => {
+      if (y.missing) return;
+      if (!["current", "archived"].includes(y.status)) errs.push(`content/${y.id}/year.json has status "${y.status}". Use current or archived.`);
       (y.courses || []).forEach((cid) => {
-        if (!ids.has(cid)) errs.push(`The year ${y.id} lists the course ${cid}, which is not in courses.`);
+        if (!ids.has(cid)) errs.push(`content/${y.id}/year.json lists the course ${cid}, which is not in courses.json.`);
         const s = fs[y.id + "/" + cid];
         if (!s) return;
         const di = new Set(), fo = new Set();
@@ -232,7 +239,7 @@ form.mg[hidden]{display:none}
   /* ---------- Page setup ---------- */
   async function init() {
     try {
-      ({ raw, files } = await LMS.loadRaw("."));
+      ({ raw, years, files } = await LMS.loadRaw("."));
     } catch (e) {
       $("#main").innerHTML = '<div class="notice"><h2>courses.json did not load</h2><p>Open this page from the published site or from a local server.</p></div>';
       return;
@@ -244,6 +251,7 @@ form.mg[hidden]{display:none}
     $("#foot").textContent = [s.instructor, s.institution].filter(Boolean).join(", ");
 
     const courses = raw.courses || [];
+    const ys = years.filter((y) => !y.missing);
     $$("select[name=course]").forEach((sel) => {
       sel.innerHTML = courses.length ? courses.map((c) => `<option value="${esc(c.id)}">${esc(c.title)}</option>`).join("") : '<option value="">No courses yet</option>';
     });
@@ -251,24 +259,25 @@ form.mg[hidden]{display:none}
     /* Add: every year (the course is added to the year if needed). Delete: only years that have the course. */
     const fillYears = (f, onlyWithCourse) => {
       const c = course(f), sel = $("[name=year]", f);
-      const ys = (raw.years || []).filter((y) => !onlyWithCourse || (c && (y.courses || []).includes(c.id)));
-      sel.innerHTML = ys.length ? ys.map((y) => `<option value="${esc(y.id)}">${esc(y.label || y.id)} (${esc(y.status || "current")})</option>`).join("") : '<option value="">None available</option>';
+      const list = ys.filter((y) => !onlyWithCourse || (c && (y.courses || []).includes(c.id)));
+      sel.innerHTML = list.length ? list.map((y) => `<option value="${esc(y.id)}">${esc(y.label || y.id)} (${esc(y.status || "current")})</option>`).join("") : '<option value="">None available</option>';
     };
     const fillMods = (f) => {
-      const c = course(f), y = (raw.years || []).find((x) => x.id === $("[name=year]", f).value), sel = $("[name=module]", f);
+      const c = course(f), y = ys.find((x) => x.id === $("[name=year]", f).value), sel = $("[name=module]", f);
       const ds = (c && y && (files[y.id + "/" + c.id] || {}).sessions) || [];
       sel.innerHTML = ds.length ? ds.map((k, i) => `<option value="${i}">${esc(deckLabel(k))} ${esc(k.title)}</option>`).join("") : '<option value="">No sessions in this year</option>';
     };
     const form = (m) => $(`form[data-mode=${m}]`);
-    const fa = form("addmod"), fd = form("delmod"), fx = form("delcourse"), fc = form("addcourse");
+    const fa = form("addmod"), fd = form("delmod"), fx = form("delcourse"), fc = form("addcourse"), fn = form("newyear");
     const info = () => {
       const c = course(fx);
-      const ys = c ? (raw.years || []).filter((y) => (y.courses || []).includes(c.id)) : [];
-      const n = ys.reduce((t, y) => t + ((files[y.id + "/" + c.id] || {}).sessions || []).length, 0);
-      $("[data-info]", fx).textContent = c ? `${c.title}: ${ys.length} year(s), ${n} session(s).` : "No course selected.";
+      const list = c ? ys.filter((y) => (y.courses || []).includes(c.id)) : [];
+      const n = list.reduce((t, y) => t + ((files[y.id + "/" + c.id] || {}).sessions || []).length, 0);
+      $("[data-info]", fx).textContent = c ? `${c.title}: ${list.length} year(s), ${n} session(s).` : "No course selected.";
     };
-    const cur = currentYear(raw);
-    $("[data-info-year]", fc).textContent = cur ? `The course is added to the current year, ${cur.id}.` : "There is no current year. Start one with python lms.py first.";
+    const cur = currentYear(years);
+    $("[data-info-year]", fc).textContent = cur ? `The course is added to the current year, ${cur.id}.` : "There is no current year. Start one under Years first.";
+    $("[data-info-new]", fn).textContent = cur ? `${cur.id} becomes archived. Its folder stays where it is, so no links change.` : "This becomes the first year.";
     $("[name=course]", fa).onchange = () => fillYears(fa, false);
     $("[name=course]", fd).onchange = () => { fillYears(fd, true); fillMods(fd); };
     $("[name=year]", fd).onchange = () => fillMods(fd);
@@ -291,18 +300,18 @@ form.mg[hidden]{display:none}
     const mode = f.dataset.mode;
     fail(f, "");
     if (mode === "check") return runCheck();
-    if (mode === "newyear") return;
-    const d = clone(raw), fs = clone(files);
-    const c = mode === "addcourse" ? null : d.courses.find((x) => x.id === (f.querySelector("[name=course]") || {}).value);
-    /* Every file this change writes: { path, json (edited copy) or text (new file), isNew } */
-    const out = [], notes = []; let extra = "", summary = "";
+    const d = clone(raw), ys = clone(years), fs = clone(files);
+    const c = ["addcourse", "newyear"].includes(mode) ? null : d.courses.find((x) => x.id === (f.querySelector("[name=course]") || {}).value);
+    const notes = []; let extra = "", summary = "";
+    /* What this change writes. Each set holds keys; the files are built at the end. */
     let coursesChanged = false;
+    const yearsChanged = new Set(), sessionsChanged = new Set(), newYears = new Set();
     const touchSessions = (y, cid) => {
       const k = y.id + "/" + cid;
-      if (!fs[k]) fs[k] = { $schema: SCHEMA, sessions: [] };
+      if (!fs[k]) fs[k] = { sessions: [] };
+      sessionsChanged.add(k);
       return fs[k];
     };
-    const sessionsFiles = new Set();
 
     if (mode === "addcourse") {
       const title = val(f, "title");
@@ -310,40 +319,38 @@ form.mg[hidden]{display:none}
       const id = title.toLowerCase().replace(/[^a-z0-9]+/g, "").slice(0, 24);
       if (!id) return fail(f, "Use letters or numbers in the title.");
       if (d.courses.some((x) => x.id === id)) return fail(f, "A course with this name already exists.");
-      const y = currentYear(d);
-      if (!y) return fail(f, "There is no current year. Start one with python lms.py first.");
+      const y = currentYear(ys);
+      if (!y) return fail(f, "There is no current year. Start one under Years first.");
       const nc = { id, title, description: val(f, "description") };
       if (val(f, "programme")) nc.programme = val(f, "programme");
       nc.visibility = "public";
-      d.courses.push(nc);
-      (y.courses = y.courses || []).push(id);
-      coursesChanged = true;
-      touchSessions(y, id); sessionsFiles.add(y.id + "/" + id);
+      d.courses.push(nc); coursesChanged = true;
+      (y.courses = y.courses || []).push(id); yearsChanged.add(y.id);
+      touchSessions(y, id);
       summary = `Added the course <strong>${esc(title)}</strong> to ${esc(y.id)}. Its page will be <code>${esc(LMS.coursePage(nc))}</code>.`;
       notes.push("Then use Add under Sessions to put sessions in this course.");
 
     } else if (mode === "delcourse") {
       if (!c) return fail(f, "Choose a course.");
       if (!$("[name=sure]", f).checked) return fail(f, "Tick the box to confirm.");
-      const ys = d.years.filter((y) => (y.courses || []).includes(c.id));
-      d.courses = d.courses.filter((x) => x.id !== c.id);
-      d.years.forEach((y) => { y.courses = (y.courses || []).filter((x) => x !== c.id); });
-      coursesChanged = true;
+      const had = ys.filter((y) => (y.courses || []).includes(c.id));
+      d.courses = d.courses.filter((x) => x.id !== c.id); coursesChanged = true;
+      had.forEach((y) => { y.courses = y.courses.filter((x) => x !== c.id); yearsChanged.add(y.id); });
       summary = `<strong>${esc(c.title)}</strong> is removed from the website.`;
       notes.push("Its folders stay in your repository until you delete them. They are no longer shown or linked.");
-      extra = ys.length ? `<div class="step"><h2>Then delete its folders (recommended)</h2>
+      extra = had.length ? `<div class="step"><h2>Then delete its folders (recommended)</h2>
         <p>Open each folder on GitHub, use the three dots menu, then <strong>Delete directory</strong>.</p>
-        ${ys.map((y) => `<a class="go" href="${esc(ghTree(LMS.courseFolder(y, c.id)))}" target="_blank" rel="noopener">Open ${esc(LMS.courseFolder(y, c.id))}</a>`).join("")}</div>` : "";
+        ${had.map((y) => `<a class="go" href="${esc(ghTree(LMS.courseFolder(y, c.id)))}" target="_blank" rel="noopener">Open ${esc(LMS.courseFolder(y, c.id))}</a>`).join("")}</div>` : "";
 
     } else if (mode === "addmod") {
-      const y = c && d.years.find((x) => x.id === val(f, "year"));
+      const y = c && ys.find((x) => x.id === val(f, "year") && !x.missing);
       const title = val(f, "title"), label = val(f, "label");
       if (!y) return fail(f, "Choose a course and a year.");
       if (!title || !label) return fail(f, "Enter a title and a label.");
       const folder = slug(label + " " + title);
       if (!folder) return fail(f, "Use letters or numbers in the title and label.");
-      if (!(y.courses || []).includes(c.id)) { (y.courses = y.courses || []).push(c.id); coursesChanged = true; }
-      const s = touchSessions(y, c.id); sessionsFiles.add(y.id + "/" + c.id);
+      if (!(y.courses || []).includes(c.id)) { (y.courses = y.courses || []).push(c.id); yearsChanged.add(y.id); }
+      const s = touchSessions(y, c.id);
       s.sessions = s.sessions || [];
       if (s.sessions.some((k) => k.folder === folder)) return fail(f, "A session with this folder already exists in this year.");
       let sid = slug(title) || folder;
@@ -359,13 +366,13 @@ form.mg[hidden]{display:none}
         <p>Folder: <code>${esc(dir)}</code>. Add images and interactives to it later.</p></div>`;
 
     } else if (mode === "delmod") {
-      const y = c && d.years.find((x) => x.id === val(f, "year"));
+      const y = c && ys.find((x) => x.id === val(f, "year"));
       const s = y && fs[y.id + "/" + c.id];
       const i = parseInt(val(f, "module"), 10);
       if (!s || !(s.sessions || [])[i]) return fail(f, "Choose a session to delete.");
       if (!$("[name=sure]", f).checked) return fail(f, "Tick the box to confirm.");
       const k = s.sessions.splice(i, 1)[0];
-      sessionsFiles.add(y.id + "/" + c.id);
+      sessionsChanged.add(y.id + "/" + c.id);
       const dir = LMS.courseFolder(y, c.id) + k.folder;
       summary = `<strong>${esc(deckLabel(k))} ${esc(k.title)}</strong> is removed from ${esc(c.title)} ${esc(y.label || y.id)}.`;
       notes.push("The session's folder stays in your repository until you delete it. It is no longer shown or linked.");
@@ -373,25 +380,40 @@ form.mg[hidden]{display:none}
         <p>On GitHub, open the folder, use the three dots menu, then <strong>Delete directory</strong>.</p>
         <a class="go" href="${esc(ghTree(dir))}" target="_blank" rel="noopener">Open the session folder</a>
         <p>Folder: <code>${esc(dir)}</code></p></div>`;
+
+    } else if (mode === "newyear") {
+      const yid = val(f, "year");
+      if (!yid || !/^[A-Za-z0-9-]+$/.test(yid) || RESERVED.includes(yid)) return fail(f, "Use letters, numbers and hyphens only in the year.");
+      if (d.years.includes(yid)) return fail(f, "This year already exists.");
+      const cur = currentYear(ys);
+      const ny = { id: yid, status: "current" };
+      if (val(f, "note")) ny.note = val(f, "note");
+      ny.courses = cur && $("[name=same]", f).checked ? (cur.courses || []).slice() : [];
+      if (cur) { cur.status = "archived"; yearsChanged.add(cur.id); }
+      ys.unshift(ny); d.years.unshift(yid); coursesChanged = true;
+      yearsChanged.add(yid); newYears.add(yid);
+      ny.courses.forEach((cid) => touchSessions(ny, cid));
+      summary = `<strong>${esc(yid)}</strong> is now the current year.` + (cur ? ` ${esc(cur.id)} moves to the Archive; its folder stays where it is.` : "");
+      if (ny.courses.length) notes.push(`Each course gets an empty sessions.json in content/${yid}/. Add sessions with Add under Sessions.`);
     }
 
-    const problems = validate(d, fs);
+    const problems = validate(d, ys, fs);
     if (problems.length) return fail(f, "Stopped. The result would not be valid: " + problems[0]);
+    const out = [];
     if (coursesChanged) out.push({ path: "courses.json", text: fmt(d), isNew: false });
-    sessionsFiles.forEach((k) => {
+    yearsChanged.forEach((id) => out.push({ path: LMS.yearFile(id), text: yearText(ys.find((y) => y.id === id)), isNew: newYears.has(id) }));
+    sessionsChanged.forEach((k) => {
       const [yid, cid] = k.split("/");
-      const y = d.years.find((x) => x.id === yid);
-      out.push({ path: LMS.sessionsFile(y, cid), text: fmt(fs[k]), isNew: !files[k] });
+      out.push({ path: LMS.sessionsFile(yid, cid), text: sessionsText(fs[k]), isNew: !files[k] });
     });
 
     const o = $("#out");
     o.className = "out show";
     o.innerHTML = `<div class="done${mode.startsWith("del") ? " warn" : ""}">${summary}${notes.length ? "<ul>" + notes.map((n) => `<li>${esc(n)}</li>`).join("") + "</ul>" : ""}</div>
-      ${out.map((x, i) => `<div class="step"><h2>Step ${i + 1}. ${x.isNew ? "Create" : "Replace"} ${esc(x.path.replace(/^.*\//, ""))}</h2>
+      ${out.map((x, i) => `<div class="step"><h2>Step ${i + 1}. ${x.isNew ? "Create" : "Replace"} ${esc(x.path)}</h2>
         <p>${x.isNew
           ? "This opens GitHub with the file name and content already filled in. Click <strong>Commit changes</strong> there."
-          : "On GitHub, the button opens the file for editing. Select all, paste this, and commit."}</p>
-        <div class="path" id="p-path-${i}">${esc(x.path)}</div>
+          : "The button opens the file on GitHub for editing. Select all, paste this, and commit."}</p>
         <a class="go" href="${esc(x.isNew ? ghNew(x.path, x.text) : ghEdit(x.path))}" target="_blank" rel="noopener">${x.isNew ? "Create" : "Open"} it on GitHub</a>
         <pre id="p-${i}">${esc(x.text)}</pre>
         <button class="copy" data-copy="p-${i}" type="button">Copy</button>
@@ -425,12 +447,13 @@ form.mg[hidden]{display:none}
     const bad = [], tasks = [];
     let n = 0;
     tasks.push(exists("course.html").then((ok) => { n++; if (!ok) bad.push("The course page is missing: course.html"); }));
-    if (!(raw.years || []).some((y) => !isArch(y))) bad.push("No year is current. Start one with python lms.py.");
-    (raw.years || []).forEach((y) => (y.courses || []).forEach((cid) => {
-      if (files[y.id + "/" + cid] === null) bad.push(`Missing ${LMS.sessionsFile(y, cid)} (courses.json lists ${cid} for ${y.id}).`);
+    years.forEach((y) => { if (y.missing) bad.push(`courses.json lists the year ${y.id}, but ${LMS.yearFile(y.id)} was not found.`); });
+    if (!currentYear(years)) bad.push("No year is current. Set one year.json to current, or start a year under Years.");
+    years.forEach((y) => (y.courses || []).forEach((cid) => {
+      if (files[y.id + "/" + cid] === null) bad.push(`Missing ${LMS.sessionsFile(y, cid)} (content/${y.id}/year.json lists ${cid}).`);
     }));
-    LMS.normalise(raw, files).courses.forEach((c) => {
-      if (!c.years.length && c.id !== "templates") bad.push(`${c.title} is not in any year. Add it to a year's courses list in courses.json.`);
+    LMS.normalise({ raw, years, files }).courses.forEach((c) => {
+      if (!c.years.length && c.id !== "templates") bad.push(`${c.title} is not in any year. Add it to a year.json's courses list.`);
       c.years.forEach((y) => y.decks.forEach((k) => {
         tasks.push(exists(k.file).then((ok) => { n++; if (!ok) bad.push(`Missing slides for ${c.title} ${y.id}, ${k.label} ${k.title}: ${k.file}`); }));
         if (/\.html?$/i.test(k.file)) return;
@@ -439,10 +462,10 @@ form.mg[hidden]{display:none}
       }));
     });
     await Promise.all(tasks);
-    validate(raw, files).forEach((e) => bad.push(e));
+    validate(raw, years, files).forEach((e) => bad.push(e));
     o.innerHTML = bad.length
       ? `<div class="report"><div class="done warn"><strong>${bad.length} problem(s) found.</strong><ul>${bad.map((b) => `<li class="bad">${esc(b)}</li>`).join("")}</ul></div></div>`
-      : `<div class="report"><div class="done"><span class="ok">No problems found.</span> Checked ${n} files, courses.json and every sessions.json.</div></div>`;
+      : `<div class="report"><div class="done"><span class="ok">No problems found.</span> Checked ${n} files, courses.json, every year.json and every sessions.json.</div></div>`;
   }
   init();
 })();

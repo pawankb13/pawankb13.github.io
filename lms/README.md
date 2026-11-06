@@ -15,67 +15,81 @@ index.html
 course.html                 The course page, for every course (course.html?c=macro)
 courses/                    Old course addresses, kept so links you shared still work
 slides.html                 Slide viewer
-courses.json                Your courses and your years. Small; changes rarely.
+courses.json                Your courses, and the list of year folders. Small; changes rarely.
 courses.schema.json         Checks courses.json as you type (VS Code)
-sessions.schema.json        Checks every sessions.json as you type (VS Code)
+year.schema.json            Checks every year.json as you type
+sessions.schema.json        Checks every sessions.json as you type
 lms.py                      Add a session, add a course, start a new year
 assets/                     Styles and scripts
 tools/                      The date hook and helpers used by lms.py
 _new-session/               The starter folder for a new session
 content/
-  active/                   The current year. Only ever one year here.
-    2026-27/
-      macro/                One folder per course taught this year
-        sessions.json       Macro's sessions for 2026-27: edit this to add, rename, hide or reorder
-        module-1-measuring-output/     One folder per session
-          slides.md         The slides
-          readings.md       The Reading Material page
-          images/           Images used in these slides
-          interactives/     HTML interactives used in these slides
-          readings/         PDFs and other reading material for this session
-        module-3-inflation-unemployment/
-        module-5-is-lm/
-      managerial/
-        sessions.json
-        ...
-  archive/                  Every past year, in the same layout
-    2025-26/
-      macro/
-        sessions.json
-        session-01-introduction/
+  2026-27/                  One folder per year
+    year.json               "status": "current" or "archived", and the courses taught this year
+    macro/                  One folder per course taught this year
+      sessions.json         Macro's sessions for 2026-27: edit this to add, rename, hide or reorder
+      module-1-measuring-output/     One folder per session
+        slides.md           The slides
+        readings.md         The Reading Material page
+        images/             Images used in these slides
+        interactives/       HTML interactives used in these slides
+        readings/           PDFs and other reading material for this session
+      module-3-inflation-unemployment/
+      module-5-is-lm/
+    managerial/
+      sessions.json
+      ...
+  2025-26/                  A past year, same layout
+    year.json               "status": "archived"
+    macro/
+      sessions.json
+      session-01-introduction/
   shared/
     macro/                  Files used by several Macro sessions, in any year
       interactives/is-lm.html
   templates/all-layouts/    The Slide Templates deck
 ```
 
-To work on a course this year, open `content/active/<year>/<course>/`. Its `sessions.json` lists the sessions and the session folders sit next to it.
+To work on a course, open `content/<year>/<course>/`. Its `sessions.json` lists the sessions and the session folders sit next to it. Folders never move: a year stays in `content/<year>/` when it is archived.
 
 Everything a session needs sits in its own folder. Paths in `slides.md` are relative to that folder, so you write `images/gdp.png` and `interactives/is-lm.html`. Folder names: `session-01-topic`, `module-5-topic` or `class-03-topic`. Use lowercase and hyphens.
 
 ### courses.json
 
-It lists your courses once, then the years, newest first. Each year names the courses taught in it. Exactly one year is `"current"`, and its folders are in `content/active/`.
+It lists your courses once, then the year folders, newest first:
 
 ```json
 "courses": [
   { "id": "macro", "title": "Macroeconomics", "description": "…", "programme": "PGDM", "visibility": "public" }
 ],
-"years": [
-  { "id": "2026-27", "status": "current",  "courses": ["managerial", "macro", "behavioural"] },
-  { "id": "2025-26", "status": "archived", "courses": ["managerial", "macro"] }
-]
+"years": ["2026-27", "2025-26"]
 ```
 
-A year can also have a `"note"` (one line shown on every course page that year) and a `"label"` (only when the name shown should differ from the `id`).
+The site cannot look inside folders, so a year folder appears only when its name is in `years`. That is the one thing to remember when you make a year folder by hand.
 
-### sessions.json (one per course per year)
+### year.json (one per year)
 
-`content/active/2026-27/macro/sessions.json`:
+`content/2026-27/year.json`:
 
 ```json
 {
-  "$schema": "../../../../sessions.schema.json",
+  "$schema": "../../year.schema.json",
+  "status": "current",
+  "courses": ["managerial", "macro", "behavioural"]
+}
+```
+
+- `status`: `"current"` or `"archived"`. Exactly one year is current; course pages open on it, and archived years are under the Archive button. To archive a year, change this one word. Nothing moves.
+- `courses`: the courses taught this year. Each has a folder next to `year.json` with a `sessions.json`.
+- Optional: `"note"` (one line shown on every course page that year), `"label"` (only when the name shown should differ from the folder name), `"term"`.
+
+### sessions.json (one per course per year)
+
+`content/2026-27/macro/sessions.json`:
+
+```json
+{
+  "$schema": "../../../sessions.schema.json",
   "sessions": [
     {
       "id": "inflation-unemployment",
@@ -107,7 +121,7 @@ When several sessions of a course use the same image or interactive, keep one co
 ![Phillips curve](shared/images/phillips.svg)
 ```
 
-`shared/` always means `content/shared/<course>/`, whichever session or year the slides are in, so it keeps working after a year is archived. Every other path still means the session's own folder. Changing a shared file does not change any session's Updated date.
+`shared/` always means `content/shared/<course>/`, whichever session or year the slides are in. Every other path still means the session's own folder. Changing a shared file does not change any session's Updated date.
 
 ## Add a new session
 
@@ -115,11 +129,11 @@ The easy way: run `python lms.py` in the `lms` folder and choose **Add a new ses
 
 By hand:
 
-1. Copy `_new-session/` into `content/active/<year>/<course>/` and rename it, for example `module-4-money`.
+1. Copy `_new-session/` into `content/<year>/<course>/` and rename it, for example `module-4-money`.
 2. Add an entry for it to the `sessions` list in that course's `sessions.json` (copy one above).
 3. Write the slides in its `slides.md`.
 
-If the course is new to this year, also add its id to the year's `courses` list in `courses.json`.
+If the course is new to this year, also add its id to the `courses` list in that year's `year.json`, and create its `sessions.json`.
 
 ## Show or hide a session or course
 
@@ -148,23 +162,22 @@ A course page opens on the current year, with one **Archive** button at the bott
 
 ## Start a new year of teaching
 
-Run `python lms.py` in the `lms` folder and choose **Start a new year**. It:
+Run `python lms.py` in the `lms` folder and choose **Start a new year**, or use **Years → Start a new year** on the Manage page. Either one:
 
-1. moves the whole current year from `content/active/<year>/` to `content/archive/<year>/`, and marks it `"archived"`,
-2. adds the new year to `courses.json` as `"current"`, with the same courses unless you say otherwise,
-3. creates `content/active/<new year>/<course>/sessions.json` for each of them, empty and ready for sessions.
+1. sets the current year's `year.json` to `"archived"` (its folder stays where it is),
+2. creates `content/<new year>/year.json` as `"current"`, with the same courses unless you say otherwise,
+3. creates an empty `sessions.json` for each of those courses,
+4. adds the new year to the front of `years` in `courses.json`.
 
-Session dates do not change when a year moves to the archive. Commit and sync afterwards.
+Nothing moves, so every link keeps working, including direct links to PDFs and images, and session dates do not change. Commit and sync afterwards.
 
-Links to slides and Reading Material pages keep working after the move, because they use ids, not folders. A link straight to a file (for example a PDF in `readings/`) contains the folder, so it changes when the year is archived. Share the Reading Material page instead of the file.
-
-GitHub's website cannot move folders, so a new year is always started on your computer.
+By hand: create `content/2027-28/year.json` with `"status": "current"` and its courses, change the old year's `year.json` to `"archived"`, and add `"2027-28"` to the front of `years` in `courses.json`.
 
 ## Add a new course
 
 Run `python lms.py` and choose **Add a new course**. It adds the course to `courses.json`, adds it to the current year, and creates its folder and `sessions.json`.
 
-By hand: add the course to the `courses` list in `courses.json` with a short lowercase `id` (letters and numbers only), a `title`, a `description`, a `programme` and `"visibility": "public"`. Add the id to the current year's `courses` list. Create `content/active/<year>/<id>/sessions.json` containing `{ "sessions": [] }`.
+By hand: add the course to the `courses` list in `courses.json` with a short lowercase `id` (letters and numbers only), a `title`, a `description`, a `programme` and `"visibility": "public"`. Add the id to the `courses` list in the current year's `year.json`. Create `content/<year>/<id>/sessions.json` containing `{ "sessions": [] }`.
 
 Its page is `course.html?c=<id>`, for example `course.html?c=macro`, and the home page links to it. There is no page file to create. Old addresses such as `courses/macro.html` still open; `courses/` keeps a small forwarding file for each course that existed before the change.
 
@@ -221,20 +234,20 @@ Add `cover` after an image layout to fill the space and trim the edges, for exam
 ## HTML interactives
 
 1. Save the interactive in the session's `interactives/` folder.
-2. Add this line to its `<head>`. The `../` steps go up to the site folder (`lms`). In a session's `interactives/` folder, such as `content/active/2026-27/macro/module-1-measuring-output/interactives/`, it is six:
+2. Add this line to its `<head>`. The `../` steps go up to the site folder (`lms`). In a session's `interactives/` folder, such as `content/2026-27/macro/module-1-measuring-output/interactives/`, it is five:
 
 ```html
-<script src="../../../../../../assets/interactive.js"></script>
+<script src="../../../../../assets/interactive.js"></script>
 ```
 
-   In `content/shared/<course>/interactives/` it is four (`../../../../assets/interactive.js`). Archiving a year does not change the count, because `active/` and `archive/` are at the same depth.
+   In `content/shared/<course>/interactives/` it is four (`../../../../assets/interactive.js`).
 
    It makes the interactive follow the light and dark switch, and keeps the arrow keys working for the slides. Esc hands control back to the slides.
 3. Show it in a slide with `@[Title](interactives/file.html)`.
 
 For dark mode, define the interactive's colours under `:root.dark-mode`. If it draws on a canvas, redraw on the `themechange` event. See `content/shared/macro/interactives/is-lm.html`.
 
-You can also put small demos straight into a slide with `<script>`. See `content/active/2026-27/managerial/session-03-elasticity/slides.md`.
+You can also put small demos straight into a slide with `<script>`. See `content/2026-27/managerial/session-03-elasticity/slides.md`.
 
 ## Presenting
 
@@ -277,7 +290,7 @@ Run `python lms.py` in the `lms` folder. It shows a menu:
 
 1. **Add a new session**: asks for course, year, title and label. It creates the session folder from `_new-session/`, adds the entry to that course's `sessions.json` and sets today as the update date.
 2. **Add a new course**: adds it to `courses.json` and to the current year, and creates its folder and `sessions.json`.
-3. **Start a new year**: moves the current year to `content/archive/`, makes the new year current in `content/active/`, and sets up its course folders.
+3. **Start a new year**: marks the current year archived, creates the new year's folder and `year.json` as current, and sets up its course folders. Nothing moves.
 
 Then commit and sync.
 
@@ -285,7 +298,7 @@ Then commit and sync.
 
 The Updated column shows the day you last changed that session: its slides, images, interactives or readings. The date is set on your computer at the moment you commit, and goes into the same commit. Nothing is committed for you afterwards, so syncing never clashes.
 
-When a commit includes a change in a session's folder, the git hook `tools/hooks/pre-commit` (which runs `tools/date_on_commit.py`) sets that session's `"updated"` in its course's `sessions.json` to today and adds that file to the commit. Sessions you did not change keep their date. Moving a folder (for example when a year is archived) does not count as a change. This works for commits from VS Code and the terminal alike. If something goes wrong, the commit still goes through and the date is simply not changed.
+When a commit includes a change in a session's folder, the git hook `tools/hooks/pre-commit` (which runs `tools/date_on_commit.py`) sets that session's `"updated"` in its course's `sessions.json` to today and adds that file to the commit. Sessions you did not change keep their date. Moving or renaming a folder does not count as a change. This works for commits from VS Code and the terminal alike. If something goes wrong, the commit still goes through and the date is simply not changed.
 
 One-time setup on each computer, in the repository folder (`pawankb13.github.io`):
 
@@ -295,7 +308,7 @@ git config core.hooksPath lms/tools/hooks
 
 Changes made on github.com (for example a reading link pasted into `readings.md` there) do not set a date. Type that session's date yourself if you want it to show: `"updated": "YYYY-MM-DD"` in its `sessions.json`.
 
-To set every date from git history at once, run `python tools/set_dates.py` in the `lms` folder (`--check` only shows what would change). It follows files across moves, so archived sessions keep the date of their last real change.
+To set every date from git history at once, run `python tools/set_dates.py` in the `lms` folder (`--check` only shows what would change). It follows files across moves and renames, so a moved session keeps the date of its last real change.
 
 ## Manage page (form)
 
@@ -305,16 +318,16 @@ Open `manage.html` on your published site, for example `https://pawankb13.github
 |---|---|
 | Courses | Add a course. Delete a course. |
 | Sessions | Add a session. Delete a session. |
-| Years | Explains how to start a new year (done on your computer with `lms.py`, because GitHub's website cannot move folders). |
+| Years | Start a new year: the current year becomes archived and the new one current. |
 | Portal | Check for problems: finds missing `sessions.json`, slide and reading files, and mistakes in the JSON files. |
 
-Each change lists the files to update on GitHub, usually one `sessions.json` and sometimes `courses.json`. For each there is a button that opens it on GitHub (filled in, for a new file), a Copy button and a Download button. Adding a session also gives buttons that open GitHub with its new `slides.md` and `readings.md` already filled in. Deleting gives links to the folders to remove on GitHub, and asks you to tick a confirmation box first. The page checks the new files before showing them, and stops if they would be invalid.
+Each change lists the files to update on GitHub: usually one `sessions.json`, and sometimes a `year.json` or `courses.json`. For each there is a button that opens it on GitHub (filled in, for a new file), a Copy button and a Download button. Adding a session also gives buttons that open GitHub with its new `slides.md` and `readings.md` already filled in. Deleting gives links to the folders to remove on GitHub, and asks you to tick a confirmation box first. The page checks the new files before showing them, and stops if they would be invalid.
 
 The buttons use the `github` setting in `courses.json` (`repo`, `branch`, `folder`). Change it if your repository, branch or folder name differs.
 
 ## Reading material
 
-1. Put the files (PDF, Word, Excel) in the session's `readings/` folder, for example `content/active/2026-27/macro/module-5-is-lm/readings/mankiw-ch11.pdf`.
+1. Put the files (PDF, Word, Excel) in the session's `readings/` folder, for example `content/2026-27/macro/module-5-is-lm/readings/mankiw-ch11.pdf`.
 2. Add a reading list slide at the end of that session's `slides.md`:
 
 ```
@@ -330,7 +343,7 @@ A link to a file in `readings/` opens from the slide. A link starting with `http
 
 ## Reading Material page (one per session)
 
-Each session row on the course page has a **Reading Material** link before **Open slides**. It opens a page for that session only. The page shows the file `readings.md` from the session's own folder, for example `content/active/2026-27/macro/module-5-is-lm/readings.md`.
+Each session row on the course page has a **Reading Material** link before **Open slides**. It opens a page for that session only. The page shows the file `readings.md` from the session's own folder, for example `content/2026-27/macro/module-5-is-lm/readings.md`.
 
 To add links, open that file on GitHub, click the pencil icon, paste your links, and commit:
 

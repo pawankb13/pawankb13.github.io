@@ -51,19 +51,7 @@
       "visibility": "hidden"
     }
   ],
-  "years": [
-    {
-      "id": "2026-27",
-      "status": "current",
-      "courses": ["managerial", "macro", "behavioural", "econometrics", "research"]
-    },
-
-    {
-      "id": "2025-26",
-      "status": "archived",
-      "courses": ["managerial", "macro"]
-    }
-  ],
+  "years": ["2026-27", "2025-26"],
   "templates": {
     "title": "Slide Templates",
     "description": "Every slide layout, ready to copy.",
