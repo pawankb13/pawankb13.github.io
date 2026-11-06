@@ -328,7 +328,7 @@ form.mg[hidden]{display:none}
       let mid = slug(title) || folder;
       for (let n = 2; (y.decks || []).some((k) => k.id === mid); n++) mid = `${slug(title) || folder}-${n}`;
       (y.decks = y.decks || []).push(Object.assign({ id: mid, title }, splitLabel(label),
-        { file: rel, updated: new Date().toISOString().slice(0, 10), visibility: "public" }));
+        { file: rel, visibility: "public" }));
       summary = `Added <strong>${esc(label)}: ${esc(title)}</strong> to ${esc(c.title)} ${esc(y.label || y.id)}.`;
       const dir = rel.replace(/\/[^\/]*$/, "");
       extra = `<div class="step"><h2>Step 2. Create the two files for this module</h2>
@@ -377,7 +377,8 @@ form.mg[hidden]{display:none}
 
     const problems = validate(d);
     if (problems.length) return fail(f, "Stopped. The result would not be valid: " + problems[0]);
-    const json = JSON.stringify(d, null, 2) + "\n";
+    /* Same layout as lms.py writes: two-space indent and a blank line between courses. */
+    const json = (JSON.stringify(d, null, 2) + "\n").replace(/\n    \},\n    \{\n/g, "\n    },\n\n    {\n");
     try { JSON.parse(json); } catch (e) { return fail(f, "Stopped. The result is not valid JSON."); }
 
     const o = $("#out");

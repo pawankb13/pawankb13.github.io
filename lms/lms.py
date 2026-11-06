@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
 """Course portal helper. Run:  python lms.py
 Menu: add a session, archive a year, start a new year.
-It edits courses.json and creates folders. Nothing else is touched."""
+It edits courses.json (and dates.json for a new session) and creates folders. Nothing else is touched."""
 import json, re, shutil, sys
 from datetime import date
 from pathlib import Path
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "courses.json"
+DATES = ROOT / "dates.json"
 
 def load():
     return json.loads(DATA.read_text(encoding="utf-8"))
 
 def save(d):
-    DATA.write_text(json.dumps(d, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    """Same layout as manage.html writes: two-space indent and a blank line between courses."""
+    text = json.dumps(d, indent=2, ensure_ascii=False) + "\n"
+    DATA.write_text(text.replace("\n    },\n    {\n", "\n    },\n\n    {\n"), encoding="utf-8")
+
+def set_date(file, day):
+    """Shows a date for a new session until GitHub writes the real one after your next push."""
+    dates = json.loads(DATES.read_text(encoding="utf-8")) if DATES.exists() else {}
+    dates[file] = day
+    DATES.write_text(json.dumps(dates, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 def ask(prompt, default=None):
     s = input(f"{prompt}" + (f" [{default}]" if default else "") + ": ").strip()
@@ -67,19 +76,10 @@ def add_session(d):
     while mid in ids:
         mid, n = f"{base}-{n}", n + 1
     y.setdefault("decks", []).append({"id": mid, "title": title, **split_label(label),
-        "file": f"{rel}/slides.md", "updated": date.today().isoformat(), "visibility": "public"})
+        "file": f"{rel}/slides.md", "visibility": "public"})
     save(d)
+    set_date(f"{rel}/slides.md", date.today().isoformat())
     print(f"\nDone. Write your slides in:\n  {rel}/slides.md\nPut images in its images/ folder and interactives in interactives/.")
-
-def update_date(d):
-    c = pick_course(d)
-    y = pick_year(c)
-    if not y.get("decks"):
-        print("This year has no sessions."); return
-    k = pick("Which session?", y["decks"], lambda k: f'{deck_label(k)}  {k["title"]}  (updated {k.get("updated", "-")})')
-    k["updated"] = ask("New date (YYYY-MM-DD)", date.today().isoformat())
-    save(d)
-    print("Date updated.")
 
 def archive_year(d):
     c = pick_course(d)
@@ -108,7 +108,7 @@ def new_year(d, c=None):
     save(d)
     print(f'\nDone. {c["title"]} {yid} is the current year. Add sessions with option 1.')
 
-MENU = [("Add a new session", add_session), 
+MENU = [("Add a new session", add_session),
         ("Archive a year", archive_year), ("Start a new year", new_year)]
 
 def main():

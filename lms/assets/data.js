@@ -1,4 +1,6 @@
-/* Reads courses.json and fills in the defaults, so every page sees the same shape.
+/* Reads courses.json and dates.json and fills in the defaults, so every page sees the same shape.
+   dates.json is written by GitHub (tools/set_dates.py): { "<deck file>": "YYYY-MM-DD" }. Never edit it by hand.
+   A deck's "updated" in courses.json is used only when dates.json has no date for it.
    Loaded before site.js, slides.js and readings.js. Gives them window.LMS.
 
    Session address:  #<course>/<year>/<session id>[/<slide number>]   e.g. #macro/2026-27/is-lm/4
@@ -16,41 +18,47 @@
   }
   const folderName = (file) => String(file || "").replace(/\/[^\/]*$/, "").replace(/^.*\//, "");
 
-  function deck(d, i) {
+  function deck(d, i, dates) {
     const label = d.label || [d.type, d.number].filter((v) => v !== undefined && v !== "").join(" ");
     return Object.assign({}, d, {
       id: String(d.id || folderName(d.file) || i + 1),
       label, index: i, visibility: visibility(d),
+      updated: dates[d.file] || d.updated || "",
     });
   }
-  function year(y, c) {
+  function year(y, c, dates) {
     return Object.assign({}, y, {
       label: y.label || y.id, status: y.status || "current",
       programme: y.programme ?? c.programme ?? "", term: y.term || "", note: y.note || "",
-      decks: (y.decks || []).map(deck),
+      decks: (y.decks || []).map((d, i) => deck(d, i, dates)),
     });
   }
-  function course(c) {
+  function course(c, dates) {
     return Object.assign({}, c, {
       description: c.description || "", visibility: visibility(c),
-      years: (c.years || []).map((y) => year(y, c)),
+      years: (c.years || []).map((y) => year(y, c, dates)),
     });
   }
 
-  function normalise(raw) {
+  function normalise(raw, dates) {
+    dates = dates || {};
     const list = (raw.courses || []).slice();
     const t = raw.templates;
     if (t) list.push({
       id: "templates", title: t.title || "Slide Templates", description: t.description, visibility: "unlisted",
       years: [{ id: "reference", label: t.label || "Reference", status: "current", note: t.note, decks: t.decks || [] }],
     });
-    return { site: raw.site || {}, courses: list.map(course) };
+    return { site: raw.site || {}, courses: list.map((c) => course(c, dates)) };
   }
 
   async function load(root) {
-    const res = await fetch((root || ".") + "/courses.json", { cache: "no-cache" });
+    const base = (root || ".") + "/";
+    /* dates.json is optional: if it is missing or broken, dates come from courses.json or show a dash. */
+    const dates = fetch(base + "dates.json", { cache: "no-cache" })
+      .then((r) => (r.ok ? r.json() : {})).catch(() => ({}));
+    const res = await fetch(base + "courses.json", { cache: "no-cache" });
     if (!res.ok) throw new Error("HTTP " + res.status);
-    return normalise(await res.json());
+    return normalise(await res.json(), await dates);
   }
 
   const listed = (x) => x.visibility === "public";    /* shown in lists and counts */

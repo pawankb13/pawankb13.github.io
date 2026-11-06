@@ -3,7 +3,6 @@
   "site": {
     "title": "Courses",
     "instructor": "Dr. Pawan Ashok Kamble",
-    "institution": "",
     "homepage": "https://pawankb13.github.io",
     "showNotes": true,
     "github": {
@@ -11,11 +10,6 @@
       "branch": "master",
       "folder": "lms"
     }
-
-
-
-
-
   },
   "courses": [
     {
@@ -35,7 +29,6 @@
               "type": "Session",
               "number": 1,
               "file": "content/managerial/2026-27/session-01-how-economists-think/slides.md",
-              "updated": "2026-08-12",
               "visibility": "public"
             },
             {
@@ -44,7 +37,6 @@
               "type": "Session",
               "number": 3,
               "file": "content/managerial/2026-27/session-03-elasticity/slides.md",
-              "updated": "2026-09-02",
               "visibility": "public"
             }
           ]
@@ -59,17 +51,12 @@
               "type": "Session",
               "number": 2,
               "file": "content/managerial/2025-26/session-02-demand-supply/slides.md",
-              "updated": "2026-03-10",
               "visibility": "public"
             }
           ]
         }
       ]
     },
-
-
-
-
 
     {
       "id": "macro",
@@ -88,7 +75,6 @@
               "type": "Module",
               "number": 1,
               "file": "content/macro/2026-27/module-1-measuring-output/slides.md",
-              "updated": "2026-07-20",
               "visibility": "hidden"
             },
             {
@@ -97,26 +83,21 @@
               "type": "Module",
               "number": 3,
               "file": "content/macro/2026-27/module-3-inflation-unemployment/slides.md",
-              "updated": "2026-11-06",
               "visibility": "public"
             },
-
             {
               "id": "is-lm",
               "title": "The IS-LM Model",
               "type": "Module",
               "number": 5,
               "file": "content/macro/2026-27/module-5-is-lm/slides.md",
-              "updated": "2026-10-14",
               "visibility": "hidden"
             }
           ]
         },
         {
           "id": "2025-26",
-          
           "status": "archived",
-          
           "decks": [
             {
               "id": "introduction",
@@ -124,17 +105,12 @@
               "type": "Session",
               "number": 1,
               "file": "content/macro/2025-26/session-01-introduction/slides.md",
-              "updated": "2026-02-18",
               "visibility": "hidden"
             }
           ]
         }
       ]
     },
-
-
-
-
 
     {
       "id": "behavioural",
@@ -154,17 +130,12 @@
               "type": "Class",
               "number": 3,
               "file": "content/behavioural/2026-27/class-03-prospect-theory/slides.md",
-              "updated": "2026-10-28",
               "visibility": "public"
             }
           ]
         }
       ]
     },
-
-
-
-
 
     {
       "id": "econometrics",
@@ -182,7 +153,6 @@
               "type": "Session",
               "number": 2,
               "file": "content/econometrics/2026-27/session-02-ols/slides.md",
-              "updated": "2026-09-25",
               "visibility": "public"
             }
           ]
@@ -190,10 +160,6 @@
       ]
     },
 
-
-
-
-    
     {
       "id": "research",
       "title": "Research Courses",
@@ -210,7 +176,6 @@
               "type": "Session",
               "number": 1,
               "file": "content/research/2026-27/session-01-research-question/slides.md",
-              "updated": "2026-08-30",
               "visibility": "public"
             }
           ]
@@ -227,8 +192,7 @@
         "id": "all-layouts",
         "title": "Slide Templates",
         "label": "All layouts",
-        "file": "content/templates/2026-27/all-layouts/slides.md",
-        "updated": "2026-11-05"
+        "file": "content/templates/2026-27/all-layouts/slides.md"
       }
     ]
   }

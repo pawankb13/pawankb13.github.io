@@ -16,6 +16,7 @@ course.html                 The course page, for every course (course.html?c=mac
 courses/                    Old course addresses, kept so links you shared still work
 slides.html                 Slide viewer
 courses.json                Courses, years and sessions. Edit this to add anything.
+dates.json                  Each session's Updated date. Written by GitHub; do not edit.
 assets/                     Styles and scripts
 _new-session/               Copy this folder to start a new session
 content/
@@ -69,14 +70,13 @@ Folder names: `session-01-topic`, `module-5-topic` or `class-03-topic`. Use lowe
   "type": "Module",
   "number": 4,
   "file": "content/macro/2026-27/module-4-money/slides.md",
-  "updated": "2026-11-05",
   "visibility": "public"
 }
 ```
 
 - `id` is the session's address: `slides.html#macro/2026-27/money`. Use lowercase and hyphens, unique within the year. **Do not change it once you have shared the link.** You can reorder, rename or delete other sessions and the link still works.
 - `type` and `number` make the label "Module 4". For something without a number, write `"label": "All layouts"` instead.
-- `updated` fills itself. See "Automatic update dates" below.
+- There is no date to type. GitHub writes it to `dates.json`. See "Automatic update dates" below.
 
 The order of the list is the order on the course page. Visitors can sort it by clicking the Type or Updated heading (up and down arrows).
 
@@ -235,11 +235,19 @@ Then write your slides in the new `slides.md`.
 
 The Updated column shows the date of the last change to that session's folder (slides, images, interactives or readings). GitHub works it out from your commits. You never type a date.
 
-This is done by `.github/workflows/update-dates.yml` at the root of the repository (not inside `lms/`). Each time you push a change under `lms/content/`, GitHub runs `tools/set_dates.py`, and if a date changed it commits `courses.json` as **github-actions[bot]** within a minute or two. You can also start it by hand: open the **Actions** tab, choose **Update session dates**, then **Run workflow**.
+The dates live in their own file, `dates.json`, so that GitHub never changes the file you edit. `courses.json` holds only what you write. `dates.json` lists each session's slides file and its date:
 
-Because GitHub commits to the repository, run `git pull` before you edit `courses.json` on your computer, or your push may be refused.
+```json
+{
+  "content/macro/2026-27/module-3-inflation-unemployment/slides.md": "2026-11-06"
+}
+```
 
-Only the dates change. The rest of `courses.json`, including its spacing, stays as you wrote it.
+The workflow `.github/workflows/update-dates.yml`, at the root of the repository (not inside `lms/`), keeps it up to date. Each time you push a change under `lms/content/` or to `lms/courses.json`, GitHub runs `tools/set_dates.py`, and if a date changed it commits `dates.json` as **github-actions[bot]** within a minute or two. You can also start it by hand: open the **Actions** tab, choose **Update session dates**, then **Run workflow**.
+
+Run `git pull` now and then to bring GitHub's `dates.json` commits to your computer. Since you never edit `dates.json`, they never clash with your own changes.
+
+A new session shows today's date (from `lms.py`) or a dash (from the Manage page) until GitHub's first run after you push it. If you ever need to set a date yourself, add `"updated": "YYYY-MM-DD"` to that session in `courses.json`. It is used only when `dates.json` has no date for the session.
 
 To see what would change without changing anything, run this in the `lms` folder:
 
