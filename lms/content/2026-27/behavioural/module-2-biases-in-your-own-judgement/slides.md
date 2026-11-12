@@ -12,8 +12,8 @@ Seven shortcuts, the errors they produce, and the procedures that catch them
 
 1. **Outline:** the question this module answers
 2. **Concepts:** seven shortcuts, and how to debias them
-3. **Case 1:** Riya's notebook, June to December
-4. **Case 2.1:** Valuation at Meridian Capital
+3. **Case 2.1:** Riya's notebook, June to December
+4. **Case 2.2:** Valuation at Meridian Capital
 5. **Close:** class activity, checklist and exit quiz
 
 ---
@@ -939,7 +939,7 @@ Keep a decision log. Compare forecasts with outcomes. Update assumptions.
 ---
 
 <!-- layout: section -->
-# 3. Case 1: Riya's notebook
+# 3. Case 2.1: Riya's notebook
 
 June to December, read through the concepts
 
@@ -1294,9 +1294,9 @@ Each bad report was explained away: poor shelf placement, early days. Evidence t
 ---
 
 <!-- layout: section -->
-# 4. Case 2.1: Valuation at Meridian Capital
+# 4. Case 2.2: Valuation at Meridian Capital
 
-A $102 million write-down, read through the seven shortcuts
+A $102 million write-down, read through the module concepts
 
 ---
 
@@ -2030,8 +2030,6 @@ The aim is calibrated judgement: use intuition, then test it.
 - Soll, J. B., Milkman, K. L. and Payne, J. W. (2015). A user's guide to debiasing. In *The Wiley Blackwell Handbook of Judgment and Decision Making*.
 - Mitchell, D. J., Russo, J. E. and Pennington, N. (1989). Back to the future. *Journal of Behavioral Decision Making*, 2(1), 25–38.
 - Klein, G. (2007). Performing a project premortem. *Harvard Business Review*, 85(9), 18–19.
-- Case 2.1, Valuation at Meridian Capital: Daiichi Sankyo press release (30 January 2009); Microsoft press release (8 July 2015); HP fourth-quarter 2012 results (20 November 2012).
-
 ---
 
 <!-- layout: references -->
