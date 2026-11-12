@@ -10,6 +10,10 @@
 
   Anything that is not a link is shown as plain text.
 -->
+### Case
+
+- [A TALE OF A RETAILER
+The Kirana Credit Book: A Shopkeeper's Refusal](/readings/Case_The Kirana Credit Book.pdf)
 
 ### Start here
 
