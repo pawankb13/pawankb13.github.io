@@ -102,7 +102,7 @@ This is not irrationality. It is the setting every manager decides in.
 
 $$E[\text{gain}] > \text{cost}$$
 
-Search once more only if the expected gain from one more search is greater than its cost. Finding the best supplier for one item might save ₹200 a year and take three hours. For most items, the sensible choice is to stop.
+Search once more only if the expected gain from one more search is greater than its cost. Finding the best supplier for one item might save ₹200 a year and take three hours. For most items, the sensible choice is to stop. Economists formalise this as rational inattention (Sims, 2003).
 
 ---
 
@@ -191,6 +191,7 @@ This reframes distribution, shelf position, search ranking and sales sequencing:
 - So **search never starts**, however good the new option is
 - A new option is never compared. It is never looked at.
 - To win, the new option must make the **old one fall below the bar**
+- Its name: **status quo bias** (Samuelson and Zeckhauser, 1988)
 
 ---
 
@@ -245,6 +246,16 @@ Slow, effortful, rule-governed. Lazy: it accepts System 1's answer unless someth
 - Evidence for two separate brain systems is **contested** (Melnikoff and Bargh, 2018)
 - Use it to predict **when** checking fails
 - Rush, fatigue, distraction, and questions that look familiar
+
+---
+
+<!-- layout: callout -->
+## Attribute substitution
+### What System 1 does with a hard question
+
+> When a question is hard, System 1 quietly answers an easier one, and does not notice the swap.
+
+"How likely is it?" becomes "How easily does an example come to mind?" "Which is more probable?" becomes "Which fits the description better?" (Kahneman and Frederick, 2002)
 
 ---
 
@@ -314,6 +325,16 @@ This course is prescriptive. We are not here to catalogue failure.
 2. **Does:** many never get round to signing up
 3. **What to do:** enrol everyone, with a free choice to opt out
 4. **Result:** joining rose by about 48 points. The money on offer did not change.
+
+---
+
+## Not only limits on thinking
+### Three bounds on the standard model (Mullainathan and Thaler, 2000)
+
+- **Bounded rationality:** limited information, capacity and time
+- **Bounded willpower:** knowing what to do and not doing it
+- **Bounded self-interest:** caring about fairness and about other people
+- The savings example is **willpower**, not information. People knew about the plan.
 
 ---
 
@@ -481,6 +502,17 @@ Not: why is he being irrational? That question ends the discussion. It does not 
 2. **Costs are missing.** Learning time, errors at the counter, saying no later.
 3. **Values are unpriced.** Privacy and trust are not in the table.
 4. **He is not maximising.** He may be aiming for good enough.
+
+---
+
+## What the case says about missing costs
+### The distributor's own evidence
+
+- **3 of 14** shops cancelled during the free trial
+- **Two** because billing slowed the evening rush
+- **One** because the son who ran it left for a job in Pune
+- If he stops, customer data **stays on the distributor's server**
+- Shops that turn reminders off **usually stop using it**. Without reminders, Ramesh said, it is just a cash register.
 
 ---
 
@@ -655,7 +687,20 @@ Once the bar is cleared, **search stops**. No new option is looked at.
 - Arjun tried to win a comparison Ramesh was not running
 - To win, the tablet must make the **notebook fall below the bar**
 
-What could do that? A lost notebook. A missed payment made public. A son who cannot read the shorthand.
+What could do that? The case gives four candidates.
+
+---
+
+<!-- layout: table -->
+## Four things changed by November
+### Concept 3: what could push the notebook below the bar
+
+| What changed | Why it matters |
+|---|---|
+| The free trial closes at month end | Waiting now has a price: ₹1,500 from the first day |
+| The main-road shop adopted the system | The rival that took two customers in 2019 now has it |
+| A ₹1,240 rice dispute, lost for want of an entry | The notebook failed, and Sonu thinks not for the first time |
+| Three nights until eleven on the accounts | His time is not free, even though no one pays for it |
 
 ---
 
@@ -713,6 +758,17 @@ Then design something that fits inside that.
 
 ---
 
+<!-- layout: steps -->
+## What a prescriptive offer could look like
+### Designed for a satisficer, inside his limits
+
+1. **Keep the notebook.** Do not ask him to give up what works.
+2. **One report, one category.** Start with cold drinks: 9% against 14%.
+3. **Reminders stay with him.** The system lists who is overdue. He decides whom to speak to, and how.
+4. **Make the notebook's risk visible.** The ₹1,240 dispute. Fourteen notebooks, one reader, no copy.
+
+---
+
 <!-- layout: table -->
 ## The case through the five concepts
 ### One line for each
@@ -751,9 +807,13 @@ Everyone must take a position before hearing anyone else's. The board photograph
 - Simon, H. A. (1955). A behavioral model of rational choice. *Quarterly Journal of Economics*, 69(1), 99–118.
 - Simon, H. A. (1971). Designing organizations for an information-rich world. In M. Greenberger (Ed.), *Computers, Communications, and the Public Interest*. Johns Hopkins Press.
 - Gigerenzer, G. and Gaissmaier, W. (2011). Heuristic decision making. *Annual Review of Psychology*, 62, 451–482.
+- Kahneman, D. and Frederick, S. (2002). Representativeness revisited: Attribute substitution in intuitive judgment. In T. Gilovich, D. Griffin and D. Kahneman (Eds.), *Heuristics and Biases*, 49–81. Cambridge University Press.
 - Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
 - Frederick, S. (2005). Cognitive reflection and decision making. *Journal of Economic Perspectives*, 19(4), 25–42.
 - Schwartz, B., et al. (2002). Maximizing versus satisficing. *Journal of Personality and Social Psychology*, 83(5), 1178–1197.
+- Samuelson, W. and Zeckhauser, R. (1988). Status quo bias in decision making. *Journal of Risk and Uncertainty*, 1(1), 7–59.
+- Sims, C. A. (2003). Implications of rational inattention. *Journal of Monetary Economics*, 50(3), 665–690.
+- Mullainathan, S. and Thaler, R. H. (2000). Behavioral economics. NBER Working Paper 7948.
 - Madrian, B. C. and Shea, D. F. (2001). The power of suggestion. *Quarterly Journal of Economics*, 116(4), 1149–1187.
 - Melnikoff, D. E. and Bargh, J. A. (2018). The mythical number two. *Trends in Cognitive Sciences*, 22(4), 280–293.
 - Bell, D. E., Raiffa, H. and Tversky, A. (1988). *Decision Making: Descriptive, Normative, and Prescriptive Interactions*. Cambridge University Press.
