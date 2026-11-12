@@ -178,6 +178,15 @@
      "folder": "module-1-how-decisions-get-made",
      "updated": "2026-11-12",
      "visibility": "public"
+    },
+    {
+     "id": "biases-in-your-own-judgement",
+     "title": "Biases in Your Own Judgement",
+     "type": "Module",
+     "number": 2,
+     "folder": "module-2-biases-in-your-own-judgement",
+     "updated": "2026-11-12",
+     "visibility": "public"
     }
    ]
   },
