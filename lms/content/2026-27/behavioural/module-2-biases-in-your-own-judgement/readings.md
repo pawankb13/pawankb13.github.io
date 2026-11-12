@@ -40,6 +40,8 @@
 
 - [Nickerson, R. S. (1998). Confirmation Bias: A Ubiquitous Phenomenon in Many Guises. Review of General Psychology, 2(2), 175–220](https://doi.org/10.1037/1089-2680.2.2.175). The standard review of the evidence.
 
+### The outside view and the Meridian case
+
 - [Kahneman, D. and Lovallo, D. (1993). Timid Choices and Bold Forecasts: A Cognitive Perspective on Risk Taking. Management Science, 39(1), 17–31](https://doi.org/10.1287/mnsc.39.1.17). The inside view versus the outside view, the core of the Meridian analysis.
 - [Damodaran, A. HP's Deal from Hell: The Mark-It-Up and Write-It-Down Two-Step](https://aswathdamodaran.substack.com/p/hps-deal-from-hell-the-mark-it-up-12-11-26). On the HP and Autonomy write-down, and why not every write-down is a valuation error.
 

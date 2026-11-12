@@ -13,7 +13,7 @@ Seven shortcuts, the errors they produce, and the procedures that catch them
 1. **Outline:** the question this module answers
 2. **Concepts:** seven shortcuts, and how to debias them
 3. **Case 1:** Riya's notebook, June to December
-4. **Case 2:** Valuation at Meridian Capital
+4. **Case 2.1:** Valuation at Meridian Capital
 5. **Close:** class activity, checklist and exit quiz
 
 ---
@@ -39,6 +39,22 @@ Seven shortcuts, the errors they produce, and the procedures that catch them
 6. Regression to the mean
 7. Confirmation bias
 8. Procedural debiasing
+
+---
+
+<!-- layout: table -->
+## How the eight concepts fit together
+### Three classic heuristics, the errors that follow, and one remedy
+
+| Group | Concepts |
+|---|---|
+| The idea | 1. Heuristics (Simon, 1955; Kahneman and Frederick, 2002) |
+| Three classic heuristics | 2. Anchoring, 3. Availability, 4. Representativeness (Tversky and Kahneman, 1974) |
+| Errors that follow from representativeness | 5. Base rate neglect, 6. Ignoring regression to the mean |
+| A bias in how we test beliefs | 7. Confirmation bias (Nickerson, 1998) |
+| The remedy | 8. Procedural debiasing |
+
+"Seven shortcuts" is shorthand. Strictly, three are heuristics. The others are errors and biases those shortcuts produce.
 
 ---
 
@@ -488,7 +504,6 @@ We ask "Does this candidate look like a star?" instead of "How likely is this ca
 - We judge candidates by a **prototype** of a successful employee
 - Similarity can outweigh statistical evidence and sample size
 - Small samples can look representative when luck is large
-- The third error is the Linda puzzle from Module 1
 
 ---
 
@@ -846,6 +861,35 @@ The procedure either stops the biased step from happening, or brings in an indep
 
 ---
 
+<!-- layout: compare -->
+## The inside view and the outside view
+### Kahneman and Lovallo (1993)
+
+|||
+
+### Inside view
+
+Build the forecast from this case: its plan, its people, its story. Each step feels reasonable. The result is usually too optimistic.
+
+|||
+
+### Outside view
+
+Set the details aside first. Ask how similar past cases turned out, and start from that. Then adjust only for what is truly different.
+
+---
+
+<!-- layout: steps -->
+## Reference class forecasting
+### The outside view as a procedure (Lovallo and Kahneman, 2003)
+
+1. **Pick the reference class:** past cases like this one
+2. **Find the distribution:** how those cases actually turned out
+3. **Place this case in it:** start from the middle, not the best outcome
+4. **Adjust a little:** move away only for evidence specific to this case
+
+---
+
 <!-- layout: callout -->
 ## Why the pre-mortem works
 ### Mitchell, Russo and Pennington (1989)
@@ -1074,7 +1118,7 @@ In memory, 112.5 ÷ 125 = **90%** of successful managers were polished. The real
 ## September: the friend who got rich
 ### Concept 3: availability
 
-**The story:** At a wedding, Riya's college friend Arjun shows her a screenshot: ₹3 lakh profit from options trading in one month. Two other friends say they have made money too.
+**The story:** At a wedding, Riya's college friend Kabir shows her a screenshot: ₹3 lakh profit from options trading in one month. Two other friends say they have made money too.
 
 **The decision:** Riya opens a trading account the next week.
 
@@ -1153,11 +1197,11 @@ So P = 0.388 ÷ 1.388 = **28%**. A flagged invoice is still more likely to be ge
 ## November: the star salesperson
 ### Concept 6: regression to the mean
 
-**August:** Ramesh, a sales officer in Riya's region, hits 140% of target. The regional head names him Star of the Month and gives him a public award.
+**August:** Prakash, a sales officer in Riya's region, hits 140% of target. The regional head names him Star of the Month and gives him a public award.
 
-**September:** Ramesh hits 112%. The regional head says, "Praise made him complacent." A rep scolded for hitting 70% in August comes in at 95%: "See, pressure works."
+**September:** Prakash hits 112%. The regional head says, "Praise made him complacent." A rep scolded for hitting 70% in August comes in at 95%: "See, pressure works."
 
-**The data:** Riya looks at Ramesh's last two years. His average is 102%.
+**The data:** Riya looks at Prakash's last two years. His average is 102%.
 
 ---
 
@@ -1175,7 +1219,7 @@ He scored 112%. The award did not make him complacent. The formula predicted the
 ## Back to Riya: November
 ### Reward the skill, not the luck
 
-> Riya shows the regional head Ramesh's two-year chart. Star of the Month is replaced by a rolling three-month average.
+> Riya shows the regional head Prakash's two-year chart. Star of the Month is replaced by a rolling three-month average.
 
 ---
 
@@ -1250,7 +1294,7 @@ Each bad report was explained away: poor shelf placement, early days. Evidence t
 ---
 
 <!-- layout: section -->
-# 4. Case 2: Valuation at Meridian Capital
+# 4. Case 2.1: Valuation at Meridian Capital
 
 A $102 million write-down, read through the seven shortcuts
 
@@ -1452,7 +1496,7 @@ Revenue grew about 7% a year, against 13% in the model. By 2026, EBITDA was 29% 
 ## What explains the gap
 ### Three causes, and all three were visible before the bid
 
-1. **Expansion:** new states reached 9% of revenue, not 22%. Shelf-space spend ate the procurement savings.
+1. **Expansion:** new states reached 9% of revenue by 2026, against 22% assumed by year 5. Shelf-space spend ate the procurement savings.
 2. **Ready-to-cook:** 29% of revenue grew 3% a year. Nobody modelled it separately.
 3. **The elder son left** in February 2025. The 15% margin rested on his conviction.
 
@@ -1723,7 +1767,18 @@ His second point, the insider's view over the consultant's base rate, is base ra
 
 $$\frac{1}{0.135 - 0.040} = 10.5 \qquad \frac{1}{0.125 - 0.055} = 14.3$$
 
-One point off the discount rate and 1.5 points on terminal growth narrow r − g from 9.5 to 7.0 points. That alone lifts terminal value by about 36%. Both changes came in the week the unseen rival appeared.
+One point off the discount rate and 1.5 points on terminal growth narrow r − g from 9.5 to 7.0 points. That alone lifts terminal value by about 36%. Both changes came after the unseen rival appeared, two days before the bid.
+
+---
+
+## The unseen rival and the deadline
+### Pressure narrows attention to the deal in hand
+
+- Trident reported a larger rival in August. Meridian **never asked who**, and saw no evidence it existed.
+- Iyer later said asking "would have signalled weakness"
+- The committee met **four hours** before the deadline and spent **six minutes** on valuation
+- Time pressure leaves little room for System 2 to check (Module 1)
+- In an auction, the winner is often the bidder who overestimated most: the **winner's curse** (Thaler, 1988)
 
 ---
 
@@ -1739,7 +1794,7 @@ Nobody made an independent estimate. Nobody was assigned to argue against. The c
 
 <!-- layout: compare -->
 ## Was it a bad decision, or a bad outcome?
-### Judge the decision on what was knowable on 20 October 2023
+### Avoid outcome bias: judge the decision on what was knowable on 20 October 2023
 
 |||
 
@@ -1757,6 +1812,16 @@ Nobody made an independent estimate. Nobody was assigned to argue against. The c
 - The elder son leaving in 2025
 - The true cost of new-state shelf space
 - Where deal multiples would sit in 2026
+
+---
+
+<!-- layout: callout -->
+## Outcome bias
+### Baron and Hershey (1988)
+
+> Outcome bias is judging a decision by how it turned out, rather than by what was known when it was made.
+
+A good process can end badly, and a bad one can end well. Meridian's decision was poor because the warnings were in the file before the bid, not because of the write-down.
 
 ---
 
@@ -1778,7 +1843,7 @@ Then say what the pattern across all four tells you that no single revision does
 ---
 
 ## Question 1: revision 4, against the evidence
-### Two changes, made in the week after the rival bidder appeared
+### Two changes, made after the rival bidder appeared, two days before the bid
 
 | Revision | Reason given | Evidence in the case | Verdict |
 |---|---|---|---|
@@ -1959,7 +2024,8 @@ The aim is calibrated judgement: use intuition, then test it.
 
 - Gallagher, J. (2014). Learning about an infrequent event. *American Economic Journal: Applied Economics*, 6(3), 206–233.
 - SEBI (2024). Analysis of Profits and Losses in the Equity Derivatives Segment (FY22–FY24).
-- Lewis, M. (2003). *Moneyball*. W. W. Norton. Kahneman, D. (2011). *Thinking, Fast and Slow*.
+- Lewis, M. (2003). *Moneyball*. W. W. Norton.
+- Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
 - Fischhoff, B. (1982). Debiasing. In *Judgment under Uncertainty*. Cambridge University Press.
 - Soll, J. B., Milkman, K. L. and Payne, J. W. (2015). A user's guide to debiasing. In *The Wiley Blackwell Handbook of Judgment and Decision Making*.
 - Mitchell, D. J., Russo, J. E. and Pennington, N. (1989). Back to the future. *Journal of Behavioral Decision Making*, 2(1), 25–38.
@@ -1972,6 +2038,9 @@ The aim is calibrated judgement: use intuition, then test it.
 ## Sources for the debiasing procedures
 
 - Kahneman, D., Sibony, O. and Sunstein, C. R. (2021). *Noise: A Flaw in Human Judgment*. Little, Brown Spark.
+- Kahneman, D. and Lovallo, D. (1993). Timid choices and bold forecasts. *Management Science*, 39(1), 17–31.
+- Baron, J. and Hershey, J. C. (1988). Outcome bias in decision evaluation. *Journal of Personality and Social Psychology*, 54(4), 569–579.
+- Thaler, R. H. (1988). Anomalies: The winner's curse. *Journal of Economic Perspectives*, 2(1), 191–202.
 - Lovallo, D. and Kahneman, D. (2003). Delusions of success. *Harvard Business Review*, 81(7), 56–63.
 - Lord, C. G., Lepper, M. R. and Preston, E. (1984). Considering the opposite. *Journal of Personality and Social Psychology*, 47(6), 1231–1243.
 - Kahneman, D., Lovallo, D. and Sibony, O. (2011). Before you make that big decision. *Harvard Business Review*, 89(6), 50–60.

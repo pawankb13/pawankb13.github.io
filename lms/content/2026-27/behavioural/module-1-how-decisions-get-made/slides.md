@@ -260,13 +260,12 @@ Slow, effortful, rule-governed. Lazy: it accepts System 1's answer unless someth
 ---
 
 <!-- layout: table -->
-## Your three answers from this morning
-### Linda returns in Module 2, and the jacket in Module 4
+## Your two answers from this morning
+### The jacket returns in Module 4
 
 | Puzzle | Answer | What happened |
 |---|---|---|
 | Bat and ball | ₹5 | System 1 offers ₹10. System 2 rarely checks. |
-| Linda | (a) | Everyone in (b) is in (a). System 1 judged resemblance, not probability. |
 | Jacket and calculator | Same both times | ₹500 was judged against the price beside it. |
 
 ---
@@ -732,7 +731,6 @@ What could do that? The case gives four candidates.
 - Most of his decisions are made **at the counter, in the rush**
 - The 2019 fridge comes to mind **fast**, so it feels likely
 - "Which category earns most?" became "whose terms are best?": **attribute substitution**
-- That swap is the same one the class made with **Linda**
 
 ---
 
@@ -793,8 +791,8 @@ Then design something that fits inside that.
 
 | Task | What to do |
 |---|---|
-| **Read** | Case 2, Valuation at Meridian Capital, with all three exhibits  |
-| **Submit** | The two preparation questions, 400 words maximum, plus one line on what you would have done as the associate |
+| **Read** | Case 2.1, Valuation at Meridian Capital, with all four exhibits |
+| **Submit** | Answers to the case's first two questions, 400 words maximum, plus your one-line answer to question 3 |
 | **Team** | Layer 1 of the audit: the organisation, your access, one decision journey, three unknowns |
 
 Everyone must take a position before hearing anyone else's. The board photograph goes on the LMS this evening.
