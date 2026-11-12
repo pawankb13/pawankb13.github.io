@@ -210,7 +210,7 @@ main.inner { padding-block: 40px 56px; }
 }
 
 /* Reading material page */
-.reading-body { max-width: 70ch; margin: 8px 0 32px; }
+.reading-body { max-width: 85ch; margin: 8px 0 32px; }
 .reading-body ul, .reading-body ol { padding-left: 1.3em; }
 .reading-body li { margin: 8px 0; }
 .reading-body a { color: var(--accent); }

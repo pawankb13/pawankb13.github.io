@@ -12,8 +12,7 @@
 -->
 ### Case
 
-- [A TALE OF A RETAILER
-The Kirana Credit Book: A Shopkeeper's Refusal](/readings/Case_The Kirana Credit Book.pdf)
+- [A Tale of a Retailer — The Kirana Credit Book: A Shopkeeper's Refusal](readings/Case_The%20Kirana%20Credit%20Book.pdf)
 
 ### Start here
 
