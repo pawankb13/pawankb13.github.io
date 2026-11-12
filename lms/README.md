@@ -180,7 +180,7 @@ Run `python lms.py` and choose **Add a new course**. It adds the course to `cour
 
 By hand: add the course to the `courses` list in `courses.json` with a short lowercase `id` (letters and numbers only), a `title`, a `description`, a `programme` and `"visibility": "public"`. Add the id to the `courses` list in the current year's `year.json`. Create `content/<year>/<id>/sessions.json` containing `{ "sessions": [] }`.
 
-Its page is `course.html?c=<id>`, for example `course.html?c=macro`, and the home page links to it. There is no page file to create. Old addresses such as `courses/macro.html` still open; `courses/` keeps a small forwarding file for each course that existed before the change.
+Its page is `course.html?c=<id>`, for example `course.html?c=macro`, and the home page links to it. There is no page file to create.
 
 ## Writing slides
 
