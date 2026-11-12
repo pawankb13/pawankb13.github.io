@@ -35,7 +35,7 @@
     "title": "Behavioral Economics",
     "description": "How real people decide: heuristics, biases, prospect theory, time preferences and nudges.",
     "programme": "PGDM",
-    "visibility": "hidden"
+    "visibility": "public"
    },
    {
     "id": "econometrics",
@@ -168,15 +168,15 @@
   },
   "2026-27/behavioural": {
    "$schema": "../../../sessions.schema.json",
-   "note": "10 classes of 3 hours each.",
+   "note": "",
    "sessions": [
     {
-     "id": "prospect-theory",
-     "title": "Prospect Theory and Loss Aversion",
-     "type": "Class",
-     "number": 3,
-     "folder": "class-03-prospect-theory",
-     "updated": "2026-11-05",
+     "id": "how-decisions-get-made",
+     "title": "How Decisions Get Made",
+     "type": "Module",
+     "number": 1,
+     "folder": "module-1-how-decisions-get-made",
+     "updated": "2026-11-12",
      "visibility": "public"
     }
    ]
@@ -239,6 +239,7 @@
   }
  },
  "readings": [
+  "content/2026-27/behavioural/module-1-how-decisions-get-made/readings.md",
   "content/2026-27/macro/module-1-measuring-output/readings.md",
   "content/2026-27/macro/module-3-inflation-unemployment/readings.md",
   "content/2026-27/macro/module-5-is-lm/readings.md"

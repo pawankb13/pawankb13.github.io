@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" font-family="Arial, sans-serif">
+<rect width="1000" height="640" fill="#ffffff"/>
+<line x1="110" y1="70" x2="110" y2="520" stroke="#7a8288" stroke-width="2"/>
+<line x1="110" y1="520" x2="950" y2="520" stroke="#7a8288" stroke-width="2"/>
+<text x="40" y="305.0" font-size="22" fill="#7a8288" transform="rotate(-90 40 305.0)" text-anchor="middle">Value of the option</text>
+<text x="530.0" y="590" font-size="22" fill="#7a8288" text-anchor="middle">Options, in the order they are found</text>
+<rect x="127" y="296" width="70" height="224" fill="#cfd8dc"/>
+<text x="162" y="552" font-size="22" fill="#313436" text-anchor="middle">1</text>
+<rect x="231" y="357" width="70" height="163" fill="#cfd8dc"/>
+<text x="266" y="552" font-size="22" fill="#313436" text-anchor="middle">2</text>
+<rect x="334" y="215" width="70" height="305" fill="#3d8296"/>
+<text x="369" y="552" font-size="22" fill="#313436" text-anchor="middle">3</text>
+<rect x="438" y="262" width="70" height="258" fill="#cfd8dc"/>
+<text x="473" y="552" font-size="22" fill="#313436" text-anchor="middle">4</text>
+<rect x="542" y="326" width="70" height="194" fill="#cfd8dc"/>
+<text x="577" y="552" font-size="22" fill="#313436" text-anchor="middle">5</text>
+<rect x="646" y="253" width="70" height="267" fill="#cfd8dc"/>
+<text x="681" y="552" font-size="22" fill="#313436" text-anchor="middle">6</text>
+<rect x="749" y="176" width="70" height="344" fill="#52adc8"/>
+<text x="784" y="552" font-size="22" fill="#313436" text-anchor="middle">7</text>
+<rect x="853" y="271" width="70" height="249" fill="#cfd8dc"/>
+<text x="888" y="552" font-size="22" fill="#313436" text-anchor="middle">8</text>
+<line x1="110" y1="240" x2="950" y2="240" stroke="#313436" stroke-width="3" stroke-dasharray="12 8"/>
+<text x="118" y="270" font-size="22" font-weight="700" fill="#313436" text-anchor="start">Good enough</text>
+<text x="369" y="157" font-size="22" font-weight="700" fill="#3d8296" text-anchor="middle">Satisficer</text>
+<text x="369" y="183" font-size="20" fill="#3d8296" text-anchor="middle">stops here</text>
+<path d="M369 191 L369 209" stroke="#3d8296" stroke-width="3"/>
+<text x="784" y="118" font-size="22" font-weight="700" fill="#2f6f83" text-anchor="middle">Maximiser</text>
+<text x="784" y="144" font-size="20" fill="#2f6f83" text-anchor="middle">checks all 8, picks this</text>
+<path d="M784 152 L784 170" stroke="#2f6f83" stroke-width="3"/>
+</svg>
