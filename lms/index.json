@@ -171,6 +171,15 @@
    "note": "",
    "sessions": [
     {
+     "id": "course-overview",
+     "title": "How Decisions Get Made",
+     "type": "Module",
+     "number": 0,
+     "folder": "module-0-course-overview",
+     "updated": "2026-11-12",
+     "visibility": "public"
+    },
+    {
      "id": "how-decisions-get-made",
      "title": "How Decisions Get Made",
      "type": "Module",
@@ -248,6 +257,7 @@
   }
  },
  "readings": [
+  "content/2026-27/behavioural/module-0-course-overview/readings.md",
   "content/2026-27/behavioural/module-1-how-decisions-get-made/readings.md",
   "content/2026-27/behavioural/module-2-biases-in-your-own-judgement/readings.md",
   "content/2026-27/macro/module-1-measuring-output/readings.md",

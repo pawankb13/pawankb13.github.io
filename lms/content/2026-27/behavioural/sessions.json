@@ -3,6 +3,15 @@
   "note": "",
   "sessions": [
     {
+      "id": "course-overview",
+      "title": "How Decisions Get Made",
+      "type": "Module",
+      "number": 0,
+      "folder": "module-0-course-overview",
+      "updated": "2026-11-12",
+      "visibility": "public"
+    },
+    {
       "id": "how-decisions-get-made",
       "title": "How Decisions Get Made",
       "type": "Module",
