@@ -19,4 +19,3 @@
 
 - [RBI: Current rates (repo, SDF, MSF, CRR, SLR)](https://www.rbi.org.in/)
 - [RBI: Weekly Statistical Supplement, money stock (23 October 2026)](https://www.rbi.org.in/Scripts/WSSView.aspx?Id=28793)
-- [NPCI: UPI product statistics](https://www.npci.org.in/what-we-do/upi/product-statistics)
