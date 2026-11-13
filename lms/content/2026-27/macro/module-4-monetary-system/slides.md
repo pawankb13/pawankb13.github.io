@@ -70,7 +70,7 @@ Money has three functions:
 
 | Function | Meaning | Indian example |
 |---|---|---|
-| **Medium of exchange** | Accepted in payment | Paying ₹40 for chai by cash or UPI |
+| **Medium of exchange** | Accepted in payment | Paying ₹40 for tea by cash or UPI |
 | **Unit of account** | Common measure of value | MRP printed in rupees; a loan of ₹5 lakh |
 | **Store of value** | Holds purchasing power over time | Keeping ₹10,000 in a savings account |
 
