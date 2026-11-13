@@ -43,6 +43,16 @@
     },
 
     {
+      "id": "monetary-system",
+      "title": "The Monetary System",
+      "type": "Module",
+      "number": 4,
+      "folder": "module-4-monetary-system",
+      "updated": "2026-11-13",
+      "visibility": "public"
+    },
+
+    {
       "id": "is-lm",
       "title": "The IS-LM Model",
       "type": "Module",

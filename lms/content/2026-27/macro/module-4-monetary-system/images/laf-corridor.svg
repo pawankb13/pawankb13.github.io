@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 520" width="820" height="520" font-family="Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker></defs>
+<rect width="820" height="520" fill="#fff"/>
+<line x1="110" y1="30" x2="110" y2="450" stroke="#555c61" stroke-width="4"/><line x1="110" y1="450" x2="580" y2="450" stroke="#555c61" stroke-width="4"/>
+<text x="36" y="240.0" font-size="32" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 240.0)">Interest rate (%)</text>
+<text x="580" y="494" font-size="32" fill="#555c61" text-anchor="end">Days</text>
+<rect x="110" y="117" width="470" height="222" fill="#3d8296" fill-opacity="0.10"/>
+<line x1="110" y1="117" x2="580" y2="117" stroke="#c0504d" stroke-width="6"/>
+<line x1="110" y1="228" x2="580" y2="228" stroke="#2f3437" stroke-width="8"/>
+<line x1="110" y1="339" x2="580" y2="339" stroke="#3d8296" stroke-width="6"/>
+<polyline points="125,228 131,201 136,183 142,178 147,184 153,195 159,204 164,207 170,206 175,207 181,214 187,231 192,254 198,276 203,289 209,287 215,272 220,251 226,231 231,219 237,215 243,214 248,212 254,204 259,190 265,178 271,173 276,182 282,203 287,230 293,255 299,269 304,271 310,265 315,257 321,253 327,254 332,257 338,256 343,245 349,224 355,198 360,177 366,167 371,172 377,188 383,207 388,222 394,230 399,232 405,234 411,240 416,253 422,270 427,283 433,285 439,273 444,250 450,223 455,202 461,192 467,191 472,197 478,201 483,200 489,194 495,191 500,194 506,209 511,234 517,260 523,280 528,286 534,279 539,264 545,247 551,237 556,233 562,232 567,228 573,217" fill="none" stroke="#b5852a" stroke-width="5"/>
+<text x="596" y="129" font-size="36" font-weight="700" fill="#c0504d">MSF 5.75%</text>
+<text x="596" y="240" font-size="36" font-weight="700" fill="#2f3437">Repo 5.50%</text>
+<text x="596" y="351" font-size="36" font-weight="700" fill="#3d8296">SDF 5.25%</text>
+<text x="596" y="414" font-size="32" font-weight="700" fill="#b5852a">WACR</text>
+<text x="100" y="461" font-size="30" fill="#555c61" text-anchor="end">5.00</text>
+<text x="100" y="350" font-size="30" fill="#555c61" text-anchor="end">5.25</text>
+<text x="100" y="239" font-size="30" fill="#555c61" text-anchor="end">5.50</text>
+<text x="100" y="128" font-size="30" fill="#555c61" text-anchor="end">5.75</text>
+</svg>

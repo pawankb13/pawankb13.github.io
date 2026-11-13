@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600" font-family="Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker></defs>
+<rect width="800" height="600" fill="#fff"/>
+<line x1="95" y1="30" x2="95" y2="520" stroke="#555c61" stroke-width="4"/><line x1="95" y1="520" x2="665" y2="520" stroke="#555c61" stroke-width="4"/>
+<text x="40" y="275.0" font-size="34" fill="#555c61" text-anchor="middle" transform="rotate(-90 40 275.0)">Interest rate</text>
+<text x="375.0" y="576" font-size="34" fill="#555c61" text-anchor="middle">Quantity of money</text>
+<line x1="123" y1="99" x2="633" y2="455" stroke="#c0504d" stroke-width="8"/>
+<text x="643" y="467" font-size="38" font-weight="700" fill="#c0504d">MD</text>
+<line x1="409" y1="70" x2="409" y2="520" stroke="#3d8296" stroke-width="8" />
+<text x="409" y="60" font-size="38" font-weight="700" fill="#3d8296" text-anchor="middle">MS</text>
+<line x1="95" y1="299" x2="409" y2="299" stroke="#555c61" stroke-width="3" stroke-dasharray="8 7"/>
+<circle cx="409" cy="299" r="14" fill="#2f3437"/>
+<text x="85" y="312" font-size="38" font-weight="700" fill="#2f3437" text-anchor="end">r*</text>
+</svg>

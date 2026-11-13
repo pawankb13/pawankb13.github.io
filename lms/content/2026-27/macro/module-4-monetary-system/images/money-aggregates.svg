@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 600" width="820" height="600" font-family="Arial, sans-serif">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker></defs>
+<rect width="820" height="600" fill="#fff"/>
+<rect x="10" y="10" width="800" height="580" rx="18" fill="#eef6f8" stroke="#3d8296" stroke-width="4"/>
+<text x="34" y="62" font-size="42" font-weight="700" fill="#2f3437">M3: Broad money</text><text x="34" y="104" font-size="32" fill="#555c61">M1 + time deposits with banks</text>
+<rect x="34" y="130" width="752" height="440" rx="18" fill="#ddedf2" stroke="#3d8296" stroke-width="4"/>
+<text x="58" y="182" font-size="42" font-weight="700" fill="#2f3437">M2</text><text x="58" y="224" font-size="32" fill="#555c61">M1 + Post Office savings deposits</text>
+<rect x="58" y="250" width="704" height="300" rx="18" fill="#c8e1ea" stroke="#3d8296" stroke-width="4"/>
+<text x="82" y="304" font-size="42" font-weight="700" fill="#2f3437">M1: Narrow money</text>
+<text x="82" y="358" font-size="34" fill="#555c61">Currency with the public</text>
+<text x="82" y="406" font-size="34" fill="#555c61">+ Demand deposits with banks</text>
+<text x="82" y="454" font-size="34" fill="#555c61">+ Other deposits with RBI</text>
+<text x="82" y="526" font-size="32" font-weight="700" fill="#3d8296">Most liquid</text>
+</svg>

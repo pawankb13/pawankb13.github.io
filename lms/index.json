@@ -156,6 +156,15 @@
      "visibility": "public"
     },
     {
+     "id": "monetary-system",
+     "title": "The Monetary System",
+     "type": "Module",
+     "number": 4,
+     "folder": "module-4-monetary-system",
+     "updated": "2026-11-13",
+     "visibility": "public"
+    },
+    {
      "id": "is-lm",
      "title": "The IS-LM Model",
      "type": "Module",
@@ -262,6 +271,7 @@
   "content/2026-27/behavioural/module-2-biases-in-your-own-judgement/readings.md",
   "content/2026-27/macro/module-1-measuring-output/readings.md",
   "content/2026-27/macro/module-3-inflation-unemployment/readings.md",
+  "content/2026-27/macro/module-4-monetary-system/readings.md",
   "content/2026-27/macro/module-5-is-lm/readings.md"
  ]
 }
