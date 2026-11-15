@@ -205,6 +205,15 @@
      "folder": "module-2-biases-in-your-own-judgement",
      "updated": "2026-11-12",
      "visibility": "public"
+    },
+    {
+     "id": "reference-points-and-framing",
+     "title": "Reference Points and Framing",
+     "type": "Module",
+     "number": 3,
+     "folder": "module-3-reference-points-and-framing",
+     "updated": "2026-11-15",
+     "visibility": "public"
     }
    ]
   },
@@ -269,6 +278,7 @@
   "content/2026-27/behavioural/module-0-course-overview/readings.md",
   "content/2026-27/behavioural/module-1-how-decisions-get-made/readings.md",
   "content/2026-27/behavioural/module-2-biases-in-your-own-judgement/readings.md",
+  "content/2026-27/behavioural/module-3-reference-points-and-framing/readings.md",
   "content/2026-27/macro/module-1-measuring-output/readings.md",
   "content/2026-27/macro/module-3-inflation-unemployment/readings.md",
   "content/2026-27/macro/module-4-monetary-system/readings.md",
