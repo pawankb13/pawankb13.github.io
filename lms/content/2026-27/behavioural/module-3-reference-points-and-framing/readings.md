@@ -10,11 +10,13 @@
 
   Anything that is not a link is shown as plain text.
 -->
+### Case: 
+- [Kaveri Fibre Pricing a Loss](readings/case.md)
 
-### Start here
+### Reference Books 
 
 - Kahneman, D. (2011). Thinking, Fast and Slow. Farrar, Straus and Giroux. Part IV, "Choices", covers prospect theory, the endowment effect, framing and loss aversion in plain language.
-- Thaler, R. H. (2015). Misbehaving: The Making of Behavioral Economics. W. W. Norton. The story of the endowment effect and mental accounting, told by the person who named them.
+- Thaler, R. H. (2015). Misbehaving: The Making of Behavioral Economics. W. W. Norton. (The story of the endowment effect and mental accounting, told by the person who named them.)
 
 ### Prospect theory and the value function
 
