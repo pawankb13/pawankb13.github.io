@@ -378,8 +378,8 @@ $$
 
 <div style="flex: 1;">
 
-- People try to save more at every income level: S shifts up, from S₀ to S₁.
-- Spending falls, so output falls from Y₀ to Y₁.
+- People try to save more at every income level: S shifts up, from S₁ to S₂.
+- Spending falls, so output falls from Y₁ to Y₂.
 - In the new equilibrium, saving is **back to I**. Total saving does not rise.
 - **India, 2020-21:** households cut spending and saved more out of caution. This deepened the fall in demand.
 
