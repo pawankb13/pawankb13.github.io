@@ -8,18 +8,7 @@ Why the same outcome feels like a gain to one person and a loss to another
 
 <!-- layout: agenda -->
 ## Outline
-### One class, four parts
-
-1. **Opening:** two quick choices
-2. **Eight concepts:** each with an example and a real business situation
-3. **Case:** Kaveri Fibre, with discussion questions
-4. **Close:** summary, checklist and exit quiz
-
----
-
-<!-- layout: compare -->
-## Eight concepts in this module
-### One theory and its consequences
+### Concepts in this module and their consequences
 
 |||
 
@@ -40,7 +29,39 @@ Why the same outcome feels like a gain to one person and a loss to another
 8. Segregating and integrating outcomes
 
 ---
+<!-- layout: compare -->
+## Before we start: two choices
+### Answer both on paper. Do not discuss.
 
+|||
+
+### Choice 1
+
+- **A:** a sure gain of ₹500
+- **B:** a 50% chance to gain ₹1,000, and a 50% chance of nothing
+
+|||
+
+
+
+---
+
+<!-- layout: compare -->
+## Before we start: two choices
+### Answer both on paper. Do not discuss.
+
+|||
+
+
+
+|||
+
+### Choice 2
+
+- **C:** a sure loss of ₹500
+- **D:** a 50% chance to lose ₹1,000, and a 50% chance of nothing
+
+---
 <!-- layout: compare -->
 ## Before we start: two choices
 ### Answer both on paper. Do not discuss.
