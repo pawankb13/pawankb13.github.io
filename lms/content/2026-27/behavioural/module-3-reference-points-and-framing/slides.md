@@ -118,7 +118,7 @@ It can be what we have now, what we expected, what others got, or the price we a
 
 |||
 
-### Anil
+### Robert
 
 Gets a **10%** raise. He expected 15%, and his team got 15%.
 
@@ -126,7 +126,7 @@ He feels he lost.
 
 |||
 
-### Bhavna
+### Luna
 
 Gets a **5%** raise. She expected 3%, and her team got 3%.
 
