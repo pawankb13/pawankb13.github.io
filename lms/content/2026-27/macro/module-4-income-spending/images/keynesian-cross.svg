@@ -14,7 +14,7 @@
 <circle cx="595.0" cy="160.0" r="12" fill="#2f3437" stroke="#fff" stroke-width="3"/>
 <text x="586" y="136" font-size="36" font-weight="700" fill="#2f3437" text-anchor="end">E</text>
 <line x1="347.0" y1="281.9" x2="347.0" y2="345.3" stroke="#3a8a3a" stroke-width="6" marker-end="url(#m3a8a3a)"/>
-<text x="359" y="376" font-size="30" font-weight="700" fill="#3a8a3a" text-anchor="start">IU < 0:</text>
+<text x="359" y="376" font-size="30" font-weight="700" fill="#3a8a3a" text-anchor="start">IU &lt; 0:</text>
 <text x="359" y="400" font-size="28" font-weight="400" fill="#3a8a3a" text-anchor="start">stocks fall</text>
 <line x1="675.6" y1="104.3" x2="675.6" y2="114.9" stroke="#c0504d" stroke-width="6" marker-end="url(#mc0504d)"/>
 <text x="750" y="251" font-size="30" font-weight="700" fill="#c0504d" text-anchor="end">IU > 0:</text>
