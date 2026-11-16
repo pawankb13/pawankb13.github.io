@@ -551,7 +551,7 @@ Each round is smaller than the last, so the total is finite.
 <!-- layout: interactive -->
 ## Interactive: The Multiplier
 
-@[Keynesian cross and the multiplier](shared/macro/interactives/keynesian-cross.html)
+@[Keynesian cross and the multiplier](shared/interactives/keynesian-cross.html)
 
 ---
 ## Using the Interactive
