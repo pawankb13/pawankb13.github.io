@@ -109,13 +109,23 @@ Money has three functions:
 > UPI is **not** a new kind of money. It is a fast way to move **bank deposits**.
 
 ---
-<!-- layout: image-grid -->
 ## Fiat Money in India
 
 ### "I promise to pay the bearer": the RBI's promise, not a promise of gold
 
-![A ₹50 note issued by the Reserve Bank of India](images/rupee-50-note.jpg)
-![The promise clause, signed by Governor Sanjay Malhotra](images/rupee-promise-clause.jpg)
+<div style="display: flex; gap: 48px; justify-content: center; align-items: flex-start; margin-top: 16px;">
+
+<figure style="margin: 0; width: min-content;">
+<img src="images/rupee-50-note.jpg" alt="A ₹50 note issued by the Reserve Bank of India" style="display: block; height: 320px; width: auto; max-width: none; max-height: none; border-radius: 4px;">
+<figcaption style="font-size: 0.6em; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.3;">A ₹50 note issued by the Reserve Bank of India</figcaption>
+</figure>
+
+<figure style="margin: 0; width: min-content;">
+<img src="images/rupee-promise-clause.jpg" alt="The promise clause, signed by Governor Sanjay Malhotra" style="display: block; height: 320px; width: auto; max-width: none; max-height: none; border-radius: 4px;">
+<figcaption style="font-size: 0.6em; color: var(--muted); text-align: center; margin-top: 10px; line-height: 1.3;">The promise clause, signed by Governor Sanjay Malhotra</figcaption>
+</figure>
+
+</div>
 
 ---
 <!-- layout: stat -->
