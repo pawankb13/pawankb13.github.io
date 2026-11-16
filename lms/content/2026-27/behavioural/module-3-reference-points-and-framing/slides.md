@@ -8,8 +8,15 @@ Why the same outcome feels like a gain to one person and a loss to another
 
 <!-- layout: agenda -->
 ## Outline
+### One class, four parts
+
+1. **Opening:** two quick choices
+2. **Eight concepts:** each with an example and a real business situation
+3. **Case:** Kaveri Fibre, with discussion questions
+4. **Close:** summary, checklist and exit quiz
 
 ---
+
 <!-- layout: compare -->
 ## Eight concepts in this module
 ### One theory and its consequences
@@ -47,23 +54,10 @@ Why the same outcome feels like a gain to one person and a loss to another
 
 |||
 
-Take a moment
-
----
-<!-- layout: compare -->
-## Before we start: two choices
-### Answer both on paper. Do not discuss.
-
-|||
-
 ### Choice 2
 
 - **C:** a sure loss of ₹500
 - **D:** a 50% chance to lose ₹1,000, and a 50% chance of nothing
-  
-|||
-
-Take a moment
 
 ---
 
@@ -108,7 +102,7 @@ Each one: what it is, an everyday example, a real business situation, and what i
 
 > A reference point is the level against which we judge an outcome. Above it feels like a gain. Below it feels like a loss.
 
-It can be what we have now, what we expected, what others got, or the price we are used to paying.
+Where we put that zero decides whether the same outcome is good news or bad news.
 
 ---
 
@@ -118,7 +112,7 @@ It can be what we have now, what we expected, what others got, or the price we a
 
 |||
 
-### Robert
+### Anil
 
 Gets a **10%** raise. He expected 15%, and his team got 15%.
 
@@ -126,11 +120,64 @@ He feels he lost.
 
 |||
 
-### Luna
+### Bhavna
 
 Gets a **5%** raise. She expected 3%, and her team got 3%.
 
 She feels she won.
+
+---
+
+<!-- layout: equation -->
+## Reference points: the mathematics
+### The outcome minus the reference point
+
+$$x = W - W_0$$
+
+$W$ is the actual outcome. $W_0$ is the reference point. $x$ is the gain or loss the person feels. If $W > W_0$, it is a gain. If $W = W_0$, it is neutral. If $W < W_0$, it is a loss.
+
+---
+
+<!-- layout: equation -->
+## Same salary, two reference points
+### Two professors now earn ₹15 lakh. A earned ₹12 lakh before, B ₹18 lakh.
+
+$$\text{Professor A:} \quad x = 15 - 12 = +3$$
+
+$$\text{Professor B:} \quad x = 15 - 18 = -3$$
+
+Same salary. A feels a gain of ₹3 lakh. B feels a loss of ₹3 lakh. This is reference dependence.
+
+---
+
+<!-- layout: table -->
+## Where reference points come from
+
+| Source | Example |
+|---|---|
+| Past experience | Last year's salary |
+| Expectations | The bonus your manager hinted at |
+| Social comparison | Your batchmate's placement package |
+| Ownership | The price you paid for a share |
+| Targets and aspirations | A monthly sales target |
+
+---
+
+<!-- layout: compare -->
+## Two more reference points
+### The zero is not always obvious
+
+|||
+
+### Salary and inflation
+
+Your salary rises 5%. Prices rise 8%. The nominal figure is a gain. Your purchasing power is a loss.
+
+|||
+
+### The laptop
+
+Bought for ₹80,000. Six months later it sells for ₹60,000. You have not sold it, yet it feels like a ₹20,000 loss. The purchase price is the reference point.
 
 ---
 
@@ -181,6 +228,29 @@ Kahneman received the 2002 Nobel Prize in Economics largely for this work.
 
 ---
 
+<!-- layout: table -->
+## Traditional economics and prospect theory
+
+| | Traditional approach | Prospect theory |
+|---|---|---|
+| What is judged | Final wealth | Gains and losses |
+| Value | Utility of wealth | Felt value of changes |
+| Probabilities | Used as given | Decision weights |
+| Preferences | Assumed consistent | Reversals explained |
+
+---
+
+<!-- layout: equation -->
+## From expected utility to prospect theory
+
+$$EU = \sum_i p_i \, U(W_i)$$
+
+$$V = \sum_i w(p_i) \, v(x_i)$$
+
+Final wealth $W$ becomes a change $x$. The probability $p$ becomes a decision weight $w(p)$, also written $\pi(p)$.
+
+---
+
 <!-- layout: steps -->
 ## Four features of prospect theory
 ### Each one breaks a rule of standard theory
@@ -189,6 +259,36 @@ Kahneman received the 2002 Nobel Prize in Economics largely for this work.
 2. **Diminishing sensitivity:** each extra rupee matters less.
 3. **Loss aversion:** losses weigh about twice as much as gains.
 4. **Probability weighting:** small chances feel bigger, near-certainty smaller.
+
+---
+
+<!-- layout: image-right -->
+## Probability weighting
+### Kahneman and Tversky (1979); refined in 1992
+
+- A 1% chance feels like about 5.5%
+- A 99% chance feels like about 91%
+- This explains lottery tickets, insurance and fear of rare disasters
+
+![Probability weighting function](images/probability-weighting.svg)
+
+---
+
+<!-- layout: compare -->
+## The value function and decision weights
+### Prospect theory has two parts
+
+|||
+
+### How much is it worth?
+
+The **value function** $v(x)$ turns a gain or loss into a feeling. Concepts 3 and 4 explain its shape.
+
+|||
+
+### How likely does it feel?
+
+The **weighting function** $w(p)$ turns a probability into a decision weight. Small chances are overweighted.
 
 ---
 
@@ -277,6 +377,45 @@ Read it as: how happy, or unhappy, does this change make me?
 | 1,000 | 436.5 | −982.2 |
 
 Ten times the money gives only 7.6 times the feeling. A loss feels 2.25 times as large.
+
+---
+
+<!-- layout: table -->
+## The parameters of the value function
+### $v(x) = x^{\alpha}$ for gains, $v(x) = -\lambda(-x)^{\beta}$ for losses
+
+| Parameter | Meaning | Typical value |
+|---|---|---|
+| $x$ | Gain or loss from the reference point | |
+| $\alpha$ | Curvature for gains | 0.88 |
+| $\beta$ | Curvature for losses | 0.88 |
+| $\lambda$ | Loss aversion coefficient | 2.25 |
+
+$0 < \alpha, \beta < 1$ gives diminishing sensitivity. $\lambda > 1$ gives loss aversion.
+
+---
+
+<!-- layout: equation -->
+## Why the gain side is concave
+### For $x > 0$: $v(x) = x^{\alpha}$
+
+$$v'(x) = \alpha x^{\alpha - 1} > 0$$
+
+$$v''(x) = \alpha(\alpha - 1)\,x^{\alpha - 2} < 0$$
+
+Since $\alpha < 1$, the term $(\alpha - 1)$ is negative. In ₹ thousand: the first ₹1,000 adds 1.00 of value. The second adds only 0.84.
+
+---
+
+<!-- layout: equation -->
+## Why the loss side is convex
+### For $x < 0$: $v(x) = -\lambda(-x)^{\beta}$
+
+$$v'(x) = \lambda \beta (-x)^{\beta - 1} > 0$$
+
+$$v''(x) = \lambda \beta (1 - \beta)(-x)^{\beta - 2} > 0$$
+
+Each extra rupee lost hurts a little less. In ₹ thousand: the first ₹1,000 lost feels like −2.25. The eleventh adds only −1.49.
 
 ---
 
@@ -370,6 +509,43 @@ A loss of ₹100 is felt λ times as strongly. With λ = 2.25, the win must be a
 
 ---
 
+<!-- layout: equation -->
+## A fair bet most people reject
+### Heads: win ₹2,000. Tails: lose ₹2,000. Values in ₹ thousand.
+
+$$EMV = 0.5(2) + 0.5(-2) = 0$$
+
+$$V = 0.5(1.84) + 0.5(-4.14) = -1.15$$
+
+Here $v(2) = 1.84$ and $v(-2) = -4.14$. Fair in money, negative in feeling, so most people say no.
+
+---
+
+<!-- layout: table -->
+## Loss aversion is not risk aversion
+### A common exam question
+
+| | Loss aversion | Risk aversion |
+|---|---|---|
+| Meaning | Losses hurt more than equal gains please | Dislike of uncertainty |
+| About | Gains against losses | Sure outcomes against risky ones |
+| In the model | λ, the steeper loss side | The curvature of the value function |
+
+---
+
+<!-- layout: table -->
+## Loss aversion in markets: the disposition effect
+### An investor holds two shares
+
+| Share | Bought at | Price now | Feels like | What investors often do |
+|---|---|---|---|---|
+| A | ₹1,000 | ₹1,500 | A gain | Sell quickly |
+| B | ₹1,000 | ₹500 | A loss | Hold on |
+
+Selling B makes the loss real. Loss aversion is one explanation. Taxes and beliefs about future prices also matter.
+
+---
+
 <!-- layout: case -->
 ## Business situation: the Netflix price rise
 ### United States, 2011
@@ -435,6 +611,29 @@ So the price to sell is higher than the price to buy, for the same person and th
 
 ---
 
+<!-- layout: table -->
+## Willingness to pay and to accept
+### A classroom mug test. Illustrative figures.
+
+| Group | Question | Average answer |
+|---|---|---|
+| Owners | Lowest price at which you would sell | ₹500 |
+| Non-owners | Highest price you would pay | ₹250 |
+
+For owners, selling is a loss. For non-owners, buying is a gain. Loss aversion opens the gap: WTA ≈ λ × WTP.
+
+---
+
+## Where the endowment effect shows up
+### Ownership changes the reference point
+
+- Home owners ask more than buyers will pay
+- Employees resist losing benefits they already have
+- Investors grow attached to shares they own
+- Consumers value products they own more than new ones
+
+---
+
 <!-- layout: case -->
 ## Business situation: the free month
 ### Trials, test drives and home try-ons
@@ -479,6 +678,44 @@ Selling price ≈ λ × buying price. In the Cornell mug test, owners asked $7.1
 > Status quo bias is a preference for the current state of affairs. People stick with what they have, or with the default, more than the options justify.
 
 The default wins not because people chose it, but because they did not choose.
+
+---
+
+## Why people stay with the status quo
+### Plan B pays more. Many stay in Plan A anyway.
+
+- **Loss aversion:** every switch has something to give up
+- **Uncertainty:** the new option feels less known
+- **Inertia:** deciding takes effort, so people put it off
+- **Endorsement:** the current option looks recommended
+
+---
+
+<!-- layout: compare -->
+## The default effect
+### Two ways to run a pension plan
+
+|||
+
+### System A: opt in
+
+Employees must sign up to join. Many never do.
+
+|||
+
+### System B: opt out
+
+Employees join automatically and can leave. Participation is usually much higher.
+
+---
+
+## Defaults in public policy
+### Governments use defaults to encourage
+
+- Pension participation and retirement savings
+- Health insurance enrolment
+- Organ donor registration
+- Energy-efficient choices
 
 ---
 
@@ -587,6 +824,32 @@ Chose D, the gamble, when told "die"
 
 ---
 
+<!-- layout: table -->
+## The disease problem, side by side
+### Same outcomes, different words
+
+| | Gain frame | Loss frame | Outcome |
+|---|---|---|---|
+| Sure option | A: 200 saved | C: 400 die | 200 live for sure |
+| Risky option | B: 1/3 chance 600 saved | D: 1/3 chance nobody dies | 1/3 chance all 600 live |
+
+$A = C$ and $B = D$. People are risk averse in the gain frame and risk seeking in the loss frame.
+
+---
+
+<!-- layout: table -->
+## Framing in management
+### Illustrative examples
+
+| Area | Gain frame | Loss frame |
+|---|---|---|
+| Advertising | "Save ₹5,000 with our product" | "Without our product, you lose ₹5,000" |
+| Pricing | Cash discount | Card surcharge |
+| Tax compliance | "File early, get your refund sooner" | "File late, pay a penalty" |
+| Investment | "80% chance of a profit" | "20% chance of a loss" |
+
+---
+
 <!-- layout: case -->
 ## Business situation: card fee or cash discount?
 ### Thaler (1980)
@@ -642,6 +905,30 @@ The value function tells us which grouping feels better.
 | Several losses | Together | Losses flatten as they grow |
 | Large gain, small loss | Together | The loss disappears into the gain |
 | Large loss, small gain | Separate | A "silver lining" |
+
+---
+
+<!-- layout: equation -->
+## Rules 1 and 2 in numbers
+### Two bonuses or two losses of ₹5,000. Values in ₹ thousand.
+
+$$v(5) + v(5) = 8.24 > v(10) = 7.59$$
+
+$$v(-5) + v(-5) = -18.55 < v(-10) = -17.07$$
+
+Top line, gains: two bonuses feel better than one. Bottom line, losses: two losses feel worse than one combined loss.
+
+---
+
+<!-- layout: equation -->
+## Rules 3 and 4 in numbers
+### A ₹10,000 bonus and a ₹1,000 penalty, then the reverse
+
+$$v(9) = 6.91 > v(10) + v(-1) = 5.34$$
+
+$$v(-10) + v(1) = -16.07 < v(-9) = -15.56$$
+
+Top line: Rule 3 holds. Bottom line: Rule 4 fails with λ = 2.25: a silver lining helps only when the loss is about 300 times the gain. The rules are predictions, not laws.
 
 ---
 
@@ -701,6 +988,21 @@ Spread out good news and benefits. Bundle costs into one honest total. Deliver b
 ### The technical point
 
 Gains of ₹50 and ₹25 feel like 48.3 apart, but 44.7 as one ₹75. Losses of the same size feel like −108.6 apart, but −100.5 together.
+
+---
+
+<!-- layout: table -->
+## Putting the module together: the framework
+
+| Step | The question it answers |
+|---|---|
+| 1. Reference point | Where am I starting from? |
+| 2. Gains and losses | Am I gaining or losing? |
+| 3. Value function | How much do I value the outcome? |
+| 4. Probability weighting | How likely does it feel? |
+| 5. Decision | What do I choose? |
+
+It explains endowment, status quo bias, framing and hedonic editing.
 
 ---
 
