@@ -1045,4 +1045,4 @@ Relating the case to the concepts
 <!-- layout: end -->
 # Questions?
 
-Dr. Pawan Ashok Kamble · BIMTECH
+Dr. Pawan Ashok Kamble
