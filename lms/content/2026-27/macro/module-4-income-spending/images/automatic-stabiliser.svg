@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="800" height="620" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="800" height="620" fill="#fff"/>
+<line x1="130" y1="40" x2="130" y2="520" stroke="#555c61" stroke-width="4"/><line x1="130" y1="520" x2="750" y2="520" stroke="#555c61" stroke-width="4"/>
+<text x="36" y="280.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 280.0)">Aggregate demand, AD</text>
+<line x1="130.0" y1="520.0" x2="750.0" y2="40.0" stroke="#9aa0a4" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/>
+<line x1="130.0" y1="448.0" x2="750.0" y2="64.0" stroke="#c0504d" stroke-width="6"  stroke-linecap="round"/>
+<line x1="130.0" y1="472.0" x2="750.0" y2="88.0" stroke="#c0504d" stroke-width="5" stroke-dasharray="12 9" stroke-linecap="round"/>
+<line x1="130.0" y1="376.0" x2="750.0" y2="88.0" stroke="#3d8296" stroke-width="7"  stroke-linecap="round"/>
+<line x1="130.0" y1="400.0" x2="750.0" y2="112.0" stroke="#3d8296" stroke-width="5" stroke-dasharray="12 9" stroke-linecap="round"/>
+<circle cx="595.0" cy="160.0" r="12" fill="#2f3437" stroke="#fff" stroke-width="3"/>
+<circle cx="440.0" cy="280.0" r="12" fill="#c0504d" stroke="#fff" stroke-width="3"/>
+<circle cx="517.5" cy="220.0" r="12" fill="#3d8296" stroke="#fff" stroke-width="3"/>
+<line x1="440" y1="280" x2="440" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="518" y1="220" x2="518" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="595" y1="160" x2="595" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<text x="440.0" y="556" font-size="28" font-weight="700" fill="#c0504d" text-anchor="middle">500</text>
+<text x="517.5" y="556" font-size="28" font-weight="700" fill="#3d8296" text-anchor="middle">625</text>
+<text x="595.0" y="556" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">750</text>
+<line x1="154.8" y1="59.19999999999999" x2="198.2" y2="59.19999999999999" stroke="#c0504d" stroke-width="6"/>
+<text x="211" y="66" font-size="28" font-weight="700" fill="#c0504d" text-anchor="start">No tax (c = 0.8)</text>
+<line x1="154.8" y1="92.80000000000001" x2="198.2" y2="92.80000000000001" stroke="#3d8296" stroke-width="7"/>
+<text x="211" y="100" font-size="28" font-weight="700" fill="#3d8296" text-anchor="start">With tax (c(1 − t) = 0.6)</text>
+<text x="440.0" y="604" font-size="30" fill="#555c61" text-anchor="middle">Income, output, Y</text>
+</svg>

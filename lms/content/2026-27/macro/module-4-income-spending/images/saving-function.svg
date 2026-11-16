@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="800" height="620" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="800" height="620" fill="#fff"/>
+<line x1="130" y1="40" x2="130" y2="530" stroke="#555c61" stroke-width="4"/><line x1="130" y1="400" x2="750" y2="400" stroke="#555c61" stroke-width="4"/>
+<text x="750" y="386" font-size="30" fill="#555c61" text-anchor="end">Y</text>
+<text x="36" y="280.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 280.0)">Saving, S</text>
+<line x1="130.0" y1="520.0" x2="750.0" y2="280.0" stroke="#c0504d" stroke-width="8"  stroke-linecap="round"/>
+<text x="750" y="258" font-size="32" font-weight="700" fill="#c0504d" text-anchor="end">S = −100 + 0.2Y</text>
+<text x="120" y="531" font-size="32" font-weight="700" fill="#c0504d" text-anchor="end">−100</text>
+<circle cx="440.0" cy="400.0" r="12" fill="#2f3437" stroke="#fff" stroke-width="3"/>
+<text x="440" y="400" font-size="34" font-weight="700" fill="#2f3437" text-anchor="start"></text>
+<text x="428" y="383" font-size="30" font-weight="700" fill="#2f3437" text-anchor="end">Break-even: 500</text>
+<text x="464.8" y="510" font-size="28" fill="#555c61">Slope: s = 1 − c = 0.2</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="800" height="620" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="800" height="620" fill="#fff"/>
+<line x1="130" y1="40" x2="130" y2="520" stroke="#555c61" stroke-width="4"/><line x1="130" y1="520" x2="750" y2="520" stroke="#555c61" stroke-width="4"/>
+<text x="440.0" y="604" font-size="30" fill="#555c61" text-anchor="middle"></text>
+<text x="36" y="280.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 280.0)">Rise in GDP per ₹1 spent</text>
+<rect x="160" y="128" width="147" height="392" fill="#c0504d"/>
+<text x="233" y="116" font-size="34" font-weight="700" fill="#2f3437" text-anchor="middle">₹2.45</text>
+<text x="233" y="558" font-size="28" fill="#555c61" text-anchor="middle">Capital</text>
+<text x="233" y="590" font-size="28" fill="#555c61" text-anchor="middle">spending</text>
+<rect x="367" y="363" width="147" height="157" fill="#3d8296"/>
+<text x="440" y="351" font-size="34" font-weight="700" fill="#2f3437" text-anchor="middle">₹0.98</text>
+<text x="440" y="558" font-size="28" fill="#555c61" text-anchor="middle">Transfers</text>
+<rect x="573" y="362" width="147" height="158" fill="#3d8296"/>
+<text x="647" y="350" font-size="34" font-weight="700" fill="#2f3437" text-anchor="middle">₹0.99</text>
+<text x="647" y="558" font-size="28" fill="#555c61" text-anchor="middle">Other revenue</text>
+<text x="647" y="590" font-size="28" fill="#555c61" text-anchor="middle">spending</text>
+<line x1="130" y1="360.0" x2="750" y2="360.0" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<text x="750" y="350.0" font-size="24" fill="#555c61" text-anchor="end">₹1</text>
+</svg>

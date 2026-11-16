@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="800" height="700" fill="#fff"/>
+<line x1="130" y1="40" x2="130" y2="520" stroke="#555c61" stroke-width="4"/><line x1="130" y1="520" x2="750" y2="520" stroke="#555c61" stroke-width="4"/>
+<text x="36" y="280.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 280.0)">Aggregate demand, AD</text>
+<line x1="130.0" y1="520.0" x2="750.0" y2="40.0" stroke="#9aa0a4" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/>
+<line x1="130.0" y1="424.0" x2="750.0" y2="136.0" stroke="#3d8296" stroke-width="8"  stroke-linecap="round"/>
+<line x1="130.0" y1="376.0" x2="750.0" y2="88.0" stroke="#c0504d" stroke-width="8"  stroke-linecap="round"/>
+<text x="750" y="170" font-size="34" font-weight="700" fill="#3d8296" text-anchor="end">AD₀</text>
+<text x="713" y="91" font-size="34" font-weight="700" fill="#c0504d" text-anchor="end">AD₁</text>
+<line x1="440" y1="280" x2="440" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="130" y1="280" x2="440" y2="280" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<text x="440" y="556" font-size="32" font-weight="700" fill="#3d8296" text-anchor="middle">Y₀</text>
+<line x1="595" y1="160" x2="595" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="130" y1="160" x2="595" y2="160" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<text x="595" y="556" font-size="32" font-weight="700" fill="#c0504d" text-anchor="middle">Y₁</text>
+<circle cx="440.0" cy="280.0" r="12" fill="#3d8296" stroke="#fff" stroke-width="3"/>
+<circle cx="595.0" cy="160.0" r="12" fill="#c0504d" stroke="#fff" stroke-width="3"/>
+<line x1="223.0" y1="374.1" x2="223.0" y2="339.5" stroke="#2f3437" stroke-width="6" marker-end="url(#m2f3437)"/>
+<text x="142" y="294" font-size="30" font-weight="700" fill="#2f3437" text-anchor="start">ΔĀ = 100</text>
+<line x1="443.1" y1="578" x2="591.9" y2="578" stroke="#c0504d" stroke-width="6" marker-end="url(#mc0504d)" marker-start="url(#mc0504d)"/>
+<text x="517.5" y="624" font-size="32" font-weight="700" fill="#c0504d" text-anchor="middle">ΔY = 2.5 × 100 = 250</text>
+<text x="440.0" y="670" font-size="30" fill="#555c61" text-anchor="middle">Income, output, Y</text>
+</svg>

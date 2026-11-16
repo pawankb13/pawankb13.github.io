@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="800" height="620" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="800" height="620" fill="#fff"/>
+<line x1="130" y1="40" x2="130" y2="520" stroke="#555c61" stroke-width="4"/><line x1="130" y1="520" x2="750" y2="520" stroke="#555c61" stroke-width="4"/>
+<text x="440.0" y="604" font-size="30" fill="#555c61" text-anchor="middle">Income, Y (₹ crore)</text>
+<text x="36" y="280.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 280.0)">Consumption, C</text>
+<line x1="130.0" y1="520.0" x2="750.0" y2="40.0" stroke="#9aa0a4" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/>
+<text x="744" y="50" font-size="30" font-weight="400" fill="#555c61" text-anchor="end">C = Y</text>
+<line x1="130.0" y1="472.0" x2="750.0" y2="88.0" stroke="#3d8296" stroke-width="8"  stroke-linecap="round"/>
+<text x="149" y="136" font-size="32" font-weight="700" fill="#3d8296" text-anchor="start">C = 100 + 0.8Y</text>
+<text x="120" y="483" font-size="32" font-weight="700" fill="#3d8296" text-anchor="end">100</text>
+<line x1="440" y1="280" x2="440" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="130" y1="280" x2="440" y2="280" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<text x="440" y="556" font-size="32" font-weight="700" fill="#2f3437" text-anchor="middle">500</text>
+<circle cx="440.0" cy="280.0" r="12" fill="#2f3437" stroke="#fff" stroke-width="3"/>
+<line x1="564.0" y1="203.2" x2="657.0" y2="203.2" stroke="#2f3437" stroke-width="4"  stroke-linecap="round"/>
+<line x1="657.0" y1="203.2" x2="657.0" y2="145.6" stroke="#2f3437" stroke-width="4"  stroke-linecap="round"/>
+<text x="610" y="232" font-size="26" font-weight="400" fill="#2f3437" text-anchor="middle">+150</text>
+<text x="666" y="179" font-size="26" font-weight="400" fill="#2f3437" text-anchor="start">+120</text>
+</svg>

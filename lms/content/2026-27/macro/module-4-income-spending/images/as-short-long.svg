@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 620" width="1200" height="620" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="1200" height="620" fill="#fff"/>
+<line x1="90" y1="80" x2="90" y2="500" stroke="#555c61" stroke-width="4"/><line x1="90" y1="500" x2="560" y2="500" stroke="#555c61" stroke-width="4"/>
+<text x="325.0" y="44" font-size="38" font-weight="700" fill="#2f3437" text-anchor="middle">Short run: Keynesian</text>
+<text x="76" y="104" font-size="32" fill="#555c61" text-anchor="end">P</text><text x="560" y="544" font-size="32" fill="#555c61" text-anchor="end">Y</text>
+<line x1="118.2" y1="105.19999999999999" x2="447.2" y2="399.2" stroke="#9aa0a4" stroke-width="7" stroke-dasharray="12 9"/>
+<text x="112.2" y="95.19999999999999" font-size="32" font-weight="700" fill="#9aa0a4" text-anchor="middle">AD₀</text>
+<line x1="212.2" y1="105.19999999999999" x2="541.2" y2="399.2" stroke="#3d8296" stroke-width="7" />
+<text x="206.2" y="95.19999999999999" font-size="32" font-weight="700" fill="#3d8296" text-anchor="middle">AD₁</text>
+<line x1="90" y1="290.0" x2="560" y2="290.0" stroke="#c0504d" stroke-width="7"/><text x="560" y="330.0" font-size="32" font-weight="700" fill="#c0504d" text-anchor="end">AS</text>
+<circle cx="325.0" cy="290.0" r="13" fill="#9aa0a4"/>
+<circle cx="419.0" cy="290.0" r="13" fill="#2f3437"/>
+<line x1="341.0" y1="340.0" x2="403.0" y2="340.0" stroke="#555c61" stroke-width="6" marker-end="url(#m555c61)"/>
+<text x="325.0" y="590" font-size="32" fill="#2f3437" text-anchor="middle">Output rises; prices fixed</text>
+<line x1="690" y1="80" x2="690" y2="500" stroke="#555c61" stroke-width="4"/><line x1="690" y1="500" x2="1160" y2="500" stroke="#555c61" stroke-width="4"/>
+<text x="925.0" y="44" font-size="38" font-weight="700" fill="#2f3437" text-anchor="middle">Long run: Classical</text>
+<text x="676" y="104" font-size="32" fill="#555c61" text-anchor="end">P</text><text x="1160" y="544" font-size="32" fill="#555c61" text-anchor="end">Y</text>
+<line x1="718.2" y1="105.19999999999999" x2="1047.2" y2="399.2" stroke="#9aa0a4" stroke-width="7" stroke-dasharray="12 9"/>
+<text x="712.2" y="95.19999999999999" font-size="32" font-weight="700" fill="#9aa0a4" text-anchor="middle">AD₀</text>
+<line x1="812.2" y1="105.19999999999999" x2="1141.2" y2="399.2" stroke="#3d8296" stroke-width="7" />
+<text x="806.2" y="95.19999999999999" font-size="32" font-weight="700" fill="#3d8296" text-anchor="middle">AD₁</text>
+<line x1="925.0" y1="80" x2="925.0" y2="500" stroke="#c0504d" stroke-width="7"/><text x="937.0" y="108" font-size="32" font-weight="700" fill="#c0504d">AS</text>
+<circle cx="925.0" cy="290.0" r="13" fill="#9aa0a4"/>
+<circle cx="925.0" cy="206.0" r="13" fill="#2f3437"/>
+<line x1="885.0" y1="274.0" x2="885.0" y2="222.0" stroke="#555c61" stroke-width="6" marker-end="url(#m555c61)"/>
+<text x="925.0" y="590" font-size="32" fill="#2f3437" text-anchor="middle">Prices rise; output fixed</text>
+</svg>

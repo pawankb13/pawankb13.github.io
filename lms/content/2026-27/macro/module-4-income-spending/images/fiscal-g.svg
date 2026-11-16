@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700" width="800" height="700" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="800" height="700" fill="#fff"/>
+<line x1="130" y1="40" x2="130" y2="520" stroke="#555c61" stroke-width="4"/><line x1="130" y1="520" x2="750" y2="520" stroke="#555c61" stroke-width="4"/>
+<text x="36" y="280.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 280.0)">Aggregate demand, AD</text>
+<line x1="130.0" y1="520.0" x2="750.0" y2="40.0" stroke="#9aa0a4" stroke-width="4" stroke-dasharray="12 9" stroke-linecap="round"/>
+<text x="744" y="52" font-size="30" font-weight="400" fill="#555c61" text-anchor="end">45°</text>
+<line x1="130.0" y1="424.0" x2="750.0" y2="136.0" stroke="#3d8296" stroke-width="8"  stroke-linecap="round"/>
+<line x1="130.0" y1="395.2" x2="750.0" y2="107.2" stroke="#c0504d" stroke-width="8"  stroke-linecap="round"/>
+<line x1="148.6" y1="56.80000000000001" x2="192.0" y2="56.80000000000001" stroke="#c0504d" stroke-width="7"/>
+<text x="208" y="65" font-size="28" font-weight="700" fill="#c0504d" text-anchor="start">AD′ = Ā′ + c(1 − t)Y</text>
+<line x1="148.6" y1="92.80000000000001" x2="192.0" y2="92.80000000000001" stroke="#3d8296" stroke-width="7"/>
+<text x="208" y="101" font-size="28" font-weight="700" fill="#3d8296" text-anchor="start">AD = Ā + c(1 − t)Y</text>
+<line x1="440" y1="280" x2="440" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="130" y1="280" x2="440" y2="280" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="533" y1="208" x2="533" y2="520" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<line x1="130" y1="208" x2="533" y2="208" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
+<circle cx="440.0" cy="280.0" r="12" fill="#3d8296" stroke="#fff" stroke-width="3"/>
+<circle cx="533.0" cy="208.0" r="12" fill="#c0504d" stroke="#fff" stroke-width="3"/>
+<text x="459" y="294" font-size="32" font-weight="700" fill="#3d8296" text-anchor="start">E</text>
+<text x="521" y="189" font-size="32" font-weight="700" fill="#c0504d" text-anchor="end">E′</text>
+<line x1="204.4" y1="383.7" x2="204.4" y2="366.4" stroke="#2f3437" stroke-width="6" marker-end="url(#m2f3437)"/>
+<text x="142" y="327" font-size="28" font-weight="700" fill="#2f3437" text-anchor="start">ΔG = 60</text>
+<text x="440.0" y="558" font-size="30" font-weight="700" fill="#3d8296" text-anchor="middle">500</text>
+<text x="533.0" y="558" font-size="30" font-weight="700" fill="#c0504d" text-anchor="middle">650</text>
+<line x1="446.2" y1="586" x2="526.8" y2="586" stroke="#c0504d" stroke-width="6" marker-end="url(#mc0504d)" marker-start="url(#mc0504d)"/>
+<text x="486.5" y="632" font-size="30" font-weight="700" fill="#c0504d" text-anchor="middle">ΔY = 2.5 × 60 = 150</text>
+<text x="440.0" y="678" font-size="30" fill="#555c61" text-anchor="middle">Income, output, Y</text>
+</svg>

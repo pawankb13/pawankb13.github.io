@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 620" width="800" height="620" font-family="Arial, sans-serif">
+<defs><marker id="m555c61" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555c61"/></marker><marker id="mc0504d" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#c0504d"/></marker><marker id="m3d8296" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3d8296"/></marker><marker id="mb5852a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#b5852a"/></marker><marker id="m2f3437" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2f3437"/></marker><marker id="m3a8a3a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3a8a3a"/></marker></defs>
+<rect width="800" height="620" fill="#fff"/>
+<line x1="130" y1="40" x2="130" y2="520" stroke="#555c61" stroke-width="4"/><line x1="130" y1="520" x2="750" y2="520" stroke="#555c61" stroke-width="4"/>
+<text x="440.0" y="604" font-size="30" fill="#555c61" text-anchor="middle"></text>
+<text x="36" y="280.0" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 280.0)">% of GDP</text>
+<rect x="138" y="310" width="62" height="210" fill="#3d8296"/>
+<text x="169" y="300" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">4.6</text>
+<text x="169" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY20</text>
+<rect x="216" y="99" width="62" height="421" fill="#c0504d"/>
+<text x="246" y="89" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">9.2</text>
+<text x="246" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY21</text>
+<rect x="293" y="214" width="62" height="306" fill="#3d8296"/>
+<text x="324" y="204" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">6.7</text>
+<text x="324" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY22</text>
+<rect x="370" y="227" width="62" height="293" fill="#3d8296"/>
+<text x="401" y="217" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">6.4</text>
+<text x="401" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY23</text>
+<rect x="448" y="264" width="62" height="256" fill="#3d8296"/>
+<text x="479" y="254" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">5.6</text>
+<text x="479" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY24</text>
+<rect x="526" y="301" width="62" height="219" fill="#3d8296"/>
+<text x="556" y="291" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">4.8</text>
+<text x="556" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY25</text>
+<rect x="603" y="319" width="62" height="201" fill="#3d8296"/>
+<text x="634" y="309" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">4.4</text>
+<text x="634" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY26</text>
+<rect x="680" y="323" width="62" height="197" fill="#3d8296"/>
+<text x="711" y="313" font-size="28" font-weight="700" fill="#2f3437" text-anchor="middle">4.3</text>
+<text x="711" y="556" font-size="26" fill="#555c61" text-anchor="middle">FY27</text>
+<text x="440.0" y="604" font-size="26" fill="#555c61" text-anchor="middle">FY26 revised estimate; FY27 budget estimate</text>
+</svg>

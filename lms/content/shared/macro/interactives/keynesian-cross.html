@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Keynesian Cross and the Multiplier</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap">
+<!-- One line that makes this file work inside slides: light/dark sync and slide keys -->
+<script src="../../../../assets/interactive.js"></script>
+<style>
+  /* Model (Dornbusch, Fischer and Startz, ch. 9):
+     AD = A + c(1 − t)Y        Equilibrium: Y = A / [1 − c(1 − t)]
+     Multiplier: αG = 1 / [1 − c(1 − t)]      ΔY = αG · ΔA
+     Budget surplus: BS = tY − G − TR                                  */
+  :root {
+    --bg: #ffffff; --ink: #494e52; --heading: #313436; --muted: #5f676d; --line: #e5e7e8;
+    --accent: #2f6f83; --accent-bright: #52adc8; --red: #c0504d; --gold: #b5852a;
+    --ghost: #bcc0c3; --soft: #eaf5f8;
+    --f-ui: "Source Sans 3", -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  :root.dark-mode {
+    --bg: #1e1e1e; --ink: #d1d5db; --heading: #f3f4f6; --muted: #9ca3af; --line: #2a2a2a;
+    --accent: #7dd3fc; --accent-bright: #60a5fa; --red: #f87171; --gold: #fbbf24;
+    --ghost: #4b5563; --soft: #1f2a36; color-scheme: dark;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light-mode) {
+      --bg: #1e1e1e; --ink: #d1d5db; --heading: #f3f4f6; --muted: #9ca3af; --line: #2a2a2a;
+      --accent: #7dd3fc; --accent-bright: #60a5fa; --red: #f87171; --gold: #fbbf24;
+      --ghost: #4b5563; --soft: #1f2a36; color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; margin: 0; }
+  body {
+    display: grid; grid-template-columns: 290px minmax(0, 1fr); gap: 26px;
+    padding: 14px 22px; background: var(--bg); color: var(--ink); font: 17px/1.35 var(--f-ui);
+  }
+  .panel { display: flex; flex-direction: column; gap: 7px; min-width: 0; overflow: auto; }
+  .ctl label { display: flex; justify-content: space-between; gap: 10px; font-weight: 600; color: var(--heading); }
+  .ctl output { color: var(--accent); font-variant-numeric: tabular-nums; }
+  input[type="range"] { width: 100%; accent-color: var(--accent-bright); height: 20px; margin: 0; }
+  .read {
+    display: grid; grid-template-columns: auto 1fr; gap: 3px 12px; margin: 0;
+    padding-top: 7px; border-top: 1px solid var(--line); font-variant-numeric: tabular-nums;
+  }
+  .read dt { color: var(--muted); }
+  .read dd { margin: 0; font-weight: 700; color: var(--heading); }
+  .read dd.big { color: var(--accent); }
+  .hint { margin: 0; padding: 7px 10px; background: var(--soft); border-radius: 4px; font-size: 0.85em; line-height: 1.3; }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  button {
+    font: inherit; font-size: 0.92em; font-weight: 600; padding: 5px 11px; cursor: pointer;
+    border: 1px solid var(--line); border-radius: 4px; background: var(--bg); color: var(--ink);
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  button[aria-pressed="true"] { background: var(--soft); border-color: var(--accent); color: var(--accent); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .main { display: flex; flex-direction: column; min-width: 0; min-height: 0; gap: 6px; }
+  .round { margin-left: auto; font-weight: 600; color: var(--heading); font-variant-numeric: tabular-nums; }
+  .chart { flex: 1; min-height: 0; display: flex; }
+  svg { width: 100%; height: 100%; min-height: 260px; }
+  .axis { stroke: var(--muted); stroke-width: 2; }
+  .grid { stroke: var(--line); stroke-width: 1; }
+  .deg { stroke: var(--muted); stroke-width: 2.5; stroke-dasharray: 9 7; }
+  .ad0 { stroke: var(--accent-bright); stroke-width: 4; }
+  .ad1 { stroke: var(--red); stroke-width: 4; }
+  .stair { stroke: var(--gold); stroke-width: 3.5; fill: none; }
+  .guide { stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 5 5; }
+  .pt { stroke: var(--bg); stroke-width: 3; }
+  .tick { fill: var(--muted); font: 14px var(--f-ui); }
+  .ttl { fill: var(--muted); font: 15px var(--f-ui); }
+  .lbl { font: 700 16px var(--f-ui); }
+  .bar { fill: var(--gold); }
+  .bar0 { fill: var(--red); }
+  .cum { stroke: var(--accent-bright); stroke-width: 3.5; fill: none; }
+  .key { fill: var(--heading); font: 600 15px var(--f-ui); }
+  @media (max-height: 470px) { body { font-size: 15px; padding: 8px 14px; gap: 18px; } .panel { gap: 3px; } .read { gap: 1px 10px; padding-top: 4px; } .main { gap: 4px; } }
+  @media (max-width: 860px) { body { grid-template-columns: 230px minmax(0, 1fr); gap: 14px; padding: 12px 14px; font-size: 15px; } }
+  @media (max-width: 560px) { body { grid-template-columns: 1fr; height: auto; } svg { height: 320px; } }
+</style>
+</head>
+<body>
+  <div class="panel">
+    <div class="ctl">
+      <label for="c">MPC, c <output id="c-out" for="c"></output></label>
+      <input id="c" type="range" min="0.5" max="0.9" step="0.01" value="0.8">
+    </div>
+    <div class="ctl">
+      <label for="t">Tax rate, t <output id="t-out" for="t"></output></label>
+      <input id="t" type="range" min="0" max="0.4" step="0.01" value="0.25">
+    </div>
+    <div class="ctl">
+      <label for="dg">Change in G, ΔG <output id="dg-out" for="dg"></output></label>
+      <input id="dg" type="range" min="-60" max="100" step="10" value="60">
+    </div>
+    <dl class="read">
+      <dt>Multiplier, α<sub>G</sub></dt><dd class="big" id="m-read"></dd>
+      <dt>Output, Y₀ → Y₁</dt><dd id="y-read"></dd>
+      <dt>Change in output, ΔY</dt><dd id="dy-read"></dd>
+      <dt>Change in surplus, ΔBS</dt><dd id="bs-read"></dd>
+    </dl>
+    <p class="hint" id="hint"></p>
+  </div>
+
+  <div class="main">
+    <div class="row">
+      <button id="v-x" type="button" aria-pressed="true">Keynesian cross</button>
+      <button id="v-r" type="button" aria-pressed="false">Rounds</button>
+      <button id="next" type="button">Next round</button>
+      <button id="play" type="button">Play</button>
+      <button id="reset" type="button">Reset</button>
+      <span class="round" id="round"></span>
+    </div>
+    <div class="chart">
+      <svg id="x" viewBox="0 0 660 430" role="img" aria-label="Keynesian cross with an increase in government spending">
+        <defs><clipPath id="clip"><rect x="60" y="20" width="580" height="360"></rect></clipPath></defs>
+        <g id="x-grid"></g>
+        <line class="axis" x1="60" y1="20" x2="60" y2="380"></line>
+        <line class="axis" x1="60" y1="380" x2="640" y2="380"></line>
+        <text class="ttl" x="640" y="418" text-anchor="end">Income, output, Y (₹ crore)</text>
+        <text class="ttl" x="8" y="14">Aggregate demand, AD</text>
+        <g clip-path="url(#clip)">
+          <line id="deg" class="deg"></line>
+          <line id="ad0" class="ad0"></line>
+          <line id="ad1" class="ad1"></line>
+          <line id="g0" class="guide"></line>
+          <line id="g1" class="guide"></line>
+          <polyline id="stair" class="stair"></polyline>
+          <circle id="e0" class="pt" r="8" fill="var(--accent-bright)"></circle>
+          <circle id="e1" class="pt" r="8" fill="var(--red)"></circle>
+          <text id="l-deg" class="lbl" fill="var(--muted)">AD = Y</text>
+          <text id="l-ad0" class="lbl" fill="var(--accent-bright)">AD₀</text>
+          <text id="l-ad1" class="lbl" fill="var(--red)">AD₁</text>
+          <text id="l-e0" class="lbl" fill="var(--accent-bright)">E₀</text>
+          <text id="l-e1" class="lbl" fill="var(--red)">E₁</text>
+        </g>
+        <text id="l-y0" class="tick" text-anchor="middle">Y₀</text>
+        <text id="l-y1" class="tick" text-anchor="middle">Y₁</text>
+      </svg>
+      <svg id="r" viewBox="0 0 660 430" role="img" aria-label="Rounds of the multiplier" style="display:none">
+        <g id="r-grid"></g>
+        <line class="axis" x1="60" y1="20" x2="60" y2="380"></line>
+        <line class="axis" x1="60" y1="380" x2="640" y2="380"></line>
+        <text class="ttl" x="640" y="418" text-anchor="end">Round</text>
+        <text class="ttl" x="8" y="14">Increase in spending (₹ crore)</text>
+        <g id="bars"></g>
+        <polyline id="cum" class="cum"></polyline>
+        <line id="target" class="guide"></line>
+        <text id="l-target" class="lbl" fill="var(--accent-bright)" text-anchor="end"></text>
+        <g transform="translate(380 230)">
+          <rect class="bar" x="0" y="-11" width="22" height="14"></rect><text class="key" x="30" y="2">New spending this round</text>
+          <line class="cum" x1="0" y1="24" x2="22" y2="24"></line><text class="key" x="30" y="29">Total so far</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+<script>
+(function () {
+  var A0 = 200, YMAX = 1000, NR = 12;
+  var $ = function (id) { return document.getElementById(id); };
+  var step = NR, timer = null, view = "x";
+
+  function p() { return { c: +$("c").value, t: +$("t").value, dg: +$("dg").value }; }
+  var X0 = 60, X1 = 640, Y0p = 380, Y1p = 20;
+  var sx = function (v) { return X0 + v / YMAX * (X1 - X0); };
+  var sy = function (v) { return Y0p - v / YMAX * (Y0p - Y1p); };
+  function setL(id, a, b, c, d) { var e = $(id); e.setAttribute("x1", a); e.setAttribute("y1", b); e.setAttribute("x2", c); e.setAttribute("y2", d); }
+  function setT(id, x, y) { $(id).setAttribute("x", x); $(id).setAttribute("y", y); }
+  function setP(id, x, y) { $(id).setAttribute("cx", x); $(id).setAttribute("cy", y); }
+  function fmt(v) { return Math.round(v).toLocaleString("en-IN"); }
+  function sgn(v) { return (v > 0.5 ? "+" : v < -0.5 ? "−" : "") + fmt(Math.abs(v)); }
+
+  function nice(m) { var e = Math.pow(10, Math.floor(Math.log10(m))), r = m / e; return (r <= 1 ? 1 : r <= 2 ? 2 : r <= 2.5 ? 2.5 : r <= 5 ? 5 : 10) * e; }
+  function gridX() {
+    var h = "", st = nice(YMAX / 4);
+    for (var v = st; v < YMAX; v += st) {
+      h += '<line class="grid" x1="' + sx(v) + '" y1="20" x2="' + sx(v) + '" y2="380"></line>';
+      h += '<line class="grid" x1="60" y1="' + sy(v) + '" x2="640" y2="' + sy(v) + '"></line>';
+      h += '<text class="tick" x="' + sx(v) + '" y="398" text-anchor="middle">' + fmt(v) + "</text>";
+      h += '<text class="tick" x="52" y="' + (sy(v) + 5) + '" text-anchor="end">' + fmt(v) + "</text>";
+    }
+    $("x-grid").innerHTML = h;
+  }
+
+  function draw() {
+    var q = p(), b = q.c * (1 - q.t), m = 1 / (1 - b);
+    var y0 = A0 * m, y1 = (A0 + q.dg) * m, dy = y1 - y0, dbs = q.t * dy - q.dg;
+    YMAX = nice(Math.max(y0, y1) * 1.25); gridX();
+    $("c-out").textContent = q.c.toFixed(2);
+    $("t-out").textContent = Math.round(q.t * 100) + "%";
+    $("dg-out").textContent = sgn(q.dg);
+    $("m-read").textContent = m.toFixed(2);
+    $("y-read").textContent = fmt(y0) + " → " + fmt(y1);
+    $("dy-read").textContent = sgn(dy);
+    $("bs-read").textContent = sgn(dbs);
+
+    // Keynesian cross
+    setL("deg", sx(0), sy(0), sx(YMAX), sy(YMAX));
+    setL("ad0", sx(0), sy(A0), sx(YMAX), sy(A0 + b * YMAX));
+    setL("ad1", sx(0), sy(A0 + q.dg), sx(YMAX), sy(A0 + q.dg + b * YMAX));
+    setP("e0", sx(y0), sy(y0)); setP("e1", sx(y1), sy(y1));
+    setL("g0", sx(y0), sy(y0), sx(y0), Y0p); setL("g1", sx(y1), sy(y1), sx(y1), Y0p);
+    setT("l-y0", sx(y0), Y0p - 6); setT("l-y1", sx(y1), Y0p - 6);
+    var up = q.dg >= 0;
+    setT("l-e0", sx(y0) + (up ? 12 : -32), sy(y0) + (up ? 22 : -12));
+    setT("l-e1", sx(y1) + (up ? -32 : 12), sy(y1) + (up ? -12 : 22));
+    var xr = YMAX * 0.95;
+    setT("l-deg", sx(Math.min(xr, YMAX * 0.86)) - 70, sy(Math.min(xr, YMAX * 0.86)) - 6);
+    var lx = YMAX * 0.93;
+    setT("l-ad0", sx(lx), sy(A0 + b * lx) + (up ? 24 : -10));
+    setT("l-ad1", sx(lx), sy(A0 + q.dg + b * lx) + (up ? -10 : 24));
+
+    // staircase: demand jumps, output catches up, demand rises again...
+    var pts = [sx(y0) + "," + sy(y0)], y = y0, inj = q.dg;
+    for (var k = 1; k <= step; k++) {
+      pts.push(sx(y) + "," + sy(y + inj));
+      y = y + inj;
+      pts.push(sx(y) + "," + sy(y));
+      inj = inj * b;
+    }
+    $("stair").setAttribute("points", pts.join(" "));
+    $("round").textContent = step >= NR ? "All rounds" : "Round " + step + " of " + NR;
+    $("l-y1").style.display = $("g1").style.display = Math.abs(dy) < 1 ? "none" : "";
+
+    // rounds view
+    var amp = Math.max(Math.abs(dy), 1), pos = q.dg >= 0;
+    var top = nice(amp * 1.1) * (nice(amp * 1.1) < amp * 1.05 ? 2 : 1);
+    var ry = function (v) { return Y0p - Math.abs(v) / top * (Y0p - Y1p); };
+    var bw = (X1 - X0) / NR, h = "", cum = 0, cp = [X0 + "," + Y0p];
+    var gh = "";
+    [0.25, 0.5, 0.75, 1].forEach(function (f) {
+      var v = top * f;
+      gh += '<line class="grid" x1="60" y1="' + ry(v) + '" x2="640" y2="' + ry(v) + '"></line><text class="tick" x="52" y="' + (ry(v) + 5) + '" text-anchor="end">' + (pos ? "" : "−") + fmt(v) + "</text>";
+    });
+    for (var i = 1; i <= NR; i++) gh += '<text class="tick" x="' + (X0 + (i - 0.5) * bw) + '" y="398" text-anchor="middle">' + i + "</text>";
+    $("r-grid").innerHTML = gh;
+    for (var j = 1; j <= NR; j++) {
+      var v = q.dg * Math.pow(b, j - 1);
+      cum += v;
+      if (j <= step) {
+        h += '<rect class="' + (j === 1 ? "bar0" : "bar") + '" x="' + (X0 + (j - 1) * bw + 6) + '" y="' + ry(v) + '" width="' + (bw - 12) + '" height="' + (Y0p - ry(v)) + '"></rect>';
+        cp.push((X0 + j * bw) + "," + ry(cum));
+      }
+    }
+    $("bars").innerHTML = h;
+    $("cum").setAttribute("points", cp.join(" "));
+    setL("target", 60, ry(dy), 640, ry(dy));
+    setT("l-target", 636, ry(dy) + 24);
+    $("l-target").textContent = "Final ΔY = " + sgn(dy);
+
+    var msg;
+    if (q.dg === 0) msg = "Move ΔG to change government spending. The multiplier tells you how far output moves.";
+    else if (step < NR) msg = "Round " + step + ": demand rises, firms raise output, incomes rise, and people spend " + Math.round(b * 100) + "% of each extra rupee of income.";
+    else msg = "Each rupee of " + (up ? "extra" : "lower") + " G changes output by ₹" + m.toFixed(2) + ". A higher c or a lower t means a bigger multiplier. Taxes leak " + Math.round(q.t * 100) + "% of each round.";
+    $("hint").textContent = msg;
+  }
+
+  function setView(v) {
+    view = v;
+    $("x").style.display = v === "x" ? "" : "none"; $("r").style.display = v === "r" ? "" : "none";
+    $("v-x").setAttribute("aria-pressed", v === "x"); $("v-r").setAttribute("aria-pressed", v === "r");
+  }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } $("play").textContent = "Play"; }
+  ["c", "t", "dg"].forEach(function (k) { $(k).addEventListener("input", function () { stop(); step = NR; draw(); }); });
+  $("next").addEventListener("click", function () { stop(); step = step >= NR ? 1 : step + 1; draw(); });
+  $("play").addEventListener("click", function () {
+    if (timer) { stop(); return; }
+    step = 0; draw(); $("play").textContent = "Pause";
+    timer = setInterval(function () { step++; draw(); if (step >= NR) stop(); }, 700);
+  });
+  $("reset").addEventListener("click", function () { stop(); $("c").value = 0.8; $("t").value = 0.25; $("dg").value = 60; step = NR; draw(); });
+  $("v-x").addEventListener("click", function () { setView("x"); });
+  $("v-r").addEventListener("click", function () { setView("r"); });
+  window.addEventListener("themechange", draw);
+  gridX(); draw();
+})();
+</script>
+</body>
+</html>
