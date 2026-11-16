@@ -1053,4 +1053,4 @@ Which motives for holding money (transaction, precautionary, speculative) explai
 <!-- layout: end -->
 # Questions?
 
-Dr. Pawan Ashok Kamble · BIMTECH
+Dr. Pawan Ashok Kamble
