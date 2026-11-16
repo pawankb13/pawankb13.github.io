@@ -8,14 +8,8 @@ Why the same outcome feels like a gain to one person and a loss to another
 
 <!-- layout: agenda -->
 ## Outline
-### One class, four parts
-
-1. **Eight concepts:** Each with an example and a real business situation
-2. **Case:** Kaveri Fibre, with discussion questions
-
 
 ---
-
 <!-- layout: compare -->
 ## Eight concepts in this module
 ### One theory and its consequences
@@ -53,10 +47,7 @@ Why the same outcome feels like a gain to one person and a loss to another
 
 |||
 
-### Choice 2
-
-- **C:** a sure loss of ₹500
-- **D:** a 50% chance to lose ₹1,000, and a 50% chance of nothing
+Take a moment
 
 ---
 <!-- layout: compare -->
@@ -65,17 +56,14 @@ Why the same outcome feels like a gain to one person and a loss to another
 
 |||
 
-### Choice 1
-
-- **A:** a sure gain of ₹500
-- **B:** a 50% chance to gain ₹1,000, and a 50% chance of nothing
-
-|||
-
 ### Choice 2
 
 - **C:** a sure loss of ₹500
 - **D:** a 50% chance to lose ₹1,000, and a 50% chance of nothing
+  
+|||
+
+Take a moment
 
 ---
 
