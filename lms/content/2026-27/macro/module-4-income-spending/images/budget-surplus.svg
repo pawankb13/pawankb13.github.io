@@ -5,8 +5,8 @@
 <text x="750" y="316" font-size="30" fill="#555c61" text-anchor="end">Y</text>
 <text x="36" y="350" font-size="30" fill="#555c61" text-anchor="middle" transform="rotate(-90 36 350)">Budget surplus, BS</text>
 <line x1="130.0" y1="498.0" x2="750.0" y2="148.0" stroke="#3d8296" stroke-width="8"  stroke-linecap="round"/>
-<text x="750" y="120" font-size="30" font-weight="700" fill="#3d8296" text-anchor="end">BS = tY − G − TR</text>
-<text x="120" y="509" font-size="30" font-weight="700" fill="#3d8296" text-anchor="end">−(G+TR)</text>
+<text x="750" y="120" font-size="30" font-weight="700" fill="#3d8296" text-anchor="end">BS = tY − <tspan text-decoration="overline">G</tspan> − <tspan text-decoration="overline">TR</tspan></text>
+<text x="120" y="509" font-size="30" font-weight="700" fill="#3d8296" text-anchor="end">−(<tspan text-decoration="overline">G</tspan> + <tspan text-decoration="overline">TR</tspan>)</text>
 <line x1="366" y1="365" x2="366" y2="330" stroke="#555c61" stroke-width="2.5" stroke-dasharray="8 7"/>
 <circle cx="365.6" cy="365.0" r="12" fill="#c0504d" stroke="#fff" stroke-width="3"/>
 <text x="365.6" y="314" font-size="30" font-weight="700" fill="#c0504d" text-anchor="middle">Y</text>

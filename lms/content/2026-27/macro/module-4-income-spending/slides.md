@@ -765,8 +765,8 @@ How does fiscal policy change the budget deficit?
 
 <div style="flex: 1;">
 
-- **BS = TA − G − TR**
-- **BS = tY − G − TR**
+- $BS = TA - \bar{G} - \overline{TR}$
+- $BS = tY - \bar{G} - \overline{TR}$
 - A negative BS is a **budget deficit**.
 - Low income: low tax revenue, so a deficit. So deficits rise in recessions even if policy does not change.
 
