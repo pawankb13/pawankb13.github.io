@@ -1038,7 +1038,7 @@ Which motives for holding money (transaction, precautionary, speculative) explai
 
 ---
 <!-- layout: references -->
-## References
+## Reference
 
 ### Textbooks and sources
 
