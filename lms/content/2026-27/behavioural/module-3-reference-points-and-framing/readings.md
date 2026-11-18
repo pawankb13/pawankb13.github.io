@@ -11,7 +11,7 @@
   Anything that is not a link is shown as plain text.
 -->
 ### Case
-- [Kaveri Fibre Pricing a Loss](readings/case.pdf)
+- [Kaveri Fibre: Pricing a Loss](readings/case.pdf)
 
 
 ### Reference Book 
