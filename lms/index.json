@@ -223,6 +223,15 @@
      "folder": "module-3-reference-points-and-framing",
      "updated": "2026-11-18",
      "visibility": "public"
+    },
+    {
+     "id": "mental-accounting-and-pricing",
+     "title": "Mental Accounting and Pricing",
+     "type": "Module",
+     "number": 4,
+     "folder": "module-4-mental-accounting-and-pricing",
+     "updated": "2026-11-21",
+     "visibility": "public"
     }
    ]
   },
@@ -288,6 +297,7 @@
   "content/2026-27/behavioural/module-1-how-decisions-get-made/readings.md",
   "content/2026-27/behavioural/module-2-biases-in-your-own-judgement/readings.md",
   "content/2026-27/behavioural/module-3-reference-points-and-framing/readings.md",
+  "content/2026-27/behavioural/module-4-mental-accounting-and-pricing/readings.md",
   "content/2026-27/macro/module-1-measuring-output/readings.md",
   "content/2026-27/macro/module-3-inflation-unemployment/readings.md",
   "content/2026-27/macro/module-4-income-spending/readings.md",

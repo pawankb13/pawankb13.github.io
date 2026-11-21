@@ -38,6 +38,16 @@
       "folder": "module-3-reference-points-and-framing",
       "updated": "2026-11-18",
       "visibility": "public"
+    },
+
+    {
+      "id": "mental-accounting-and-pricing",
+      "title": "Mental Accounting and Pricing",
+      "type": "Module",
+      "number": 4,
+      "folder": "module-4-mental-accounting-and-pricing",
+      "updated": "2026-11-21",
+      "visibility": "public"
     }
 
   ]
