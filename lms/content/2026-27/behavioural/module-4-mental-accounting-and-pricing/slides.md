@@ -1,3 +1,4 @@
+<!-- slide 1 -->
 # Mental Accounting and Pricing
 
 Behavioural Economics for Managers · Module 4
@@ -16,6 +17,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 2 -->
 ## What this module is about
 ### Money, prices and menus as people actually see them
 
@@ -41,6 +43,7 @@ None of this means people are foolish. These are shortcuts that usually work. Bu
 ---
 
 <!-- layout: compare -->
+<!-- slide 3 -->
 ## Why it matters for managers
 ### Every firm makes these decisions, whether it thinks about them or not
 
@@ -76,6 +79,7 @@ A firm makes these choices even if no one thinks about them. Doing nothing is al
 
 ---
 
+<!-- slide 4 -->
 ## Where this module fits
 ### Behavioural Economics for Managers
 
@@ -100,6 +104,7 @@ Note:
 ---
 
 <!-- layout: steps -->
+<!-- slide 5 -->
 ## What you will be able to do
 ### By the end of this module
 
@@ -122,6 +127,7 @@ Note:
 ---
 
 <!-- layout: agenda -->
+<!-- slide 6 -->
 ## Outline
 
 1. Mental accounting
@@ -157,6 +163,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 7 -->
 ## Before we start: two evenings at the theatre
 ### Would you still buy a ticket?
 
@@ -188,6 +195,7 @@ Note:
 ---
 
 <!-- layout: stat -->
+<!-- slide 8 -->
 ## What people answered
 ### Kahneman and Tversky (1984). The original used a $10 ticket.
 
@@ -223,6 +231,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 9 -->
 ## The question this module answers
 ### Why is a rupee not always a rupee?
 
@@ -244,6 +253,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 10 -->
 ## The link to Module 3
 ### The same value function, applied to each account
 
@@ -268,6 +278,7 @@ Note:
 ---
 
 <!-- layout: section -->
+<!-- slide 11 -->
 # Eight concepts
 
 Each one: definition, theory, an experiment, a business case and a question
@@ -288,6 +299,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 12 -->
 ## Concept 1: Mental accounting
 ### Definition
 
@@ -314,6 +326,7 @@ Note:
 
 ---
 
+<!-- slide 13 -->
 ## Mental accounting: the theory
 ### Three parts, Thaler (1999)
 
@@ -340,6 +353,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 14 -->
 ## Mental accounting: the theory
 ### Standard economics against mental accounting
 
@@ -374,6 +388,7 @@ Their total wealth is the same, but their spending is not.
 ---
 
 <!-- layout: stat -->
+<!-- slide 15 -->
 ## Mental accounting: an experiment
 ### Epley, Mak and Idson (2006). Students got $25 in cash, then could buy items in the lab.
 
@@ -418,6 +433,7 @@ They could then buy snacks and office items in the lab.
 ---
 
 <!-- layout: compare -->
+<!-- slide 16 -->
 ## What the experiment shows
 ### The label decides the account
 
@@ -449,6 +465,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 17 -->
 ## Business case: cheaper petrol, more premium petrol
 ### Hastings and Shapiro (2013), *Quarterly Journal of Economics*
 
@@ -474,6 +491,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 18 -->
 ## Why would a household in a recession buy more premium petrol when petrol becomes cheaper?
 
 Where else is money labelled this way in a business?
@@ -495,6 +513,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 19 -->
 ## Concept 2: Acquisition and transaction utility
 ### Definition, Thaler (1985)
 
@@ -521,6 +540,7 @@ Sales, coupons and "was" prices work mainly through transaction utility.
 ---
 
 <!-- layout: equation -->
+<!-- slide 20 -->
 ## Acquisition and transaction utility: the theory
 ### Total value of a purchase has two parts
 
@@ -557,6 +577,7 @@ If the shop had simply charged ₹3,000 all year, the reference price would be �
 ---
 
 <!-- layout: stat -->
+<!-- slide 21 -->
 ## The theory in an experiment: beer on the beach
 ### Thaler (1985). The most you would pay for the same cold beer.
 
@@ -591,6 +612,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 22 -->
 ## What the beer shows
 ### Same beer, same beach, different reference price
 
@@ -617,6 +639,7 @@ So people refuse to pay $2.50 to the grocery store even though they would happil
 ---
 
 <!-- layout: compare -->
+<!-- slide 23 -->
 ## Transaction utility: a replication
 ### Shah, Shafir and Mullainathan (2015), *Psychological Science*
 
@@ -654,6 +677,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 24 -->
 ## Business case: J.C. Penney, "fair and square"
 ### United States, 2012
 
@@ -683,6 +707,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 25 -->
 ## J.C. Penney's prices were lower. Why did customers leave?
 
 And when does chasing deals hurt the customer?
@@ -709,6 +734,7 @@ Transaction utility is a real feeling, but it can lead people to pay for the dea
 ---
 
 <!-- layout: callout -->
+<!-- slide 26 -->
 ## Concept 3: Reference prices
 ### Definition
 
@@ -731,6 +757,7 @@ Note:
 ---
 
 <!-- layout: table -->
+<!-- slide 27 -->
 ## Reference prices: the theory
 ### Where buyers get their reference price
 
@@ -759,6 +786,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 28 -->
 ## Reference prices: why cues work
 ### Anderson and Simester (2003), *Harvard Business Review*
 
@@ -795,6 +823,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 29 -->
 ## Reference prices: an experiment
 ### Anderson and Simester (2003), three field experiments on price endings
 
@@ -822,6 +851,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 30 -->
 ## Business case: the power of a "Sale" sign
 ### Anderson and Simester, catalogue and grocery field studies (2001)
 
@@ -847,6 +877,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 31 -->
 ## If a "Sale" sign alone raises demand, why not put one on every product?
 
 And when does an MRP or a "was" price become a false reference price?
@@ -867,6 +898,7 @@ In India, the CCPA guidelines of 2023 list false urgency and misleading price cl
 ---
 
 <!-- layout: callout -->
+<!-- slide 32 -->
 ## Concept 4: Partitioned pricing
 ### Definition
 
@@ -893,6 +925,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 33 -->
 ## Partitioned pricing: the theory
 ### Morwitz, Greenleaf and Johnson (1998)
 
@@ -925,6 +958,7 @@ Note:
 ---
 
 <!-- layout: equation -->
+<!-- slide 34 -->
 ## Partitioned pricing: a simple model
 ### A $10.00 shelf price, with 7.375% sales tax added at the till
 
@@ -954,6 +988,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 35 -->
 ## Partitioned pricing: an experiment
 ### Chetty, Looney and Kroft (2009), *American Economic Review*
 
@@ -979,6 +1014,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 36 -->
 ## Business case: StubHub's hidden fees
 ### Blake, Moshary, Sweeney and Tadelis (2021), *Marketing Science*
 
@@ -1010,6 +1046,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 37 -->
 ## StubHub earned more with fees shown late. Should it have kept the change?
 
 And is a separate delivery fee always drip pricing?
@@ -1035,6 +1072,7 @@ The same fee becomes drip pricing when it appears for the first time at the last
 ---
 
 <!-- layout: callout -->
+<!-- slide 38 -->
 ## Concept 5: Payment decoupling
 ### Definition
 
@@ -1063,6 +1101,7 @@ Note:
 
 ---
 
+<!-- slide 39 -->
 ## Payment decoupling: the theory
 ### Prelec and Loewenstein (1998): the pain of paying
 
@@ -1092,6 +1131,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 40 -->
 ## Payment decoupling: the theory
 ### Payment depreciation, Gourville and Soman (1998)
 
@@ -1123,6 +1163,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 41 -->
 ## Payment decoupling: an experiment
 ### Soman and Gourville (2001), a Shakespeare festival, *Journal of Marketing Research*
 
@@ -1158,6 +1199,7 @@ Note:
 ---
 
 <!-- layout: stat -->
+<!-- slide 42 -->
 ## Business case: cash or card?
 ### Prelec and Simester (2001). Sealed bids for Boston Celtics tickets by MIT students.
 
@@ -1199,6 +1241,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 43 -->
 ## Business case: the health club bill
 ### Gourville and Soman (1998)
 
@@ -1226,6 +1269,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 44 -->
 ## A gym can bill ₹12,000 once a year or ₹1,000 a month. Which gets more renewals, and why?
 
 And which is better for the customer?
@@ -1250,6 +1294,7 @@ For the firm, the honest approach is to encourage use in every period, as Gourvi
 ---
 
 <!-- layout: callout -->
+<!-- slide 45 -->
 ## Concept 6: The decoy effect
 ### Definition, Huber, Payne and Puto (1982)
 
@@ -1273,6 +1318,7 @@ Note:
 
 ---
 
+<!-- slide 46 -->
 ## The decoy effect: the theory
 ### Target T, competitor C and decoy D
 
@@ -1306,6 +1352,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 47 -->
 ## Why the decoy breaks a rule
 ### The regularity principle
 
@@ -1329,6 +1376,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 48 -->
 ## The decoy effect in real sales
 ### Wu and Cosguner (2020), an online diamond retailer, *Marketing Science*
 
@@ -1357,6 +1405,7 @@ Note:
 ---
 
 <!-- layout: table -->
+<!-- slide 49 -->
 ## Business case: The Economist subscription
 ### Ariely (2008), a test with 100 MIT students
 
@@ -1389,6 +1438,7 @@ The print-only option looks strange. It costs the same as print and web but give
 ---
 
 <!-- layout: equation -->
+<!-- slide 50 -->
 ## The Economist, in numbers
 ### Revenue per 100 subscribers
 
@@ -1416,6 +1466,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 51 -->
 ## Where have you seen a decoy on a menu or price page?
 
 Which option was it built to sell? Is using a decoy honest?
@@ -1442,6 +1493,7 @@ A useful test is the honesty test at the end of the module: would we be comforta
 ---
 
 <!-- layout: callout -->
+<!-- slide 52 -->
 ## Concept 7: The compromise effect
 ### Definition, Simonson (1989)
 
@@ -1467,6 +1519,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 53 -->
 ## The compromise effect: the theory
 ### Extremeness aversion
 
@@ -1502,6 +1555,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 54 -->
 ## The compromise effect: the evidence
 ### Simonson and Tversky (1992), cameras
 
@@ -1533,6 +1587,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 55 -->
 ## The compromise effect: an experiment
 ### Sharpe, Staelin and Huber (2008), soft drink sizes, *Journal of Consumer Research*
 
@@ -1558,6 +1613,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 56 -->
 ## Business case: the Williams-Sonoma bread maker
 ### A widely told retail story, not a controlled study
 
@@ -1583,6 +1639,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 57 -->
 ## You sell two laptop plans. Should you add a premium plan you expect few people to buy?
 
 What could go wrong?
@@ -1609,6 +1666,7 @@ Test it first. Compare sales and margin with and without the premium plan in a f
 ---
 
 <!-- layout: callout -->
+<!-- slide 58 -->
 ## Concept 8: Assortment design
 ### Definition
 
@@ -1633,6 +1691,7 @@ Note:
 ---
 
 <!-- layout: compare -->
+<!-- slide 59 -->
 ## Assortment design: the theory
 ### More choice has benefits and costs
 
@@ -1669,6 +1728,7 @@ Note:
 ---
 
 <!-- layout: table -->
+<!-- slide 60 -->
 ## Assortment design: the classic evidence
 ### Iyengar and Lepper (2000), a jam tasting stall in a California store
 
@@ -1700,6 +1760,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 61 -->
 ## Assortment design: a caution
 ### Scheibehenne, Greifeneder and Todd (2010)
 
@@ -1728,6 +1789,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 62 -->
 ## Assortment design: evidence from retirement plans
 ### Iyengar, Huberman and Jiang (2004), US 401(k) plans run by Vanguard
 
@@ -1755,6 +1817,7 @@ Note:
 ---
 
 <!-- layout: case -->
+<!-- slide 63 -->
 ## Business case: Procter & Gamble cuts its brands
 ### 2014
 
@@ -1786,6 +1849,7 @@ Note:
 ---
 
 <!-- layout: discussion -->
+<!-- slide 64 -->
 ## Your app offers 40 plans. How would you redesign the menu?
 
 What would you test before cutting any plan?
@@ -1812,6 +1876,7 @@ Remember the caution from Scheibehenne and colleagues: choice overload does not 
 
 ---
 
+<!-- slide 65 -->
 ## Putting the module together
 
 | Concept | One line | Link to Module 3 |
@@ -1836,6 +1901,7 @@ Note:
 
 ---
 
+<!-- slide 66 -->
 ## Putting the module together (continued)
 
 | Concept | One line | Link to Module 3 |
@@ -1863,6 +1929,7 @@ Note:
 ---
 
 <!-- layout: steps -->
+<!-- slide 67 -->
 ## A checklist for any price, payment or menu decision
 ### Ask before you launch
 
@@ -1887,6 +1954,7 @@ Note:
 ---
 
 <!-- layout: callout -->
+<!-- slide 68 -->
 ## The honesty test
 ### One question for every pricing idea
 
@@ -1909,6 +1977,7 @@ Note:
 
 ---
 
+<!-- slide 69 -->
 ## Exit quiz
 ### Five questions on the module
 
